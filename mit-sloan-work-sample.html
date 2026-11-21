@@ -13,7 +13,7 @@
 <title>MIT Sloan Annual Fund Analytics · Work sample · Narissara Khomkhai</title>
 <style>
 
-:root{--bg:#f7f6f3;--paper:#fff;--ink:#1f2a30;--muted:#56626a;--line:#dfe1de;--soft:#f0f1ee;--accent:#750014;--accent-dk:#520010;--pale:#f6eaec;--slate:#4a6675;--slate-pale:#e3ebef;--gold:#a5762a;--gold-pale:#f7efdf;--green:#2f6f4f;--green-pale:#e3f1e8;--amber:#9a5b0a;--amber-pale:#fbf0dc;--serif:Cambria,Georgia,"Times New Roman",serif}
+:root{--bg:#f7f6f3;--paper:#fff;--ink:#1f2a30;--muted:#56626a;--line:#dfe1de;--soft:#f0f1ee;--accent:#750014;--accent-dk:#520010;--pale:#f6eaec;--slate:#4a6675;--slate-pale:#e3ebef;--gold:#8a6122;--gold-pale:#f7efdf;--green:#2f6f4f;--green-pale:#e3f1e8;--amber:#9a5b0a;--amber-pale:#fbf0dc;--serif:Cambria,Georgia,"Times New Roman",serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.55 var(--serif);-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4,p{margin:0}h1,h2,h3{line-height:1.15}
@@ -229,7 +229,7 @@ dialog .next{background:var(--soft);border-left:3px solid var(--accent);padding:
 .tk.amber{border-left-color:var(--amber)}.tk.amber b{color:var(--amber)}
 .tk.slate{border-left-color:var(--slate)}.tk.slate b{color:var(--slate)}
 .chart svg{display:block;width:100%;height:auto}
-.chart text{font-family:var(--serif);fill:var(--ink)}
+.chart text{font-family:var(--serif)}.chart text:not([fill]):not([style*="fill"]){fill:var(--ink)}
 .chart .ax{stroke:var(--muted);stroke-width:1}
 .chart .gr{stroke:var(--line);stroke-width:1}
 .chart .lbl{fill:var(--muted);font-size:12px}
@@ -642,6 +642,14 @@ ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:10px}ul.plain li{li
 @media print{.hact{display:none}}
 dialog.wide{width:min(1100px,94vw);max-width:none}
 .std td:nth-child(3){min-width:240px}
+
+.tabs{position:sticky}
+.tabmenu{position:absolute;top:100%;z-index:30;min-width:240px;max-width:340px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);box-shadow:0 10px 24px rgba(20,30,40,.14);padding:6px;display:grid;gap:2px}
+.tabmenu[hidden]{display:none}
+.tabmenu button{display:flex;gap:10px;align-items:baseline;text-align:left;border:0;background:none;padding:7px 10px;font:inherit;font-size:14px;color:var(--ink);cursor:pointer}
+.tabmenu button b{min-width:28px;color:var(--accent);font-size:12.5px}
+.tabmenu button:hover,.tabmenu button:focus-visible{background:var(--pale);outline:none}
+@media print{.tabmenu{display:none!important}}
 
 </style>
 </head>
@@ -1092,7 +1100,7 @@ const sig = z => 1 / (1 + Math.exp(-z));
 function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 const gs = r => { let u = 0, v = 0; while (!u) u = r(); while (!v) v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
 const tint = p => `color-mix(in srgb, var(--accent) ${Math.round(8 + p * 92)}%, #fff)`;
-const CL = ['var(--accent)', 'var(--slate)', 'var(--gold)', 'var(--green)', 'var(--amber)', '#b77a7a', '#7f9aa8'];
+const CL = ['var(--accent)', 'var(--slate)', 'var(--gold)', 'var(--green)', 'var(--amber)', '#9a5b5b', '#7f9aa8'];
 const POP = {};
 const safe = (name, fn) => { try { fn(); } catch (err) { console.error('Exhibit ' + name + ' could not draw', err); const n = document.getElementById('partial'); if (n) n.hidden = false; } };
 const sqlBox = q => `<pre class="sql"><code>${esc(q)}</code></pre>`;
@@ -1283,8 +1291,8 @@ safe('forecast', function forecast() {
 
 safe('pipeline', function pipeline() {
  const ST = [['Identified', 214, 6.1e6, 41], ['Qualified', 132, 4.0e6, 58], ['Cultivation', 88, 2.9e6, 96], ['Ask made', 41, 1.35e6, 37], ['Committed', 26, .78e6, 0]];
- const Wd = 560, H = 260, mx = ST[0][1]; let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Leadership annual gift pipeline by stage">`;
- ST.forEach((st, i) => { const w = 110 + 270 * st[1] / mx, y = 10 + i * 48, x = (Wd - 140 - w) / 2; s += `<rect x="${x}" y="${y}" width="${w}" height="40" fill="var(--accent)" opacity="${1 - i * .14}"/><text x="${x + w / 2}" y="${y + 25}" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">${st[0]} · ${st[1]}</text><text x="${Wd - 130}" y="${y + 18}" font-size="12.5" fill="var(--ink)">${k1(st[2])}</text><text x="${Wd - 130}" y="${y + 34}" font-size="11.5" fill="var(--muted)">${i < 4 ? pct(ST[i + 1][1] / st[1]) + ' move on' : 'Closed'}</text>`; });
+ const PF = ['#750014', '#8f2a3a', '#a8505e', '#c9909a', '#e3bfc5'], Wd = 560, H = 260, mx = ST[0][1]; let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Leadership annual gift pipeline by stage">`;
+ ST.forEach((st, i) => { const w = 110 + 270 * st[1] / mx, y = 10 + i * 48, x = (Wd - 140 - w) / 2; s += `<rect x="${x}" y="${y}" width="${w}" height="40" fill="${PF[i]}"/><text x="${x + w / 2}" y="${y + 25}" text-anchor="middle" font-size="13" font-weight="700" style="fill:${i < 3 ? '#fff' : '#1f2a30'}">${st[0]} · ${st[1]}</text><text x="${Wd - 130}" y="${y + 18}" font-size="12.5" fill="var(--ink)">${k1(st[2])}</text><text x="${Wd - 130}" y="${y + 34}" font-size="11.5" fill="var(--muted)">${i < 4 ? pct(ST[i + 1][1] / st[1]) + ' move on' : 'Closed'}</text>`; });
  $('#pipeline').innerHTML = s + `</svg><p class="note">Lead annual prospects at $10,000 or more, FY27 to date, synthetic. <b>So what:</b> cultivation holds prospects longest, a median ${ST[2][3]} days, so the monthly pack flags anyone in a stage over 180 days.</p>`;
  const AGO = [['AGO 1', 204, .71, 41, 1.22e6, 1.3e6], ['AGO 2', 197, .64, 33, .98e6, 1.2e6], ['AGO 3', 210, .58, 29, .86e6, 1.2e6], ['AGO 4', 188, .76, 46, 1.31e6, 1.3e6]];
  const due = 120 * (142 / 365);
@@ -1305,7 +1313,7 @@ safe('rfm', function rfm() {
  const Wd = 640, H = 330, rects = [];
  (function split(items, x, y, w, h) { if (items.length === 1) { rects.push([items[0], x, y, w, h]); return; } const sum = items.reduce((s, i) => s + i.n, 0); let acc = 0, k = 0; while (k < items.length - 1 && acc + items[k].n <= sum / 2) acc += items[k++].n; if (k === 0) { acc = items[0].n; k = 1; } const a = items.slice(0, k), b = items.slice(k), f = acc / sum; if (w >= h) { split(a, x, y, w * f, h); split(b, x + w * f, y, w * (1 - f), h); } else { split(a, x, y, w, h * f); split(b, x, y + h * f, w, h * (1 - f)); } })(data, 0, 0, Wd, H);
  let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="RFM segments by donor count">`;
- rects.forEach(([g, x, y, w, h]) => { const i = data.indexOf(g), big = w > 120 && h > 62, mid = w > 70 && h > 44; s += `<g data-open="seg:${i}" tabindex="0" role="button" aria-label="${g.sg}: ${n0(g.n)} donors"><rect x="${x + 1}" y="${y + 1}" width="${w - 2}" height="${h - 2}" fill="${g.col}" opacity=".88"/>${mid ? `<text x="${x + 9}" y="${y + 21}" font-size="${big ? 14 : 12}" font-weight="700" fill="#fff">${big || g.sg.length < 11 ? g.sg : g.sg.split(' ')[0]}</text><text x="${x + 9}" y="${y + 38}" font-size="12" fill="#fff">${n0(g.n)} donors</text>${h > 62 ? `<text x="${x + 9}" y="${y + 54}" font-size="12" fill="#fff">${pct(g.m / tot)} of dollars</text>` : ''}` : ''}</g>`; });
+ rects.forEach(([g, x, y, w, h]) => { const i = data.indexOf(g), big = w > 120 && h > 62, mid = w > 70 && h > 44; s += `<g data-open="seg:${i}" tabindex="0" role="button" aria-label="${g.sg}: ${n0(g.n)} donors"><rect x="${x + 1}" y="${y + 1}" width="${w - 2}" height="${h - 2}" fill="${g.col}"/>${mid ? `<text x="${x + 9}" y="${y + 21}" font-size="${big ? 14 : 12}" font-weight="700" fill="#fff">${big || g.sg.length < 11 ? g.sg : g.sg.split(' ')[0]}</text><text x="${x + 9}" y="${y + 38}" font-size="12" fill="#fff">${n0(g.n)} donors</text>${h > 62 ? `<text x="${x + 9}" y="${y + 54}" font-size="12" fill="#fff">${pct(g.m / tot)} of dollars</text>` : ''}` : ''}</g>`; });
  $('#rfm').innerHTML = s + '</svg><p class="note">Box size is donor count. Select a segment for its profile, treatment and the SQL behind it.</p>';
 });
 safe('kmeans', function kmeans() {
@@ -1715,6 +1723,61 @@ const packSafe = () => safe('pack', buildPack);
 packSafe(); addEventListener('beforeprint', packSafe);
 window.FA_pack = packSafe;
 const pb = $('#printPack'); if (pb) pb.addEventListener('click', () => { packSafe(); if ($('#printpack').innerHTML.trim()) print(); });
+/* hover menu: point at a tab to see its sub-sections */
+safe('tabmenu', function tabmenu() {
+ const bar = $('.tabs'), menu = document.createElement('div');
+ menu.className = 'tabmenu'; menu.hidden = true; menu.setAttribute('role', 'menu'); bar.appendChild(menu);
+ let cur = null, timer = 0;
+ const items = pid => { const subs = SUBS[pid] || [], g = GROUPS.findIndex(x => x[0] === pid) + 1; return subs.map((sb, k) => `<button type="button" role="menuitem" data-mp="${pid}" data-mk="${k}"><b>${g ? g + '.' + (k + 1) : k + 1}</b>${esc(sb[0])}</button>`).join(''); };
+ const open = (tab, focus) => {
+  const pid = tab.getAttribute('aria-controls'); if (!SUBS[pid]) return close();
+  clearTimeout(timer); cur = tab; menu.innerHTML = items(pid); menu.hidden = false;
+  menu.setAttribute('aria-label', 'Sections in ' + tab.textContent.trim());
+  const br = bar.getBoundingClientRect(), r = tab.getBoundingClientRect();
+  menu.style.left = Math.max(8, Math.min(r.left - br.left, br.width - menu.offsetWidth - 8)) + 'px'; menu.style.top = (r.bottom - br.top) + 'px';
+  if (focus) menu.querySelector('button').focus();
+ };
+ const close = () => { menu.hidden = true; cur = null; };
+ const later = () => { clearTimeout(timer); timer = setTimeout(close, 180); };
+ const hover = matchMedia('(hover: hover)').matches;
+ $$('.tab').forEach(tab => {
+  if (hover) { tab.addEventListener('mouseenter', () => open(tab)); tab.addEventListener('mouseleave', later); }
+  tab.setAttribute('aria-haspopup', 'menu');
+  tab.addEventListener('keydown', e => { if (e.key === 'ArrowDown') { e.preventDefault(); open(tab, true); } });
+ });
+ menu.addEventListener('mouseenter', () => clearTimeout(timer)); menu.addEventListener('mouseleave', later);
+ menu.addEventListener('click', e => { const b = e.target.closest('button[data-mp]'); if (!b) return; const pid = b.dataset.mp; close(); show(pid); showSub(pid, +b.dataset.mk, true); });
+ menu.addEventListener('keydown', e => {
+  const bs = [...menu.querySelectorAll('button')], i = bs.indexOf(document.activeElement);
+  if (e.key === 'ArrowDown') { e.preventDefault(); bs[(i + 1) % bs.length].focus(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); bs[(i - 1 + bs.length) % bs.length].focus(); }
+  else if (e.key === 'Escape' || e.key === 'Tab') { const t = cur; close(); if (e.key === 'Escape' && t) { e.preventDefault(); t.focus(); } }
+ });
+ document.addEventListener('click', e => { if (!menu.hidden && !menu.contains(e.target) && !e.target.closest('.tab')) close(); });
+ bar.querySelector('.wrap').addEventListener('scroll', close);
+});
+/* label contrast: each chart label takes white or ink, whichever reads better on the shape under it */
+function fixContrast(root) {
+ const L = c => { const m = (c || '').match(/[\d.]+/g); if (!m || m.length < 3) return null; return m.slice(0, 3).map(v => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }); };
+ const lum = a => .2126 * a[0] + .7152 * a[1] + .0722 * a[2], cr = (a, b) => (Math.max(a, b) + .05) / (Math.min(a, b) + .05);
+ const WHITE = 1, INK = lum(L('rgb(31,42,48)'));
+ (root || document).querySelectorAll('svg').forEach(svg => {
+  const rects = [...svg.querySelectorAll('rect')].map(r => ({r, x: +r.getAttribute('x') || 0, y: +r.getAttribute('y') || 0, w: +r.getAttribute('width') || 0, h: +r.getAttribute('height') || 0}));
+  svg.querySelectorAll('text').forEach(tx => {
+   if (tx.dataset.cx === 'fixed') return;
+   const x = +tx.getAttribute('x'), y = +tx.getAttribute('y') - 4; if (isNaN(x) || isNaN(y)) return;
+   let bg = null;
+   rects.forEach(o => { if (o.w > 0 && o.h > 0 && x >= o.x && x <= o.x + o.w && y >= o.y && y <= o.y + o.h && (o.r.compareDocumentPosition(tx) & Node.DOCUMENT_POSITION_FOLLOWING)) bg = o; });
+   if (!bg) return;
+   const cs = getComputedStyle(bg.r), f = L(cs.fill); if (!f || cs.fill === 'none') return;
+   const op = parseFloat(bg.r.getAttribute('opacity') || cs.opacity || 1), lin = f.map(v => v * op + (1 - op));
+   const bl = lum(lin), cur = L(getComputedStyle(tx).fill), cl = cur ? lum(cur) : INK;
+   if (cr(cl, bl) >= 4.5) return;
+   tx.style.fill = cr(WHITE, bl) >= cr(INK, bl) ? '#fff' : '#1f2a30'; tx.dataset.cx = 'fixed';
+  });
+ });
+}
+safe('contrast', () => { fixContrast(); let q = 0; new MutationObserver(() => { clearTimeout(q); q = setTimeout(() => fixContrast(), 60); }).observe($('main'), {childList: true, subtree: true}); });
 })();
 
 </script>
