@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="MIT Sloan Annual Fund Analytics · Work sample · Narissara Khomkhai">
 <meta property="og:description" content="Annual Fund reporting, segmentation and data integrity for the MIT Sloan Office of External Relations, built on synthetic data.">
-<meta property="og:url" content="https://narissa-pgm.github.io/MIT_Sloan/mit-sloan-work-sample.html">
+<meta property="og:url" content="https://narissa-pgm.github.io/MIT_Sloan_OER/mit-sloan-work-sample.html">
 <title>MIT Sloan Annual Fund Analytics · Work sample · Narissara Khomkhai</title>
 <style>
 
@@ -1709,7 +1709,7 @@ function buildPack() {
  const pick = ['takeaways', 'progress', 'suppress', 'minq', 'straight', 'handling'];
  const out = pick.map(id => { const el = document.getElementById(id); if (!el) return ''; const c = id === 'takeaways' ? el : (el.closest('.card') || el); const k = c.cloneNode(true); k.removeAttribute('id'); k.hidden = false; k.querySelectorAll('[id]').forEach(e => e.removeAttribute('id')); k.querySelectorAll('button').forEach(x => { const s = document.createElement('div'); s.className = x.className; s.innerHTML = x.innerHTML; x.replaceWith(s); }); return `<div class="pk pk-${id}">${k.outerHTML}</div>`; });
  const html = out.slice(0, 4).join('') + `<div class="pk-pair">${out[4]}${out[5]}</div>`;
- $('#printpack').innerHTML = `<p class="pk-note">Two-page summary. The full interactive work sample, with every exhibit, is at narissa-pgm.github.io/MIT_Sloan. All donor data is synthetic.</p>` + html;
+ $('#printpack').innerHTML = `<p class="pk-note">Two-page summary. The full interactive work sample, with every exhibit, is at narissa-pgm.github.io/MIT_Sloan_OER. All donor data is synthetic.</p>` + html;
 }
 const packSafe = () => safe('pack', buildPack);
 packSafe(); addEventListener('beforeprint', packSafe);
