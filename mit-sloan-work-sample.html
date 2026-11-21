@@ -650,6 +650,12 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
 .tabmenu button b{min-width:28px;color:var(--accent);font-size:12.5px}
 .tabmenu button:hover,.tabmenu button:focus-visible{background:var(--pale);outline:none}
 @media print{.tabmenu{display:none!important}}
+.dlgbar{display:flex;justify-content:flex-end;align-items:center;gap:10px;position:sticky;top:-2px;z-index:3;background:var(--paper);padding:4px 0 8px;margin-bottom:4px}
+.dlgbar .close{float:none;margin-left:auto}
+.dlgback{font:inherit;font-size:13.5px;font-weight:700;color:var(--accent);background:var(--pale);border:1px solid var(--accent);border-radius:4px;padding:4px 10px;cursor:pointer;max-width:70%;text-align:left}
+.dlgback[hidden]{display:none}
+.dlgback:hover{background:#fff}
+#dlg-title:focus{outline:none}
 
 </style>
 </head>
@@ -1079,7 +1085,7 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
 <footer class="foot"><div class="wrap"><span>Work sample by Narissara Khomkhai. All donors, gifts, figures and dates are synthetic, except the MIT Sloan facts on the Overview and MIT Sloan context tabs, which link to their sources. The report catalog, checks, issue log, reconciliation, roles and roadmap are proposals or worked examples, not descriptions of OER today. Models are trained in the browser on synthetic data. Table names in SQL are illustrative. Not affiliated with or endorsed by MIT.</span><span><button class="linkbtn" data-def="glossary">Glossary</button></span></div></footer>
 
 <dialog id="cpDlg" class="cp-dlg" aria-labelledby="cpDlg-title"><div class="cp-shell"><header><div><p class="cp-eyebrow">Narissara Khomkhai · Application</p><h2 id="cpDlg-title">Career profile</h2></div><div class="cp-actions"><a class="cp-btn" href="mit-sloan-career-profile.html" target="_blank" rel="noopener">Open in a new tab ↗</a><button type="button" class="cp-btn cp-close" data-cp-close>Close ×</button></div></header><iframe id="cpFrame" title="Career profile of Narissara Khomkhai"></iframe></div></dialog>
-<dialog id="dlg" aria-labelledby="dlg-title"><button class="close" data-close>Close ×</button><div id="dlg-body"></div></dialog>
+<dialog id="dlg" aria-labelledby="dlg-title"><div class="dlgbar"><button type="button" class="dlgback" id="dlgBack" data-back hidden>‹ Back</button><button class="close" data-close>Close ×</button></div><div id="dlg-body"></div></dialog>
 <script>
 (() => {
 'use strict';
@@ -1619,13 +1625,30 @@ POP.std = (id, t) => openDlg(`<p class="eyebrow">Definitions · standards alignm
 
 /* ================= DIALOG ================= */
 const dlg = $('#dlg'); let opener = null;
-function openDlg(html, trig) { const y = scrollY; $('#dlg-body').innerHTML = html; dlg.classList.toggle('wide', html.includes('data-wide')); $('#dlg-body').scrollTop = 0; dlg.scrollTop = 0; opener = trig; if (!dlg.open) dlg.showModal(); window.scrollTo(0, y); }
+/* popups keep a history: a popup opened from inside another one can go back to it */
+const STACK = []; let rootOpener = null;
+const dlgTitle = () => { const h = $('#dlg-body h3'); return h ? h.textContent.trim() : 'previous'; };
+function syncBack() { const b = $('#dlgBack'); if (!b) return; const top = STACK[STACK.length - 1]; b.hidden = !top; if (top) b.textContent = '‹ Back to ' + (top.title.length > 48 ? top.title.slice(0, 46) + '…' : top.title); }
+function openDlg(html, trig) {
+ const y = scrollY, body = $('#dlg-body');
+ if (dlg.open && trig && dlg.contains(trig)) STACK.push({html: body.innerHTML, wide: dlg.classList.contains('wide'), title: dlgTitle(), top: dlg.scrollTop, opener});
+ else if (!dlg.open) { STACK.length = 0; rootOpener = trig; }
+ body.innerHTML = html; dlg.classList.toggle('wide', html.includes('data-wide') || html.includes('class="evidence"'));
+ body.scrollTop = 0; dlg.scrollTop = 0; opener = trig; if (!dlg.open) dlg.showModal(); window.scrollTo(0, y); syncBack();
+ const h = $('#dlg-title'); if (h && STACK.length) { h.setAttribute('tabindex', '-1'); h.focus({preventScroll: true}); }
+}
+function dlgBack() {
+ const s = STACK.pop(); if (!s) { dlg.close(); return; }
+ $('#dlg-body').innerHTML = s.html; dlg.classList.toggle('wide', s.wide); opener = s.opener; syncBack();
+ requestAnimationFrame(() => { dlg.scrollTop = s.top; const f = $('#dlg-title'); if (f) { f.setAttribute('tabindex', '-1'); f.focus({preventScroll: true}); } });
+}
 function defHtml(k) {
  if (k === 'glossary') return `<p class="eyebrow">Glossary</p><h3 id="dlg-title">Terms used in this work sample</h3><dl>${Object.values(DEFS).map(v => `<dt>${v[0]}</dt><dd>${v[1]}</dd>`).join('')}</dl>`;
  const v = DEFS[k]; return `<p class="eyebrow">Definition</p><h3 id="dlg-title">${v[0]}</h3><p>${v[1]}</p>`;
 }
 function handle(t) {
  if (t.dataset.close !== undefined) { dlg.close(); return; }
+ if (t.dataset.back !== undefined) { dlgBack(); return; }
  if (t.dataset.go) { if (t.dataset.go.includes('#')) { openEvidence(t); return; } if (dlg.open) dlg.close(); show(t.dataset.go); if (t.dataset.sub !== undefined) showSub(t.dataset.go, +t.dataset.sub, false); return; }
  if (t.dataset.def) { openDlg(defHtml(t.dataset.def), t); return; }
  const [kind, id] = t.dataset.open.split(':');
@@ -1633,10 +1656,11 @@ function handle(t) {
  if (kind === 'def') { openDlg(defHtml(id), t); return; }
  if (POP[kind]) POP[kind](id, t);
 }
-document.addEventListener('click', e => { const t = e.target.closest('[data-open],[data-def],[data-close],[data-go]'); if (t) handle(t); });
+document.addEventListener('click', e => { const t = e.target.closest('[data-open],[data-def],[data-close],[data-back],[data-go]'); if (t) handle(t); });
 document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('g[data-open]')) { e.preventDefault(); handle(e.target); } });
 dlg.addEventListener('click', e => { if (e.target === dlg) { const r = dlg.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close(); } });
-dlg.addEventListener('close', () => { dlg.classList.remove('wide'); if (opener && opener.isConnected && opener.focus) opener.focus({preventScroll:true}); });
+dlg.addEventListener('cancel', e => { if (STACK.length) { e.preventDefault(); dlgBack(); } });
+dlg.addEventListener('close', () => { dlg.classList.remove('wide'); STACK.length = 0; syncBack(); const o = rootOpener && rootOpener.isConnected ? rootOpener : opener; if (o && o.isConnected && o.focus) o.focus({preventScroll:true}); });
 
 /* ================= SUB-INDEX AND EVIDENCE ================= */
 
