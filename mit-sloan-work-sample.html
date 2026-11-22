@@ -656,6 +656,13 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
 .dlgback[hidden]{display:none}
 .dlgback:hover{background:#fff}
 #dlg-title:focus{outline:none}
+.rec{margin-top:14px;border:1px solid var(--line);border-left:4px solid var(--green);background:var(--green-pale);padding:10px 14px}
+.rec p{margin:0}.rec-k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+.rec-a{font-weight:700;font-size:15px;line-height:1.45;margin-top:3px!important}
+.rec-o{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:6px!important;font-size:13.5px;color:var(--ink);line-height:1.45}
+.rec-o b{color:var(--green);margin-right:4px}
+@media print{.pk .rec{padding:5px 8px;margin-top:6px}.pk .rec-a{font-size:9pt}.pk .rec-o{font-size:8pt}}
+@media print{.pk .rec{display:none}.pk-progress .rec{display:block}}
 
 </style>
 </head>
@@ -1504,7 +1511,7 @@ $('#ninety').innerHTML = [['Days 1 to 30', 'Listen and inventory', ['Meet Annual
 /* ================= OVERVIEW ================= */
 const c27t = C27;
 $('#takeaways').innerHTML = [['', 'Annual Fund', `FY27 is at ${musd(c27t)} through November 20, ${c27t >= C26SD ? pct(c27t / C26SD - 1) + ' ahead of' : pct(1 - c27t / C26SD) + ' behind'} the same calendar day last year.`, `Simulated chance of reaching the ${musd(GOAL)} goal is ${pct(SIM.pGoal)}.`, 'go:af'], ['slate', 'Renewal', `About ${n0(LYBUNT)} FY26 donors have not renewed yet.`, 'The renewal model sorts them for calls and notes.', 'go:seg'], ['amber', 'Integrity', 'A worked example shows how a gap between an OER and a central total would be explained, dollar by dollar.', 'Hypothetical figures. Most such gaps are counting rules, not errors.', 'go:dq']].map(t => `<button class="tk ${t[0]}" data-open="${t[4]}"><b>${t[1]}</b><strong>${t[2]}</strong><span>${t[3]}</span></button>`).join('');
-$('#kpis').innerHTML = [[musd(c27t), 'FY27 Annual Fund to date', pct(c27t / GOAL) + ' of goal', 'go:af', ''], [n0(FY26D.length), 'FY26 donors', musd(FY26T) + ' raised', 'go:an', ''], [pct(B26.ret), 'FY26 donor retention', 'Of FY25 donors', 'go:an', ''], [CHK.filter(c => c[1] <= c[2]).length + ' of ' + CHK.length, 'Data checks passing', (CHK.length - CHK.filter(c => c[1] <= c[2]).length) + ' to fix today', 'go:dq', CHK.some(c => c[1] > c[2]) ? 'warn' : ''], [pct(SELF_SERVED), 'Requests self-served', 'June, first-year plan', 'go:pi', ''], ['Ready', 'Spring appeal list', 'Suppressions applied', 'go:seg', '']].map(k => `<button class="kpi ${k[4]}" data-open="${k[3]}"><strong>${k[0]}</strong><span>${k[1]}</span><small>${k[2]}</small></button>`).join('');
+$('#kpis').innerHTML = [[musd(c27t), 'FY27 Annual Fund to date', pct(c27t / GOAL) + ' of goal', 'go:af', ''], [n0(FY26D.length), 'FY26 donors', musd(FY26T) + ' raised', 'go:an', ''], [pct(B26.ret), 'FY26 donor retention', 'Of FY25 donors', 'go:an', ''], [CHK.filter(c => c[1] <= c[2]).length + ' of ' + CHK.length, 'Data checks passing', (CHK.length - CHK.filter(c => c[1] <= c[2]).length) + ' to fix today', 'go:dq', CHK.some(c => c[1] > c[2]) ? 'warn' : ''], [pct(SELF_SERVED), 'Requests self-served', 'Target by June, first-year plan', 'go:pi', ''], ['Ready', 'Spring appeal list', 'Suppressions applied', 'go:seg', '']].map(k => `<button class="kpi ${k[4]}" data-open="${k[3]}"><strong>${k[0]}</strong><span>${k[1]}</span><small>${k[2]}</small></button>`).join('');
 const GROUPS = [['af', 'Annual Fund reporting'], ['an', 'Analytics and forecasting'], ['seg', 'Segments and campaigns'], ['dq', 'Data integrity'], ['pi', 'Process and training'], ['sp', 'Special projects']];
 const NAMES = {overview: 'Overview', now: 'MIT Sloan context'}; GROUPS.forEach(g => NAMES[g[0]] = g[1]);
 const DUTIES = [
@@ -1555,7 +1562,7 @@ $('#nowsrc').innerHTML = NSRC.map(x => `<li><a href="${x[1]}" target="_blank" re
 
 /* ================= GAPS FROM THE FULL POSTING ================= */
 safe('perf', function perf() {
- const R = [['Annual Fund dollars', C27, C26SD, 'usd'], ['Donors', 1012, 968, 'n'], ['Alumni participation', .036, .034, 'p'], ['Retained from FY26', .41, .39, 'p'], ['Leadership donors, $1,000+', 446, 431, 'n'], ['New donors', 118, 131, 'n'], ['Average gift', 1808, 1746, 'usd'], ['Gift officer meetings', 149, 137, 'n']];
+ const R = [['Annual Fund dollars', C27, C26SD, 'usd'], ['Donors', 1012, 968, 'n'], ['Alumni participation', .036, .034, 'p'], ['Retained from FY26, FY27 to date', .41, .39, 'p'], ['Leadership donors, $1,000+', 446, 431, 'n'], ['New donors', 118, 131, 'n'], ['Average gift', 1808, 1746, 'usd'], ['Gift officer meetings', 149, 137, 'n']];
  const f = (v, t) => t === 'usd' ? (v >= 1e5 ? musd(v) : usd(v)) : t === 'p' ? pct1(v) : n0(v);
  $('#perf').innerHTML = `<div class="scroll"><table class="tbl"><thead><tr><th scope="col">Measure</th><th scope="col">FY27 to Nov 20</th><th scope="col">Same day FY26</th><th scope="col">Change</th></tr></thead><tbody>${R.map(r => { const ch = r[1] / r[2] - 1; return `<tr><th scope="row">${r[0]}</th><td><b>${f(r[1], r[3])}</b></td><td>${f(r[2], r[3])}</td><td><span class="st ${ch >= 0 ? 'pass' : 'flag'}">${ch >= 0 ? '+' : '−'}${pct(Math.abs(ch))}</span></td></tr>`; }).join('')}</tbody></table></div><p class="note">Same-day comparison removes the calendar effect. Synthetic figures. <b>So what:</b> dollars, donors and retention are ahead, but new donors trail last year, so the next appeal leans on acquisition and the first reunion classes.</p>`;
 });
@@ -1563,7 +1570,7 @@ safe('cycle', function cycle() {
  const A = [['Fall email', 'Sep', 24100, .006, 61200], ['Giving Tuesday', 'Dec 2', 18300, .009, 98400], ['Calendar year-end', 'Dec', 26800, .021, 1.21e6], ['24-Hour Challenge', 'Mar 12', 27500, .025, 0.52e6], ['Spring email', 'Apr', 26800, .014, 182000], ['Fiscal year-end', 'Jun', 22400, .017, 0.61e6]];
  const Wd = 960, H = 300, L = 70, T = 16, B = 56, bw = (Wd - L - 70) / A.length, mx = 1.4e6, mr = .03, Yv = v => T + (H - T - B) * (1 - v / mx), Yr = v => T + (H - T - B) * (1 - v / mr);
  let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="FY26 appeal cycle: dollars and response rate by appeal">`;
- [0, .5e6, 1e6].forEach(v => s += `<line x1="${L}" x2="${Wd - 60}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="var(--line)"/><text x="${L - 8}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${k1(v)}</text>`);
+ [0, .5e6, 1e6].forEach(v => s += `<line x1="${L}" x2="${Wd - 60}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="var(--line)"/><text x="${L - 8}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v ? (v >= 1e6 ? '$' + v / 1e6 + 'M' : '$' + v / 1e3 + 'K') : '$0'}</text>`);
  [0, .01, .02, .03].forEach(v => s += `<text x="${Wd - 54}" y="${Yr(v) + 4}" font-size="12" fill="var(--accent)">${(v * 100).toFixed(0)}%</text>`);
  A.forEach((a, i) => { const x = L + i * bw; s += `<rect x="${x + 14}" y="${Yv(a[4])}" width="${bw - 28}" height="${Yv(0) - Yv(a[4])}" fill="var(--slate)" opacity=".75"><title>${a[0]}: ${k1(a[4])}</title></rect><text x="${x + bw / 2}" y="${H - 34}" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">${a[0]}</text><text x="${x + bw / 2}" y="${H - 18}" text-anchor="middle" font-size="11.5" fill="var(--muted)">${a[1]} · ${n0(a[2])} sent</text>`; });
  s += `<polyline fill="none" stroke="var(--accent)" stroke-width="2.5" points="${A.map((a, i) => (L + i * bw + bw / 2) + ',' + Yr(a[3])).join(' ')}"/>` + A.map((a, i) => `<circle cx="${L + i * bw + bw / 2}" cy="${Yr(a[3])}" r="5" fill="var(--accent)"/><text x="${L + i * bw + bw / 2 + 8}" y="${Yr(a[3]) - 8}" font-size="12" font-weight="700" fill="var(--accent)">${pct1(a[3])}</text>`).join('');
@@ -1623,6 +1630,58 @@ POP.std = (id, t) => openDlg(`<p class="eyebrow">Definitions · standards alignm
  <div class="scroll" data-wide><table class="tbl std"><thead><tr><th scope="col">Measure</th><th scope="col">Typical school-level practice</th><th scope="col">CASE and VSE basis</th><th scope="col">Decision needed</th></tr></thead><tbody>${STD.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join('')}</tbody></table></div>
  <p class="note">Sources are CASE’s VSE survey definitions, survey forms and participation requirements. <a href="https://www.case.org/system/files/media/inline/VSE%20Survey%20Requirements%20to%20Participate%20Updated%202026.pdf" target="_blank" rel="noopener">VSE requirements, 2026</a> · <a href="https://www.case.org/system/files/media/inline/VSE%20Minimal%20Survey%202023_0.pdf" target="_blank" rel="noopener">VSE survey form</a> · <a href="https://www.case.org/system/files/media/inline/CASE%20Insights%20VSE%20Survey%20Definitions%202022.pdf" target="_blank" rel="noopener">VSE definitions, 2022</a> · <a href="https://case.org/system/files/media/inline/CASE%20Insights%20VSE%20Survey%20Definitions%202024.pdf" target="_blank" rel="noopener">VSE definitions, 2024</a> · <a href="https://www.case.org/system/files/media/inline/2025-26-CASE_Insights_on_Voluntary_Support_of_Education_Full-Partial_Version.pdf" target="_blank" rel="noopener">2025–26 VSE survey</a></p>`, t);
 
+/* ================= RECOMMENDATIONS: every exhibit ends with what to do next ================= */
+const REC = {
+ progress: ['Put late-spring effort on donors who gave last year but not yet this year, and rerun the forecast every Monday from that day’s actual.', 'The gap to the $6.1M goal closes before June, and leadership sees the chance of reaching it each week.', 'Same-day pace and the forecast’s chance of reaching goal'],
+ programs: ['Give each newer one-year program a class-agent ask and a first-gift appeal in the first year after graduation.', 'Participation in those programs moves toward the MBA rate within three years.', 'Participation by program and class year, same day last year'],
+ pyramid: ['Assign every leadership donor who has not renewed to an Annual Giving Officer by March, and ask donors just below $1,000 to move up one giving level.', 'The leadership share of dollars holds while upgrades widen the base under it.', 'Renewal rate and upgrades by gift band'],
+ reunion: ['Start reunion solicitation 12 months out and send each class committee a weekly progress report against its last reunion.', 'More classes beat their previous reunion total.', 'Reunion dollars and participation against each class’s last reunion'],
+ challenge: ['Place matches and unlock milestones in the slowest hours, and send a midday reminder to last year’s challenge donors who have not given yet.', 'More donors in the hours that lag today.', 'Donors per hour against last year’s curve'],
+ catalog: ['Retire any report with no user in 90 days, and answer repeat questions from the catalog first.', 'Fewer reports, each one trusted.', 'Active reports and requests answered from the catalog'],
+ perf: ['Add a new-donor push before calendar year-end, because new donors are the one measure behind last year.', 'New donors back to last year’s same-day level by December 31.', 'New donors against the same day last year'],
+ flow: ['Make renewal the first ask in every appeal, and run a spring reactivation stream for donors who lapsed last year.', 'Fewer donors lost than gained, so the donor base grows.', 'The donor flow, refreshed each quarter'],
+ behav: ['Ask donors with three or more steady years to upgrade, and send downgraders a thank-you before the next ask.', 'More upgraded than downgraded donors next year.', 'Upgrades and downgrades by segment'],
+ cohort: ['Start a second-gift series for every first-time donor, with a thank-you within 48 hours and a renewal ask at 10 months.', 'Second-year retention up 5 points within two cohorts.', 'The cohort retention table'],
+ conc: ['Review a leadership renewal watch list each month, and flag any top-10% donor who is behind the same day last year.', 'No leadership donor lapses without a personal contact.', 'Top-decile renewal rate, same day last year'],
+ fcast: ['Use the best-backtested model as the official forecast, show the simulated range beside it, and refresh both monthly.', 'Leadership plans around a range, not a single number.', 'Forecast error against actual each month'],
+ mape: ['Re-score the models each July on the newest full year, and switch only when another model wins on the yearly total.', 'Forecast accuracy improves year over year.', 'Backtest error each July'],
+ season: ['Finish each list two weeks before December, March and June, the months that carry the year.', 'No peak month without a ready, checked list.', 'List-ready date against each peak'],
+ pipeline: ['Review every prospect in cultivation over 180 days with its officer each month, and agree a next step or a release.', 'Shorter time to ask, and more asks made.', 'Median days in each stage and stage-to-stage conversion'],
+ portfolio: ['Rebalance portfolios each quarter, and move donors with no response in a year back to the appeal stream.', 'Each officer stays on plan for meetings.', 'Meetings due against meetings completed'],
+ cycle: ['Put the strongest match and message into calendar year-end and the 24-Hour Challenge, and test dropping the weakest email.', 'The same dollars from fewer contacts.', 'Revenue per recipient by appeal'],
+ rfm: ['Give each segment its own treatment, from stewardship for Champions to reactivation for Lapsing, instead of one appeal for all.', 'Higher revenue per recipient.', 'Response and revenue per recipient by segment'],
+ kmeans: ['Use the clusters to check the segments once a year, and add a new segment only when Annual Giving agrees it needs a different treatment.', 'Segments that follow behavior and stay stable.', 'Segment membership year to year'],
+ suppress: ['Have Annual Giving sign off the rule order once a year, and log every override with its reason.', 'No donor is asked against their wishes, and lists match from appeal to appeal.', 'Overrides and complaints per appeal'],
+ dataset: ['Build every appeal file from the one query, and block export when the row count does not match the waterfall.', 'No mismatched file reaches a vendor.', 'Export checks passed'],
+ abtest: ['Roll out a winner only when revenue per recipient wins, and size each test before launch so it can detect the lift that matters.', 'Decisions made on revenue, not opens.', 'Revenue per recipient by cell'],
+ roc: ['Use gradient boosting for the renewal score, refresh it each year, and keep logistic regression beside it as the explainable check.', 'Renewal calls go where a call changes the outcome.', 'Renewal rate of the call list against the rest'],
+ calib: ['Recalibrate before setting any threshold, and show officers the top reasons beside each score.', 'Scores officers trust and use.', 'Calibration gap and officer use of the list'],
+ thresh: ['Set the threshold where expected renewals per call stay worth the call, and let Annual Giving choose within that range.', 'The most renewals for the calls the team can make.', 'Renewals per call against the model’s estimate'],
+ defs: ['Agree each definition with Resource Development, and print its name and basis on every report.', 'One meaning per number across OER and central.', 'Share of reports with a basis label'],
+ recon: ['Reconcile with central every month, not only at year-end, and fix counting-rule gaps where they start.', 'No unexplained difference at the June 30 close.', 'Unexplained dollars each month'],
+ checks: ['Hold any report while a check fails, and fix failing checks before the weekly report goes out.', 'No report goes out on data that failed a check.', 'Checks passing each morning'],
+ issues: ['Close each discrepancy with a root cause and a fix at the source, and review open items weekly.', 'The same issue does not come back.', 'Days open and repeat issues'],
+ anom: ['Review flagged gifts before the weekly report, and tune the flag each quarter on what reviewers confirm.', 'Errors caught before they reach a report.', 'Share of flags confirmed as errors'],
+ triage: ['Publish the triage order, and move any question asked three times to self-service within a month.', 'Analysts spend their time on analysis.', 'Share of requests self-served'],
+ brief: ['Attach this one-page brief to every one-time analysis.', 'Leaders know how far to trust each number.', 'Analyses sent with a brief'],
+ reqs: ['Turn any request asked three times into a standing report or dashboard.', 'Request volume falls, as it did at Harvard FAS.', 'Requests by type each month'],
+ process: ['Automate the appeal list first, because it repeats with every appeal.', 'Hours back on every list, with the same rules each time.', 'Hours per list'],
+ tools: ['Agree the criteria and weights with Sloan Technology Services and central before any demo, then pilot the top choice with one team.', 'A tool the users actually adopt.', 'Weekly users in the pilot'],
+ training: ['Train people on the reports they run, in short sessions two weeks before each peak.', 'Fewer how-do-I requests in peak months.', 'Requests in the month after training'],
+ assets: ['Review owners and validation dates each quarter, and retire anything not validated in a year.', 'Every asset has a current owner.', 'Assets past their validation date'],
+ event: ['Staff the giving station through lunch and the evening reception, and thank reunion-day donors the same day.', 'More gifts on the day.', 'Gifts per hour on reunion day'],
+ models: ['Keep every model behind Resource Development approval and MIT data governance review, and start with explainable models.', 'Models that can be defended to donors and auditors.', 'Models approved and in use'],
+ mitwide: ['Report unrestricted Annual Fund dollars as their own line in every leadership report.', 'Leadership sees flexible support as clearly as total dollars.', 'Unrestricted share of the Annual Fund']
+};
+safe('recs', function recs() {
+ Object.entries(REC).forEach(([id, r]) => {
+  const el = document.getElementById(id); if (!el) return; const card = el.closest('.card'); if (!card || card.querySelector('.rec')) return;
+  const d = document.createElement('div'); d.className = 'rec';
+  d.innerHTML = `<p class="rec-k">Recommendation</p><p class="rec-a">${r[0]}</p><p class="rec-o"><span><b>Expected outcome</b> ${r[1]}</span><span><b>Measure</b> ${r[2]}</span></p>`;
+  card.appendChild(d);
+ });
+});
+
 /* ================= DIALOG ================= */
 const dlg = $('#dlg'); let opener = null;
 /* popups keep a history: a popup opened from inside another one can go back to it */
@@ -1649,7 +1708,7 @@ function defHtml(k) {
 function handle(t) {
  if (t.dataset.close !== undefined) { dlg.close(); return; }
  if (t.dataset.back !== undefined) { dlgBack(); return; }
- if (t.dataset.go) { if (t.dataset.go.includes('#')) { openEvidence(t); return; } if (dlg.open) dlg.close(); show(t.dataset.go); if (t.dataset.sub !== undefined) showSub(t.dataset.go, +t.dataset.sub, false); return; }
+ if (t.dataset.go) { if (t.dataset.go.includes('#')) { openEvidence(t); return; } if (dlg.open) dlg.close(); show(t.dataset.go); if (t.dataset.sub !== undefined) showSub(t.dataset.go, +t.dataset.sub, true); return; }
  if (t.dataset.def) { openDlg(defHtml(t.dataset.def), t); return; }
  const [kind, id] = t.dataset.open.split(':');
  if (kind === 'go') { if (dlg.open) dlg.close(); show(id); return; }
@@ -1683,10 +1742,24 @@ Object.entries(SUBS).forEach(([pid, subs]) => {
 });
 function showSub(pid, k, user) {
  const panel = document.getElementById(pid), nav = document.querySelector(`.subnav[data-panel="${pid}"]`);
- nav.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.sub === k));
- panel.querySelectorAll('[data-sub]').forEach(c => { if (c.parentElement === panel) c.hidden = +c.dataset.sub !== k; });
- if (user) { const ph = panel.querySelector('.ph') || panel.firstElementChild, top = ph.getBoundingClientRect().top + scrollY - stickH() - 8; if (scrollY > top) window.scrollTo({top, behavior:'instant'}); }
+ if (nav) nav.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.sub === k));
+ if (!user) return;
+ const first = [...panel.children].find(c => +c.dataset.sub === k), ph = panel.querySelector('.ph') || panel.firstElementChild;
+ const el = k === 0 ? ph : first; if (!el) return;
+ spyHold = Date.now() + 700;
+ window.scrollTo({top: Math.max(0, el.getBoundingClientRect().top + scrollY - stickH() - 10), behavior: 'instant'});
 }
+/* all sections stay on the page; the sub-nav is a table of contents that follows the scroll */
+let spyHold = 0, spyQ = 0;
+function spy() {
+ if (Date.now() < spyHold) return;
+ const panel = $('.panel:not([hidden])'); if (!panel || !SUBS[panel.id]) return;
+ const lim = stickH() + 24; let k = 0;
+ [...panel.children].forEach(c => { if (c.dataset.sub !== undefined && c.getBoundingClientRect().top <= lim) k = Math.max(k, +c.dataset.sub); });
+ if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) { const last = [...panel.children].filter(c => c.dataset.sub !== undefined).pop(); if (last && last.getBoundingClientRect().top < innerHeight) k = +last.dataset.sub; }
+ const nav = document.querySelector(`.subnav[data-panel="${panel.id}"]`); if (nav) nav.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.sub === k));
+}
+addEventListener('scroll', () => { cancelAnimationFrame(spyQ); spyQ = requestAnimationFrame(spy); }, {passive: true});
 function stickH() { return $('.tabs').offsetHeight; }
 function setStick() { document.documentElement.style.setProperty('--tabs-h', stickH() + 'px'); }
 setStick(); addEventListener('resize', setStick);
@@ -1702,7 +1775,7 @@ function openEvidence(t) {
  dlg.classList.add('wide');
  openDlg(`<p class="eyebrow">${esc(grp)} · evidence</p><h3 id="dlg-title">${esc(title)}</h3><div class="evidence">${html}</div><p style="margin-top:14px"><button class="linkbtn" data-go="${tab}" data-sub="${subIdx < 0 ? 0 : subIdx}">Open this in the ${esc(grp)} tab</button></p>`, t);
 }
-$('#index-btn').addEventListener('click', e => { e.stopPropagation(); const blocks = [['overview','Overview']].concat(GROUPS, [['now','MIT Sloan context']]).map(([pid, name]) => { const gi = GROUPS.findIndex(g => g[0] === pid) + 1; return `<div class="ixg"><button class="ixh" data-go="${pid}" data-sub="0">${gi ? '<b>' + gi + '</b>' : ''}${esc(name)}</button><ol>${SUBS[pid].map((sb, k) => `<li><button data-go="${pid}" data-sub="${k}"><span>${gi ? gi + '.' + (k + 1) : k + 1}</span>${esc(sb[0])}</button></li>`).join('')}</ol></div>`; }).join(''); dlg.classList.add('wide'); openDlg(`<p class="eyebrow">Index</p><h3 id="dlg-title">Every tab and section</h3><div class="ixgrid">${blocks}</div>`, e.currentTarget); });
+$('#index-btn').addEventListener('click', e => { e.stopPropagation(); const blocks = [['overview','Overview']].concat(GROUPS, [['now','MIT Sloan context']]).map(([pid, name]) => { const gi = GROUPS.findIndex(g => g[0] === pid) + 1; return `<div class="ixg"><button class="ixh" data-go="${pid}" data-sub="0">${gi ? '<b>' + gi + '</b>' : ''}${esc(name)}</button><ol>${SUBS[pid].map((sb, k) => `<li><button data-go="${pid}" data-sub="${k}"><span>${gi ? gi + '.' + (k + 1) : k + 1}</span>${esc(sb[0])}</button></li>`).join('')}</ol></div>`; }).join(''); dlg.classList.add('wide'); openDlg(`<p class="eyebrow">Index</p><h3 id="dlg-title">Every tab and section</h3><div class="ixgrid" data-wide>${blocks}</div>`, e.currentTarget); });
 
 
 /* ================= TABS ================= */
@@ -1755,18 +1828,18 @@ safe('tabmenu', function tabmenu() {
  const items = pid => { const subs = SUBS[pid] || [], g = GROUPS.findIndex(x => x[0] === pid) + 1; return subs.map((sb, k) => `<button type="button" role="menuitem" data-mp="${pid}" data-mk="${k}"><b>${g ? g + '.' + (k + 1) : k + 1}</b>${esc(sb[0])}</button>`).join(''); };
  const open = (tab, focus) => {
   const pid = tab.getAttribute('aria-controls'); if (!SUBS[pid]) return close();
-  clearTimeout(timer); cur = tab; menu.innerHTML = items(pid); menu.hidden = false;
+  clearTimeout(timer); if (cur && cur !== tab) cur.setAttribute('aria-expanded', 'false'); cur = tab; tab.setAttribute('aria-expanded', 'true'); menu.innerHTML = items(pid); menu.hidden = false;
   menu.setAttribute('aria-label', 'Sections in ' + tab.textContent.trim());
   const br = bar.getBoundingClientRect(), r = tab.getBoundingClientRect();
   menu.style.left = Math.max(8, Math.min(r.left - br.left, br.width - menu.offsetWidth - 8)) + 'px'; menu.style.top = (r.bottom - br.top) + 'px';
   if (focus) menu.querySelector('button').focus();
  };
- const close = () => { menu.hidden = true; cur = null; };
+ const close = () => { menu.hidden = true; if (cur) cur.setAttribute('aria-expanded', 'false'); cur = null; };
  const later = () => { clearTimeout(timer); timer = setTimeout(close, 180); };
  const hover = matchMedia('(hover: hover)').matches;
  $$('.tab').forEach(tab => {
   if (hover) { tab.addEventListener('mouseenter', () => open(tab)); tab.addEventListener('mouseleave', later); }
-  tab.setAttribute('aria-haspopup', 'menu');
+  tab.setAttribute('aria-haspopup', 'menu'); tab.setAttribute('aria-expanded', 'false');
   tab.addEventListener('keydown', e => { if (e.key === 'ArrowDown') { e.preventDefault(); open(tab, true); } });
  });
  menu.addEventListener('mouseenter', () => clearTimeout(timer)); menu.addEventListener('mouseleave', later);
@@ -1782,7 +1855,7 @@ safe('tabmenu', function tabmenu() {
 });
 /* label contrast: each chart label takes white or ink, whichever reads better on the shape under it */
 function fixContrast(root) {
- const L = c => { const m = (c || '').match(/[\d.]+/g); if (!m || m.length < 3) return null; return m.slice(0, 3).map(v => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }); };
+ const L = c => { const srgb = /^color\(srgb/.test(c || ''), m = (c || '').replace(/^color\(srgb/, '').match(/[\d.]+/g); if (!m || m.length < 3) return null; return m.slice(0, 3).map(v => { v = srgb ? +v : v / 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }); };
  const lum = a => .2126 * a[0] + .7152 * a[1] + .0722 * a[2], cr = (a, b) => (Math.max(a, b) + .05) / (Math.min(a, b) + .05);
  const WHITE = 1, INK = lum(L('rgb(31,42,48)'));
  (root || document).querySelectorAll('svg').forEach(svg => {
