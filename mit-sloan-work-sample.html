@@ -662,7 +662,8 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
 .rec-o{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:6px!important;font-size:13.5px;color:var(--ink);line-height:1.45}
 .rec-o b{color:var(--green);margin-right:4px}
 @media print{.pk .rec{padding:5px 8px;margin-top:6px}.pk .rec-a{font-size:9pt}.pk .rec-o{font-size:8pt}}
-@media print{.pk .rec{display:none}.pk-progress .rec{display:block}}
+@media print{.pk .rec{display:none!important}}
+.rec-f{font-size:14px;line-height:1.5;margin:0 0 8px!important;padding-bottom:8px;border-bottom:1px solid rgba(47,111,79,.25)}.rec-f b{color:var(--green);margin-right:4px}
 
 </style>
 </head>
@@ -1637,7 +1638,7 @@ const REC = {
  pyramid: ['Assign every leadership donor who has not renewed to an Annual Giving Officer by March, and ask donors just below $1,000 to move up one giving level.', 'The leadership share of dollars holds while upgrades widen the base under it.', 'Renewal rate and upgrades by gift band'],
  reunion: ['Start reunion solicitation 12 months out and send each class committee a weekly progress report against its last reunion.', 'More classes beat their previous reunion total.', 'Reunion dollars and participation against each class’s last reunion'],
  challenge: ['Place matches and unlock milestones in the slowest hours, and send a midday reminder to last year’s challenge donors who have not given yet.', 'More donors in the hours that lag today.', 'Donors per hour against last year’s curve'],
- catalog: ['Retire any report with no user in 90 days, and answer repeat questions from the catalog first.', 'Fewer reports, each one trusted.', 'Active reports and requests answered from the catalog'],
+ catalog: ['Retire any OER report with no user in 90 days, and answer repeat questions from the catalog first.', 'Fewer reports, each one trusted.', 'Active reports and requests answered from the catalog'],
  perf: ['Add a new-donor push before calendar year-end, because new donors are the one measure behind last year.', 'New donors back to last year’s same-day level by December 31.', 'New donors against the same day last year'],
  flow: ['Make renewal the first ask in every appeal, and run a spring reactivation stream for donors who lapsed last year.', 'Fewer donors lost than gained, so the donor base grows.', 'The donor flow, refreshed each quarter'],
  behav: ['Ask donors with three or more steady years to upgrade, and send downgraders a thank-you before the next ask.', 'More upgraded than downgraded donors next year.', 'Upgrades and downgrades by segment'],
@@ -1663,7 +1664,7 @@ const REC = {
  issues: ['Close each discrepancy with a root cause and a fix at the source, and review open items weekly.', 'The same issue does not come back.', 'Days open and repeat issues'],
  anom: ['Review flagged gifts before the weekly report, and tune the flag each quarter on what reviewers confirm.', 'Errors caught before they reach a report.', 'Share of flags confirmed as errors'],
  triage: ['Publish the triage order, and move any question asked three times to self-service within a month.', 'Analysts spend their time on analysis.', 'Share of requests self-served'],
- brief: ['Attach this one-page brief to every one-time analysis.', 'Leaders know how far to trust each number.', 'Analyses sent with a brief'],
+ brief: ['Attach this one-page brief to every one-time analysis that goes to the Director or the Dean’s office.', 'Leaders know how far to trust each number.', 'Analyses sent with a brief'],
  reqs: ['Turn any request asked three times into a standing report or dashboard.', 'Request volume falls, as it did at Harvard FAS.', 'Requests by type each month'],
  process: ['Automate the appeal list first, because it repeats with every appeal.', 'Hours back on every list, with the same rules each time.', 'Hours per list'],
  tools: ['Agree the criteria and weights with Sloan Technology Services and central before any demo, then pilot the top choice with one team.', 'A tool the users actually adopt.', 'Weekly users in the pilot'],
@@ -1671,13 +1672,16 @@ const REC = {
  assets: ['Review owners and validation dates each quarter, and retire anything not validated in a year.', 'Every asset has a current owner.', 'Assets past their validation date'],
  event: ['Staff the giving station through lunch and the evening reception, and thank reunion-day donors the same day.', 'More gifts on the day.', 'Gifts per hour on reunion day'],
  models: ['Keep every model behind Resource Development approval and MIT data governance review, and start with explainable models.', 'Models that can be defended to donors and auditors.', 'Models approved and in use'],
- mitwide: ['Report unrestricted Annual Fund dollars as their own line in every leadership report.', 'Leadership sees flexible support as clearly as total dollars.', 'Unrestricted share of the Annual Fund']
+ mitwide: ['Report unrestricted Annual Fund dollars as their own line in the Director’s monthly pack and every Dean’s office report.', 'Leadership sees flexible support as clearly as total dollars.', 'Unrestricted share of the Annual Fund']
 };
 safe('recs', function recs() {
  Object.entries(REC).forEach(([id, r]) => {
   const el = document.getElementById(id); if (!el) return; const card = el.closest('.card'); if (!card || card.querySelector('.rec')) return;
+  /* fold the card's "So what" into the recommendation so it is said once */
+  let finding = '';
+  card.querySelectorAll('.note').forEach(nt => { const i = nt.innerHTML.search(/<b>So what:?<\/b>/); if (i < 0 || finding) return; finding = nt.innerHTML.slice(i).replace(/^<b>So what:?<\/b>\s*/, ''); const rest = nt.innerHTML.slice(0, i).trim(); if (rest) nt.innerHTML = rest; else nt.remove(); });
   const d = document.createElement('div'); d.className = 'rec';
-  d.innerHTML = `<p class="rec-k">Recommendation</p><p class="rec-a">${r[0]}</p><p class="rec-o"><span><b>Expected outcome</b> ${r[1]}</span><span><b>Measure</b> ${r[2]}</span></p>`;
+  d.innerHTML = `${finding ? `<p class="rec-f"><b>Finding</b> ${finding}</p>` : ''}<p class="rec-k">Recommendation</p><p class="rec-a">${r[0]}</p><p class="rec-o"><span><b>Expected outcome</b> ${r[1]}</span><span><b>Measure</b> ${r[2]}</span></p>`;
   card.appendChild(d);
  });
 });
@@ -1753,7 +1757,7 @@ function showSub(pid, k, user) {
 let spyHold = 0, spyQ = 0;
 function spy() {
  if (Date.now() < spyHold) return;
- const panel = $('.panel:not([hidden])'); if (!panel || !SUBS[panel.id]) return;
+ const panel = $('.panel.on'); if (!panel || !SUBS[panel.id]) return;
  const lim = stickH() + 24; let k = 0;
  [...panel.children].forEach(c => { if (c.dataset.sub !== undefined && c.getBoundingClientRect().top <= lim) k = Math.max(k, +c.dataset.sub); });
  if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) { const last = [...panel.children].filter(c => c.dataset.sub !== undefined).pop(); if (last && last.getBoundingClientRect().top < innerHeight) k = +last.dataset.sub; }
