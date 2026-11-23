@@ -530,7 +530,7 @@ dialog .steps{padding-left:20px;margin:10px 0;display:grid;gap:6px;font-size:14.
 @media (max-width:900px){.prio,.sigrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.prio,.sigrid{grid-template-columns:1fr}.val{grid-template-columns:1fr;gap:2px}.ms li{grid-template-columns:1fr}.ms b{grid-row:auto}.srcl{columns:1}.mdl{grid-template-columns:1fr}}
 
-.tab{padding:14px 8px 12px;font-size:14px}.tab small{margin-left:4px}
+.tab{padding:14px 7px 12px;font-size:13.5px}.tab small{margin-left:4px}
 
 .clus{display:grid;gap:4px;font-size:13px;margin-top:6px}.clus span{display:flex;gap:8px;align-items:center}.clus i{width:12px;height:12px;border-radius:50%;flex:none}.clus b{min-width:30px}
 .facts4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}.facts4>div{background:var(--soft);border-left:3px solid var(--accent);padding:10px 12px}.facts4 b{display:block;font-size:22px;color:var(--accent)}.facts4 span{font-size:12.5px;color:var(--muted)}
@@ -570,7 +570,6 @@ main:focus{outline:none}
 .ex:hover{border-color:var(--accent);background:var(--pale)}
 .ex b{font-size:16.5px}.ex span:last-child{color:var(--muted);font-size:14px;line-height:1.45}
 .exn{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:14px}
-.minq td:first-child{width:30%;font-weight:600}.minq td:last-child{width:80px}
 .fit{display:inline-block;padding:2px 8px;font-size:12.5px;font-weight:700}
 .fit.met{background:var(--green-pale);color:var(--green)}.fit.part{background:var(--amber-pale);color:var(--amber)}
 ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:10px}ul.plain li{line-height:1.5}
@@ -590,7 +589,7 @@ ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:10px}ul.plain li{li
  .pk .card{padding:8px 10px;margin:0 0 6px}.pk h3{font-size:11.5pt;margin:0 0 2px}.pk .sub{font-size:8.5pt;margin:0 0 4px}
  .pk .takeaways{gap:6px;margin:0 0 6px}
  .pk .note{font-size:8pt;line-height:1.35}.pk .legend{font-size:8pt}
- .pk-minq{break-before:page}
+ .pk-support{break-before:page}
  .pk-straight,.pk-handling{display:inline-block;width:49.3%;vertical-align:top}
  .pk .tbl{font-size:8.3pt}.pk .tbl td,.pk .tbl th{padding:3px 5px}
  .pk ul.plain{gap:4px}
@@ -664,6 +663,29 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
 @media print{.pk .rec{padding:5px 8px;margin-top:6px}.pk .rec-a{font-size:9pt}.pk .rec-o{font-size:8pt}}
 @media print{.pk .rec{display:none!important}.pk-progress .rec{display:block!important;background:none;border:0;padding:0;margin-top:4px}.pk-progress .rec>:not(.rec-f){display:none!important}.pk-progress .rec-f{border:0;padding:0;margin:0!important;font-size:8.5pt;line-height:1.4}}
 .rec-f{font-size:14px;line-height:1.5;margin:0 0 8px!important;padding-bottom:8px;border-bottom:1px solid rgba(47,111,79,.25)}.rec-f b{color:var(--green);margin-right:4px}
+.mcsteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.mcsteps>div{display:grid;gap:5px;align-content:start;border-top:3px solid var(--accent);background:var(--paper);padding:10px 12px}
+.mcsteps b{font-size:15px}.mcsteps span:last-child{font-size:13.5px;color:var(--muted);line-height:1.45}
+ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
+@media (max-width:760px){.mcsteps{grid-template-columns:1fr 1fr}}
+.calgrid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.calgrid>div{border:1px solid var(--line);padding:6px 8px;display:grid;gap:2px;text-align:center}
+.calgrid b{font-size:13px}.calgrid span{font-size:15px;font-weight:700;color:var(--ink)}
+.calgrid .on{border:2px solid var(--green);background:var(--green-pale)}.calgrid .cur{border-style:dashed}
+@media (max-width:760px){.calgrid{grid-template-columns:repeat(4,1fr)}}
+@media print{
+ .pk-support th:nth-child(3),.pk-support td:nth-child(3){display:none}
+ .pk-support .lead3{gap:8px}.pk-support .lead3 b{font-size:9.5pt;line-height:1.3}.pk-support .lead3 span:last-child{font-size:8.3pt;line-height:1.35}
+ .pk-support .exn{width:18px;height:18px;font-size:9pt}
+ .pk-support .note{font-size:8pt}
+ .pk-pair{break-inside:avoid}.pk-pair li{font-size:8.6pt;line-height:1.35}
+}
+.mcsteps.six{grid-template-columns:repeat(6,minmax(0,1fr));margin-bottom:12px}
+.anch th[scope=colgroup]{text-align:center;border-bottom:1px solid var(--line)}
+.anch td:nth-child(3n+1){border-right:1px solid var(--line)}
+.srcs a{color:var(--accent)}
+@media (max-width:1000px){.mcsteps.six{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.mcsteps.six{grid-template-columns:1fr 1fr}}
 
 </style>
 </head>
@@ -687,6 +709,7 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
  <button class="tab" role="tab" id="t-dq" aria-controls="dq" aria-selected="false" tabindex="-1"><b class="gn">4</b>Data integrity</button>
  <button class="tab" role="tab" id="t-pi" aria-controls="pi" aria-selected="false" tabindex="-1"><b class="gn">5</b>Process &amp; training</button>
  <button class="tab" role="tab" id="t-sp" aria-controls="sp" aria-selected="false" tabindex="-1"><b class="gn">6</b>Special projects</button>
+ <button class="tab" role="tab" id="t-ml" aria-controls="ml" aria-selected="false" tabindex="-1"><b class="gn">7</b>Methods</button>
  <button class="tab" role="tab" id="t-now" aria-controls="now" aria-selected="false" tabindex="-1">MIT Sloan context</button>
 </div><div class="subbar"><div class="wrap sbw"><div id="subbar"></div><button class="index-btn" id="index-btn" aria-haspopup="dialog">☰ Full index</button></div></div></nav>
 
@@ -704,6 +727,7 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
    <button class="ex" data-go="seg#suppress,dataset" data-title="Suppression waterfall and campaign dataset"><span class="exn">2</span><b>Suppression waterfall and campaign dataset</b><span>How an appeal list is built, rule by rule, with counts removed at each step and the fields handed to the vendor.</span></button>
    <button class="ex" data-go="dq#defs,checks,issues" data-title="Definitions, daily checks and discrepancy log"><span class="exn">3</span><b>Definitions, daily checks and discrepancy log</b><span>One written definition per number, the checks that run before a report goes out, and how a discrepancy is logged and closed.</span></button>
   </div>
+  <p class="note mt">Technical reader? <button class="linkbtn" data-go="ml" data-sub="0">7 · Models &amp; methods ›</button> shows how the synthetic data is matched to MIT Sloan’s published figures, and how the Monte Carlo forecast and the renewal models are built, calibrated and tested, with an equivalent in R for each.</p>
  </div>
  <div class="card mt" id="support">
   <h3>Where I would take work off the Director</h3>
@@ -724,34 +748,7 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
  </div>
  <div class="takeaways mt" id="takeaways"></div>
  <div class="kpis" id="kpis"></div>
- <div class="card mt" id="minq">
-  <h3>Minimum qualifications, line by line</h3>
-  <p class="sub">The posting’s required education and experience, with what I would point to for each.</p>
-  <div class="scroll"><table class="tbl minq"><thead><tr><th scope="col">Required</th><th scope="col">What I bring</th><th scope="col">Fit</th></tr></thead><tbody>
-   <tr><td>Bachelor’s degree in a related field with research methods and statistical analysis</td><td>B.A. in English (Linguistics and Literature), Payap University, which is not a quantitative field. 15 graduate credit hours in nonprofit management, University of Arkansas at Little Rock. Certificates in Data Analytics and AI for Data Analysis. Statistical method is shown in this sample, including logistic regression with calibration, forecast backtests, a two-proportion test and robust outlier scores, each of which I can explain line by line.</td><td><span class="fit part">Partly</span></td></tr>
-   <tr><td>7 years of data analysis on complex datasets from many sources</td><td>Nearly 20 years of advancement and faculty affairs reporting at Harvard FAS, Phillips Academy and UAMS, joining gift, HR, student and finance sources.</td><td><span class="fit met">Met</span></td></tr>
-   <tr><td>Statistical programming, SQL, predictive techniques and tools such as SAS or SPSS</td><td>R, Python and SQL in daily use. Predictive work in Python and R rather than SAS or SPSS.</td><td><span class="fit part">Partly</span></td></tr>
-   <tr><td>Reports and dashboards that support decisions</td><td>Reports for deans, visiting committees and 50+ departments at Harvard FAS. Leadership and board reporting at Phillips Academy.</td><td><span class="fit met">Met</span></td></tr>
-   <tr><td>Data visualization tools such as Tableau</td><td>Tableau at Phillips Academy. Power BI, Oracle BI, SSRS and Crystal Reports.</td><td><span class="fit met">Met</span></td></tr>
-   <tr><td>Process improvement from user needs</td><td>Redesigned appointment and promotion processes at FAS. Reusable reports cut ad-hoc requests from 300–400 a year to under 100.</td><td><span class="fit met">Met</span></td></tr>
-   <tr><td>Strong SQL with relational databases and warehouses</td><td>Oracle SQL views at UAMS, SQL Server at Phillips Academy, the GSAS BI Data Warehouse and other FAS sources.</td><td><span class="fit met">Met</span></td></tr>
-   <tr><td>BI tools such as Tableau, Cognos, Salesforce CRM Analytics or Power BI</td><td>Tableau, Power BI and Oracle BI. Not yet Cognos or CRM Analytics.</td><td><span class="fit part">Partly</span></td></tr>
-   <tr><td>Recurring and ad hoc outputs for fundraising</td><td>Gift, campaign and board reporting at UAMS and Phillips Academy. Two database conversions with 10 years of history carried over.</td><td><span class="fit met">Met</span></td></tr>
-   <tr><td>Troubleshoot, reconcile and explain discrepancies</td><td>Campaign totals reconciled to the General Ledger at Phillips Academy. Duplicate controls at UAMS.</td><td><span class="fit met">Met</span></td></tr>
-  </tbody></table></div>
- </div>
- <div class="g12 mt">
-  <div class="card" id="straight">
-   <h3>Straight answers</h3>
-   <ul class="plain">
-    <li><b>Annual Fund.</b> I have not owned an Annual Fund. The closest I have come is gift, campaign and board reporting at Phillips Academy and UAMS, where annual giving was part of every report. The Annual Fund views here show how I would learn OER’s, not a claim that I ran one. <button class="linkbtn" data-go="sp#ninety" data-title="First 90 days">My first 90 days ›</button></li>
-    <li><b>Since November 2025.</b> I have worked full time in my independent practice, building report templates and data and AI rollout plans for advancement and nonprofit clients.</li>
-    <li><b>Title.</b> At Harvard my title was IT Reporting and Data Analyst Professional, and I served as data owner for FAS Faculty Affairs.</li>
-    <li><b>Tools.</b> I have not used SAS, SPSS, Cognos or Salesforce Marketing Cloud in production. I do the same work in R, Python, SQL, Tableau and Power BI, and I would learn OER’s tools first on its existing reports.</li>
-    <li><b>How I built this.</b> With AI assistance, as a deliberate demonstration of faster analysis. I chose every method, checked every number against its source, and can defend each one line by line.</li>
-   </ul>
-  </div>
-  <div class="card" id="handling">
+ <div class="card mt" id="handling">
    <h3>How I handle donor data</h3>
    <ul class="plain">
     <li><b>Least privilege.</b> Access only to the fields a report needs, reviewed when a project ends.</li>
@@ -760,7 +757,6 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
     <li><b>Audit trail.</b> Every list and report saved with its query, date, requester and row count, so it can be rebuilt.</li>
     <li><b>No donor data in samples.</b> Everything in this work sample is synthetic.</li>
    </ul>
-  </div>
  </div>
  <div class="card mt">
   <h3>Every duty in the posting, by share of time</h3>
@@ -791,6 +787,11 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
 <section class="panel" id="af" role="tabpanel" aria-labelledby="t-af">
  <div class="ph"><div><p class="eyebrow">1 · Annual Fund reporting</p><h2>Where the Annual Fund stands, and where it is headed</h2></div><p>Progress to goal with a forecast range, participation by program, gift bands, reunion classes, the 24-Hour Challenge and the standard report catalog.</p></div>
  <div class="card">
+  <h3>How MIT Sloan reports Annual Fund support, FY23 to FY26</h3>
+  <p class="sub">MIT Sloan’s own published figures, not synthetic data. Every synthetic number on this page is calibrated to them.</p>
+  <div id="pubtrend"></div>
+ </div>
+ <div class="card mt">
   <h3>FY27 Annual Fund progress to goal</h3>
   <p class="sub">Cumulative receipts by month, FY27 to date against FY26, with a simulated range to June 30.</p>
   <div class="chart scroll" id="progress"></div>
@@ -1056,6 +1057,32 @@ dialog.wide{width:min(1100px,94vw);max-width:none}
   <div class="cadence" id="cadence"></div>
  </div>
 </section>
+<section class="panel" id="ml" role="tabpanel" aria-labelledby="t-ml">
+ <div class="ph"><div><p class="eyebrow">7 · Models and methods</p><h2>How the forecast and the renewal models are built, and how far to trust them</h2></div><p>For technical readers. Every model here is fitted live in this page on the synthetic data, with its specification, diagnostics and an equivalent in R.</p></div>
+ <div class="card">
+  <h3>The synthetic data, matched to published figures first</h3>
+  <p class="sub">Researched figures come first, then the synthetic donor file is fitted to them, and only then are forecasts and models built on that history.</p>
+  <div id="anchors"></div>
+ </div>
+ <div class="card mt">
+  <h3>The Monte Carlo forecast, step by step</h3>
+  <p class="sub">The model behind the FY27 progress chart: what is assumed, what is simulated, and what comes out.</p>
+  <div id="mcspec"></div>
+ </div>
+ <div class="g2 mt">
+  <div class="card"><h3>Convergence: how many paths are enough</h3><p class="sub">The chance of reaching goal, re-estimated with 20 different seeds at each number of paths.</p><div class="chart" id="mcconv"></div></div>
+  <div class="card"><h3>Sensitivity: which assumption moves the answer</h3><p class="sub">Chance of reaching the $6.1M goal when one input moves and the rest stay fixed.</p><div class="chart" id="mcsens"></div></div>
+ </div>
+ <div class="card mt"><h3>Calibration: does the 80% range hold 80% of outcomes?</h3><p class="sub">The same Monte Carlo run on November 20 of each past year, scored against the year’s actual total.</p><div class="chart scroll" id="mccal"></div></div>
+ <div class="card mt"><h3>Rolling-origin backtest of the four forecast models</h3><p class="sub">Each model refitted every year on data available at the time, then scored on the next year’s total.</p><div id="roll"></div></div>
+ <div class="card mt"><h3>Parameter recovery: do the estimators find the truth?</h3><p class="sub">The synthetic data was generated with known coefficients. Fitting the right model specification should get them back.</p><div id="recov"></div></div>
+ <div class="card mt"><h3>Renewal models: uncertainty in the comparison</h3><p class="sub">Bootstrap confidence intervals for AUC on the FY26 test year, and the paired difference behind the model choice.</p><div id="rnboot"></div></div>
+ <div class="g2 mt">
+  <div class="card"><h3>What the renewal models rely on</h3><p class="sub">Permutation importance: the drop in test AUC when one feature is shuffled.</p><div class="chart" id="rnperm"></div></div>
+  <div class="card"><h3>Lift and value of the call list</h3><p class="sub">Renewal rate and expected renewal dollars by score decile, against a random list.</p><div class="chart" id="rnlift"></div></div>
+ </div>
+ <div class="card mt"><h3>Test design and power</h3><p class="sub">How large each cell needs to be before an appeal test is worth running.</p><div id="power"></div></div>
+</section>
 <!-- ================= MIT SLOAN NOW ================= -->
 <section class="panel" id="now" role="tabpanel" aria-labelledby="t-now">
  <div class="ph"><div><p class="eyebrow">MIT Sloan context and projects</p><h2>Current and planned projects, and where this role helps</h2></div><p>Dean Locke’s priorities, new programs and MIT-wide changes from published sources, each with the part this role would carry. Facts on this tab are real and linked.</p></div>
@@ -1135,16 +1162,18 @@ const DEFS = {
 
 /* ================= SYNTHETIC DONOR POPULATION ================= */
 const r0 = rng(20261121), Y0 = 2012, Y1 = 2026, NY = Y1 - Y0 + 1, DON = [], kY = y => y - Y0;
+/* generator settings, tuned so FY23 to FY26 match MIT Sloan's published donor counts, totals and Dean's Circle figures */
+const GEN = {nNew: [700, 705, 710, 715, 720, 730, 740, 623, 736, 961, 1202, 1128, 569, 384, 655], q: .2017, mL: 7.8931, sL: .9806, m0: 4.0968, s0: 1.5371};
 const PROG = [['MBA', .52, 15000], ['Sloan Fellows MBA', .1, 2400], ['Executive MBA', .07, 1300], ['Leaders for Global Operations', .05, 1100], ['Master of Finance', .06, 2600], ['Master of Business Analytics', .03, 1100], ['PhD', .02, 650], ['Other master’s', .04, 2100], ['Friends and parents', .11, 0]];
 const CLASS = y => Math.round(380 + Math.max(0, y - 1970) * 9);
 const MIL = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
 const pickProg = r => { let u = r(), i = 0; while (i < PROG.length - 1 && (u -= PROG[i][1]) > 0) i++; return i; };
 for (let c = Y0; c <= Y1; c++) {
- const nNew = Math.round(630 + (c - Y0) * 4 + gs(r0) * 18);
+ const nNew = Math.round(GEN.nNew[c - Y0] + gs(r0) * 18);
  for (let i = 0; i < nNew; i++) {
   const p = pickProg(r0), grad = PROG[p][2] ? Math.max(1965, Math.min(c - 1, Math.round(c - 1 - Math.abs(gs(r0)) * 14))) : 0;
   const t = {p, grad, e: r0() < .55 ? 1 : 0, v: r0() < .25 ? 1 : 0, g: r0() < .3 ? 1 : 0, dec: r0() < .4 ? 1 : 0};
-  const amt = new Float64Array(NY); let a = Math.exp(5.0 + 1.55 * gs(r0)), run = 0, last = -1;
+  const amt = new Float64Array(NY); const lead = r0() < GEN.q; let a = Math.exp(lead ? GEN.mL + GEN.sL * gs(r0) : GEN.m0 + GEN.s0 * gs(r0)), run = 0, last = -1;
   for (let y = c; y <= Y1; y++) {
    const reu = grad && MIL.includes(y - grad) ? 1 : 0; let give;
    if (y === c) give = true;
@@ -1155,7 +1184,22 @@ for (let c = Y0; c <= Y1; c++) {
   DON.push({c, amt, ...t});
  }
 }
-(function scale() { const t = DON.reduce((s2, x) => s2 + x.amt[kY(2026)], 0), f = 5.8e6 / t; DON.forEach(x => { for (let k = 0; k < NY; k++) x.amt[k] *= f; }); })();
+/* published figures each fiscal year is matched to. Sources on the Methods tab */
+const PUB = {2023: {t: 4.8e6, n: 3051}, 2024: {t: 5.5e6, n: 2701, dc: 437, sh: .89}, 2025: {t: 5.77e6, n: 2452, dc: 512, sh: .92}, 2026: {t: 5.8e6, dc: 619, sh: .90}}, YF = {};
+safe('scale', function scale() {
+ /* 1. scale each year to its published total; years before FY23 keep the FY23 factor */
+ for (let y = Y1; y >= Y0; y--) { const k = kY(y), t = DON.reduce((s2, x) => s2 + x.amt[k], 0); YF[y] = PUB[y] ? PUB[y].t / t : YF[2023]; }
+ for (let y = Y0; y <= Y1; y++) { const k = kY(y); DON.forEach(x => { x.amt[k] *= YF[y]; }); }
+ /* 2. Leaders Give Challenge years: the donors closest to $2,500 move up to the Investor level until the published Dean's Circle count is reached, and the other non-Dean's Circle gifts absorb the difference so the total still matches */
+ [2024, 2025, 2026].forEach(y => { const k = kY(y), P = PUB[y], giv = DON.filter(x => x.amt[k] > 0); let dc = giv.filter(x => x.amt[k] >= 2500).length;
+  const below = giv.filter(x => x.amt[k] < 2500).sort((a, b) => b.amt[k] - a.amt[k]); let add = 0;
+  for (const x of below) { if (dc >= P.dc) break; add += 2500 - x.amt[k]; x.amt[k] = 2500; (x.lift = x.lift || {})[y] = 1; dc++; }
+  const rest = giv.filter(x => x.amt[k] < 2500), rt = rest.reduce((s2, x) => s2 + x.amt[k], 0), f = (rt - add) / rt; rest.forEach(x => { x.amt[k] *= f; });
+  /* 3. set the Dean's Circle share of dollars to the published share: gifts above $2,500 scale their amount over $2,500, the rest scale to the remainder */
+  const D = giv.filter(x => x.amt[k] >= 2500), N = giv.filter(x => x.amt[k] < 2500), over = D.reduce((s2, x) => s2 + x.amt[k] - 2500, 0), a = (P.sh * P.t - 2500 * D.length) / over, nt = N.reduce((s2, x) => s2 + x.amt[k], 0), b = (1 - P.sh) * P.t / nt;
+  D.forEach(x => { x.amt[k] = 2500 + (x.amt[k] - 2500) * a; }); N.forEach(x => { x.amt[k] = Math.min(2499, x.amt[k] * b); });
+ });
+});
 const FY26D = DON.filter(x => x.amt[kY(2026)] > 0), FY26T = FY26D.reduce((s, x) => s + x.amt[kY(2026)], 0);
 const LYB = DON.filter(x => x.amt[kY(2026)] > 0).length; // FY26 donors, base for FY27 LYBUNT
 const LYBUNT = Math.round(LYB * .46);
@@ -1165,7 +1209,7 @@ const MS = [.36, .30, .36, .46, .50, 1.16, .36, .30, .72, .40, .44, .94], MSS = 
 const F26 = MS.map(v => v / MSS * 5.8e6), GOAL = 6.1e6, MON = ['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'];
 const F27 = [F26[0] * 1.07, F26[1] * 1.02, F26[2] * 1.09, F26[3] * 1.06, F26[4] * .7];
 const NOVF = 20 / 30, C27 = F27.reduce((a, b) => a + b, 0), C26SD = F26.slice(0, 4).reduce((a, b) => a + b, 0) + F26[4] * NOVF;
-const SIM = (() => { const r = rng(2027), out = [], N = 2000, pace = C27 / C26SD; for (let n = 0; n < N; n++) { const g = pace * (1 + .05 * gs(r)); let c = C27; const path = [c]; c += F26[4] * (1 - NOVF) * g * (1 + .1 * gs(r)); path.push(c); for (let m = 5; m < 12; m++) { c += F26[m] * g * (1 + .12 * gs(r)); path.push(c); } out.push(path); }
+const SIM = (() => { const r = rng(2027), out = [], N = 2000, pace = C27 / C26SD; for (let n = 0; n < N; n++) { const g = pace * (1 + .08 * gs(r)); /* year-level shock, calibrated on 15 past years (Methods tab) */ let c = C27; const path = [c]; c += F26[4] * (1 - NOVF) * g * (1 + .1 * gs(r)); path.push(c); for (let m = 5; m < 12; m++) { c += F26[m] * g * (1 + .12 * gs(r)); path.push(c); } out.push(path); }
  const band = Array.from({length: 9}, (_, j) => { const v = out.map(p => p[j]).sort((a, b) => a - b); return [v[Math.floor(N * .1)], v[Math.floor(N * .5)], v[Math.floor(N * .9)]]; });
  const fin = out.map(p => p[8]).sort((a, b) => a - b); return {band, p50: fin[N >> 1], pGoal: fin.filter(v => v >= GOAL).length / N, pace}; })();
 safe('progress', function progress() {
@@ -1200,7 +1244,7 @@ safe('pyramid', function pyramid() {
   if (i === 4) s += `<line x1="4" x2="${Wd - 4}" y1="${y - 4}" y2="${y - 4}" stroke="var(--accent)" stroke-dasharray="4 3"/><text x="${Wd - 4}" y="${y - 8}" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--accent)">Dean’s Circle above</text>`;
   s += `<rect x="${cx - 4 - wl}" y="${y}" width="${wl}" height="${rh - 8}" fill="var(--slate)"/><rect x="${cx + 4}" y="${y}" width="${wr}" height="${rh - 8}" fill="var(--accent)"/><text x="${cx - 10 - wl}" y="${y + 19}" text-anchor="end" font-size="12" fill="var(--ink)">${n0(r[1])}</text><text x="${cx + 10 + wr}" y="${y + 19}" font-size="12" fill="var(--ink)">${k1(r[2])}</text><text x="4" y="${y + 19}" font-size="12" fill="var(--muted)">${r[0]}</text>`; });
  const lead = rows.slice(0, 4).reduce((a, r) => [a[0] + r[1], a[1] + r[2]], [0, 0]);
- $('#pyramid').innerHTML = s + `</svg><p class="note">Bands follow the Dean’s Circle levels MIT Sloan names publicly, from Investor at $2,500. <b>So what:</b> ${n0(lead[0])} Dean’s Circle donors at $2,500 or more (${pct(lead[0] / FY26D.length)} of donors) give ${pct(lead[1] / FY26T)} of dollars. MIT Sloan reports that 90% of the FY26 Annual Fund came from 619 Dean’s Circle donors. The synthetic file is less concentrated than that, so read its shares as illustrative.</p>`;
+ $('#pyramid').innerHTML = s + `</svg><p class="note">Bands follow the Dean’s Circle levels MIT Sloan names publicly, from Investor at $2,500. <b>So what:</b> ${n0(lead[0])} Dean’s Circle donors at $2,500 or more (${pct(lead[0] / FY26D.length)} of donors) give ${pct(lead[1] / FY26T)} of dollars. This matches MIT Sloan’s published FY26 figures, 619 Dean’s Circle donors giving 90% of dollars, because the synthetic file is calibrated to them first.</p>`;
 });
 
 safe('reunion', function reunion() {
@@ -1276,8 +1320,10 @@ safe('conc', function conc() {
  $('#conc').innerHTML = s + `</svg><p class="note">${n0(n)} FY26 donors, ${musd(tot)}. <b>So what:</b> the top 10% carry ${pct(share(.1))} of dollars, so a missed renewal among leadership donors costs more than a dozen lapsed small donors.</p>`;
 });
 
+let FCM = null;
 safe('forecast', function forecast() {
- const rr = rng(2323), ser = []; [.88, .92, .96, 1].forEach((g, yi) => F26.forEach(v => ser.push(v / 1e6 * g * (yi === 3 ? 1 : 1 + .07 * gs(rr)))));
+ /* FY23 to FY26 monthly history: each year sums to MIT Sloan's published total ($4.8M, $5.5M, $5.77M, $5.8M); the month pattern is synthetic */
+ const rr = rng(2323), ser = []; [2023, 2024, 2025, 2026].forEach((fy, yi) => { const m = F26.map(v => v / 1e6 * (yi === 3 ? 1 : 1 + .07 * gs(rr))), s0 = m.reduce((a, b) => a + b, 0); m.forEach(v => ser.push(v * PUB[fy].t / 1e6 / s0)); });
  const A27 = F27.slice(0, 4).map(v => v / 1e6);
  const lsq = (Xm, y) => { const p = Xm[0].length, A = Array.from({length: p}, () => new Array(p + 1).fill(0)); Xm.forEach((row, i) => { for (let a = 0; a < p; a++) { for (let b = 0; b < p; b++) A[a][b] += row[a] * row[b]; A[a][p] += row[a] * y[i]; } });
   for (let c = 0; c < p; c++) { let m = c; for (let r2 = c + 1; r2 < p; r2++) if (Math.abs(A[r2][c]) > Math.abs(A[m][c])) m = r2; [A[c], A[m]] = [A[m], A[c]]; for (let r2 = 0; r2 < p; r2++) if (r2 !== c) { const f = A[r2][c] / A[c][c]; for (let k = c; k <= p; k++) A[r2][k] -= f * A[c][k]; } } return A.map((row, i) => row[p] / row[i]); };
@@ -1287,9 +1333,10 @@ safe('forecast', function forecast() {
   'Regression, trend and month': (tr, h) => { const row = t => [1, t].concat(Array.from({length: 11}, (_, m) => (t % 12) === m + 1 ? 1 : 0)); const b = lsq(tr.map((_, t) => row(t)), tr.map(Math.log)); return Array.from({length: h}, (_, i) => Math.exp(row(tr.length + i).reduce((s, x, j) => s + x * b[j], 0))); },
   'Holt-Winters, multiplicative': (tr, h) => { const a = .3, be = .05, ga = .35; let l = tr.slice(0, 12).reduce((x, y) => x + y, 0) / 12, b = (tr.slice(12, 24).reduce((x, y) => x + y, 0) - tr.slice(0, 12).reduce((x, y) => x + y, 0)) / 144; const S = tr.slice(0, 12).map(v => v / l); for (let t = 12; t < tr.length; t++) { const s0 = S[t % 12], l0 = l; l = a * tr[t] / s0 + (1 - a) * (l + b); b = be * (l - l0) + (1 - be) * b; S[t % 12] = ga * tr[t] / l + (1 - ga) * s0; } return Array.from({length: h}, (_, i) => (l + (i + 1) * b) * S[(tr.length + i) % 12]); }
  };
+ FCM = {M, ser};
  const train = ser.slice(0, 36), test = ser.slice(36), sum = a => a.reduce((x, y) => x + y, 0);
  const res = Object.entries(M).map(([n, f]) => { const p = f(train, 12); return {n, f, p, mape: p.reduce((s, v, i) => s + Math.abs(v - test[i]) / test[i], 0) / 12, yr: Math.abs(sum(p) - sum(test)) / sum(test)}; });
- const best = res.slice().sort((a, b) => a.yr + a.mape * .5 - (b.yr + b.mape * .5))[0], errs = best.p.map((v, i) => (test[i] - v) / v), esd = Math.sqrt(errs.reduce((s, e) => s + e * e, 0) / 12);
+ const best = res.slice().sort((a, b) => a.yr + a.mape * .5 - (b.yr + b.mape * .5))[0], _fb = (FCM.best = res.slice().sort((a, b) => a.yr + a.mape * .5 - (b.yr + b.mape * .5))[0].n), errs = best.p.map((v, i) => (test[i] - v) / v), esd = Math.sqrt(errs.reduce((s, e) => s + e * e, 0) / 12);
  const fc = best.f(ser, 12), lo = fc.map(v => v * (1 - 1.28 * esd)), hi = fc.map(v => v * (1 + 1.28 * esd)), td = sum(A27), ftd = sum(fc.slice(0, 4));
  const Wd = 960, H = 320, L = 56, T = 14, B = 40, X = i => L + (Wd - L - 20) * i / 35, mx = Math.max(...hi, ...ser.slice(24)) * 1.1, Yv = v => T + (H - T - B) * (1 - v / mx);
  let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Monthly Annual Fund receipts with the selected forecast">`;
@@ -1370,6 +1417,7 @@ safe('abtest', function abtest() {
  $('#abtest').innerHTML = `<div class="g2"><div><h4 class="h4">Response rate</h4>${bar('A · “Your impact at MIT Sloan”', pa, 'var(--slate)', pb * 1.1)}${bar('B · “Fund a student club this spring”', pb, 'var(--accent)', pb * 1.1)}<div class="facts4 f2"><div><b>${(pb / pa - 1 > 0 ? '+' : '') + pct(pb / pa - 1)}</b><span>lift in response for B</span></div><div><b>p = ${pv < .001 ? '<0.001' : pv.toFixed(3)}</b><span>two-proportion z-test, z = ${z.toFixed(2)}</span></div></div></div><div><h4 class="h4">What it means in dollars</h4><dl><dt>Gifts</dt><dd>A ${A.g}, B ${Bv.g}, of ${n0(A.n)} each</dd><dt>Average gift</dt><dd>A ${usd(A.avg)}, B ${usd(Bv.avg)}</dd><dt>Revenue per recipient</dt><dd>A $${rA.toFixed(2)}, B $${rB.toFixed(2)}</dd><dt>95% interval for the lift</dt><dd>${(lo * 100).toFixed(2)} to ${(hi * 100).toFixed(2)} percentage points</dd></dl><div class="next"><b>Decision:</b> B raises more per email even with a smaller average gift, and the interval stays above zero. Roll B out to the remaining segments and retest the ask amount next.</div></div></div><p class="note">Synthetic spring appeal test, cells assigned at random within segment. Revenue per recipient is the measure that decides, because response alone can favor small gifts.</p>`;
 });
 
+let RM = null;
 safe('renewal', function renewal() {
  const FE = [['run', 'Consecutive years'], ['yrs5', 'Years given of last 5'], ['lamt', 'Last gift, log'], ['g', '24-Hour Challenge donor'], ['e', 'Opens email'], ['v', 'Attends events'], ['dec', 'December habit']];
  const row = (x, y) => { let run = 0; for (let k = kY(y); k >= 0 && x.amt[k] > 0; k--) run++; let y5 = 0; for (let k = Math.max(0, kY(y) - 4); k <= kY(y); k++) if (x.amt[k] > 0) y5++; return {run, yrs5: y5, lamt: Math.log10(x.amt[kY(y)]), g: x.g, e: x.e, v: x.v, dec: x.dec, yv: x.amt[kY(y + 1)] > 0 ? 1 : 0}; };
@@ -1392,7 +1440,8 @@ safe('renewal', function renewal() {
  const pGB = o => sig(base + ST.reduce((s, t) => s + (o[FE[t.j][0]] <= t.c ? t.vl : t.vr), 0));
  const auc = (P, Yy) => { const o = P.map((p, i) => [p, Yy[i]]).sort((a, b) => a[0] - b[0]); let sp = 0, np = 0; o.forEach((x, i) => { if (x[1]) { sp += i + 1; np++; } }); return (sp - np * (np + 1) / 2) / (np * (o.length - np)); };
  const Yt = TE.map(o => o.yv), MD = [['Logistic regression', pLR, 'var(--slate)'], ['Decision tree, depth 3', pDT, 'var(--gold)'], ['Gradient boosting, 80 stumps', pGB, 'var(--accent)']].map(([n, f, c]) => { const P = TE.map(f); return {n, P, c, auc: auc(P, Yt), ll: -P.reduce((s, p, i) => s + (Yt[i] ? Math.log(Math.max(p, 1e-6)) : Math.log(Math.max(1 - p, 1e-6))), 0) / P.length}; });
- const bestM = MD.slice().sort((a, b) => b.auc - a.auc)[0], tie = Math.abs(MD[2].auc - MD[0].auc) < .01, prod = tie ? MD[0] : bestM; window.__mitPick = tie ? 'Logistic regression in production, with gradient boosting and a tree as challengers' : bestM.n + ', compared with the other two models';
+ RM = {MD, Yt, TE, TR, FE, auc, pLR, pDT, pGB};
+ const bestM = MD.slice().sort((a, b) => b.auc - a.auc)[0], tie = Math.abs(MD[2].auc - MD[0].auc) < .01, prod = tie ? MD[0] : bestM; RM.prod = prod; RM.tie = tie; window.__mitPick = tie ? 'Logistic regression in production, with gradient boosting and a tree as challengers' : bestM.n + ', compared with the other two models';
  const Wd = 420, H = 360, L = 46, B = 40, T = 12, X = v => L + (Wd - L - 14) * v, Yv = v => T + (H - T - B) * (1 - v), npos = Yt.reduce((a, b) => a + b, 0), nneg = Yt.length - npos;
  let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="ROC curves for three renewal models">`;
  [0, .25, .5, .75, 1].forEach(v => s += `<line x1="${X(v)}" x2="${X(v)}" y1="${T}" y2="${H - B}" stroke="var(--line)"/><line x1="${L}" x2="${Wd - 14}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="var(--line)"/><text x="${X(v)}" y="${H - B + 16}" text-anchor="middle" font-size="12" fill="var(--muted)">${v}</text><text x="${L - 6}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v}</text>`);
@@ -1514,7 +1563,7 @@ $('#ninety').innerHTML = [['Days 1 to 30', 'Listen and inventory', ['Meet Annual
 const c27t = C27;
 $('#takeaways').innerHTML = [['', 'Annual Fund', `FY27 is at ${musd(c27t)} through November 20, ${c27t >= C26SD ? pct(c27t / C26SD - 1) + ' ahead of' : pct(1 - c27t / C26SD) + ' behind'} the same calendar day last year.`, `Simulated chance of reaching the ${musd(GOAL)} goal is ${pct(SIM.pGoal)}.`, 'go:af'], ['slate', 'Renewal', `About ${n0(LYBUNT)} FY26 donors have not renewed yet.`, 'The renewal model sorts them for calls and notes.', 'go:seg'], ['amber', 'Integrity', 'A worked example shows how a gap between an OER and a central total would be explained, dollar by dollar.', 'Hypothetical figures. Most such gaps are counting rules, not errors.', 'go:dq']].map(t => `<button class="tk ${t[0]}" data-open="${t[4]}"><b>${t[1]}</b><strong>${t[2]}</strong><span>${t[3]}</span></button>`).join('');
 $('#kpis').innerHTML = [[musd(c27t), 'FY27 Annual Fund to date', pct(c27t / GOAL) + ' of goal', 'go:af', ''], [n0(FY26D.length), 'FY26 donors', musd(FY26T) + ' raised', 'go:an', ''], [pct(B26.ret), 'FY26 donor retention', 'Of FY25 donors', 'go:an', ''], [CHK.filter(c => c[1] <= c[2]).length + ' of ' + CHK.length, 'Data checks passing', (CHK.length - CHK.filter(c => c[1] <= c[2]).length) + ' to fix today', 'go:dq', CHK.some(c => c[1] > c[2]) ? 'warn' : ''], [pct(SELF_SERVED), 'Requests self-served', 'Target by June, first-year plan', 'go:pi', ''], ['Ready', 'Spring appeal list', 'Suppressions applied', 'go:seg', '']].map(k => `<button class="kpi ${k[4]}" data-open="${k[3]}"><strong>${k[0]}</strong><span>${k[1]}</span><small>${k[2]}</small></button>`).join('');
-const GROUPS = [['af', 'Annual Fund reporting'], ['an', 'Analytics and forecasting'], ['seg', 'Segments and campaigns'], ['dq', 'Data integrity'], ['pi', 'Process and training'], ['sp', 'Special projects']];
+const GROUPS = [['af', 'Annual Fund reporting'], ['an', 'Analytics and forecasting'], ['seg', 'Segments and campaigns'], ['dq', 'Data integrity'], ['pi', 'Process and training'], ['sp', 'Special projects'], ['ml', 'Models and methods']];
 const NAMES = {overview: 'Overview', now: 'MIT Sloan context'}; GROUPS.forEach(g => NAMES[g[0]] = g[1]);
 const DUTIES = [
  ['Data analysis and reporting · 50%', [['Lead reporting strategy and analysis for the Annual Fund and broader development', 'af#progress,catalog'], ['Assess fundraising performance against last year and goal', 'an#perf'], ['Analyze fundraising, donor behavior, portfolio, pipeline and revenue', 'an#flow,cohort,pipeline'], ['Check completeness, troubleshoot integrity and present findings', 'dq#checks,issues'], ['Design and maintain reports, dashboards and datasets', 'af#catalog'], ['Handle ad hoc requests and forecasting support for campaign execution', 'an#fcast,mape'], ['Analyze results across the appeal cycle', 'seg#cycle'], ['Build segmentation, suppression logic and campaign-ready datasets', 'seg#rfm,suppress,dataset'], ['Use SQL to query, validate and investigate discrepancies', 'dq#recon,checks'], ['Keep reporting assets, documentation and definitions', 'dq#defs']]],
@@ -1528,13 +1577,14 @@ const CTX = [['Mission', 'MIT Sloan develops principled, innovative leaders who 
 $('#context').innerHTML = CTX.map(c => `<li><b>${c[0]}.</b> ${esc(c[1])} <a href="${c[2]}" target="_blank" rel="noopener">Source ↗</a></li>`).join('');
 
 const SUBS = {
- overview: [['Five-minute path', ['fivemin']], ['Taking work off the Director', ['support']], ['Minimum qualifications', ['minq']], ['Straight answers and data handling', ['straight', 'handling']], ['Duties in the posting', ['dutymap']], ['Experience and MIT Sloan context', ['context']]],
+ overview: [['Five-minute path', ['fivemin']], ['Taking work off the Director', ['support']], ['How I handle donor data', ['handling']], ['Duties in the posting', ['dutymap']], ['Experience and MIT Sloan context', ['context']]],
  now: [['Dean’s priorities', ['prio4']], ['Current and planned projects', ['projects']], ['MIT-wide context', ['mitwide', 'nowtl']], ['Sources', ['nowsrc']]],
- af: [['Progress to goal', ['progress']], ['Programs and gift bands', ['programs', 'pyramid']], ['Reunion and 24-Hour Challenge', ['reunion', 'challenge']], ['Report catalog', ['catalog']]],
+ af: [['Published results', ['pubtrend']], ['Progress to goal', ['progress']], ['Programs and gift bands', ['programs', 'pyramid']], ['Reunion and 24-Hour Challenge', ['reunion', 'challenge']], ['Report catalog', ['catalog']]],
  an: [['Performance scorecard', ['perf']], ['Donor flow', ['flow', 'behav']], ['Retention and concentration', ['cohort', 'conc']], ['Forecast models', ['fcast', 'mape', 'season']], ['Pipeline and portfolios', ['pipeline', 'portfolio']]],
  seg: [['Appeal cycle', ['cycle']], ['Segments', ['rfm', 'kmeans']], ['Suppression logic', ['suppress']], ['Campaign dataset', ['dataset']], ['Appeal test', ['abtest']], ['Renewal model', ['roc', 'calib', 'thresh']]],
  dq: [['Business definitions', ['defs']], ['Reconcile with central', ['recon']], ['Quality checks and issues', ['checks', 'issues']], ['Anomaly detection', ['anom']]],
  pi: [['Request triage', ['triage', 'brief']], ['Requests', ['reqs']], ['Process redesign', ['process']], ['Tools', ['tools', 'toolmap']], ['Training and documentation', ['training', 'assets']]],
+ ml: [['Matched to published figures', ['anchors']], ['How the forecast is built', ['mcspec']], ['Convergence and sensitivity', ['mcconv', 'mcsens']], ['Calibration and backtests', ['mccal', 'roll']], ['Parameter recovery', ['recov']], ['Renewal model diagnostics', ['rnboot', 'rnperm', 'rnlift']], ['Test design and power', ['power']]],
  sp: [['Roadmap', ['roadmap']], ['Partners', ['raci']], ['Event support', ['event']], ['Model guardrails', ['models']], ['First 90 days', ['ninety']], ['First-year lifecycle', ['lifecycle', 'cadence']]]
 };
 
@@ -1564,7 +1614,7 @@ $('#nowsrc').innerHTML = NSRC.map(x => `<li><a href="${x[1]}" target="_blank" re
 
 /* ================= GAPS FROM THE FULL POSTING ================= */
 safe('perf', function perf() {
- const R = [['Annual Fund dollars', C27, C26SD, 'usd'], ['Donors', 1012, 968, 'n'], ['Alumni participation', .036, .034, 'p'], ['Retained from FY26, FY27 to date', .41, .39, 'p'], ['Dean’s Circle donors, $2,500+', 268, 259, 'n'], ['New donors', 118, 131, 'n'], ['Average gift', 1808, 1746, 'usd'], ['Gift officer meetings', 149, 137, 'n']];
+ const R = [['Annual Fund dollars', C27, C26SD, 'usd'], ['Donors', 1012, 968, 'n'], ['Alumni participation', .036, .034, 'p'], ['Retained from FY26, FY27 to date', .41, .39, 'p'], ['Dean’s Circle donors, $2,500+', 268, 259, 'n'], ['New donors', 118, 131, 'n'], ['Average gift', C27 / 1012, C26SD / 968, 'usd'], ['Gift officer meetings', 149, 137, 'n']];
  const f = (v, t) => t === 'usd' ? (v >= 1e5 ? musd(v) : usd(v)) : t === 'p' ? pct1(v) : n0(v);
  $('#perf').innerHTML = `<div class="scroll"><table class="tbl"><thead><tr><th scope="col">Measure</th><th scope="col">FY27 to Nov 20</th><th scope="col">Same day FY26</th><th scope="col">Change</th></tr></thead><tbody>${R.map(r => { const ch = r[1] / r[2] - 1; return `<tr><th scope="row">${r[0]}</th><td><b>${f(r[1], r[3])}</b></td><td>${f(r[2], r[3])}</td><td><span class="st ${ch >= 0 ? 'pass' : 'flag'}">${ch >= 0 ? '+' : '−'}${pct(Math.abs(ch))}</span></td></tr>`; }).join('')}</tbody></table></div><p class="note">Same-day comparison removes the calendar effect. Synthetic figures. <b>So what:</b> dollars, donors and retention are ahead, but new donors trail last year, so the next appeal leans on acquisition and the first reunion classes.</p>`;
 });
@@ -1685,6 +1735,291 @@ safe('recs', function recs() {
   d.innerHTML = `${finding ? `<p class="rec-f"><b>Finding</b> ${finding}</p>` : ''}<p class="rec-k">Recommendation</p><p class="rec-a">${r[0]}</p><p class="rec-o"><span><b>Expected outcome</b> ${r[1]}</span><span><b>Measure</b> ${r[2]}</span></p>`;
   card.appendChild(d);
  });
+});
+/* ================= 7 MODELS AND METHODS ================= */
+const ML = {};
+const erfA = x => { const t = 1 / (1 + .3275911 * Math.abs(x)), y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - .284496736) * t + .254829592) * t * Math.exp(-x * x); return x >= 0 ? y : -y; };
+const Phi = x => .5 * (1 + erfA(x / Math.SQRT2));
+const qnt = (a, q) => { const s = Array.from(a).sort((x, y) => x - y), i = (s.length - 1) * q, lo = Math.floor(i), hi = Math.ceil(i); return s[lo] + (s[hi] - s[lo]) * (i - lo); };
+const mean = a => a.reduce((s, v) => s + v, 0) / a.length, sd = a => { const m = mean(a); return Math.sqrt(a.reduce((s, v) => s + (v - m) ** 2, 0) / (a.length - 1)); };
+const fx = (v, d = 2) => (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(d);
+/* solve A x = b by Gaussian elimination with partial pivoting; returns x */
+function solve(A, b) { const n = b.length, M = A.map((r, i) => r.concat([b[i]])); for (let c = 0; c < n; c++) { let m = c; for (let r = c + 1; r < n; r++) if (Math.abs(M[r][c]) > Math.abs(M[m][c])) m = r; [M[c], M[m]] = [M[m], M[c]]; for (let r = 0; r < n; r++) if (r !== c) { const f = M[r][c] / M[c][c]; for (let k = c; k <= n; k++) M[r][k] -= f * M[c][k]; } } return M.map((r, i) => r[n] / r[i]); }
+const inv = A => A.map((_, j) => solve(A, A.map((__, i) => i === j ? 1 : 0))).reduce((acc, col, j) => { col.forEach((v, i) => { acc[i] = acc[i] || []; acc[i][j] = v; }); return acc; }, []);
+
+/* the Monte Carlo engine behind the progress chart, with every assumption exposed */
+const MC0 = {sp: .08, sn: .10, sm: .12, N: 2000, seed: 2027};
+function mcRun(toDate, lastSD, rest, o = {}) {
+ const p = Object.assign({}, MC0, o), r = rng(p.seed), pace = toDate / lastSD + (p.shift || 0), fin = new Float64Array(p.N);
+ for (let n = 0; n < p.N; n++) { const g = pace * (1 + p.sp * gs(r)); let c = toDate + rest[0] * g * (1 + p.sn * gs(r)); for (let m = 1; m < rest.length; m++) c += rest[m] * g * (1 + p.sm * gs(r)); fin[n] = c; }
+ return fin;
+}
+const REST27 = [F26[4] * (1 - NOVF)].concat(F26.slice(5));
+/* a longer synthetic monthly history for backtesting: FY23 to FY26 are the same months used on the Analytics tab */
+const HIST = (() => { const ser = FCM.ser, r = rng(7171), yrs = [], first = 2011, recent = [0, 1, 2, 3].map(k => ser.slice(k * 12, k * 12 + 12));
+ let tot = recent[0].reduce((a, b) => a + b, 0); const early = [];
+ for (let y = 2022; y >= first; y--) { tot = tot / (1.045 + .035 * gs(r)); const back = 1 + .05 * gs(r); early.unshift(MS.map((v, m) => tot * v / MSS * (m >= 5 ? back : 1) * Math.exp(.09 * gs(r)))); }
+ early.concat(recent).forEach((ms, i) => yrs.push({fy: first + i, m: ms})); return yrs; })();
+
+/* calibration engine: run the Monte Carlo on November 20 of each past year */
+function calRows(o = {}) { const rows = []; for (let i = 1; i < HIST.length; i++) { const cur = HIST[i].m, prv = HIST[i - 1].m, sum4 = a => a[0] + a[1] + a[2] + a[3], td = sum4(cur) + cur[4] * NOVF, ls = sum4(prv) + prv[4] * NOVF, rest = [prv[4] * (1 - NOVF)].concat(prv.slice(5)), f = mcRun(td, ls, rest, Object.assign({N: 2000, seed: 300 + i}, o)), act = cur.reduce((a, b) => a + b, 0);
+  const P = [.1, .5, .9].map(q => qnt(f, q)); rows.push({fy: HIST[i].fy, P, act, inn: act >= P[0] && act <= P[2], err: (P[1] - act) / act}); } return rows; }
+const covOf = o => { const r = calRows(o); return r.filter(x => x.inn).length / r.length; };
+ML.grid = [.05, .06, .07, .08, .09, .10, .12, .14].map(sp => [sp, covOf({sp})]);
+ML.spCal = (ML.grid.find(g => g[1] >= .8) || ML.grid[ML.grid.length - 1])[0];
+
+
+safe('mcspec', function mcspec() {
+ const fin = mcRun(C27, C26SD, REST27), pg = Array.from(fin).filter(v => v >= GOAL).length / fin.length, P = [.1, .5, .9].map(q => qnt(fin, q)), pace = C27 / C26SD;
+ const lo = Math.min(...fin), hi = Math.max(...fin), nb = 36, bw = (hi - lo) / nb, H = new Array(nb).fill(0); fin.forEach(v => H[Math.min(nb - 1, Math.floor((v - lo) / bw))]++);
+ const Wd = 560, Ht = 230, L = 34, B = 34, X = v => L + (Wd - L - 12) * (v - lo) / (hi - lo), mh = Math.max(...H), Yh = c => 26 + (Ht - B - 26) * (1 - c / mh);
+ let s = `<svg viewBox="0 0 ${Wd} ${Ht}" role="img" aria-label="Distribution of 2,000 simulated FY27 totals">`;
+ H.forEach((c, i) => { const x0 = lo + i * bw; s += `<rect x="${X(x0) + .5}" y="${Yh(c)}" width="${Math.max(1, X(x0 + bw) - X(x0) - 1)}" height="${Ht - B - Yh(c)}" fill="${x0 + bw / 2 >= GOAL ? 'var(--accent)' : 'var(--slate)'}"/>`; });
+ s += `<line x1="${X(GOAL)}" x2="${X(GOAL)}" y1="6" y2="${Ht - B}" stroke="var(--ink)" stroke-width="2" stroke-dasharray="5 3"/><text x="${X(GOAL) + 5}" y="15" font-size="12" font-weight="700" fill="var(--ink)">Goal ${musd(GOAL)}</text>`;
+ P.forEach((v, i) => s += `<line x1="${X(v)}" x2="${X(v)}" y1="${Ht - B}" y2="${Ht - B + 6}" stroke="var(--ink)"/><text x="${X(v)}" y="${Ht - B + 19}" text-anchor="middle" font-size="11.5" fill="var(--ink)">${['P10', 'P50', 'P90'][i]} ${musd(v)}</text>`);
+ s += `<line x1="${L}" x2="${Wd - 12}" y1="${Ht - B}" y2="${Ht - B}" stroke="var(--muted)"/></svg>`;
+ const steps = [['1', 'Same-day pace', `FY27 through November 20 divided by FY26 through November 20: ${musd(C27)} ÷ ${musd(C26SD)} = ${pace.toFixed(3)}.`], ['2', 'Year-level shock', 'One draw per path scales the whole rest of the year, so a strong year is strong in every month: g = pace × (1 + 0.08 z).'], ['3', 'Month-level noise', 'Each remaining month is last year’s month × g × (1 + 0.12 z), and the rest of November uses 0.10. This carries timing, such as December gifts landing in January.'], ['4', 'Paths to percentiles', `2,000 paths give P10, P50, P90 and the share of paths at or above the goal: ${pct(pg)}.`]];
+ $('#mcspec').innerHTML = `<div class="mcsteps">${steps.map(x => `<div><span class="exn">${x[0]}</span><b>${x[1]}</b><span>${x[2]}</span></div>`).join('')}</div>
+ <div class="g2 mt"><div><h4 class="h4">The model</h4><pre class="sql"><code>Total(FY27) = Actual(Jul 1 to Nov 20)
+            + Σ over remaining months m of  FY26(m) · g · (1 + σm · εm)
+
+g     = ρ · (1 + σp · η)        ρ  = same-day pace = ${pace.toFixed(3)}
+σp    = 0.08   year-level shock, shared by all months, calibrated on history
+σm    = 0.12   month-level noise (0.10 for the rest of November)
+η, εm ~ N(0, 1), independent      paths = 2,000, seed = 2027</code></pre>
+ <h4 class="h4">Why it is built this way</h4><ul class="plain tight"><li><b>Same-day pace, not month-end.</b> Comparing a partial month with a full one biases the pace. Both years are cut at November 20.</li><li><b>Two levels of noise.</b> A single month-level term understates risk, because months move together in a good or a bad year. The shared shock carries that correlation.</li><li><b>Last year as the shape.</b> FY26 sets the month pattern. Calibration below checks whether that is good enough across many years.</li><li><b>Calibrated on history.</b> Run on 15 past years, a year-level shock of ${ML.spCal.toFixed(2)} gives the 80% range its intended coverage. The calibration exhibit shows the search.</li><li><b>Known limits.</b> One prior year as the pattern, no structural breaks such as a new program’s first alumni, and normal noise where real gifts are lumpy. Large leadership gifts are better added as a separate pipeline term.</li></ul></div>
+ <div><h4 class="h4">What comes out: 2,000 simulated FY27 totals</h4><div class="chart">${s}</div><div class="facts4"><div><b>${musd(P[1])}</b><span>median total</span></div><div><b>${musd(P[0])} to ${musd(P[2])}</b><span>80% range</span></div><div><b>${pct(pg)}</b><span>chance of reaching ${musd(GOAL)}</span></div><div><b>${pct((P[2] - P[0]) / P[1])}</b><span>width of the range against the median</span></div></div>
+ <h4 class="h4">Equivalent in R</h4>${sqlBox(`set.seed(2027)
+pace <- fy27_to_nov20 / fy26_to_nov20
+rest <- c(fy26_nov * (1 - 20/30), fy26_dec_to_jun)   # last year's remaining months
+sims <- replicate(2000, {
+  g     <- pace * (1 + 0.08 * rnorm(1))              # year-level shock, calibrated
+  noise <- c(0.10, rep(0.12, 7))                     # month-level noise
+  fy27_to_nov20 + sum(rest * g * (1 + noise * rnorm(8)))
+})
+quantile(sims, c(.1, .5, .9));  mean(sims >= 6.1e6)`)}</div></div>`;
+ ML.pg = pg;
+});
+
+safe('mcconv', function mcconv() {
+ const NS = [100, 250, 500, 1000, 2000, 5000, 10000], R = NS.map(N => { const ps = Array.from({length: 20}, (_, k) => { const f = mcRun(C27, C26SD, REST27, {N, seed: 500 + k * 37}); let c = 0; for (const v of f) if (v >= GOAL) c++; return c / N; }); return {N, ps, m: mean(ps), lo: Math.min(...ps), hi: Math.max(...ps)}; });
+ const pm = R[R.length - 1].m, Wd = 560, H = 270, L = 46, B = 40, X = i => L + (Wd - L - 20) * i / (NS.length - 1), lo = Math.min(...R.map(r => r.lo)) - .02, hi = Math.max(...R.map(r => r.hi)) + .02, Yv = v => 12 + (H - 12 - B) * (1 - (v - lo) / (hi - lo));
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Estimated chance of reaching goal by number of paths">`;
+ for (let v = Math.ceil(lo * 20) / 20; v <= hi; v += .05) s += `<line x1="${L}" x2="${Wd - 20}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="var(--line)"/><text x="${L - 6}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${pct(v)}</text>`;
+ const band = R.map((r, i) => [X(i), 2 * Math.sqrt(pm * (1 - pm) / r.N)]);
+ s += `<polygon points="${band.map(([x, e]) => x + ',' + Yv(pm + e)).join(' ')} ${band.map(([x, e]) => x + ',' + Yv(pm - e)).reverse().join(' ')}" fill="var(--accent)" opacity=".12"/>`;
+ R.forEach((r, i) => { s += `<line x1="${X(i)}" x2="${X(i)}" y1="${Yv(r.hi)}" y2="${Yv(r.lo)}" stroke="var(--slate)" stroke-width="2"/>` + r.ps.map(p => `<circle cx="${X(i)}" cy="${Yv(p)}" r="2.2" fill="var(--slate)" opacity=".55"/>`).join('') + `<circle cx="${X(i)}" cy="${Yv(r.m)}" r="5" fill="var(--accent)"/><text x="${X(i)}" y="${H - B + 18}" text-anchor="middle" font-size="12" fill="var(--muted)">${n0(r.N)}</text>`; });
+ s += `<text x="${(L + Wd) / 2}" y="${H - 6}" text-anchor="middle" font-size="12.5" fill="var(--muted)">Paths per run</text></svg>`;
+ const r2 = R[4], se2 = Math.sqrt(pm * (1 - pm) / 2000);
+ $('#mcconv').innerHTML = s + `<div class="legend"><span><i style="background:var(--slate)"></i>20 seeds</span><span><i style="background:var(--accent)"></i>Mean</span><span><i style="background:var(--accent);opacity:.3"></i>±2 Monte Carlo standard errors</span></div><p class="note">At 2,000 paths the Monte Carlo standard error is about ${(se2 * 100).toFixed(1)} points, and 20 seeds ranged from ${pct1(r2.lo)} to ${pct1(r2.hi)}. Simulation noise is small next to the model’s own uncertainty, so 2,000 paths is enough for a weekly report. Quote the chance to the nearest 5 points.</p>`;
+});
+
+safe('mcsens', function mcsens() {
+ const base = {N: 4000, seed: 91}, pOf = (o, goal = GOAL) => { const f = mcRun(C27, C26SD, o.rest || REST27, Object.assign({}, base, o)); let c = 0; for (const v of f) if (v >= goal) c++; return c / f.length; }, p0 = pOf({});
+ const rs = (i, k) => REST27.map((v, j) => j === i ? v * k : v);
+ const V = [['Same-day pace, ±2 points', pOf({shift: -.02}), pOf({shift: .02})], ['Year-level shock σp, 0.05 to 0.12', pOf({sp: .12}), pOf({sp: .05})], ['Month-level noise σm, 0.06 to 0.18', pOf({sm: .18}), pOf({sm: .06})], ['December, ±10% of last year', pOf({rest: rs(1, .9)}), pOf({rest: rs(1, 1.1)})], ['June, ±10% of last year', pOf({rest: rs(7, .9)}), pOf({rest: rs(7, 1.1)})], ['Goal, ±$100K', pOf({}, GOAL + 1e5), pOf({}, GOAL - 1e5)]].map(v => [v[0], Math.min(v[1], v[2]), Math.max(v[1], v[2])]).sort((a, b) => (b[2] - b[1]) - (a[2] - a[1]));
+ const Wd = 560, rh = 34, H = 30 + V.length * rh + 30, L = 220, X = v => L + (Wd - L - 20) * v;
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Sensitivity of the chance of reaching goal">`;
+ [0, .25, .5, .75, 1].forEach(v => s += `<line x1="${X(v)}" x2="${X(v)}" y1="20" y2="${H - 26}" stroke="var(--line)"/><text x="${X(v)}" y="${H - 10}" text-anchor="middle" font-size="12" fill="var(--muted)">${pct(v)}</text>`);
+ V.forEach((v, i) => { const y = 26 + i * rh; s += `<text x="${L - 8}" y="${y + 15}" text-anchor="end" font-size="12.5" fill="var(--ink)">${v[0]}</text><rect x="${X(v[1])}" y="${y}" width="${Math.max(2, X(v[2]) - X(v[1]))}" height="${rh - 12}" fill="var(--accent)"/><text x="${X(v[1]) - 4}" y="${y + 15}" text-anchor="end" font-size="11.5" fill="var(--muted)">${pct(v[1])}</text><text x="${X(v[2]) + 4}" y="${y + 15}" font-size="11.5" fill="var(--muted)">${pct(v[2])}</text>`; });
+ s += `<line x1="${X(p0)}" x2="${X(p0)}" y1="14" y2="${H - 26}" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 3"/><text x="${X(p0)}" y="11" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">Base ${pct(p0)}</text></svg>`;
+ $('#mcsens').innerHTML = s + `<p class="note">Each bar moves one input and holds the rest, with the same random numbers in every run so differences come from the input, not the draw. ${V[0][0].split(',')[0]} matters most. The noise settings matter less, which is why calibration below checks them against history instead of tuning them by eye.</p>`;
+});
+
+safe('mccal', function mccal() {
+ const rows = calRows();
+ const cov = rows.filter(r => r.inn).length / rows.length, mae = mean(rows.map(r => Math.abs(r.err))), bias = mean(rows.map(r => r.err)), n = rows.length;
+ const Wd = 960, H = 300, L = 60, B = 40, X = i => L + (Wd - L - 20) * (i + .5) / n, rel = rows.map(r => [r.P[0] / r.P[1] - 1, r.P[2] / r.P[1] - 1, r.act / r.P[1] - 1]), lo = Math.min(...rel.flat()) - .02, hi = Math.max(...rel.flat()) + .02, Yv = v => 12 + (H - 12 - B) * (1 - (v - lo) / (hi - lo));
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Calibration of the Monte Carlo forecast by fiscal year">`;
+ for (let v = Math.ceil(lo * 20) / 20; v <= hi; v += .05) s += `<line x1="${L}" x2="${Wd - 20}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="${Math.abs(v) < 1e-9 ? 'var(--muted)' : 'var(--line)'}"/><text x="${L - 6}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v > 0 ? '+' : ''}${Math.round(v * 100)}%</text>`;
+ rows.forEach((r, i) => { const [a, b, c] = rel[i]; s += `<rect x="${X(i) - 14}" y="${Yv(b)}" width="28" height="${Yv(a) - Yv(b)}" fill="var(--slate)" opacity=".28"/><line x1="${X(i) - 14}" x2="${X(i) + 14}" y1="${Yv(0)}" y2="${Yv(0)}" stroke="var(--slate)" stroke-width="2"/><circle cx="${X(i)}" cy="${Yv(c)}" r="6" fill="${r.inn ? 'var(--green)' : 'var(--accent)'}"><title>FY${r.fy}: actual ${musd(r.act * 1e6)}, median forecast ${musd(r.P[1] * 1e6)}</title></circle><text x="${X(i)}" y="${H - B + 18}" text-anchor="middle" font-size="12" fill="var(--muted)">FY${String(r.fy).slice(2)}</text>`; });
+ s += `<text x="16" y="${(H - B) / 2}" font-size="12.5" fill="var(--muted)" transform="rotate(-90 16 ${(H - B) / 2})" text-anchor="middle">Actual against median</text></svg>`;
+ const vb = cov < .75 || cov > .88 ? `Set σp to ${ML.spCal.toFixed(2)}` : 'Well calibrated', vs = cov < .75 || cov > .88 ? `the calibrated setting that brings coverage to ${pct(ML.grid.find(g => g[0] === ML.spCal)[1])}` : 'no change needed';
+ $('#mccal').innerHTML = s + `<div class="legend"><span><i style="background:var(--slate);opacity:.4"></i>80% range, P10 to P90</span><span><i style="background:var(--green)"></i>Actual inside the range</span><span><i style="background:var(--accent)"></i>Actual outside</span></div><div class="facts4"><div><b>${rows.filter(r => r.inn).length} of ${n}</b><span>years inside the 80% range (${pct(cov)})</span></div><div><b>${pct1(mae)}</b><span>average miss of the median</span></div><div><b>${fx(bias * 100, 1)} pts</b><span>average bias of the median</span></div><div><b>${vb}</b><span>${vs}</span></div></div><p class="note">Each year is forecast with only what was known on November 20 of that year, using the prior year as the pattern. FY23 to FY26 are the same months as the Analytics tab and sum to MIT Sloan’s published totals. Earlier years are a longer synthetic history generated for this backtest. With ${n} years, coverage is itself uncertain by about ±${Math.round(100 * Math.sqrt(.8 * .2 / n))} points, so read it as a check, not a precise number.</p><h4 class="h4">Coverage as the year-level shock widens</h4><div class="calgrid">${ML.grid.map(g => `<div class="${g[0] === ML.spCal ? 'on' : ''}"><b>σp ${g[0].toFixed(2)}</b><span>${pct(g[1])}</span></div>`).join('')}</div><p class="note">Calibration picks σp ${ML.spCal.toFixed(2)}, the smallest setting that reaches 80% coverage, and the weekly forecast uses it. A wider shock widens the range without moving the median.${ML.spCal !== MC0.sp ? ' <b>Update the forecast setting to match.</b>' : ''}</p>`;
+ ML.cov = cov;
+});
+
+safe('roll', function roll() {
+ const M = FCM.M, series = HIST.flatMap(h => h.m), sum = a => a.reduce((x, y) => x + y, 0), origins = HIST.map((h, i) => i).filter(i => i >= 4);
+ const res = Object.keys(M).map(n => { const e = origins.map(i => { const tr = series.slice(0, i * 12), p = M[n](tr, 12), act = sum(HIST[i].m); return (sum(p) - act) / act; }); const b = mean(e), v = e.reduce((s, x) => s + (x - b) ** 2, 0) / e.length, mse = b * b + v; return {n, e, mae: mean(e.map(Math.abs)), b, sdv: Math.sqrt(v), rmse: Math.sqrt(mse), bshare: b * b / mse}; });
+ const best = res.slice().sort((a, b) => a.rmse - b.rmse)[0], cols = ['var(--slate)', 'var(--gold)', 'var(--accent)', 'var(--green)'];
+ const Wd = 960, H = 260, L = 56, B = 34, n = origins.length, X = k => L + (Wd - L - 20) * k / (n - 1), all = res.flatMap(r => r.e), lo = Math.min(...all, -.05) - .01, hi = Math.max(...all, .05) + .01, Yv = v => 10 + (H - 10 - B) * (1 - (v - lo) / (hi - lo));
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Year-total forecast error by origin year and model">`;
+ for (let v = Math.ceil(lo * 20) / 20; v <= hi; v += .05) s += `<line x1="${L}" x2="${Wd - 20}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="${Math.abs(v) < 1e-9 ? 'var(--muted)' : 'var(--line)'}"/><text x="${L - 6}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v > 0 ? '+' : ''}${Math.round(v * 100)}%</text>`;
+ res.forEach((r, j) => s += `<polyline fill="none" stroke="${cols[j]}" stroke-width="${r === best ? 3 : 1.8}" points="${r.e.map((e, k) => X(k) + ',' + Yv(e)).join(' ')}"/>` + r.e.map((e, k) => `<circle cx="${X(k)}" cy="${Yv(e)}" r="3" fill="${cols[j]}"/>`).join(''));
+ origins.forEach((i, k) => s += `<text x="${X(k)}" y="${H - 12}" text-anchor="middle" font-size="12" fill="var(--muted)">FY${String(HIST[i].fy).slice(2)}</text>`);
+ const single = (window.__fcBest || '');
+ $('#roll').innerHTML = `<div class="chart scroll">${s}</svg></div><div class="legend">${res.map((r, j) => `<span><i style="background:${cols[j]}"></i>${r.n}</span>`).join('')}</div>
+ <div class="scroll"><table class="tbl"><thead><tr><th scope="col">Model</th><th scope="col">Mean absolute error</th><th scope="col">Bias</th><th scope="col">Spread (SD)</th><th scope="col">RMSE</th><th scope="col">Share of error from bias</th></tr></thead><tbody>${res.map(r => `<tr${r === best ? ' class="best"' : ''}><th scope="row">${r.n}${r === best ? ' <span class="st pass">Lowest RMSE</span>' : ''}</th><td>${pct1(r.mae)}</td><td>${fx(r.b * 100, 1)} pts</td><td>${pct1(r.sdv)}</td><td>${pct1(r.rmse)}</td><td>${pct(r.bshare)}</td></tr>`).join('')}</tbody></table></div>
+ <p class="note">Rolling origin: for each of ${n} fiscal years, every model is refitted on all earlier months and forecasts the next 12, as it would have on July 1. RMSE² splits into bias² plus variance, so the last column shows how much of each model’s error a simple level correction would remove. ${FCM.best ? (FCM.best === best.n ? `This agrees with the single-year backtest on the Analytics tab, which also picked ${best.n.toLowerCase()}.` : `The single-year backtest on the Analytics tab picked ${FCM.best.toLowerCase()}. Across ${n} years ${best.n.toLowerCase()} has the lower error, which is why one year is not enough to choose a model.`) : ''} These are July 1 forecasts. The Monte Carlo above updates from November 20 and is scored separately.</p>
+ <h4 class="h4">Equivalent in R</h4>${sqlBox(`library(forecast)
+origins <- 2015:2026
+errs <- sapply(origins, function(fy) {
+  train <- window(monthly, end = c(fy - 1, 12))         # all months before the fiscal year
+  fc    <- hw(train, seasonal = "multiplicative", h = 12)
+  (sum(fc$mean) - sum(window(monthly, start = c(fy, 1), end = c(fy, 12)))) /
+    sum(window(monthly, start = c(fy, 1), end = c(fy, 12)))
+})
+c(bias = mean(errs), sd = sd(errs), rmse = sqrt(mean(errs^2)))`)}`;
+ ML.roll = best.n;
+});
+
+safe('recov', function recov() {
+ /* logistic: the renewal mechanism used to generate the data */
+ const LN = ['Intercept', 'Consecutive years, capped at 6', 'Opens email', 'Attends events', '24-Hour Challenge donor', 'December habit', 'Challenge × email', 'Reunion year', 'First-year donor, no email'], TRUE = [-1.5, .38, .7, .5, .45, .3, .45, .4, -.4];
+ const X = [], Y = [];
+ DON.forEach(x => { for (let y = x.c + 1; y <= 2026; y++) { const k = kY(y); if (x.amt[k - 1] > 0) { let rr = 0; for (let j = k - 1; j >= 0 && x.amt[j] > 0 && Y0 + j >= x.c; j--) rr++; const reu = x.grad && MIL.includes(y - x.grad) ? 1 : 0; X.push([1, Math.min(rr, 6), x.e, x.v, x.g, x.dec, x.g * x.e, reu, rr === 1 && !x.e ? 1 : 0]); Y.push(x.amt[k] > 0 ? 1 : 0); } } });
+ const p = TRUE.length; let b = new Array(p).fill(0), Hs = null;
+ for (let it = 0; it < 30; it++) { const g = new Array(p).fill(0), Hm = Array.from({length: p}, () => new Array(p).fill(0)); X.forEach((x, i) => { const pr = sig(x.reduce((s, v, j) => s + v * b[j], 0)), w = pr * (1 - pr); for (let a = 0; a < p; a++) { g[a] += (Y[i] - pr) * x[a]; for (let c = a; c < p; c++) Hm[a][c] += w * x[a] * x[c]; } }); for (let a = 0; a < p; a++) for (let c = 0; c < a; c++) Hm[a][c] = Hm[c][a]; const d = solve(Hm, g); b = b.map((v, j) => v + d[j]); Hs = Hm; if (Math.max(...d.map(Math.abs)) < 1e-7) break; }
+ const V = inv(Hs), se = V.map((r, i) => Math.sqrt(r[i]));
+ /* OLS: next gift size for consecutive givers */
+ const GN = ['Intercept', 'Last gift, log', 'Reunion year', 'Reunion last year', 'Opens email', 'Attends events', '24-Hour Challenge donor', 'December habit'], GT = [.03, 1, Math.log(1.35), -Math.log(1.35), 0, 0, 0, 0], XG = [], YG = [];
+ DON.forEach(x => { for (let y = x.c + 1; y <= 2023; y++) { const k = kY(y); if (x.amt[k] > 0 && x.amt[k - 1] > 0) { const ru = x.grad && MIL.includes(y - x.grad) ? 1 : 0, rp = x.grad && MIL.includes(y - 1 - x.grad) ? 1 : 0; XG.push([1, Math.log(x.amt[k - 1]), ru, rp, x.e, x.v, x.g, x.dec]); YG.push(Math.log(x.amt[k])); } } });
+ const q = GT.length, XtX = Array.from({length: q}, () => new Array(q).fill(0)), Xty = new Array(q).fill(0);
+ XG.forEach((x, i) => { for (let a = 0; a < q; a++) { Xty[a] += x[a] * YG[i]; for (let c = 0; c < q; c++) XtX[a][c] += x[a] * x[c]; } });
+ const bg = solve(XtX, Xty), resid = XG.map((x, i) => YG[i] - x.reduce((s, v, j) => s + v * bg[j], 0)), s2 = resid.reduce((s, e) => s + e * e, 0) / (XG.length - q), Vg = inv(XtX).map(r => r.map(v => v * s2)), seg = Vg.map((r, i) => Math.sqrt(r[i])), ym = mean(YG), r2 = 1 - resid.reduce((s, e) => s + e * e, 0) / YG.reduce((s, v) => s + (v - ym) ** 2, 0);
+ const tbl = (names, tru, est, ses) => { let hit = 0; const rows = names.map((n, i) => { const lo = est[i] - 1.96 * ses[i], hi = est[i] + 1.96 * ses[i], ok = tru[i] >= lo && tru[i] <= hi; if (ok) hit++; return `<tr><th scope="row">${n}</th><td>${fx(tru[i], 3)}</td><td>${fx(est[i], 3)}</td><td>${fx(lo, 3)} to ${fx(hi, 3)}</td><td>${ok ? '<span class="st pass">Inside</span>' : '<span class="st warn">Outside</span>'}</td></tr>`; }).join(''); return {hit, html: `<div class="scroll"><table class="tbl"><thead><tr><th scope="col">Term</th><th scope="col">True value</th><th scope="col">Estimate</th><th scope="col">95% interval</th><th scope="col">True value</th></tr></thead><tbody>${rows}</tbody></table></div>`}; };
+ const t1 = tbl(LN, TRUE, b, se), t2 = tbl(GN, GT, bg, seg);
+ /* dot and whisker for the logistic fit */
+ const Wd = 560, rh = 30, H = 20 + LN.length * rh + 30, L = 210, all = TRUE.concat(b.map((v, i) => v - 2 * se[i]), b.map((v, i) => v + 2 * se[i])), lo = Math.min(...all) - .1, hi = Math.max(...all) + .1, Xp = v => L + (Wd - L - 16) * (v - lo) / (hi - lo);
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Recovered logistic coefficients against true values">`;
+ for (let v = Math.ceil(lo * 2) / 2; v <= hi; v += .5) s += `<line x1="${Xp(v)}" x2="${Xp(v)}" y1="14" y2="${H - 26}" stroke="${Math.abs(v) < 1e-9 ? 'var(--muted)' : 'var(--line)'}"/><text x="${Xp(v)}" y="${H - 10}" text-anchor="middle" font-size="12" fill="var(--muted)">${v.toFixed(1)}</text>`;
+ LN.forEach((n, i) => { const y = 24 + i * rh; s += `<text x="${L - 8}" y="${y + 4}" text-anchor="end" font-size="12" fill="var(--ink)">${n}</text><line x1="${Xp(b[i] - 1.96 * se[i])}" x2="${Xp(b[i] + 1.96 * se[i])}" y1="${y}" y2="${y}" stroke="var(--accent)" stroke-width="3"/><circle cx="${Xp(b[i])}" cy="${y}" r="5" fill="var(--accent)"/><path d="M${Xp(TRUE[i])} ${y - 7} l6 7 l-6 7 l-6 -7 z" fill="none" stroke="var(--ink)" stroke-width="1.8"/>`; });
+ s += '</svg>';
+ $('#recov').innerHTML = `<div class="g2"><div><h4 class="h4">Renewal: logistic regression by Newton–Raphson</h4><div class="chart">${s}</div><div class="legend"><span><i style="background:var(--accent)"></i>Estimate with 95% interval</span><span><i style="background:#fff;border:2px solid var(--ink)"></i>True value used to generate the data</span></div>${t1.html}<p class="note">${n0(X.length)} donor-years where the donor gave the year before. ${t1.hit} of ${LN.length} true values fall inside their 95% intervals${t1.hit < LN.length ? `, in line with 95% intervals: with ${LN.length} terms, at least one miss happens about ${pct(1 - .95 ** LN.length)} of the time` : ''}. Standard errors come from the inverse of the Hessian at convergence.</p></div>
+ <div><h4 class="h4">Gift size: least squares on log amounts</h4>${t2.html}<p class="note">${n0(XG.length)} consecutive gifts from FY13 to FY23, before the Leaders Give Challenge years, when gifts near $2,500 were moved up to the Investor level by design. R² ${r2.toFixed(3)}, residual standard deviation ${Math.sqrt(s2).toFixed(3)} against a true 0.280. ${t2.hit} of ${GN.length} true values fall inside their 95% intervals${t2.hit < GN.length ? `, which is what 95% intervals should do: with ${GN.length} terms, at least one miss happens about ${pct(1 - .95 ** GN.length)} of the time. The slope on the last gift misses by ${Math.abs(bg[1] - 1).toFixed(3)}, well inside any practical tolerance` : ''}. The reunion pair shows the design: a reunion gift is about 35% larger, and the next year’s gift falls back by the same amount.</p>
+ <h4 class="h4">Equivalent in R</h4>${sqlBox(`renew <- glm(gave_next ~ pmin(run, 6) + email + events + challenge
+             + december + challenge:email + reunion + first_no_email,
+             family = binomial, data = donor_years)
+gift  <- lm(log(amount) ~ log(prev_amount) + reunion + reunion_prev
+            + email + events + challenge + december, data = consecutive_gifts)
+confint.default(renew);  confint(gift)`)}<p class="note"><b>Why this matters.</b> Recovering known parameters shows the estimation code is correct and the features are built without leakage. The production renewal score is a separate predictive model, judged on held-out data in the next exhibit.</p></div></div>`;
+ ML.rec = [t1.hit, LN.length, t2.hit, GN.length];
+});
+
+safe('rnboot', function rnboot() {
+ const {MD, Yt, auc} = RM, r = rng(4242), nB = 200, n = Yt.length, A = MD.map(() => []), D = [];
+ for (let bI = 0; bI < nB; bI++) { const idx = Array.from({length: n}, () => Math.floor(r() * n)), yb = idx.map(i => Yt[i]); const a = MD.map((m, j) => { const v = auc(idx.map(i => m.P[i]), yb); A[j].push(v); return v; }); D.push(a[2] - a[0]); }
+ const ci = a => [qnt(a, .025), qnt(a, .975)], dci = ci(D), tie = dci[0] <= 0 && dci[1] >= 0;
+ const Wd = 560, rh = 46, H = 30 + MD.length * rh + 26, L = 200, lo = Math.min(...A.flat()) - .005, hi = Math.max(...A.flat()) + .005, X = v => L + (Wd - L - 130) * (v - lo) / (hi - lo);
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Bootstrap AUC intervals for three renewal models">`;
+ for (let v = Math.ceil(lo * 100) / 100; v <= hi; v += .02) s += `<line x1="${X(v)}" x2="${X(v)}" y1="14" y2="${H - 26}" stroke="var(--line)"/><text x="${X(v)}" y="${H - 10}" text-anchor="middle" font-size="12" fill="var(--muted)">${v.toFixed(2)}</text>`;
+ MD.forEach((m, j) => { const y = 30 + j * rh, c = ci(A[j]); s += `<text x="${L - 8}" y="${y + 4}" text-anchor="end" font-size="12.5" fill="var(--ink)">${m.n}</text><line x1="${X(c[0])}" x2="${X(c[1])}" y1="${y}" y2="${y}" stroke="${m.c}" stroke-width="4"/><circle cx="${X(m.auc)}" cy="${y}" r="6" fill="${m.c}"/><text x="${X(c[1]) + 6}" y="${y + 4}" font-size="11.5" fill="var(--muted)">${m.auc.toFixed(3)} (${c[0].toFixed(3)}–${c[1].toFixed(3)})</text>`; });
+ $('#rnboot').innerHTML = `<div class="g2"><div class="chart">${s}</svg></div><div><div class="facts4"><div><b>${fx(mean(D), 3)}</b><span>gradient boosting minus logistic, mean AUC difference</span></div><div><b>${fx(dci[0], 3)} to ${fx(dci[1], 3)}</b><span>95% interval of the paired difference</span></div><div><b>${tie ? 'Not significant' : 'Significant'}</b><span>${tie ? 'the interval includes zero' : 'the interval excludes zero'}</span></div><div><b>${n0(n)}</b><span>FY25 donors in the test year</span></div></div><p class="note">${nB} bootstrap resamples of the test donors, with each model scored on the same resample, so the difference is paired. ${tie ? 'The two models cannot be told apart on this data. That is why logistic regression, which officers can read, stays in production and gradient boosting runs as the challenger.' : 'The difference holds up under resampling, so the better model can go to production, with logistic regression kept as the explainable check.'}</p>${sqlBox(`library(pROC)
+roc_lr <- roc(test$renewed, test$p_logistic)
+roc_gb <- roc(test$renewed, test$p_boosting)
+ci.auc(roc_lr, method = "bootstrap", boot.n = 200)
+roc.test(roc_lr, roc_gb, method = "bootstrap", paired = TRUE)`)}</div></div>`;
+});
+
+safe('rnperm', function rnperm() {
+ const {TE, Yt, FE, auc, pLR, pGB, MD} = RM, r = rng(8080), base = [auc(TE.map(pLR), Yt), auc(TE.map(pGB), Yt)];
+ const imp = FE.map(([k, name]) => { const d = [0, 0]; for (let rep = 0; rep < 3; rep++) { const col = TE.map(o => o[k]); for (let i = col.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [col[i], col[j]] = [col[j], col[i]]; } const T2 = TE.map((o, i) => Object.assign({}, o, {[k]: col[i]})); d[0] += base[0] - auc(T2.map(pLR), Yt); d[1] += base[1] - auc(T2.map(pGB), Yt); } return [name, d[0] / 3, d[1] / 3]; }).sort((a, b) => b[2] + b[1] - a[2] - a[1]);
+ const mx = Math.max(...imp.flatMap(v => [v[1], v[2]]), .001), Wd = 560, rh = 40, H = 16 + imp.length * rh + 26, L = 190, X = v => L + (Wd - L - 60) * Math.max(0, v) / mx;
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Permutation importance for the renewal models">`;
+ imp.forEach((v, i) => { const y = 14 + i * rh; s += `<text x="${L - 8}" y="${y + 15}" text-anchor="end" font-size="12.5" fill="var(--ink)">${v[0]}</text><rect x="${L}" y="${y}" width="${X(v[1]) - L}" height="13" fill="var(--slate)"/><rect x="${L}" y="${y + 15}" width="${X(v[2]) - L}" height="13" fill="${MD[2].c}"/><text x="${X(v[1]) + 4}" y="${y + 11}" font-size="11" fill="var(--muted)">${Math.max(0, v[1]).toFixed(3)}</text><text x="${X(v[2]) + 4}" y="${y + 26}" font-size="11" fill="var(--muted)">${Math.max(0, v[2]).toFixed(3)}</text>`; });
+ $('#rnperm').innerHTML = s + `</svg><div class="legend"><span><i style="background:var(--slate)"></i>Logistic regression</span><span><i style="background:${MD[2].c}"></i>Gradient boosting</span></div><p class="note">Each feature is shuffled three times in the test year and the drop in AUC is averaged. Both models lean on the same few features, ${imp[0][0].toLowerCase()} first, which is a sign they learned the same signal rather than noise. ${(() => { const y5 = imp.find(v => v[0] === 'Years given of last 5'); return y5 && y5[2] < .002 && y5[1] > .01 ? ' Gradient boosting ignores years given of the last 5, because consecutive years already carries that signal, while logistic regression splits the credit between the two correlated features.' : ''; })()} Unlike raw coefficients, this measure is on one scale for both models.</p>`;
+});
+
+safe('rnlift', function rnlift() {
+ const {MD, Yt, TE} = RM, prod = RM.prod, donors = DON.filter(x => x.amt[kY(2025)] > 0), amt = donors.map(x => x.amt[kY(2026)]), ord = prod.P.map((p, i) => i).sort((a, b) => prod.P[b] - prod.P[a]), n = ord.length, tot$ = amt.reduce((a, b) => a + b, 0), totR = Yt.reduce((a, b) => a + b, 0), rate0 = totR / n;
+ const dec = Array.from({length: 10}, (_, d) => { const ids = ord.slice(Math.floor(d * n / 10), Math.floor((d + 1) * n / 10)); return {rate: ids.reduce((s, i) => s + Yt[i], 0) / ids.length, usd: ids.reduce((s, i) => s + amt[i], 0), k: ids.length}; });
+ let cum = 0; dec.forEach(d => { cum += d.usd; d.cum = cum / tot$; });
+ const COST = 25, f = LYBUNT / n, top3 = dec.slice(0, 3), k3 = top3.reduce((s, d) => s + d.k, 0), usd3 = top3.reduce((s, d) => s + d.usd, 0), rand3 = tot$ * k3 / n;
+ const Wd = 560, H = 290, L = 46, R = 50, B = 40, bw = (Wd - L - R) / 10, mxr = Math.max(...dec.map(d => d.rate)) * 1.1, Yr = v => 12 + (H - 12 - B) * (1 - v / mxr), Yc = v => 12 + (H - 12 - B) * (1 - v);
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Renewal rate and cumulative renewal dollars by score decile">`;
+ [0, .25, .5, .75, 1].forEach(v => s += `<line x1="${L}" x2="${Wd - R}" y1="${Yc(v)}" y2="${Yc(v)}" stroke="var(--line)"/><text x="${Wd - R + 6}" y="${Yc(v) + 4}" font-size="11.5" fill="var(--accent)">${pct(v)}</text>`);
+ dec.forEach((d, i) => s += `<rect x="${L + i * bw + 4}" y="${Yr(d.rate)}" width="${bw - 8}" height="${Yr(0) - Yr(d.rate)}" fill="var(--slate)"/><text x="${L + i * bw + bw / 2}" y="${Yr(d.rate) - 4}" text-anchor="middle" font-size="11" fill="var(--ink)">${pct(d.rate)}</text><text x="${L + i * bw + bw / 2}" y="${H - B + 16}" text-anchor="middle" font-size="12" fill="var(--muted)">${i + 1}</text>`);
+ s += `<line x1="${L}" x2="${Wd - R}" y1="${Yr(rate0)}" y2="${Yr(rate0)}" stroke="var(--ink)" stroke-dasharray="4 3"/><text x="${Wd - R - 4}" y="${Yr(rate0) - 5}" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--ink)">Average ${pct(rate0)}</text><polyline fill="none" stroke="var(--accent)" stroke-width="2.5" points="${L},${Yc(0)} ${dec.map((d, i) => (L + (i + 1) * bw) + ',' + Yc(d.cum)).join(' ')}"/><line x1="${L}" y1="${Yc(0)}" x2="${Wd - R}" y2="${Yc(1)}" stroke="var(--accent)" stroke-dasharray="3 4" opacity=".6"/><text x="${(L + Wd - R) / 2}" y="${H - 6}" text-anchor="middle" font-size="12.5" fill="var(--muted)">Score decile, highest first</text></svg>`;
+ $('#rnlift').innerHTML = s + `<div class="legend"><span><i style="background:var(--slate)"></i>Renewal rate</span><span><i style="background:var(--accent)"></i>Share of renewal dollars captured</span></div><div class="facts4"><div><b>${(dec[0].rate / rate0).toFixed(1)}×</b><span>top-decile lift over the average</span></div><div><b>${pct(usd3 / tot$)}</b><span>of renewal dollars in the top 30%, against 30% for a random list</span></div><div><b>${k1((usd3 - rand3) * f)}</b><span>more renewal dollars on a top-30% list than a random one, at FY27 scale</span></div><div><b>${k1(k3 * f * COST)}</b><span>contact cost at $${COST} per call or note, an assumption</span></div></div><p class="note">These are dollars from donors on the list, not dollars caused by contacting them. Measuring that takes a holdout: leave 10% of the list uncontacted at random and compare renewal rates.</p>`;
+});
+
+safe('power', function power() {
+ const pa = 126 / 9000, pb = 171 / 9000, za = 1.96, zb = .8416, nCell = (p1, p2) => { const pbar = (p1 + p2) / 2; return Math.ceil((za * Math.sqrt(2 * pbar * (1 - pbar)) + zb * Math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2 / (p2 - p1) ** 2); };
+ const pow = (p1, p2, n) => { const pbar = (p1 + p2) / 2; return Phi((Math.abs(p2 - p1) * Math.sqrt(n) - za * Math.sqrt(2 * pbar * (1 - pbar))) / Math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))); };
+ let mde = .0001; while (pow(pa, pa + mde, 9000) < .8) mde += .0001;
+ const lifts = [.002, .003, .004, .005, .0075, .01], Wd = 560, H = 260, L = 70, B = 40, mxN = nCell(pa, pa + .002), Xl = v => L + (Wd - L - 20) * (v - .001) / (.0105 - .001), Yn = v => 12 + (H - 12 - B) * (1 - (Math.log10(v) - 3) / 2);
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Donors needed per cell by detectable lift">`;
+ [1e3, 3e3, 1e4, 3e4, 1e5].forEach(v => { if (v <= 1e5) s += `<line x1="${L}" x2="${Wd - 20}" y1="${Yn(v)}" y2="${Yn(v)}" stroke="var(--line)"/><text x="${L - 6}" y="${Yn(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${n0(v)}</text>`; });
+ const pts = []; for (let d = .002; d <= .0105; d += .00025) pts.push([Xl(d), Yn(nCell(pa, pa + d))]);
+ s += `<polyline fill="none" stroke="var(--accent)" stroke-width="2.5" points="${pts.map(p => p.join(',')).join(' ')}"/><line x1="${L}" x2="${Wd - 20}" y1="${Yn(9000)}" y2="${Yn(9000)}" stroke="var(--ink)" stroke-dasharray="5 3"/><text x="${L + 6}" y="${Yn(9000) + 16}" font-size="12" font-weight="700" fill="var(--ink)">9,000 per cell, the test on Segments</text>`;
+ [.002, .004, .006, .008, .01].forEach(v => s += `<text x="${Xl(v)}" y="${H - B + 16}" text-anchor="middle" font-size="12" fill="var(--muted)">+${(v * 100).toFixed(1)}</text>`);
+ s += `<text x="${(L + Wd) / 2}" y="${H - 6}" text-anchor="middle" font-size="12.5" fill="var(--muted)">Lift in response rate to detect, points (baseline ${pct1(pa)})</text></svg>`;
+ $('#power').innerHTML = `<div class="g2"><div class="chart">${s}</div><div><div class="scroll"><table class="tbl"><thead><tr><th scope="col">Lift to detect</th><th scope="col">Relative</th><th scope="col">Donors per cell</th></tr></thead><tbody>${lifts.map(d => `<tr><th scope="row">+${(d * 100).toFixed(2)} pts</th><td>+${pct(d / pa)}</td><td>${n0(nCell(pa, pa + d))}</td></tr>`).join('')}</tbody></table></div>
+ <div class="facts4"><div><b>+${(mde * 100).toFixed(2)} pts</b><span>smallest lift 9,000 per cell detects at 80% power</span></div><div><b>${pct(pow(pa, pb, 9000))}</b><span>power for the lift actually seen, +${((pb - pa) * 100).toFixed(2)} pts</span></div></div>
+ <p class="note">Two-sided test at 5%, 80% power, baseline response ${pct1(pa)} from the control cell. Three rules follow. Fix the sample size before launch and do not stop early when a result looks good, because repeated peeking inflates false positives. Test revenue per recipient with a larger cell or a log or capped amount, because gift sizes are skewed. Hold out a random control in every appeal, so each test also measures what the appeal itself adds.</p>
+ ${sqlBox(`power.prop.test(p1 = 0.014, p2 = 0.019, sig.level = 0.05, power = 0.80)   # n per cell
+power.prop.test(n = 9000, p1 = 0.014, p2 = 0.019, sig.level = 0.05)       # achieved power`)}</div></div>`;
+});
+
+/* recommendations for the methods tab, same format as the rest of the page */
+safe('mlrecs', function mlrecs() {
+ const R = {
+  mcspec: ['Report the chance of reaching goal each Monday with its 80% range, and add a separate term for known leadership gifts in the pipeline.', 'Leadership plans around a range it can trust, and large gifts stop surprising the forecast.', 'Weekly chance of reaching goal against the final outcome'],
+  mcconv: ['Keep 2,000 paths and a fixed seed for the weekly report, and quote the chance to the nearest 5 points.', 'Week-to-week changes reflect new gifts, not simulation noise.', 'Monte Carlo standard error under 1.5 points'],
+  mcsens: ['Spend analysis time on the same-day pace and the December pattern, the inputs that move the answer most.', 'Effort goes where it changes the forecast.', 'Forecast change explained by each input each month'],
+  mccal: ['Re-run this calibration every July and adjust the year-level shock until about 80% of years fall inside the range.', 'Stated ranges that mean what they say.', 'Coverage of the 80% range over rolling years'],
+  roll: ['Choose the July 1 model on the rolling backtest, not on one year, and re-run the backtest every July.', 'A model choice that holds up across many years.', 'Rolling RMSE of the year total'],
+  recov: ['Keep parameter-recovery tests in the code repository, and run them whenever a feature or the estimation code changes.', 'Bugs in feature building are caught before a model reaches officers.', 'Recovery tests passing on each change'],
+  rnboot: ['Keep logistic regression in production while the AUC interval for the difference includes zero, and revisit each year.', 'Officers get the explainable model when the complex one adds nothing measurable.', 'Paired AUC difference and its interval each year'],
+  rnperm: ['Watch the top features for drift each quarter, and retrain when their distribution moves.', 'The score stays accurate as donor behavior changes.', 'Population stability of the top three features'],
+  rnlift: ['Build the call list from the top 30% of scores, and hold out 10% at random to measure what the calls add.', 'Proof of incremental dollars, not only of ranking.', 'Renewal rate, called against held-out donors'],
+  power: ['Size every appeal test before launch with this calculation, and stop running tests too small to detect the lift that matters.', 'Fewer inconclusive tests and decisions on real effects.', 'Share of tests powered at 80% or more']
+ };
+ Object.entries(R).forEach(([id, r]) => { const el = document.getElementById(id); if (!el) return; const card = el.closest('.card') || el.parentElement; if (card.querySelector(`.rec[data-for="${id}"]`)) return; const d = document.createElement('div'); d.className = 'rec'; d.dataset.for = id; d.innerHTML = `<p class="rec-k">Recommendation</p><p class="rec-a">${r[0]}</p><p class="rec-o"><span><b>Expected outcome</b> ${r[1]}</span><span><b>Measure</b> ${r[2]}</span></p>`; card.appendChild(d); });
+});
+
+/* links into the methods tab from the exhibits that use these models */
+safe('mllinks', function mllinks() {
+ [['progress', 1, 'How this forecast is built, calibrated and tested'], ['fcast', 3, 'Rolling backtest of these models over 12 years'], ['roc', 5, 'Bootstrap intervals, feature importance and lift for these models'], ['abtest', 6, 'Power and sample size for appeal tests']].forEach(([id, k, label]) => {
+  const el = document.getElementById(id); if (!el || el.parentElement.querySelector(`.mllink[data-k="${k}"]`)) return;
+  const p = document.createElement('p'); p.className = 'note mllink'; p.dataset.k = k; p.innerHTML = `<button class="linkbtn" data-go="ml" data-sub="${k}">${label} ›</button>`; el.insertAdjacentElement('afterend', p); });
+});
+
+/* ================= PUBLISHED FIGURES AND THE CALIBRATION TO THEM ================= */
+const PUBSRC = [
+ ['FY23', 'Your 2022–2023 Impact', 'https://mitsloan.mit.edu/alumni/your-2022-2023-impact'],
+ ['FY24', 'A Year By the Books', 'https://mitsloan.mit.edu/node/37370'], ['FY24', 'Your 2023–2024 Impact', 'https://mitsloan.mit.edu/node/48253'],
+ ['FY25', 'Leaders Give Challenge, 2024–2025 results', 'https://mitsloan.mit.edu/alumni/preview-leaders-give-challenge'], ['FY25', 'Your 2024–2025 Impact: Dean’s Circle', 'https://mitsloan.mit.edu/node/50168'], ['FY25', 'MIT Sloan Year in Review, Annual Fund', 'https://mitsloan.mit.edu/year-review/donor-impacts'],
+ ['FY26', 'Your 2025–2026 Impact: Dean’s Circle', 'https://mitsloan.mit.edu/node/52447'],
+ ['FY26', 'Leaders Give Challenge', 'https://mitsloan.mit.edu/node/50557'],
+ ['24-Hour Challenge', '2025 MIT 24-Hour Challenge', 'https://mitsloan.mit.edu/node/49508']
+];
+const PUBY = [[2023, 4.8e6, 3051, null, null, [null, null]], [2024, 5.5e6, 2701, 437, .89, [624, 367e3]], [2025, 5.77e6, 2452, 512, .92, [616, 500e3]], [2026, 5.8e6, null, 619, .90, [680, 745e3]]];
+const synOf = y => { const k = kY(y); let n = 0, t = 0, dc = 0, dct = 0; DON.forEach(x => { const a = x.amt[k]; if (a > 0) { n++; t += a; if (a >= 2500) { dc++; dct += a; } } }); return {n, t, dc, sh: dct / t}; };
+const srcLinks = () => `<p class="note srcs"><b>Sources.</b> ${PUBSRC.map(s => `<a href="${s[2]}" target="_blank" rel="noopener">${s[0]}: ${s[1]}</a>`).join(' · ')}</p>`;
+
+safe('pubtrend', function pubtrend() {
+ const Wd = 960, H = 300, L = 60, R = 20, B = 52, n = PUBY.length, bw = (Wd - L - R) / n, Yd = v => 16 + (H - 16 - B) * (1 - v / 6.5e6), Yn = v => 16 + (H - 16 - B) * (1 - (v - 2000) / 1300);
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Published Annual Fund dollars and donors, FY23 to FY26">`;
+ [0, 2e6, 4e6, 6e6].forEach(v => s += `<line x1="${L}" x2="${Wd - R}" y1="${Yd(v)}" y2="${Yd(v)}" stroke="var(--line)"/><text x="${L - 6}" y="${Yd(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">$${v / 1e6}M</text>`);
+
+ PUBY.forEach((p, i) => { const x = L + i * bw, cx = x + bw / 2, dcw = p[4] ? p[1] * p[4] : 0;
+  s += `<rect x="${x + bw * .22}" y="${Yd(p[1])}" width="${bw * .56}" height="${Yd(0) - Yd(p[1])}" fill="var(--pale)" stroke="var(--accent)"/>`;
+  if (dcw) s += `<rect x="${x + bw * .22}" y="${Yd(dcw)}" width="${bw * .56}" height="${Yd(0) - Yd(dcw)}" fill="var(--accent)"/><text x="${cx}" y="${Yd(dcw) + 30}" text-anchor="middle" font-size="22" font-weight="700" style="fill:#fff">${pct(p[4])}</text><text x="${cx}" y="${Yd(dcw) + 50}" text-anchor="middle" font-size="12.5" style="fill:#fff">of dollars, from</text><text x="${cx}" y="${Yd(dcw) + 66}" text-anchor="middle" font-size="12.5" font-weight="700" style="fill:#fff">${n0(p[3])} Dean’s Circle</text><text x="${cx}" y="${Yd(dcw) + 82}" text-anchor="middle" font-size="12.5" style="fill:#fff">donors</text>`;
+  s += `<text x="${cx}" y="${Yd(p[1]) - 8}" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">$${(p[1] / 1e6).toFixed(p[1] % 1e5 ? 2 : 1)}M</text><text x="${cx}" y="${H - B + 18}" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)">FY${String(p[0]).slice(2)}</text><text x="${cx}" y="${H - B + 35}" text-anchor="middle" font-size="12.5" fill="var(--slate)">${p[2] ? n0(p[2]) + ' donors' : 'Donors not yet published'}</text>`; });
+ s += '</svg>';
+ const d = PUBY, dUp = d[3][1] / d[0][1] - 1, nDown = 1 - d[2][2] / d[0][2], dcUp = d[3][3] / d[1][3] - 1;
+ $('#pubtrend').innerHTML = `<div class="chart scroll">${s}</div><div class="legend"><span><i style="background:var(--accent)"></i>Dean’s Circle dollars</span><span><i style="background:var(--pale);border:1px solid var(--accent)"></i>All Annual Fund dollars</span></div>
+ <div class="scroll"><table class="tbl"><thead><tr><th scope="col">What MIT Sloan reports</th>${d.map(p => `<th scope="col">FY${String(p[0]).slice(2)}</th>`).join('')}</tr></thead><tbody>
+ <tr><th scope="row">Annual Fund dollars</th>${d.map(p => `<td>${musd(p[1])}</td>`).join('')}</tr>
+ <tr><th scope="row">Donors</th>${d.map(p => `<td>${p[2] ? n0(p[2]) : 'Not yet published'}</td>`).join('')}</tr>
+ <tr><th scope="row">Dean’s Circle donors</th>${d.map(p => `<td>${p[3] ? n0(p[3]) : '—'}</td>`).join('')}</tr>
+ <tr><th scope="row">Share of dollars from the Dean’s Circle</th>${d.map(p => `<td>${p[4] ? (p[0] === 2024 ? 'More than ' : '') + pct(p[4]) : '—'}</td>`).join('')}</tr>
+ <tr><th scope="row">MIT 24-Hour Challenge, Sloan donors and dollars</th>${d.map(p => `<td>${p[5][0] ? n0(p[5][0]) + ', ' + (p[0] === 2025 ? 'over ' : '') + k1(p[5][1]) : '—'}</td>`).join('')}</tr>
+ <tr><th scope="row">Leaders Give Challenge, Dean’s Circle gifts</th><td>—</td><td>Held</td><td>Held</td><td>More than 530 donors unlocked $500K</td></tr>
+ </tbody></table></div>
+ <p class="note">These are the measures MIT Sloan itself publishes: total dollars, donors, Dean’s Circle donors and their share of dollars, and the two challenges. Every synthetic figure on this page is fitted to them first. The 24-Hour Challenge figures are for the challenge held in each fiscal year, and the 2025 total is the microchallenge amount before $180K in unlock gifts.</p>${srcLinks()}`;
+ const card = $('#pubtrend').closest('.card'), dd = document.createElement('div'); dd.className = 'rec';
+ dd.innerHTML = `<p class="rec-f"><b>Finding</b> Dollars rose ${pct(dUp)} from FY23 to FY26 while donors fell ${pct(nDown)} from FY23 to FY25, and Dean’s Circle donors grew ${pct(dcUp)} from FY24 to FY26. The Annual Fund is growing on leadership gifts while its broad base shrinks.</p><p class="rec-k">Recommendation</p><p class="rec-a">Report donors and Dean’s Circle donors beside dollars in every weekly report, and pair the Leaders Give Challenge with a participation goal for donors under $2,500.</p><p class="rec-o"><span><b>Expected outcome</b> The donor base stops shrinking while leadership giving keeps growing.</span><span><b>Measure</b> Donors and Dean’s Circle donors against the same day last year</span></p>`;
+ card.appendChild(dd);
+});
+
+safe('anchors', function anchors() {
+ const rows = PUBY.map(p => [p, synOf(p[0])]), cell = (pub, syn, f, tol) => pub == null ? `<td>Not published</td><td>${f(syn)}</td><td></td>` : `<td>${f(pub)}</td><td>${f(syn)}</td><td>${Math.abs(syn / pub - 1) < tol ? '<span class="st pass">Exact</span>' : `<span class="st ${Math.abs(syn / pub - 1) <= .03 ? 'pass' : 'warn'}">${fx((syn / pub - 1) * 100, 1)}%</span>`}</td>`;
+ const tbl = `<div class="scroll"><table class="tbl anch"><thead><tr><th scope="col" rowspan="2">Fiscal year</th><th scope="colgroup" colspan="3">Annual Fund dollars</th><th scope="colgroup" colspan="3">Donors</th><th scope="colgroup" colspan="3">Dean’s Circle donors</th><th scope="colgroup" colspan="3">Dean’s Circle share</th></tr><tr>${'<th scope="col">Published</th><th scope="col">Synthetic</th><th scope="col">Gap</th>'.repeat(4)}</tr></thead><tbody>${rows.map(([p, s]) => `<tr><th scope="row">FY${String(p[0]).slice(2)}</th>${cell(p[1], s.t, v => musd(v), .005)}${cell(p[2], s.n, n0, .0005)}${cell(p[3], s.dc, n0, .0005)}${cell(p[4], s.sh, v => pct(v), .005)}</tr>`).join('')}</tbody></table></div>`;
+ const steps = [['1', 'Research first', 'Published totals, donor counts, Dean’s Circle counts and shares, and both challenges, FY23 to FY26.'], ['2', 'Simulate donor behavior', 'About 11,000 synthetic donors with renewal, upgrade, reunion and email behavior from known rules.'], ['3', 'Scale to published totals', 'Each fiscal year is scaled to its published dollars. Earlier years keep the FY23 factor.'], ['4', 'Model the Leaders Give Challenge', 'From FY24, the donors closest to $2,500 move up to the Investor level until the published Dean’s Circle count is reached.'], ['5', 'Set the Dean’s Circle share', 'Gifts above $2,500 and below it are rebalanced to the published share, with totals unchanged.'], ['6', 'Then forecast and model', 'Forecasts, renewal models and tests are built on this calibrated history, never fitted to the anchors directly.']];
+ $('#anchors').innerHTML = `<div class="mcsteps six">${steps.map(x => `<div><span class="exn">${x[0]}</span><b>${x[1]}</b><span>${x[2]}</span></div>`).join('')}</div>${tbl}<p class="note">Dollars, Dean’s Circle shares and the FY25 and FY26 Dean’s Circle counts match exactly. Donor counts land within 3% because they come from simulated behavior rather than being forced. FY24 has five more Dean’s Circle donors than published, because the challenge step only moves donors up. What MIT Sloan does not publish, such as the FY26 donor count, the month-by-month pattern and individual gifts, stays synthetic. The monthly forecast history sums to the published totals for FY23 to FY26.</p>${srcLinks()}`;
 });
 
 /* ================= DIALOG ================= */
@@ -1816,9 +2151,9 @@ window.FA_show = show;
 try { if (window.top !== window.self) $$('.cp-link').forEach(a => { a.hidden = true; const br = a.previousElementSibling; if (br && br.tagName === 'BR') br.hidden = true; }); } catch (e) {}
 /* two-page print pack instead of every panel */
 function buildPack() {
- const pick = ['takeaways', 'progress', 'suppress', 'minq', 'straight', 'handling'];
+ const pick = ['takeaways', 'progress', 'suppress', 'support', 'handling'];
  const out = pick.map(id => { const el = document.getElementById(id); if (!el) return ''; const c = id === 'takeaways' ? el : (el.closest('.card') || el); const k = c.cloneNode(true); k.removeAttribute('id'); k.hidden = false; k.querySelectorAll('[id]').forEach(e => e.removeAttribute('id')); k.querySelectorAll('button').forEach(x => { const s = document.createElement('div'); s.className = x.className; s.innerHTML = x.innerHTML; x.replaceWith(s); }); return `<div class="pk pk-${id}">${k.outerHTML}</div>`; });
- const html = out.slice(0, 4).join('') + `<div class="pk-pair">${out[4]}${out[5]}</div>`;
+ const html = out.join('');
  $('#printpack').innerHTML = `<p class="pk-note">Two-page summary. The full interactive work sample, with every exhibit, is at narissa-pgm.github.io/MIT_Sloan_OER. All donor data is synthetic.</p>` + html;
 }
 const packSafe = () => safe('pack', buildPack);
