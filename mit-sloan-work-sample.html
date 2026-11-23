@@ -686,6 +686,130 @@ ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
 .srcs a{color:var(--accent)}
 @media (max-width:1000px){.mcsteps.six{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:760px){.mcsteps.six{grid-template-columns:1fr 1fr}}
+.msn{display:grid;grid-template-columns:1.1fr 1.4fr;gap:10px 28px;border-top:4px solid var(--accent)}
+.msn blockquote{margin:6px 0 8px;font-size:21px;line-height:1.35;font-weight:700;color:var(--ink);border-left:4px solid var(--accent);padding-left:14px}
+.msn .src{font-size:13px;color:var(--accent)}
+.mv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-content:start}.mv .eyebrow{grid-column:1/-1;margin:0}
+.mv>div{background:var(--paper);border-top:3px solid var(--accent);padding:9px 11px;display:grid;gap:4px}.mv b{font-size:15px}.mv span{font-size:13.5px;color:var(--muted);line-height:1.45}
+.mm{grid-column:1/-1;margin:0;font-size:14.5px;color:var(--ink);background:var(--pale);padding:8px 12px}
+.own5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:14px}
+.own{display:grid;gap:6px;align-content:start;text-align:left;font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);padding:12px;cursor:pointer}
+.own:hover,.own:focus-visible{background:var(--pale)}.own b{font-size:15px;line-height:1.3}.own span{font-size:13.5px;color:var(--muted);line-height:1.4}.own .more{color:var(--accent);font-weight:700;font-size:13px}
+.ico{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--pale)}.ico svg{width:24px;height:24px;fill:none;stroke:var(--accent);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.hd5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.hd{display:grid;gap:6px;justify-items:start;align-content:start;background:var(--paper);padding:12px}.hd b{font-size:15px}.hd span:last-child{font-size:13.5px;color:var(--muted);line-height:1.45}
+.ownd{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:10px}.ownd>div{background:var(--paper);padding:10px 12px}.ownd p{margin:0}.k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 4px!important}
+.ownev{display:grid;grid-template-columns:1fr 1fr;gap:8px}.ex.ev{font-weight:700;color:var(--accent)}
+@media (max-width:1000px){.own5,.hd5{grid-template-columns:repeat(3,1fr)}.msn{grid-template-columns:1fr}}
+@media (max-width:760px){.own5,.hd5,.mv,.ownd,.ownev{grid-template-columns:1fr}}
+@media print{.pk .own .more{display:none}.pk .own5,.pk .hd5{gap:5px}.pk .own,.pk .hd{padding:6px}.pk .own b,.pk .hd b{font-size:9pt}.pk .own span,.pk .hd span{font-size:8pt}.pk .ico{width:24px;height:24px}.pk .ico svg{width:15px;height:15px}}
+
+#dutymap .dgroups{grid-template-columns:1fr;gap:0}
+#dutymap .dgroup{display:grid;grid-template-columns:230px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+#dutymap .dgroup:first-child{border-top:0}
+#dutymap .dgchips{display:flex;flex-wrap:wrap;gap:6px;align-content:start}
+#dutymap .duty{display:inline-block;padding:5px 11px;font-size:13.5px;border-left-width:3px}
+@media(max-width:760px){#dutymap .dgroup{grid-template-columns:1fr}}
+#dutymap .dghead{align-self:start;padding-top:4px}
+.msn blockquote{border-left:0;padding-left:0}
+.ownprint{display:none}
+@media print{
+ .pk-support .own5{display:none}.pk-support .ownprint{display:block;margin-top:8px}
+ .pk-handling{display:block!important;width:auto!important}
+ .pk-handling .hd5{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+}
+@media print{.pk-support .ownprint th:nth-child(3),.pk-support .ownprint td:nth-child(3){display:table-cell!important}}
+@media print{.pk-mission .msn{display:grid!important;grid-template-columns:1fr 1.5fr!important;gap:6px 16px;padding:10px 12px}.pk-mission .mv{grid-template-columns:repeat(3,1fr)!important;gap:6px}.pk-mission .mq{padding:8px 10px}.pk-mission blockquote{font-size:11pt}.pk-mission .mv span{font-size:8pt}.pk-mission .mv b{font-size:9pt}.pk-mission .mm{font-size:8.5pt}}
+.inv th[scope=row]{min-width:170px}.inv th[scope=row] small{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:2px}
+.st.pilot{background:#f4ead9;color:#7a5418}.st.prop{background:var(--paper);color:var(--muted);border:1px solid var(--line)}
+#dlg .chart>svg{max-height:440px}
+.hcgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:20px;align-items:start}
+.hcgrid .chart svg{max-width:460px;margin:0 auto;display:block}
+.hcleg{font-size:12.5px}.hcf{margin:10px 0}.hct{font-weight:700;color:var(--accent);min-width:130px}
+.hcsend tr.past td,.hcsend tr.past th{color:var(--muted)}
+@media(max-width:900px){.hcgrid{grid-template-columns:1fr}}
+.hcf.facts4{grid-template-columns:1fr 1fr!important}
+.hcgrid .chart svg{max-width:480px}
+.mcard h3{margin:4px 0 2px}.mcgrid{display:grid;grid-template-columns:170px 1fr;gap:6px 14px;margin:12px 0}
+.mcgrid dt{font-weight:700;font-size:13.5px;color:var(--accent)}.mcgrid dd{margin:0;font-size:14.5px}
+.mcsign{margin-top:8px}.mcnav{display:flex;justify-content:space-between;gap:10px;margin-top:14px}
+.inv td{font-size:13.5px}
+@media print{body.cards-print .pk-mc{break-after:page;padding:6px 4px}body.cards-print .pk-mc:last-child{break-after:auto}body.cards-print .mcgrid{grid-template-columns:150px 1fr;gap:5px 12px}body.cards-print .mcgrid dd{font-size:10.5pt}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.mcbtns{display:flex;gap:10px;flex-wrap:wrap}.mcbtns a.hbtn{text-decoration:none}
+/* time machine */
+.tm{border:1px solid var(--line);background:var(--soft);padding:8px 12px;margin:0 0 10px}
+.tm-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tm-k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-right:4px}
+.tm-btn{font:inherit;width:32px;height:30px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font-size:14px}
+.tm-btn:hover,.tm-btn:focus-visible{border-color:var(--accent);color:var(--accent)}
+.tm input[type=range]{flex:1;min-width:160px;accent-color:#A31D1D}
+.tm-out{font-weight:700;min-width:84px;color:var(--ink)}.tm-now{font-size:13px}
+.tm-read{margin:6px 0 0;font-size:14px;color:var(--ink)}
+#dlg .tm{display:none}
+/* platform index rail */
+.rail{position:fixed;left:0;top:0;bottom:0;width:300px;z-index:60;background:var(--paper);border-right:1px solid var(--line);box-shadow:4px 0 18px rgba(0,0,0,.08);display:flex;flex-direction:column;font-size:14px}
+.rail[hidden]{display:none}
+body.rail-docked{padding-left:300px}body.rail-docked .rail{box-shadow:none}
+.rh{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:3px solid var(--accent)}.rh b{flex:1;font-size:15.5px}
+.rx{font:inherit;font-size:20px;line-height:1;border:0;background:none;cursor:pointer;color:var(--muted);padding:2px 6px}
+.rsrch{display:block;padding:10px 14px 0}.rsrch input{width:100%;font:inherit;padding:7px 10px;border:1px solid var(--line);background:var(--soft)}
+.rsrch input:focus{outline:2px solid var(--accent);outline-offset:0;background:var(--paper)}
+.rhint{margin:4px 14px 6px;font-size:12px;color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.rtree,.rres{overflow:auto;flex:1;padding:4px 8px 20px}
+.rp{border-bottom:1px solid var(--line)}.rp summary{cursor:pointer;padding:8px 6px;font-weight:700;display:flex;gap:8px;align-items:center;list-style:none}
+.rp summary::-webkit-details-marker{display:none}.rp summary::after{content:'›';margin-left:auto;color:var(--muted);transition:transform .15s}.rp[open] summary::after{transform:rotate(90deg)}
+.rp.cur summary{color:var(--accent)}
+.rn{display:inline-grid;place-items:center;min-width:22px;height:22px;border-radius:50%;background:var(--pale);color:var(--accent);font-size:12px}
+.rp ol,.rp ul,.rres ul{list-style:none;margin:0;padding:0}.rp ol{padding:0 0 8px 6px}
+.rsb,.rc{display:block;width:100%;text-align:left;font:inherit;background:none;border:0;border-left:3px solid transparent;padding:4px 8px;cursor:pointer;color:var(--ink)}
+.rsb b{color:var(--muted);font-weight:400;font-size:12px;margin-right:6px}
+.rc{font-size:13px;color:var(--muted);padding-left:26px}.rres .rc{padding-left:8px;color:var(--ink);font-size:14px}.rres .rc small{display:block;color:var(--muted);font-size:12px}
+.rsb:hover,.rc:hover,.rsb:focus-visible,.rc:focus-visible{background:var(--pale)}
+.rsb[aria-current],.rc[aria-current]{border-left-color:var(--accent);color:var(--accent);font-weight:700;background:var(--pale)}
+.rcount{margin:6px 8px;color:var(--muted);font-size:13px}
+.card.flash{animation:flash 1.2s ease-out}@keyframes flash{0%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:0 0 0 3px transparent}}
+@media(max-width:700px){.rail{width:86vw}}
+@media print{.rail,.tm{display:none!important}body.rail-docked{padding-left:0}}
+.card h3[tabindex="-1"]:focus{outline:none}
+body.rail-docked .tab{padding:14px 6px 12px;font-size:13.5px}
+@media(max-width:1520px){body.rail-docked .tab .num,body.rail-docked .tab b{display:none}}
+/* reporting calendar */
+.cal-day{--c:var(--accent)}.cal-week{--c:var(--slate)}.cal-month{--c:var(--green)}.cal-quarter{--c:var(--gold)}.cal-year{--c:#6b4f7a}.cal-event{--c:var(--amber)}
+.calb{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.calc{display:grid;gap:6px;align-content:start}
+.calc h4{margin:0 0 2px;display:flex;justify-content:space-between;align-items:center;font-size:15px;padding:6px 8px;background:var(--c);color:#fff}
+.calc h4 span{font-size:12px;background:rgba(255,255,255,.22);padding:1px 7px;border-radius:10px}
+.calr{display:grid;gap:2px;text-align:left;font:inherit;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--c);padding:7px 9px;cursor:pointer;color:var(--ink)}
+.calr:hover,.calr:focus-visible{background:var(--pale)}.calr b{font-size:13.5px;line-height:1.3}.calr span{font-size:12.5px;color:var(--c);font-weight:700}.calr small{font-size:12px;color:var(--muted);line-height:1.35}
+.wk{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.wk h4{margin:0 0 6px;font-size:14.5px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+.wk section{display:grid;gap:5px;align-content:start}
+.wkc{display:grid;gap:1px;text-align:left;font:inherit;font-size:13px;line-height:1.3;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--c);padding:5px 8px;cursor:pointer;color:var(--ink)}
+.wkc span{font-size:12px;font-weight:700;color:var(--c)}.wkc small{color:var(--muted);font-size:11.5px}.wkc:hover,.wkc:focus-visible{background:var(--pale)}
+.calleg i{background:var(--c)}
+.yr{display:grid;grid-template-columns:110px repeat(12,minmax(58px,1fr));gap:6px 3px;min-width:860px;align-items:center}
+.ym{text-align:center;font-size:13px;padding:4px 0;border-bottom:2px solid var(--line)}.ym.now{color:var(--accent);border-bottom-color:var(--accent)}.ym small{display:block;font-size:10.5px;font-weight:400}
+.yl{font-size:13px;font-weight:700;color:var(--muted)}
+.ylane{grid-column:2 / -1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px 3px;grid-auto-flow:row dense}
+.yb{font:inherit;font-size:12px;line-height:1.25;text-align:left;padding:5px 7px;border:0;background:var(--c);color:#fff;cursor:pointer}
+.yb:hover,.yb:focus-visible{filter:brightness(1.15)}
+
+@media(max-width:1100px){.calb{grid-template-columns:repeat(3,minmax(0,1fr))}.wk{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.calb,.wk{grid-template-columns:1fr}}
+.tab{padding:14px 7px 12px;font-size:14px}.tab .gn{margin-right:5px}
+/* year wheel */
+.whgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
+.whgrid .chart svg{max-width:520px;margin:0 auto;display:block}
+.wsec{cursor:pointer}.wsec.on{fill:var(--pale)}
+.wop{cursor:pointer;transition:opacity .15s}.wop.dim{opacity:.22}.wop:hover,.wop:focus-visible{opacity:1;stroke:var(--ink);stroke-width:1.5;outline:none}
+.wside h4{margin:0 0 8px;font-size:18px;color:var(--accent)}
+.wgrp{margin-bottom:10px}.wgrp .wk{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.wit{display:grid;gap:2px;width:100%;text-align:left;font:inherit;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--c);padding:7px 10px;margin-bottom:5px;cursor:pointer;color:var(--ink)}
+.wit:hover,.wit:focus-visible{background:var(--pale)}.wit b{font-size:14px}.wit span{font-size:13px;color:var(--ink)}.wit small{font-size:12.5px;color:var(--muted)}
+.wev{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:13px}.wev b{color:var(--ink)}.wev span{color:var(--muted)}
+@media(max-width:1000px){.whgrid{grid-template-columns:1fr}}
 
 </style>
 </head>
@@ -696,18 +820,19 @@ ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
   <p class="eyebrow">Work sample · Senior Data Analyst &amp; Reporting Specialist · MIT Sloan Office of External Relations</p>
   <h1>Annual Fund Analytics and Reporting</h1>
   <p class="for">Reports, analysis, segmentation and data integrity for the MIT Sloan Annual Fund, with every number defined, every list reproducible and every model checked.</p>
-  <span class="asof">Synthetic data · as of November 20, 2026</span>
+  <span class="asof">Synthetic data · as of November 23, 2026</span>
  </div>
  <div class="who"><strong>Narissara Khomkhai</strong><a href="mailto:sawatdee@me.com">sawatdee@me.com</a><br><a href="mit-sloan-career-profile.html" class="cp-link" aria-haspopup="dialog">Career profile ↗</a><span class="hact"><button type="button" class="hbtn" id="printPack">Print or save the two-page PDF</button><a class="hbtn" href="OER-reporting-readiness-brief.pdf" target="_blank" rel="noopener">One-page brief for the Director ↗</a></span></div>
 </div></header>
 
 <nav class="tabs" aria-label="Work sample sections"><div class="wrap" role="tablist">
  <button class="tab" role="tab" id="t-overview" aria-controls="overview" aria-selected="true">Overview</button>
+ <button class="tab" role="tab" id="t-cal" aria-controls="cal" aria-selected="false" tabindex="-1">Calendar</button>
  <button class="tab" role="tab" id="t-af" aria-controls="af" aria-selected="false" tabindex="-1"><b class="gn">1</b>Annual Fund</button>
- <button class="tab" role="tab" id="t-an" aria-controls="an" aria-selected="false" tabindex="-1"><b class="gn">2</b>Analytics &amp; forecasts</button>
- <button class="tab" role="tab" id="t-seg" aria-controls="seg" aria-selected="false" tabindex="-1"><b class="gn">3</b>Segments &amp; campaigns</button>
+ <button class="tab" role="tab" id="t-an" aria-controls="an" aria-selected="false" tabindex="-1"><b class="gn">2</b>Analytics</button>
+ <button class="tab" role="tab" id="t-seg" aria-controls="seg" aria-selected="false" tabindex="-1"><b class="gn">3</b>Segments</button>
  <button class="tab" role="tab" id="t-dq" aria-controls="dq" aria-selected="false" tabindex="-1"><b class="gn">4</b>Data integrity</button>
- <button class="tab" role="tab" id="t-pi" aria-controls="pi" aria-selected="false" tabindex="-1"><b class="gn">5</b>Process &amp; training</button>
+ <button class="tab" role="tab" id="t-pi" aria-controls="pi" aria-selected="false" tabindex="-1"><b class="gn">5</b>Process</button>
  <button class="tab" role="tab" id="t-sp" aria-controls="sp" aria-selected="false" tabindex="-1"><b class="gn">6</b>Special projects</button>
  <button class="tab" role="tab" id="t-ml" aria-controls="ml" aria-selected="false" tabindex="-1"><b class="gn">7</b>Methods</button>
  <button class="tab" role="tab" id="t-now" aria-controls="now" aria-selected="false" tabindex="-1">MIT Sloan context</button>
@@ -719,6 +844,16 @@ ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
 
 <!-- ================= OVERVIEW ================= -->
 <section class="panel on" id="overview" role="tabpanel" aria-labelledby="t-overview">
+ <div class="card msn" id="mission">
+  <div class="mq"><p class="eyebrow">MIT Sloan’s mission</p><blockquote>To develop principled, innovative leaders who improve the world and to generate ideas that advance management practice.</blockquote><a class="src" href="https://mitsloan.mit.edu/node/26054" target="_blank" rel="noopener">MIT Sloan, Our Values ↗</a></div>
+  <div class="mv">
+   <p class="eyebrow">MIT’s values, in this work</p>
+   <div><b>Excellence and curiosity</b><span>Every number defined, and every model calibrated to MIT Sloan’s published results.</span></div>
+   <div><b>Openness and respect</b><span>Shared definitions with central partners, and donor data handled with care.</span></div>
+   <div><b>Belonging and community</b><span>Reports the whole OER team can use, and a donor base that grows beyond the Dean’s Circle.</span></div>
+  </div>
+  <p class="mm"><b>Mens et manus, mind and hand.</b> Every exhibit pairs the analysis with a recommendation for action.</p>
+ </div>
  <div class="card five" id="fivemin">
   <h3>If you have five minutes, look at these three things</h3>
   <p class="sub">The core of the job in three exhibits. Each opens here, with a link to the full tab.</p>
@@ -731,32 +866,33 @@ ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
  </div>
  <div class="card mt" id="support">
   <h3>Where I would take work off the Director</h3>
-  <p class="sub">The Director of Strategic Information sets the agenda. This is the part I would carry, and what I would need first.</p>
+  <p class="sub">The Director of Strategic Information sets the agenda. These are the parts I would carry. Select one for what I would own, the evidence, and what I would need first.</p>
   <div class="lead3">
    <div><span class="exn">1</span><b>Numbers that reconcile with central before the campaign starts.</b><span>Every OER total tied to Resource Development, with each difference explained.</span></div>
    <div><span class="exn">2</span><b>A gate list for the CRM conversion, from someone who has done three.</b><span>Raiser’s Edge to Advance at UAMS, Raiser’s Edge to Agilon at Phillips Academy, and APEX to HART at Harvard FAS.</span></div>
    <div><span class="exn">3</span><b>A lighter ad-hoc load, so the team can do analysis.</b><span>At Harvard FAS, requests fell from 300–400 a year to under 100 once reusable reports went live.</span></div>
   </div>
-  <div class="scroll mt"><table class="tbl support"><thead><tr><th scope="col">Director’s priority</th><th scope="col">What I would own</th><th scope="col">Evidence</th><th scope="col">What I would need first</th></tr></thead><tbody>
-   <tr><td>Definitions and reconciliation</td><td>A CASE-aligned definition set, a funds received to new funds committed bridge, and an OER to central reconciliation with every difference explained.</td><td><button class="linkbtn" data-open="std:all">CASE standards alignment ›</button><br><button class="linkbtn" data-go="dq#defs,recon" data-title="Definitions and reconciliation">Definitions and reconciliation ›</button></td><td>Who owns each definition centrally, and the current VSE extract.</td></tr>
-   <tr><td>CRM conversion</td><td>Reporting readiness, with a field and report inventory, gates, a risk register, parallel-run parity tests and a cutover checklist.</td><td>Three conversions, two with 10 years of history back-entered, each run as inventory, clean, load, parallel-run and cut over. <button class="linkbtn" data-open="crm:all">CRM gate list and risks ›</button></td><td>Which system is chosen, the timeline, and whether it is lift-and-shift or redesign.</td></tr>
-   <tr><td>Reporting estate and self-service</td><td>The report catalog with owners and a retire list, request triage, a training calendar and an asset inventory.</td><td><button class="linkbtn" data-go="pi#triage,training,assets" data-title="Triage, training and assets">Triage, training and assets ›</button></td><td>The current report list, and which reports matter most to their users.</td></tr>
-   <tr><td>Annual Fund and campaign reporting</td><td>Daily dashboard, weekly report, portfolio and pipeline pack, a backtested forecast, and automated suppression and campaign datasets.</td><td><button class="linkbtn" data-go="af#progress,catalog" data-title="Annual Fund reporting">Annual Fund tab ›</button></td><td>The campaign calendar and the Annual Giving team’s targets.</td></tr>
-   <tr><td>AI with guardrails</td><td>A one-page approved-use framework, pilot selection (anomaly explanations, draft narratives, propensity scores) and evaluation criteria.</td><td><button class="linkbtn" data-go="sp#models" data-title="Models and guardrails">Models and guardrails ›</button></td><td>Resource Development’s approval process and MIT’s data governance rules.</td></tr>
-  </tbody></table></div>
-  <p class="note"><b>Where I would partner, not own.</b> I would work with BDTO and IS&amp;T on the data mart and own the reporting layer on top of it. Team leadership and enterprise partnerships stay with the Director. No model here would go into production without Resource Development approval and MIT data governance review.</p>
+  <div class="own5">
+   <button type="button" class="own" data-open="own:0"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12M6 11h12M6 16h7" /><circle cx="18" cy="17" r="3"/></svg></span><b>Definitions and reconciliation</b><span>Every OER total tied to central</span><span class="more">What I would own ›</span></button>
+   <button type="button" class="own" data-open="own:1"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="7" height="14" rx="1.5"/><rect x="14" y="5" width="7" height="14" rx="1.5"/><path d="M10 12h4M12.5 10l2 2-2 2"/></svg></span><b>CRM conversion</b><span>Reporting ready before cutover</span><span class="more">What I would own ›</span></button>
+   <button type="button" class="own" data-open="own:2"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 15v-3M12 15V9M16 15v-5"/></svg></span><b>Reporting estate and self-service</b><span>Fewer, trusted reports</span><span class="more">What I would own ›</span></button>
+   <button type="button" class="own" data-open="own:3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l5-6 4 3 7-9"/><path d="M15 6h5v5"/></svg></span><b>Annual Fund and campaign reporting</b><span>Weekly view of pace and risk</span><span class="more">What I would own ›</span></button>
+   <button type="button" class="own" data-open="own:4"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="9" width="14" height="10" rx="2"/><path d="M12 5v4M9 13h.01M15 13h.01M9 16h6"/><path d="M12 3.5l1 1.5h-2z"/></svg></span><b>AI with guardrails</b><span>Approved uses, tested first</span><span class="more">What I would own ›</span></button>
+  </div>
+  <div class="ownprint"></div>
+  <p class="note"><b>Where I would partner, not own.</b> I would work with BDTO and IS&amp;T on the data mart and own the reporting layer on top of it. Team leadership and enterprise partnerships stay with the Director. No model goes into production without Resource Development approval and MIT data governance review.</p>
  </div>
  <div class="takeaways mt" id="takeaways"></div>
  <div class="kpis" id="kpis"></div>
  <div class="card mt" id="handling">
-   <h3>How I handle donor data</h3>
-   <ul class="plain">
-    <li><b>Least privilege.</b> Access only to the fields a report needs, reviewed when a project ends.</li>
-    <li><b>Personal data in extracts.</b> Constituent IDs instead of names where possible, no home addresses or birthdates unless the request needs them, and extracts deleted on a set date.</li>
-    <li><b>Secure transfer.</b> MIT-approved shared drives and vendor portals, never email attachments of donor lists.</li>
-    <li><b>Audit trail.</b> Every list and report saved with its query, date, requester and row count, so it can be rebuilt.</li>
-    <li><b>No donor data in samples.</b> Everything in this work sample is synthetic.</li>
-   </ul>
+  <h3>How I handle donor data</h3>
+  <div class="hd5">
+   <div class="hd"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 10a4 4 0 1 0-3.5 4L9 15.5V18H6.5v2.5H4V17l6-6"/><circle cx="15" cy="8" r="1"/></svg></span><b>Least privilege</b><span>Only the fields a report needs, reviewed when a project ends</span></div>
+   <div class="hd"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M12 10h6M12 14h4"/></svg></span><b>Minimal personal data</b><span>Constituent IDs, not names or addresses, and extracts deleted on a set date</span></div>
+   <div class="hd"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><b>Secure transfer</b><span>MIT-approved drives and vendor portals, never donor lists by email</span></div>
+   <div class="hd"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M8.5 10h7M8.5 14h7M8.5 18h4"/></svg></span><b>Audit trail</b><span>Every list saved with its query, date, requester and row count</span></div>
+   <div class="hd"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7.5 15h9"/></svg></span><b>Synthetic data only</b><span>No real donor data in this sample or any demo</span></div>
+  </div>
  </div>
  <div class="card mt">
   <h3>Every duty in the posting, by share of time</h3>
@@ -783,9 +919,17 @@ ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
 
 
 
+<!-- ================= REPORTING CALENDAR ================= -->
+<section class="panel" id="cal" role="tabpanel" aria-labelledby="t-cal">
+ <div class="ph"><div><p class="eyebrow">Operating and reporting calendar</p><h2>The year, the week, and every report by how often it goes out</h2></div><p>The wheel maps the whole year: what happens, when, and with or to whom. Then every report by cadence, and a typical week. The analysis stays on its topic tab. Select anything for its specification and the exhibit behind it.</p></div>
+ <div class="card"><h3>The year on one wheel: what, when, and with or to whom</h3><p class="sub">July at the top, clockwise. Select a month, or any arc, to see what is happening, who it is with or for, and what comes out of it.</p><div id="calwheel"></div></div>
+ <div class="card mt"><h3>Report catalog by cadence</h3><p class="sub">Proposed catalog, not OER’s current reports. Each report has an audience, a delivery time, the checks it passes before release and an owner.</p><div id="catalog"></div></div>
+ <div class="card mt"><h3>A typical week</h3><p class="sub">What goes out when, Eastern time. Each day starts on data checked the evening before.</p><div id="calweek"></div></div>
+</section>
+
 <!-- ================= 1 ANNUAL FUND ================= -->
 <section class="panel" id="af" role="tabpanel" aria-labelledby="t-af">
- <div class="ph"><div><p class="eyebrow">1 · Annual Fund reporting</p><h2>Where the Annual Fund stands, and where it is headed</h2></div><p>Progress to goal with a forecast range, participation by program, gift bands, reunion classes, the 24-Hour Challenge and the standard report catalog.</p></div>
+ <div class="ph"><div><p class="eyebrow">1 · Annual Fund reporting</p><h2>Where the Annual Fund stands, and where it is headed</h2></div><p>Progress to goal with a forecast range, participation by program, gift bands, reunion classes, and the 24-Hour Challenge. The reports themselves are on the Reporting calendar tab.</p></div>
  <div class="card">
   <h3>How MIT Sloan reports Annual Fund support, FY23 to FY26</h3>
   <p class="sub">MIT Sloan’s own published figures, not synthetic data. Every synthetic number on this page is calibrated to them.</p>
@@ -821,9 +965,9 @@ ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
   </div>
  </div>
  <div class="card mt">
-  <h3>Report catalog</h3>
-  <p class="sub">Standard Annual Fund reports with an audience, a schedule and a purpose.</p>
-  <div id="catalog"></div>
+  <h3>24-Hour Challenge clock: who is awake, when to send, and the 15-minute report</h3>
+  <p class="sub">The challenge runs midnight to 11:59 p.m. Eastern. The dial is that day in Eastern time, 15 minutes per slice. Rings show when each region is awake, and numbered marks are the sends. Move the report time to see what each 15-minute run would show.</p>
+  <div id="hcclock"></div>
  </div>
 </section>
 
@@ -1059,7 +1203,8 @@ ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
 </section>
 <section class="panel" id="ml" role="tabpanel" aria-labelledby="t-ml">
  <div class="ph"><div><p class="eyebrow">7 · Models and methods</p><h2>How the forecast and the renewal models are built, and how far to trust them</h2></div><p>For technical readers. Every model here is fitted live in this page on the synthetic data, with its specification, diagnostics and an equivalent in R.</p></div>
- <div class="card">
+ <div class="card"><h3>Model register and model cards</h3><p class="sub">Every model that ranks, forecasts or flags work for a person, with its target, decision metric, failure mode and owner. Select a model for its one-page model card.</p><div id="inventory"></div></div>
+ <div class="card mt">
   <h3>The synthetic data, matched to published figures first</h3>
   <p class="sub">Researched figures come first, then the synthetic donor file is fitted to them, and only then are forecasts and models built on that history.</p>
   <div id="anchors"></div>
@@ -1073,13 +1218,18 @@ ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
   <div class="card"><h3>Convergence: how many paths are enough</h3><p class="sub">The chance of reaching goal, re-estimated with 20 different seeds at each number of paths.</p><div class="chart" id="mcconv"></div></div>
   <div class="card"><h3>Sensitivity: which assumption moves the answer</h3><p class="sub">Chance of reaching the $6.1M goal when one input moves and the rest stay fixed.</p><div class="chart" id="mcsens"></div></div>
  </div>
- <div class="card mt"><h3>Calibration: does the 80% range hold 80% of outcomes?</h3><p class="sub">The same Monte Carlo run on November 20 of each past year, scored against the year’s actual total.</p><div class="chart scroll" id="mccal"></div></div>
+ <div class="card mt"><h3>Calibration: does the 80% range hold 80% of outcomes?</h3><p class="sub">The same Monte Carlo run on November 23 of each past year, scored against the year’s actual total.</p><div class="chart scroll" id="mccal"></div></div>
  <div class="card mt"><h3>Rolling-origin backtest of the four forecast models</h3><p class="sub">Each model refitted every year on data available at the time, then scored on the next year’s total.</p><div id="roll"></div></div>
  <div class="card mt"><h3>Parameter recovery: do the estimators find the truth?</h3><p class="sub">The synthetic data was generated with known coefficients. Fitting the right model specification should get them back.</p><div id="recov"></div></div>
  <div class="card mt"><h3>Renewal models: uncertainty in the comparison</h3><p class="sub">Bootstrap confidence intervals for AUC on the FY26 test year, and the paired difference behind the model choice.</p><div id="rnboot"></div></div>
  <div class="g2 mt">
   <div class="card"><h3>What the renewal models rely on</h3><p class="sub">Permutation importance: the drop in test AUC when one feature is shuffled.</p><div class="chart" id="rnperm"></div></div>
   <div class="card"><h3>Lift and value of the call list</h3><p class="sub">Renewal rate and expected renewal dollars by score decile, against a random list.</p><div class="chart" id="rnlift"></div></div>
+ </div>
+ <div class="card mt"><h3>Upgrade propensity by gift band and giving history</h3><p class="sub">Share of FY25 donors who moved up at least one gift band in FY26, by FY25 band and years of giving. This is where a Dean’s Circle conversion ask starts.</p><div id="upgrade"></div></div>
+ <div class="g2 mt">
+  <div class="card"><h3>Participation forecast</h3><p class="sub">FY27 donors from two models, with ranges from a 12-year rolling backtest.</p><div id="partfc"></div></div>
+  <div class="card"><h3>Reunion giving model</h3><p class="sub">Each class’s FY26 reunion participation predicted from its last reunion, leaving that class out of the fit.</p><div id="reunfc"></div></div>
  </div>
  <div class="card mt"><h3>Test design and power</h3><p class="sub">How large each cell needs to be before an appeal test is worth running.</p><div id="power"></div></div>
 </section>
@@ -1110,7 +1260,7 @@ ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
  </div>
  <div class="card mt">
   <h3>Sources</h3>
-  <p class="sub">Published by MIT, MIT Sloan and their partners, checked November 20, 2026.</p>
+  <p class="sub">Published by MIT, MIT Sloan and their partners, checked November 23, 2026.</p>
   <ul class="srcl" id="nowsrc"></ul>
  </div>
 </section>
@@ -1125,7 +1275,7 @@ ul.plain.tight{gap:6px}ul.plain.tight li{font-size:14px}
 (() => {
 'use strict';
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const TODAY = new Date('2026-11-20T12:00:00');
+const TODAY = new Date('2026-11-23T12:00:00');
 const DAY = 864e5;
 const d = s => new Date(s + 'T12:00:00');
 const iso = x => new Date(x).toISOString().slice(0, 10);
@@ -1185,6 +1335,7 @@ for (let c = Y0; c <= Y1; c++) {
  }
 }
 /* published figures each fiscal year is matched to. Sources on the Methods tab */
+const SD27 = {d: 1012, dLY: 968, p: .036, pLY: .034, ret: .41, retLY: .39};
 const PUB = {2023: {t: 4.8e6, n: 3051}, 2024: {t: 5.5e6, n: 2701, dc: 437, sh: .89}, 2025: {t: 5.77e6, n: 2452, dc: 512, sh: .92}, 2026: {t: 5.8e6, dc: 619, sh: .90}}, YF = {};
 safe('scale', function scale() {
  /* 1. scale each year to its published total; years before FY23 keep the FY23 factor */
@@ -1207,11 +1358,25 @@ const LYBUNT = Math.round(LYB * .46);
 /* ================= 1 ANNUAL FUND REPORTING ================= */
 const MS = [.36, .30, .36, .46, .50, 1.16, .36, .30, .72, .40, .44, .94], MSS = MS.reduce((a, b) => a + b, 0);
 const F26 = MS.map(v => v / MSS * 5.8e6), GOAL = 6.1e6, MON = ['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'];
-const F27 = [F26[0] * 1.07, F26[1] * 1.02, F26[2] * 1.09, F26[3] * 1.06, F26[4] * .7];
-const NOVF = 20 / 30, C27 = F27.reduce((a, b) => a + b, 0), C26SD = F26.slice(0, 4).reduce((a, b) => a + b, 0) + F26[4] * NOVF;
+const F27 = [F26[0] * 1.07, F26[1] * 1.02, F26[2] * 1.09, F26[3] * 1.06, F26[4] * .8];
+const NOVF = 23 / 30, C27 = F27.reduce((a, b) => a + b, 0), C26SD = F26.slice(0, 4).reduce((a, b) => a + b, 0) + F26[4] * NOVF;
 const SIM = (() => { const r = rng(2027), out = [], N = 2000, pace = C27 / C26SD; for (let n = 0; n < N; n++) { const g = pace * (1 + .08 * gs(r)); /* year-level shock, calibrated on 15 past years (Methods tab) */ let c = C27; const path = [c]; c += F26[4] * (1 - NOVF) * g * (1 + .1 * gs(r)); path.push(c); for (let m = 5; m < 12; m++) { c += F26[m] * g * (1 + .12 * gs(r)); path.push(c); } out.push(path); }
  const band = Array.from({length: 9}, (_, j) => { const v = out.map(p => p[j]).sort((a, b) => a - b); return [v[Math.floor(N * .1)], v[Math.floor(N * .5)], v[Math.floor(N * .9)]]; });
  const fin = out.map(p => p[8]).sort((a, b) => a - b); return {band, p50: fin[N >> 1], pGoal: fin.filter(v => v >= GOAL).length / N, pace}; })();
+/* time machine: step a chart through time, with play, step and a readout */
+function timeMachine(host, steps, label, draw, start, aria) {
+ if (!host) return;
+ const box = document.createElement('div'); box.className = 'tm';
+ box.innerHTML = `<div class="tm-row"><span class="tm-k">Time machine</span><button type="button" class="tm-btn" data-d="-1" aria-label="Step back">‹</button><button type="button" class="tm-btn tm-play" aria-label="Play through time">▶</button><button type="button" class="tm-btn" data-d="1" aria-label="Step forward">›</button><input type="range" min="0" max="${steps.length - 1}" value="${start}" aria-label="${aria}"><output class="tm-out"></output><button type="button" class="tm-now linkbtn">Today</button></div><p class="tm-read" aria-live="polite"></p>`;
+ host.parentNode.insertBefore(box, host);
+ const inp = box.querySelector('input'), out = box.querySelector('.tm-out'), rd = box.querySelector('.tm-read'), pl = box.querySelector('.tm-play'); let timer = 0;
+ const set = i => { i = Math.max(0, Math.min(steps.length - 1, i)); inp.value = i; out.textContent = label(steps[i]); try { rd.innerHTML = draw(steps[i], i === start) || ''; } catch (e) { console.warn('time machine', e); } };
+ const stop = () => { clearInterval(timer); timer = 0; pl.textContent = '▶'; pl.setAttribute('aria-label', 'Play through time'); };
+ inp.addEventListener('input', () => { stop(); set(+inp.value); });
+ box.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; if (b.dataset.d) { stop(); set(+inp.value + +b.dataset.d); } else if (b === pl) { if (timer) return stop(); if (+inp.value >= steps.length - 1) set(0); pl.textContent = '❚❚'; pl.setAttribute('aria-label', 'Pause'); timer = setInterval(() => { if (+inp.value >= steps.length - 1) return stop(); set(+inp.value + 1); }, 750); } else if (b.classList.contains('tm-now')) { stop(); set(start); } });
+ set(start);
+}
+
 safe('progress', function progress() {
  const Wd = 960, H = 330, L = 60, T = 16, B = 40, X = i => L + (Wd - L - 30) * i / 11, mx = 7e6, Yv = v => T + (H - T - B) * (1 - v / mx);
  const XP = i => i < 4 ? X(i) : X(3 + NOVF);
@@ -1223,10 +1388,39 @@ safe('progress', function progress() {
  const XB = j => X(j ? 3 + j : 3 + NOVF), up = SIM.band.map((b, j) => XB(j) + ',' + Yv(b[2])).join(' '), dn = SIM.band.map((b, j) => XB(j) + ',' + Yv(b[0])).reverse().join(' ');
  s += `<polygon points="${up} ${dn}" fill="var(--slate)" opacity=".18"/><polyline fill="none" stroke="var(--slate)" stroke-width="2" stroke-dasharray="5 4" points="${SIM.band.map((b, j) => XB(j) + ',' + Yv(b[1])).join(' ')}"/>`;
  s += `<polyline fill="none" stroke="var(--muted)" stroke-width="2" points="${c26.map((v, i) => X(i) + ',' + Yv(v)).join(' ')}"/><text x="${X(9)}" y="${Yv(c26[9]) + 22}" font-size="12.5" fill="var(--muted)">FY26 final ${musd(c26[11])}</text>`;
- s += `<circle cx="${X(3 + NOVF)}" cy="${Yv(C26SD)}" r="5" fill="#fff" stroke="var(--muted)" stroke-width="2"/><text x="${X(3 + NOVF) - 10}" y="${Yv(C26SD) - 14}" text-anchor="end" font-size="12" fill="var(--muted)">FY26 through Nov 20 ${musd(C26SD)}</text>`;
+ s += `<circle cx="${X(3 + NOVF)}" cy="${Yv(C26SD)}" r="5" fill="#fff" stroke="var(--muted)" stroke-width="2"/><text x="${X(3 + NOVF) - 10}" y="${Yv(C26SD) - 14}" text-anchor="end" font-size="12" fill="var(--muted)">FY26 through Nov 23 ${musd(C26SD)}</text>`;
  s += `<polyline fill="none" stroke="var(--accent)" stroke-width="3" points="${c27.map((v, i) => XP(i) + ',' + Yv(v)).join(' ')}"/>` + c27.map((v, i) => `<circle cx="${XP(i)}" cy="${Yv(v)}" r="4" fill="var(--accent)"/>`).join('') + `<text x="${XP(4) + 10}" y="${Yv(c27[4]) + 24}" font-size="12.5" font-weight="700" fill="var(--accent)">FY27 to date ${musd(c27[4])}</text>`;
- $('#progress').innerHTML = s + `</svg><div class="legend"><span><i style="background:var(--accent)"></i>FY27 actual, month ends and November 1 to 20</span><span><i style="background:var(--muted)"></i>FY26, full months, with the November 20 point marked</span><span><i style="background:var(--slate);opacity:.45"></i>Simulated range, 10th to 90th percentile</span></div><p class="note"><b>Basis.</b> Every comparison uses the same calendar day: FY27 through November 20 is ${musd(C27)} against ${musd(C26SD)} for FY26 through November 20, ${C27 >= C26SD ? pct(C27 / C26SD - 1) + ' ahead' : pct(1 - C27 / C26SD) + ' behind'}. FY27’s last point sits at November 20, not at the month end. <b>Forecast.</b> 2,000 simulated paths start from the FY27 actual on November 20, then follow FY26’s pattern for the rest of the year, scaled by FY27’s same-day pace with month-to-month noise. Median finish ${musd(SIM.p50)}, and a ${pct(SIM.pGoal)} chance of reaching the goal. <b>So what:</b> December and June decide the year, and the 24-Hour Challenge in March is the one lever in between.</p>`;
+ $('#progress').innerHTML = s + `</svg><div class="legend"><span><i style="background:var(--accent)"></i>FY27 actual, month ends and November 1 to 23</span><span><i style="background:var(--muted)"></i>FY26, full months, with the November 23 point marked</span><span><i style="background:var(--slate);opacity:.45"></i>Simulated range, 10th to 90th percentile</span></div><p class="note"><b>Basis.</b> Every comparison uses the same calendar day: FY27 through November 23 is ${musd(C27)} against ${musd(C26SD)} for FY26 through November 23, ${C27 >= C26SD ? pct(C27 / C26SD - 1) + ' ahead' : pct(1 - C27 / C26SD) + ' behind'}. FY27’s last point sits at November 23, not at the month end. <b>Forecast.</b> 2,000 simulated paths start from the FY27 actual on November 23, then follow FY26’s pattern for the rest of the year, scaled by FY27’s same-day pace with month-to-month noise. Median finish ${musd(SIM.p50)}, and a ${pct(SIM.pGoal)} chance of reaching the goal. <b>So what:</b> December and June decide the year, and the 24-Hour Challenge in March is the one lever in between.</p>`;
 });
+/* progress to goal, as of any week from July 31 to today, with the forecast re-run from that day */
+safe('progressTM', function progressTM() {
+ const DAYS = [31, 31, 30, 31, 30], steps = [[0, 31]]; let m = 1, d = 7;
+ while (m < 4 || (m === 4 && d < 23)) { steps.push([m, d]); d += 7; if (d > DAYS[m]) { d -= DAYS[m]; m++; } }
+ steps.push([4, 23]);
+ const Wd = 960, H = 330, L = 60, T = 16, B = 40, X = i => L + (Wd - L - 30) * i / 11, mx = 7e6, Yv = v => T + (H - T - B) * (1 - v / mx);
+ const sum = a => a.reduce((x, y) => x + y, 0), lab = ([m, d]) => `${MON[m]} ${d}`;
+ const draw = ([m, d], today) => {
+  const fr = d / DAYS[m], a27 = sum(F27.slice(0, m)) + (m === 4 ? F27[4] * fr / NOVF : F27[m] * fr), a26 = sum(F26.slice(0, m)) + F26[m] * fr, pos = X(m - 1 + fr);
+  const r = rng(2027), N = 2000, pace = a27 / a26, out = [];
+  for (let n = 0; n < N; n++) { const g = pace * (1 + .08 * gs(r)); let c = a27; const path = [c]; c += F26[m] * (1 - fr) * g * (1 + .1 * gs(r)); path.push(c); for (let k = m + 1; k < 12; k++) { c += F26[k] * g * (1 + .12 * gs(r)); path.push(c); } out.push(path); }
+  const band = out[0].map((_, j) => { const v = out.map(p => p[j]).sort((x, y) => x - y); return [v[N * .1 | 0], v[N * .5 | 0], v[N * .9 | 0]]; }), fin = out.map(p => p[p.length - 1]).sort((x, y) => x - y), pG = fin.filter(v => v >= GOAL).length / N;
+  const XB = j => j ? X(m + j - 1) : pos, c26 = F26.reduce((acc, v, i) => (acc.push((acc[i - 1] || 0) + v), acc), []);
+  const pts27 = []; let c = 0; for (let i = 0; i < m; i++) { c += F27[i]; pts27.push([X(i), c]); } pts27.push([pos, a27]);
+  let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Cumulative receipts as of ${lab([m, d])}, with the forecast from that day">`;
+  [0, 1, 2, 3, 4, 5, 6, 7].forEach(v => s += `<line x1="${L}" x2="${Wd - 30}" y1="${Yv(v * 1e6)}" y2="${Yv(v * 1e6)}" stroke="var(--line)"/><text x="${L - 8}" y="${Yv(v * 1e6) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">$${v}M</text>`);
+  MON.forEach((mo, i) => s += `<text x="${X(i)}" y="${H - 12}" text-anchor="middle" font-size="12.5" fill="var(--muted)">${mo}</text>`);
+  s += `<line x1="${L}" x2="${Wd - 30}" y1="${Yv(GOAL)}" y2="${Yv(GOAL)}" stroke="var(--accent)" stroke-dasharray="6 4"/><text x="${L + 8}" y="${Yv(GOAL) - 7}" font-size="12.5" font-weight="700" fill="var(--accent)">FY27 goal ${musd(GOAL)}</text>`;
+  s += `<polygon points="${band.map((b, j) => XB(j) + ',' + Yv(b[2])).join(' ')} ${band.map((b, j) => XB(j) + ',' + Yv(b[0])).reverse().join(' ')}" fill="var(--slate)" opacity=".18"/><polyline fill="none" stroke="var(--slate)" stroke-width="2" stroke-dasharray="5 4" points="${band.map((b, j) => XB(j) + ',' + Yv(b[1])).join(' ')}"/>`;
+  s += `<polyline fill="none" stroke="var(--muted)" stroke-width="2" points="${c26.map((v, i) => X(i) + ',' + Yv(v)).join(' ')}"/><text x="${X(9)}" y="${Yv(c26[9]) + 22}" font-size="12.5" fill="var(--muted)">FY26 final ${musd(c26[11])}</text>`;
+  s += `<line x1="${pos}" x2="${pos}" y1="${T}" y2="${H - B}" stroke="var(--ink)" stroke-dasharray="2 3"/><text x="${pos + 6}" y="${T + 12}" font-size="12" font-weight="700" fill="var(--ink)">As of ${lab([m, d])}</text>`;
+  s += `<circle cx="${pos}" cy="${Yv(a26)}" r="5" fill="#fff" stroke="var(--muted)" stroke-width="2"><title>FY26 through ${lab([m, d])}: ${musd(a26)}</title></circle><polyline fill="none" stroke="var(--accent)" stroke-width="3" points="${pts27.map(p => p[0] + ',' + Yv(p[1])).join(' ')}"/>` + pts27.map(p => `<circle cx="${p[0]}" cy="${Yv(p[1])}" r="4" fill="var(--accent)"><title>${musd(p[1])}</title></circle>`).join('') + `<text x="${pos + 10}" y="${Yv(a27) + 24}" font-size="12.5" font-weight="700" fill="var(--accent)">FY27 ${musd(a27)}</text></svg>`;
+  const old = $('#progress svg'); if (old) old.outerHTML = today && PORIG ? PORIG : s;
+  return `<b>As of ${lab([m, d])}</b>: ${musd(a27)} raised, ${a27 >= a26 ? pct(a27 / a26 - 1) + ' ahead of' : pct(1 - a27 / a26) + ' behind'} FY26 on the same day. The forecast from that day: median finish ${musd(fin[N >> 1])}, 80% range ${musd(fin[N * .1 | 0])} to ${musd(fin[N * .9 | 0])}, <b>${pct(pG)} chance of the goal</b>.`;
+ };
+ const psv = $('#progress svg'), PORIG = psv ? psv.outerHTML : '';
+ timeMachine($('#progress'), steps, lab, draw, steps.length - 1, 'As-of date for the progress chart');
+});
+
 
 safe('programs', function programs() {
  const rows = PROG.filter(p => p[2]).map(p => { const i = PROG.indexOf(p), g = DON.filter(x => x.p === i && x.amt[kY(2026)] > 0); return [p[0], g.length, g.length / p[2], g.reduce((s, x) => s + x.amt[kY(2026)], 0)]; }).sort((a, b) => b[2] - a[2]);
@@ -1244,8 +1438,28 @@ safe('pyramid', function pyramid() {
   if (i === 4) s += `<line x1="4" x2="${Wd - 4}" y1="${y - 4}" y2="${y - 4}" stroke="var(--accent)" stroke-dasharray="4 3"/><text x="${Wd - 4}" y="${y - 8}" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--accent)">Dean’s Circle above</text>`;
   s += `<rect x="${cx - 4 - wl}" y="${y}" width="${wl}" height="${rh - 8}" fill="var(--slate)"/><rect x="${cx + 4}" y="${y}" width="${wr}" height="${rh - 8}" fill="var(--accent)"/><text x="${cx - 10 - wl}" y="${y + 19}" text-anchor="end" font-size="12" fill="var(--ink)">${n0(r[1])}</text><text x="${cx + 10 + wr}" y="${y + 19}" font-size="12" fill="var(--ink)">${k1(r[2])}</text><text x="4" y="${y + 19}" font-size="12" fill="var(--muted)">${r[0]}</text>`; });
  const lead = rows.slice(0, 4).reduce((a, r) => [a[0] + r[1], a[1] + r[2]], [0, 0]);
- $('#pyramid').innerHTML = s + `</svg><p class="note">Bands follow the Dean’s Circle levels MIT Sloan names publicly, from Investor at $2,500. <b>So what:</b> ${n0(lead[0])} Dean’s Circle donors at $2,500 or more (${pct(lead[0] / FY26D.length)} of donors) give ${pct(lead[1] / FY26T)} of dollars. This matches MIT Sloan’s published FY26 figures, 619 Dean’s Circle donors giving 90% of dollars, because the synthetic file is calibrated to them first.</p>`;
+ $('#pyramid').innerHTML = s + `</svg><p class="note">Bands follow the Dean’s Circle levels MIT Sloan names publicly, from Investor at $2,500. <b>So what:</b> ${n0(lead[0])} Dean’s Circle donors at $2,500 or more (${pct(lead[0] / FY26D.length)} of donors) give ${pct(lead[1] / FY26T)} of dollars. This matches MIT Sloan’s published FY26 figures, ${PUB[2026].dc} Dean’s Circle donors giving ${pct(PUB[2026].sh)} of dollars, because the synthetic file is calibrated to them first.</p>`;
 });
+/* gift pyramid by fiscal year, on one scale so years compare */
+safe('pyramidTM', function pyramidTM() {
+ const B = [[25000, 'Leader and above, $25K+'], [10000, 'Director, $10K–$24.9K'], [5000, 'Partner, $5K–$9.9K'], [2500, 'Investor, $2.5K–$4.9K'], [1000, '$1,000 to $2,499'], [250, '$250 to $999'], [100, '$100 to $249'], [0, 'Under $100']];
+ const YRS = [2022, 2023, 2024, 2025, 2026], rowsOf = y => B.map(([lo], i) => { const hi = i ? B[i - 1][0] : Infinity, g = DON.filter(x => x.amt[kY(y)] > 0 && x.amt[kY(y)] >= lo && x.amt[kY(y)] < hi); return [B[i][1], g.length, g.reduce((s, x) => s + x.amt[kY(y)], 0)]; });
+ const ALL = YRS.map(rowsOf), mn = Math.max(...ALL.flat().map(r => r[1])), md2 = Math.max(...ALL.flat().map(r => r[2])), Wd = 640, H = 320, cx = 340, rh = 36;
+ const draw = (y, today) => {
+  const h3 = $('#pyramid').closest('.card').querySelector('h3'); if (h3) h3.textContent = h3.textContent.replace(/FY\d\d/, 'FY' + String(y).slice(2));
+  const rows = ALL[YRS.indexOf(y)], tot = rows.reduce((a, r) => [a[0] + r[1], a[1] + r[2]], [0, 0]), lead = rows.slice(0, 4).reduce((a, r) => [a[0] + r[1], a[1] + r[2]], [0, 0]), P = PUB[y];
+  if (!today) { let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="FY${String(y).slice(2)} gift pyramid: donors and dollars by gift band">`;
+   s += `<text x="${cx - 6}" y="14" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--slate)">Donors</text><text x="${cx + 6}" y="14" font-size="12.5" font-weight="700" fill="var(--accent)">Dollars</text>`;
+   rows.forEach((r, i) => { const yy = 24 + i * rh, wl = r[1] / mn * 150, wr = r[2] / md2 * 150; if (i === 4) s += `<line x1="4" x2="${Wd - 4}" y1="${yy - 4}" y2="${yy - 4}" stroke="var(--accent)" stroke-dasharray="4 3"/><text x="${Wd - 4}" y="${yy - 8}" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--accent)">Dean’s Circle above</text>`;
+    s += `<rect x="${cx - 4 - wl}" y="${yy}" width="${wl}" height="${rh - 8}" fill="var(--slate)"><title>${r[0]}: ${n0(r[1])} donors</title></rect><rect x="${cx + 4}" y="${yy}" width="${wr}" height="${rh - 8}" fill="var(--accent)"><title>${r[0]}: ${musd(r[2])}</title></rect><text x="${cx - 10 - wl}" y="${yy + 19}" text-anchor="end" font-size="12" fill="var(--ink)">${n0(r[1])}</text><text x="${cx + 10 + wr}" y="${yy + 19}" font-size="12" fill="var(--ink)">${k1(r[2])}</text><text x="4" y="${yy + 19}" font-size="12" fill="var(--ink)">${r[0]}</text>`; });
+   const old = $('#pyramid svg'); if (old) old.outerHTML = s + '</svg>'; }
+  else { const old = $('#pyramid svg'); if (old && ORIG) old.outerHTML = ORIG; }
+  return `<b>FY${String(y).slice(2)}</b>: ${n0(tot[0])} donors${P && P.n ? ` (published ${n0(P.n)})` : ''}, ${musd(tot[1])}. Dean’s Circle at $2,500 or more: ${n0(lead[0])} donors giving ${pct(lead[1] / tot[1])} of dollars${P && P.dc ? `. Published: ${P.dc} donors, ${pct(P.sh)}` : '. No published Dean’s Circle count for this year'}.`;
+ };
+ const host = $('#pyramid'), sv = host && host.querySelector('svg'), ORIG = sv ? sv.outerHTML : '';
+ timeMachine(host, YRS, y => 'FY' + String(y).slice(2), draw, YRS.length - 1, 'Fiscal year for the gift pyramid');
+});
+
 
 safe('reunion', function reunion() {
  const rows = MIL.map(m => { const gy = 2026 - m, g = DON.filter(x => x.grad === gy), dn = g.filter(x => x.amt[kY(2026)] > 0); return [m, gy, CLASS(gy), dn.length, dn.reduce((s, x) => s + x.amt[kY(2026)], 0)]; }).filter(r => r[3] > 0);
@@ -1261,12 +1475,141 @@ safe('challenge', function challenge() {
  [0, 200, 400, 600].forEach(v => s += `<line x1="${L}" x2="${Wd - 20}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="var(--line)"/><text x="${L - 6}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v}</text>`);
  [0, 6, 12, 18, 23].forEach(h => s += `<text x="${X(h)}" y="${H - 14}" text-anchor="middle" font-size="12" fill="var(--muted)">${h === 0 ? '12 a.m.' : h === 12 ? 'Noon' : h === 23 ? '11 p.m.' : (h % 12) + (h < 12 ? ' a.m.' : ' p.m.')}</text>`);
  s += `<line x1="${L}" x2="${Wd - 20}" y1="${Yv(616)}" y2="${Yv(616)}" stroke="var(--muted)" stroke-dasharray="4 4"/><text x="${L + 6}" y="${Yv(616) - 6}" font-size="12" fill="var(--muted)">2025 total, 616 donors</text>`;
- s += `<polyline fill="none" stroke="var(--accent)" stroke-width="3" points="${cum.map((v, h) => X(h) + ',' + Yv(v)).join(' ')}"/><circle cx="${X(23)}" cy="${Yv(680)}" r="5" fill="var(--accent)"/><text x="${X(23) - 8}" y="${Yv(680) - 10}" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--accent)">2026, 680 donors</text>`;
+ s += `<polyline fill="none" stroke="var(--accent)" stroke-width="3" points="${cum.map((v, h) => X(h) + ',' + Yv(v)).join(' ')}"/><circle cx="${X(23)}" cy="${Yv(680)}" r="5" fill="var(--accent)"/>${cum.map((v, h) => `<circle cx="${X(h)}" cy="${Yv(v)}" r="7" fill="#fff" fill-opacity="0"><title>By ${h === 11 ? 'noon' : ((h + 1) % 12 || 12) + (h + 1 < 12 || h + 1 === 24 ? ' a.m.' : ' p.m.')} Eastern: ${Math.round(v)} donors</title></circle>`).join('')}<text x="${X(23) - 8}" y="${Yv(680) - 10}" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--accent)">2026, 680 donors</text>`;
  $('#challenge').innerHTML = s + '</svg><p class="note">Totals are MIT Sloan’s published results for March 12, 2026, when 680 donors unlocked more than $745,000, and the prior year. The hour-by-hour curve is synthetic. <b>So what:</b> two peaks, mid-morning and the final hours, set when the live dashboard and the Alumni Association’s reminder emails matter most.</p>';
 });
 
-const CAT = [['Annual Fund daily dashboard', 'Annual Giving and OER leadership', 'Daily, 7 a.m.', 'Receipts, donors and participation against goal, by program and reunion class'], ['Weekly Annual Fund report', 'Senior Associate Dean and Director of Annual Giving', 'Mondays', 'Week, fiscal year to date and same day last year, counted the same way as central reports'], ['AGO portfolio report', 'Annual Giving Officers', 'Weekly', 'Portfolio donors, last contact, open asks and meetings against the yearly target'], ['Reunion giving tracker', 'Reunion volunteers and staff', 'Weekly in reunion season', 'Class participation, dollars and goal by reunion class'], ['24-Hour Challenge live board', 'OER and the Alumni Association', 'Every 15 minutes on the day', 'Donors, dollars and challenge unlocks'], ['Pipeline and forecast pack', 'Director, Strategic Information Management', 'Monthly', 'Pipeline by stage and the fiscal-year forecast range'], ['Appeal results', 'Annual Giving', 'After each appeal', 'Response rate, average gift and revenue per recipient by segment and test cell'], ['Leadership and major gift pipeline', 'OER development leadership', 'Monthly', 'Prospects by stage and officer, proposals out and expected closes, beyond the Annual Fund'], ['Gift officer activity', 'Development officers and managers', 'Monthly', 'Visits, proposals, closes and dollars against each officer’s goals'], ['Corporate and consortium partners', 'Corporate relations and program leads', 'Quarterly', 'Organization members, renewals and engagement, kept separate from alumni giving']];
-$('#catalog').innerHTML = `<p class="prop">Proposed catalog, not OER’s current reports</p><div class="scroll"><table class="tbl"><thead><tr><th scope="col">Report</th><th scope="col">Audience</th><th scope="col">Schedule</th><th scope="col">What it shows</th></tr></thead><tbody>${CAT.map(c => `<tr><th scope="row">${c[0]}</th><td>${c[1]}</td><td>${c[2]}</td><td>${c[3]}</td></tr>`).join('')}</tbody></table></div><p class="note">Every report links to the business definitions on the Data integrity tab, so a donor or a dollar means the same thing everywhere.</p>`;
+/* 24-Hour Challenge clock: regions awake, sends, and the 15-minute report */
+safe('hcclock', function hcclock() {
+ // offsets from Eastern time on March 12, 2026 (US on daylight time since March 8, Europe not until March 29)
+ const RG = [['US East and Central', 0, .46, 'var(--accent)', 'New York'], ['US Mountain and Pacific', -3, .17, 'var(--slate)', 'San Francisco'], ['Latin America', 1, .06, 'var(--green)', 'São Paulo'], ['Europe', 4, .14, 'var(--gold)', 'London'], ['India and Gulf', 9.5, .05, 'var(--amber)', 'Mumbai'], ['East Asia and Pacific', 12, .12, '#6b4f7a', 'Singapore']];
+ const SEND = [[0, 'Opening post', 'East Asia and India', [5, 4], 'Noon in Singapore, 9:30 a.m. in Mumbai'], [3, 'Morning email', 'Europe', [3], '7 a.m. in London, 8 a.m. in Paris'], [7, 'Morning email', 'US East and Latin America', [0, 2], '7 a.m. in New York, 8 a.m. in São Paulo'], [11, 'Morning email and social', 'US West', [1], '8 a.m. in San Francisco'], [12.5, 'Progress update, donors to go', 'Everyone', [0, 1, 2, 3], '12:30 p.m. in New York, 5:30 p.m. in London'], [20, 'Second morning', 'East Asia', [5], '8 a.m. Friday in Singapore'], [21.5, 'Final hours', 'US', [0, 1], '9:30 p.m. in New York, 6:30 p.m. in San Francisco'], [23, 'Last call, ends 8:59 p.m. Pacific', 'Everyone', [0, 1, 3, 4, 5], '11 p.m. in New York, 8 p.m. in San Francisco, 11 a.m. Friday in Singapore']];
+ const loc = (h, o) => ((h + o) % 24 + 24) % 24, awake = (h, o) => { const l = loc(h, o); return l >= 7 && l < 23; };
+ const act = l => (l >= 7 && l < 23 ? .22 : .03) + .8 * Math.exp(-((l - 9) ** 2) / 3) + .55 * Math.exp(-((l - 12.6) ** 2) / 2) + .7 * Math.exp(-((l - 20.5) ** 2) / 4);
+ const r = rng(31226), N = 96, slot = (bump, n) => { const v = []; for (let s = 0; s < N; s++) { const h = s / 4 + .125; let t = 0; RG.forEach((g, gi) => { let a = act(loc(h, g[1])); if (bump) SEND.forEach(sd => { if (sd[3].includes(gi)) a += .9 * Math.exp(-((h - sd[0] - .3) ** 2) / .12); }); t += g[2] * a; }); t *= 1 + 2.4 * Math.exp(-((h - 23.6) ** 2) / 1.3) + .7 * Math.exp(-(h ** 2) / .4); v.push(Math.max(0, t * (1 + .12 * gs(r)))); } const tt = v.reduce((a, b) => a + b, 0); return v.map(x => x / tt * n); };
+ const TY = slot(true, 680), LY = slot(false, 616), cum = a => { let c = 0; return a.map(x => c += x); }, CT = cum(TY), CL = cum(LY);
+ const cx = 230, cy = 230, A = h => h / 24 * 2 * Math.PI - Math.PI / 2, P = (rad, h) => [cx + rad * Math.cos(A(h)), cy + rad * Math.sin(A(h))].map(v => v.toFixed(1));
+ const arc = (rad, h0, h1) => { const [x0, y0] = P(rad, h0), [x1, y1] = P(rad, h1); return `M${x0},${y0} A${rad},${rad} 0 ${h1 - h0 > 12 ? 1 : 0} 1 ${x1},${y1}`; };
+ const mx = Math.max(...TY);
+ const tm = h => { const m = Math.round(h * 60) % 1440, hh = Math.floor(m / 60), mm = m % 60, ap = hh < 12 ? 'a.m.' : 'p.m.', h12 = hh % 12 || 12; return hh === 12 && mm === 0 ? 'noon' : `${h12}${mm ? ':' + String(mm).padStart(2, '0') : ''} ${ap}`; };
+ let s = `<svg viewBox="-38 -8 536 476" role="img" aria-label="Twenty-four hour dial in Eastern time with regions awake, sends and donors per 15 minutes">`;
+ RG.forEach((g, gi) => { const rad = 214 - gi * 14; s += `<circle cx="${cx}" cy="${cy}" r="${rad}" fill="none" stroke="var(--soft)" stroke-width="9"/>`; let st = null; for (let q = 0; q <= 96; q++) { const h = q / 4, on = q < 96 && awake(h + .01, g[1]); if (on && st === null) st = h; if (!on && st !== null) { s += `<path d="${arc(rad, st, h)}" fill="none" stroke="${g[3]}" stroke-width="9" stroke-linecap="butt"><title>${g[0]}: awake ${tm(st)} to ${tm(h)} Eastern</title></path>`; st = null; } } });
+ for (let q = 0; q < 24; q += 3) { const [x, y] = P(232, q); s += `<text x="${x}" y="${(+y + 4).toFixed(1)}" text-anchor="middle" font-size="11.5" fill="var(--muted)">${q === 0 ? '12 a.m.' : q === 12 ? 'Noon' : tm(q).replace(' ', ' ')}</text>`; }
+ TY.forEach((v, q) => { const h = q / 4 + .125, [x0, y0] = P(70, h), [x1, y1] = P(70 + 56 * v / mx, h); s += `<line class="hcbar" data-q="${q}" x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}" stroke="var(--accent)" stroke-width="3.2"><title>${tm(q / 4)} to ${tm(q / 4 + .25)} Eastern: ${v.toFixed(1)} donors, ${LY[q].toFixed(1)} last year</title></line>`; });
+ SEND.forEach((sd, i) => { const [x, y] = P(134, sd[0]); s += `<circle cx="${x}" cy="${y}" r="9" fill="var(--ink)"/><text x="${x}" y="${(+y + 4).toFixed(1)}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">${i + 1}</text>`; });
+ s += `<line class="hchand" x1="${cx}" y1="${cy}" x2="${cx}" y2="${cy - 200}" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 3"/><circle cx="${cx}" cy="${cy}" r="58" fill="var(--paper)"/><text x="${cx}" y="${cy - 8}" text-anchor="middle" font-size="12" fill="var(--muted)">Thursday</text><text x="${cx}" y="${cy + 8}" text-anchor="middle" font-size="12" fill="var(--muted)">March 12</text><text class="hcnow" x="${cx}" y="${cy + 26}" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)"></text></svg>`;
+ const leg = `<div class="legend hcleg">${RG.map(g => `<span><i style="background:${g[3]}"></i>${g[0]}, ${pct(g[2])}</span>`).join('')}<span><i style="background:var(--accent);height:4px"></i>Donors per 15 minutes</span></div>`;
+ const tbl = `<div class="scroll"><table class="tbl hcsend"><thead><tr><th scope="col">#</th><th scope="col">Eastern</th><th scope="col">Send</th><th scope="col">To</th><th scope="col">Local time</th></tr></thead><tbody>${SEND.map((sd, i) => `<tr data-h="${sd[0]}"><th scope="row">${i + 1}</th><td>${tm(sd[0])}</td><td>${sd[1]}</td><td>${sd[2]}</td><td>${sd[4]}</td></tr>`).join('')}</tbody></table></div>`;
+ $('#hcclock').innerHTML = `<div class="hcgrid"><div class="chart">${s}${leg}</div><div><label class="thr"><span>15-minute report run at</span><input type="range" min="1" max="96" value="50" aria-label="Report run time"><output class="hct"></output></label><div class="facts4 hcf"></div>${tbl}</div></div>
+ <p class="note">Each run reads gifts from the giving-day platform for the last 15 minutes, compares them with the same slot last year, and lists who is awake. Gifts post to the CRM afterwards and are reconciled the next morning. Whether the platform offers OER a 15-minute export or feed is to confirm with the Alumni Association’s 24-Hour Challenge team. Region shares and the 15-minute curves are synthetic. In production they would come from preferred-address country in the CRM and last year’s gift timestamps. Day totals match MIT Sloan’s published results, 680 donors in 2026 and 616 in 2025. <b>Two things the dial shows.</b> East Asia gets two mornings inside the window, so it gets two sends. The day ends at 8:59 p.m. Pacific, so West Coast last-call messages must say that, not midnight.</p>`;
+ const root = $('#hcclock'), inp = root.querySelector('input'), out = root.querySelector('.hct'), F = root.querySelector('.hcf');
+ const upd = () => { const k = +inp.value, h = k / 4, cT = CT[k - 1], cL = CL[k - 1], rate = TY.slice(Math.max(0, k - 4), k).reduce((a, b) => a + b, 0) / Math.min(4, k), lyRate = LY.slice(Math.max(0, k - 4), k).reduce((a, b) => a + b, 0) / Math.min(4, k), left = 96 - k, need = left ? Math.max(0, (616 - cT) / left) : 0, aw = RG.filter(g => awake(h - .01, g[1])).map(g => g[0]), nx = SEND.findIndex(sd => sd[0] >= h), slow = rate < .7 * lyRate;
+  out.textContent = tm(h) + ' Eastern';
+  F.innerHTML = `<div><b>${n0(cT)}</b><span>MIT Sloan donors so far, against ${n0(cL)} at this time last year</span></div><div><b>${rate.toFixed(1)}</b><span>donors per 15 minutes over the last hour, against ${lyRate.toFixed(1)} last year${slow ? ', below 70%, so the next send moves up' : ''}</span></div><div><b>${cT >= 616 ? 'Passed' : need.toFixed(1)}</b><span>${cT >= 616 ? 'last year’s 616 donors' : 'donors per 15 minutes needed to pass last year’s 616'}</span></div><div><b>${nx < 0 ? 'Done' : '#' + (nx + 1) + ' at ' + tm(SEND[nx][0])}</b><span>${nx < 0 ? 'all sends are out' : 'next send, ' + SEND[nx][2]}. Awake now: ${aw.join(', ') || 'none'}</span></div>`;
+  const [x, y] = P(200, h); root.querySelectorAll('.hchand').forEach(l => { l.setAttribute('x2', x); l.setAttribute('y2', y); }); root.querySelectorAll('.hcnow').forEach(t => t.textContent = tm(h));
+  root.querySelectorAll('.hcbar').forEach(b => b.setAttribute('opacity', +b.dataset.q < k ? 1 : .25)); root.querySelectorAll('.hcsend tbody tr').forEach(tr => tr.classList.toggle('past', +tr.dataset.h < h)); };
+ inp.addEventListener('input', upd); upd();
+});
+
+/* reporting calendar: every report by cadence, with its specification, checks and the exhibit behind it */
+const CADS = [['day', 'Daily'], ['week', 'Weekly'], ['month', 'Monthly'], ['quarter', 'Quarterly'], ['year', 'Yearly'], ['event', 'Event-driven']];
+const RPT = [
+ ['day', 'Data checks before release', 'Strategic Information team', '5:30 p.m., the evening before', 'Eight checks on the day’s gift batch once it closes: counts, totals against central, duplicates, codes and suppression flags. They run on a schedule, and the analyst reads the exceptions before leaving', 'The day’s closed gift batch, appeal codes, suppression flags', 'The checks themselves. A failed check holds the next morning’s dashboard until gift processing fixes it or it is noted', 'dq#checks'],
+ ['day', 'Annual Fund daily dashboard', 'Annual Giving and OER leadership', '7 a.m., refreshed overnight', 'Receipts, donors and participation against goal and against the same day last year, by program and reunion class, with data through the previous day’s close', 'Gift batch checked the evening before, refreshed overnight with no one at a desk', 'Same-day basis, totals tied to the morning checks', 'af#progress'],
+ ['day', 'Gift anomaly review', 'Gift processing and central data partners', '9 a.m.', 'Gifts flagged as likely keying or coding errors, with the reason for each flag', 'Yesterday’s posted gifts', 'Each flag confirmed or cleared, with the share confirmed tracked', 'dq#anom'],
+ ['day', 'Year-end pace, December 15 to 31 and June', 'Director and Annual Giving', '7 a.m. and 2 p.m.', 'Dollars and donors by day against the same days last year, and what is still needed for goal', 'Gift feed, twice a day in the two busiest periods', 'Same-day basis, pending gifts shown apart', 'an#season'],
+ ['week', 'Weekly Annual Fund report', 'Senior Associate Dean and Director of Annual Giving', 'Monday 10 a.m.', 'Week, year to date and same day last year, counted the same way as central reports, with the scorecard', 'Friday close of the gift feed', 'Ties to the central weekly total, and every difference explained', 'an#perf'],
+ ['week', 'Forecast and chance of goal', 'Director and OER leadership', 'Monday 10 a.m.', 'Median finish, 80% range and the chance of reaching goal, re-run from Monday’s actual', 'Same-day pace and monthly history', 'Monte Carlo standard error under 1.5 points, range calibrated each July', 'af#progress,mcspec'],
+ ['week', 'Annual Giving Officer portfolio report', 'Annual Giving Officers', 'Tuesday 10 a.m.', 'Portfolio donors, last contact, open asks and meetings against the yearly target', 'CRM contacts and asks', 'Every portfolio donor assigned once, contacts dated', 'an#portfolio'],
+ ['week', 'Renewal watch list', 'Annual Giving', 'Wednesday 10 a.m.', 'Last year’s donors not yet renewed, ranked by renewal score, with top-10% donors flagged', 'Renewal score and the gift feed', 'Scores recalibrated each July, one list per donor', 'seg#roc,thresh'],
+ ['week', 'Reunion giving tracker', 'Reunion volunteers and staff', 'Thursday 10 a.m., in reunion season', 'Class participation, dollars and goal by reunion class', 'Gift feed and class lists', 'Class lists matched to central, goals from the reunion model', 'af#reunion,reunfc'],
+ ['month', 'Month close and OER to central reconciliation', 'Director and central finance and data partners', '5th business day', 'OER totals against central totals, with each difference sized and explained', 'Central month-end extract', 'Every difference over $500 explained, the log updated', 'dq#recon'],
+ ['month', 'Pipeline and forecast pack', 'Director of Strategic Information', '7th business day', 'Lead annual pipeline by stage, expected closes and the fiscal-year forecast range', 'CRM proposals and stages, forecast model', 'Stages follow the written entry rules', 'an#pipeline,fcast'],
+ ['month', 'Leadership and major gift pipeline', 'OER development leadership', '7th business day', 'Prospects by stage and officer, proposals out and expected closes, beyond the Annual Fund', 'CRM proposals and stages', 'Stale stages over 180 days flagged', 'an#pipeline'],
+ ['month', 'Gift officer activity', 'Development officers and managers', '10th business day', 'Visits, proposals, closes and dollars against each officer’s goals', 'CRM contacts and proposals', 'Contacts dated and typed the same way', 'an#portfolio'],
+ ['month', 'Participation and Dean’s Circle', 'Director and Annual Giving', '10th business day', 'Donor forecast, participation against goal, Dean’s Circle members and upgrades by band', 'Gift feed and contactable-alumni count', 'Denominator agreed with central', 'ml#partfc,pyramid,upgrade'],
+ ['month', 'Requests and self-service', 'Director of Strategic Information', 'Last Friday', 'Requests by type and turnaround, and the share answered by a dashboard', 'Request log', 'Every request triaged within two days', 'pi#reqs,triage'],
+ ['quarter', 'Quarterly advancement update', 'Senior Associate Dean, External Engagement', 'October, January, April, July', 'Quarter and year to date against goal and last year, with one page of findings and recommendations', 'Month closes', 'Built only from closed, reconciled months', 'an#perf,af#pubtrend'],
+ ['quarter', 'Data quality scorecard and issue log', 'Central data partners and BDTO', 'Quarter end', 'Checks passed, issues opened and closed, and time to fix', 'Check results and the issue log', 'Each open issue has an owner and a date', 'dq#issues,checks'],
+ ['quarter', 'Model drift review', 'Annual Giving and the Director', 'Quarter end', 'Stability of the renewal model’s top features, and anomaly flag thresholds', 'Model inputs and outcomes', 'Retrain when a top feature moves beyond its limit', 'ml#rnperm,inventory'],
+ ['quarter', 'Corporate and consortium partners', 'Corporate relations and program leads', 'Quarter end', 'Organization members, renewals and engagement, kept separate from alumni giving', 'CRM organization records', 'Organizations never counted as alumni donors', ''],
+ ['quarter', 'Report catalog review', 'Director of Strategic Information', 'Quarter end', 'Report use, owners, and reports to retire with no user in 90 days', 'Report usage logs', 'Every report has an owner and a last-validated date', 'pi#assets'],
+ ['year', 'Fiscal-year close and year-end report', 'Dean’s office and OER leadership', 'July and August', 'Final dollars, donors, participation, Dean’s Circle count and share, reconciled to central and counted to CASE standards', 'Closed fiscal year', 'Signed off with central before release', 'af#pubtrend,dq#recon'],
+ ['year', 'Model refit and calibration', 'Strategic Information team', 'July', 'Forecast range re-calibrated, renewal and upgrade models refit, model cards updated', 'Closed fiscal year', 'Each model passes its stated check before use', 'ml#mccal,roll,inventory'],
+ ['year', 'Reunion class goals', 'Reunion giving staff', 'September', 'Goal range for every reunion class from the reunion model', 'Class history', 'Small classes pooled before a goal is set', 'ml#reunfc'],
+ ['year', 'Next-year goal and forecast', 'Director and OER leadership', 'May', 'A goal range for the next fiscal year from the forecast and participation models', 'Rolling backtest and same-day history', 'Range from the backtest, not a single number', 'an#fcast,ml#partfc'],
+ ['event', '24-Hour Challenge live board', 'OER and the Alumni Association', 'Every 15 minutes on the day, in March', 'Donors, dollars, challenge unlocks, pace against last year, and who is awake', 'Giving-day platform export, to confirm', 'Reconciled to the CRM the next morning', 'af#challenge,hcclock'],
+ ['event', 'Appeal list and campaign dataset', 'Annual Giving and the mail or email vendor', 'Before each appeal', 'The appeal file after every suppression rule, with counts at each step', 'CRM, suppression flags, appeal calendar', 'Row count matches the last bar of the waterfall', 'seg#suppress,dataset'],
+ ['event', 'Appeal results', 'Annual Giving', '2, 4 and 8 weeks after each appeal', 'Response rate, average gift and revenue per recipient by segment and test cell', 'Gift feed matched to appeal codes', 'Test cells sized before launch, no early stopping', 'seg#abtest,cycle']
+];
+$('#catalog').innerHTML = `<div class="calb">${CADS.map(([k, n]) => { const rs = RPT.map((r, i) => [r, i]).filter(([r]) => r[0] === k); return `<section class="calc cal-${k}"><h4>${n}<span>${rs.length}</span></h4>${rs.map(([r, i]) => `<button type="button" class="calr" data-open="rpt:${i}"><b>${r[1]}</b><span>${r[3]}</span><small>${r[2]}</small></button>`).join('')}</section>`; }).join('')}</div><p class="note">${RPT.length} reports. Every report links to the business definitions on the Data integrity tab, so a donor or a dollar means the same thing everywhere, and nothing goes out until the evening checks on that data have passed.</p>`;
+const RI = n => RPT.findIndex(r => r[1] === n);
+safe('calweek', function calweek() {
+ const D = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], daily = ['Data checks before release', 'Annual Fund daily dashboard', 'Gift anomaly review'].map(RI);
+ const chip = (i, note) => `<button type="button" class="wkc cal-${RPT[i][0]}" data-open="rpt:${i}"><span>${RPT[i][0] === 'day' ? RPT[i][3].split(',')[0] : RPT[i][3].replace(/^\w+day /, '').replace(', in reunion season', '')}</span>${RPT[i][1]}${note ? `<small>${note}</small>` : ''}</button>`;
+ $('#calweek').innerHTML = `<div class="wk">${D.map(d => { const wk = RPT.map((r, i) => [r, i]).filter(([r]) => r[0] === 'week' && r[3].startsWith(d)).map(([, i]) => i), extra = d === 'Friday' ? [[RI('Requests and self-service'), 'Last Friday of the month']] : d === 'Thursday' ? [] : [];
+  return `<section><h4>${d}</h4>${daily.slice(1).map(i => chip(i)).join('')}${wk.map(i => chip(i, RPT[i][3].includes('reunion season') ? 'In reunion season' : '')).join('')}${extra.map(([i, n]) => chip(i, n)).join('')}${chip(daily[0], 'For tomorrow’s 7 a.m. dashboard')}</section>`; }).join('')}</div>
+ <div class="legend calleg">${CADS.slice(0, 3).map(([k, n]) => `<span><i class="cal-${k}"></i>${n}</span>`).join('')}</div><p class="note">The dashboard uses data through the previous day’s close, so the checks run at 5:30 p.m. the evening before, once the day’s gift batch closes. They run on a schedule, and the analyst reads the exceptions before leaving. The dashboard refreshes overnight and is ready at 7 a.m. with no one at a desk, and a failed check holds it until gift processing fixes it at 9 a.m. Weekly reports go out at 10 a.m., after the 9 a.m. fixes, so nothing reaches a reader before a person has looked at the exceptions. Month-close reports land on business days 5 to 10 and do not move the weekly rhythm.</p>`;
+});
+/* the year on one wheel: what happens, when, and with or to whom */
+safe('calwheel', function calwheel() {
+ const M = ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], MF = ['July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March', 'April', 'May', 'June'];
+ const RINGS = [['rep', 'Reports out', 'var(--accent)'], ['cmp', 'Campaigns and events', 'var(--amber)'], ['par', 'Partners and governance', 'var(--green)'], ['team', 'Team and training', 'var(--slate)'], ['mod', 'Models', '#6b4f7a']];
+ // [ring, start month (0 = July, fractions within the month), end, what, with or to whom, deliverable, link]
+ const OPS = [
+  ['rep', 0, 2, 'Fiscal-year close and year-end report', 'To the Dean’s office and OER leadership, signed off with central', 'Final dollars, donors, participation and Dean’s Circle counted to CASE standards', 'rpt:' + RI('Fiscal-year close and year-end report')],
+  ['rep', 3, 3.6, 'Q1 advancement update', 'To the Senior Associate Dean, External Engagement', 'Quarter and year to date against goal, findings and recommendations', 'rpt:' + RI('Quarterly advancement update')],
+  ['rep', 6, 6.6, 'Q2 advancement update', 'To the Senior Associate Dean, External Engagement', 'Half-year view after the calendar year-end peak', 'rpt:' + RI('Quarterly advancement update')],
+  ['rep', 9, 9.6, 'Q3 advancement update', 'To the Senior Associate Dean, External Engagement', 'Where the year will land, with the 24-Hour Challenge result', 'rpt:' + RI('Quarterly advancement update')],
+  ['rep', 2, 3, 'Reunion class goals', 'To reunion giving staff and class volunteers', 'A goal range for every reunion class', 'rpt:' + RI('Reunion class goals')],
+  ['rep', 10, 11, 'Next-year goal and forecast', 'To the Director and OER leadership', 'A goal range for the next fiscal year', 'rpt:' + RI('Next-year goal and forecast')],
+  ['cmp', 2.2, 2.8, 'Fall email appeal', 'With Annual Giving and the email vendor', 'Appeal list, suppression waterfall, test cells, then results at 2, 4 and 8 weeks', 'rpt:' + RI('Appeal list and campaign dataset')],
+  ['cmp', 5, 5.15, 'Giving Tuesday, December 1', 'With Annual Giving and the Alumni Association', 'Appeal list the week before, results the next morning', 'rpt:' + RI('Appeal list and campaign dataset')],
+  ['cmp', 5.4, 6, 'Calendar year-end appeal', 'With Annual Giving, Annual Giving Officers and gift processing', 'Year-end pace twice a day from December 15', 'rpt:' + RI('Year-end pace, December 15 to 31 and June')],
+  ['cmp', 8.3, 8.5, 'MIT 24-Hour Challenge', 'With the Alumni Association’s 24-Hour Challenge team', 'Send schedule, then the live board every 15 minutes on the day', 'rpt:' + RI('24-Hour Challenge live board')],
+  ['cmp', 9, 9.45, 'Spring email and Dean’s Circle upgrade ask', 'With Annual Giving', 'Upgrade list from the upgrade model, with a 10% holdout', 'rpt:' + RI('Appeal list and campaign dataset')],
+  ['cmp', 9.5, 11, 'Reunion season', 'With reunion volunteers and staff', 'Weekly reunion tracker by class', 'rpt:' + RI('Reunion giving tracker')],
+  ['cmp', 11.1, 12, 'Fiscal-year-end appeal and close-out', 'With Annual Giving and gift processing', 'Close-out pace twice a day, then results', 'rpt:' + RI('Appeal results')],
+  ['par', 0, 1, 'Definitions and counting rules for the year', 'With central finance and data partners', 'One agreed definition set, CASE-aligned, and the contactable-alumni count', 'go:dq#defs'],
+  ['par', 1, 2, 'Year-end sign-off with central', 'With central finance and data partners', 'OER totals reconciled to central before the year-end report', 'go:dq#recon'],
+  ['par', 3.6, 4, 'Data quality review', 'With central data partners and BDTO', 'Scorecard and open issues, each with an owner and a date', 'rpt:' + RI('Data quality scorecard and issue log')],
+  ['par', 4, 5, 'Data mart and CRM roadmap planning', 'With BDTO and IS&T', 'Next year’s reporting-layer work and CRM conversion gates', 'go:sp#roadmap,lifecycle'],
+  ['par', 6.6, 7, 'Data quality review', 'With central data partners and BDTO', 'Scorecard and open issues', 'rpt:' + RI('Data quality scorecard and issue log')],
+  ['par', 7, 8, 'Model approval for spring pilots', 'With Resource Development', 'Upgrade pilot approved before the spring ask', 'go:ml#upgrade,inventory'],
+  ['par', 8, 9, 'MIT data governance review', 'With MIT data governance', 'Model cards and data handling reviewed', 'go:ml#inventory'],
+  ['par', 9.6, 10, 'Data quality review', 'With central data partners and BDTO', 'Scorecard and open issues', 'rpt:' + RI('Data quality scorecard and issue log')],
+  ['team', 1, 2, 'New Annual Giving Officer onboarding', 'With Annual Giving managers', 'Portfolio report, renewal list and definitions walk-through', 'go:pi#training'],
+  ['team', 2, 3, 'Fall training cohort', 'For OER staff who use dashboards', 'Self-service dashboards and the report catalog', 'go:pi#training'],
+  ['team', 6, 7, 'Winter training cohort', 'For OER staff who use dashboards', 'Refresher before the spring appeals and the 24-Hour Challenge', 'go:pi#training'],
+  ['team', 11, 12, 'Report catalog review and retire list', 'With report owners', 'Reports with no user in 90 days retired', 'rpt:' + RI('Report catalog review')],
+  ['mod', 0, 1, 'Model refit and calibration', 'Strategic Information team, reported to the Director', 'Forecast range recalibrated, renewal and upgrade refit, model cards updated', 'rpt:' + RI('Model refit and calibration')],
+  ['mod', 3, 3.6, 'Model drift review', 'With Annual Giving', 'Top features checked, retrain if one moved', 'rpt:' + RI('Model drift review')],
+  ['mod', 6, 6.6, 'Model drift review', 'With Annual Giving', 'Top features checked after the year-end peak', 'rpt:' + RI('Model drift review')],
+  ['mod', 7.4, 8.2, 'Upgrade pilot launch', 'With Annual Giving', 'Scores and holdout ready for the spring upgrade ask', 'go:ml#upgrade'],
+  ['mod', 9.6, 10.2, 'Model drift review', 'With Annual Giving', 'Top features checked before the year closes', 'rpt:' + RI('Model drift review')]
+ ];
+ const EVERY = [['Every evening', 'Data checks at 5:30 p.m. after the gift batch closes', 'Strategic Information team'], ['Every morning', 'Daily dashboard at 7 a.m., anomaly review at 9 a.m.', 'To Annual Giving and OER leadership, with gift processing'], ['Every week', 'Weekly report and forecast Monday at 10 a.m., portfolios Tuesday, renewal list Wednesday, after the 9 a.m. fixes', 'To the Senior Associate Dean, the Director and Annual Giving'], ['Every month', 'Month close and reconciliation, then the pipeline pack and participation', 'With central finance and data partners, to the Director'], ['Every month', 'Dashboard office hours', 'For anyone in OER']];
+ const cx = 260, cy = 260, A = m => m / 12 * 2 * Math.PI - Math.PI / 2, pt = (r, m) => [(cx + r * Math.cos(A(m))).toFixed(1), (cy + r * Math.sin(A(m))).toFixed(1)];
+ const sector = (r0, r1, m0, m1) => { const [a, b] = pt(r1, m0), [c, d] = pt(r1, m1), [e, f] = pt(r0, m1), [g, h] = pt(r0, m0), L = m1 - m0 > 6 ? 1 : 0; return `M${a},${b} A${r1},${r1} 0 ${L} 1 ${c},${d} L${e},${f} A${r0},${r0} 0 ${L} 0 ${g},${h} Z`; };
+ const RR = RINGS.map((_, k) => [232 - k * 27, 232 - k * 27 - 23]), NOW = 4 + 23 / 30;
+ let s = `<svg viewBox="-10 -10 540 540" role="img" aria-label="The fiscal year on one wheel, July at the top, with five rings of activity">`;
+ M.forEach((m, i) => { s += `<path class="wsec" data-m="${i}" d="${sector(80, 236, i, i + 1)}" fill="${i % 2 ? 'var(--soft)' : 'var(--paper)'}" stroke="var(--line)"/>`; const [x, y] = pt(252, i + .5); s += `<text x="${x}" y="${(+y + 4).toFixed(1)}" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">${m}</text>`; });
+ OPS.forEach((o, i) => { const k = RINGS.findIndex(r => r[0] === o[0]), [r0, r1] = [RR[k][1], RR[k][0]]; s += `<path class="wop" data-i="${i}" data-m0="${o[1]}" data-m1="${o[2]}" d="${sector(r0, r1, o[1] + .02, o[2] - .02)}" fill="${RINGS[k][2]}" tabindex="0" role="button" aria-label="${o[3]}, ${o[4]}"><title>${o[3]}. ${o[4]}</title></path>`; });
+ const [hx, hy] = pt(240, NOW); s += `<line x1="${cx}" y1="${cy}" x2="${hx}" y2="${hy}" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 3"/><circle cx="${hx}" cy="${hy}" r="5" fill="var(--ink)"/>`;
+ s += `<circle cx="${cx}" cy="${cy}" r="78" fill="var(--paper)"/><text x="${cx}" y="${cy - 14}" text-anchor="middle" font-size="12" fill="var(--muted)">Fiscal year 2027</text><text class="wmon" x="${cx}" y="${cy + 6}" text-anchor="middle" font-size="18" font-weight="700" fill="var(--accent)"></text><text x="${cx}" y="${cy + 26}" text-anchor="middle" font-size="11.5" fill="var(--muted)">Today, November 23</text></svg>`;
+ $('#calwheel').innerHTML = `<div class="whgrid"><div class="chart">${s}<div class="legend">${RINGS.map(r => `<span><i style="background:${r[2]}"></i>${r[1]}</span>`).join('')}</div></div><div class="wside"></div></div><p class="note">A proposed operating calendar. The outer ring is what goes out and to whom, and the inner rings are the work with partners, the team and the models that make it possible. Month-by-month and weekly rhythms are listed for every month. July is the busiest month, with the old year closing while the new one starts, so no new reports begin in July.</p>`;
+ const side = $('#calwheel .wside');
+ const draw = m => { const act = OPS.map((o, i) => [o, i]).filter(([o]) => o[1] < m + 1 && o[2] > m);
+  $$('#calwheel .wsec').forEach(p => p.classList.toggle('on', +p.dataset.m === m)); $$('#calwheel .wop').forEach(p => p.classList.toggle('dim', !(+p.dataset.m0 < m + 1 && +p.dataset.m1 > m))); $('#calwheel .wmon').textContent = MF[m];
+  side.innerHTML = `<h4>${MF[m]}${m === 4 ? ' · now' : ''}</h4>${RINGS.map(r => { const it = act.filter(([o]) => o[0] === r[0]); return it.length ? `<div class="wgrp"><p class="wk" style="color:${r[2]}">${r[1]}</p>${it.map(([o]) => `<button type="button" class="wit" style="--c:${r[2]}" data-open="${o[6]}"><b>${o[3]}</b><span>${o[4]}</span><small>${o[5]}</small></button>`).join('')}</div>` : ''; }).join('')}<div class="wgrp"><p class="wk">Every month</p><ul class="wev">${EVERY.map(e => `<li><b>${e[0]}</b> ${e[1]}${/\.$/.test(e[1]) ? '' : '.'} <span>${e[2]}.</span></li>`).join('')}</ul></div>`;
+  return `<b>${MF[m]}</b>: ${act.length} ${act.length === 1 ? 'activity' : 'activities'} on the wheel${act.length ? ', ' + act.map(([o]) => o[3]).join(', ') : ''}.`; };
+ timeMachine($('#calwheel'), M.map((_, i) => i), i => MF[i], draw, 4, 'Month on the wheel');
+ $('#calwheel').addEventListener('click', e => { const p = e.target.closest('.wop'), sc = e.target.closest('.wsec'); if (p) { const o = OPS[+p.dataset.i]; const tm = $('#calwheel').previousElementSibling; const inp = tm && tm.querySelector('input'); if (inp) { inp.value = Math.floor(o[1] + .01); inp.dispatchEvent(new Event('input')); } } else if (sc) { const inp = $('#calwheel').previousElementSibling.querySelector('input'); inp.value = sc.dataset.m; inp.dispatchEvent(new Event('input')); } });
+ $('#calwheel').addEventListener('keydown', e => { const p = e.target.closest('.wop'); if (p && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); p.dispatchEvent(new MouseEvent('click', {bubbles: true})); } });
+});
+POP.rpt = (id, t) => { const r = RPT[+id], cad = (CADS.find(c => c[0] === r[0]) || ['', ''])[1], ex = r[7] ? r[7].split(',') : [], tab = ex.length ? ex[0].split('#')[0] : '', ids = ex.map(x => x.includes('#') ? x.split('#')[1] : x).join(',');
+ openDlg(`<p class="eyebrow">Reporting calendar · ${cad}</p><h3 id="dlg-title">${r[1]}</h3><dl class="mcgrid"><dt>Audience</dt><dd>${r[2]}</dd><dt>When</dt><dd>${r[3]}</dd><dt>What it shows</dt><dd>${r[4]}</dd><dt>Source</dt><dd>${r[5]}</dd><dt>Before release</dt><dd>${r[6]}</dd><dt>Owner</dt><dd>Strategic Information team, with ${r[2].split(',')[0]} as the user who signs off</dd></dl>${ids ? `<p><button class="ex ev" data-go="${tab}#${ids}" data-title="${r[1]}">See it in this sample ›</button></p>` : '<p class="note">No exhibit in this sample. Organization records are kept apart from alumni giving.</p>'}`, t); };
+
 
 /* ================= 2 DONOR ANALYTICS AND FORECASTING ================= */
 function behavior(y) {
@@ -1358,7 +1701,7 @@ safe('pipeline', function pipeline() {
  $('#pipeline').innerHTML = s + `</svg><p class="note">Lead annual prospects at $10,000 or more, FY27 to date, synthetic. <b>So what:</b> cultivation holds prospects longest, a median ${ST[2][3]} days, so the monthly pack flags anyone in a stage over 180 days.</p>`;
  const AGO = [['AGO 1', 204, .71, 41, 1.22e6, 1.3e6], ['AGO 2', 197, .64, 33, .98e6, 1.2e6], ['AGO 3', 210, .58, 29, .86e6, 1.2e6], ['AGO 4', 188, .76, 46, 1.31e6, 1.3e6]];
  const due = 120 * (142 / 365);
- $('#portfolio').innerHTML = `<div class="scroll"><table class="tbl"><thead><tr><th scope="col">Officer</th><th scope="col">Portfolio</th><th scope="col">Meetings to date</th><th scope="col">Raised against goal</th></tr></thead><tbody>${AGO.map(a => `<tr><th scope="row">${a[0]}</th><td>${a[1]}</td><td><span class="st ${a[3] >= due ? 'pass' : 'flag'}">${a[3]} of ${Math.round(due)} due</span></td><td>${k1(a[4])} of ${k1(a[5])}</td></tr>`).join('')}</tbody></table></div><p class="note">OER’s Annual Giving Officer posting describes portfolios of about 200 donors at $1,000 or more and 120 meetings a year. Meetings due are pro-rated to November 20. Figures are synthetic.</p>`;
+ $('#portfolio').innerHTML = `<div class="scroll"><table class="tbl"><thead><tr><th scope="col">Officer</th><th scope="col">Portfolio</th><th scope="col">Meetings to date</th><th scope="col">Raised against goal</th></tr></thead><tbody>${AGO.map(a => `<tr><th scope="row">${a[0]}</th><td>${a[1]}</td><td><span class="st ${a[3] >= due ? 'pass' : 'flag'}">${a[3]} of ${Math.round(due)} due</span></td><td>${k1(a[4])} of ${k1(a[5])}</td></tr>`).join('')}</tbody></table></div><p class="note">OER’s Annual Giving Officer posting describes portfolios of about 200 donors at $1,000 or more and 120 meetings a year. Meetings due are pro-rated to November 23. Figures are synthetic.</p>`;
 });
 
 const SSERIES = [.18, .2, .22, .25, .3, .33, .38, .42, .46, .5, .53, .56], SELF_SERVED = SSERIES[11];
@@ -1561,10 +1904,10 @@ $('#ninety').innerHTML = [['Days 1 to 30', 'Listen and inventory', ['Meet Annual
 
 /* ================= OVERVIEW ================= */
 const c27t = C27;
-$('#takeaways').innerHTML = [['', 'Annual Fund', `FY27 is at ${musd(c27t)} through November 20, ${c27t >= C26SD ? pct(c27t / C26SD - 1) + ' ahead of' : pct(1 - c27t / C26SD) + ' behind'} the same calendar day last year.`, `Simulated chance of reaching the ${musd(GOAL)} goal is ${pct(SIM.pGoal)}.`, 'go:af'], ['slate', 'Renewal', `About ${n0(LYBUNT)} FY26 donors have not renewed yet.`, 'The renewal model sorts them for calls and notes.', 'go:seg'], ['amber', 'Integrity', 'A worked example shows how a gap between an OER and a central total would be explained, dollar by dollar.', 'Hypothetical figures. Most such gaps are counting rules, not errors.', 'go:dq']].map(t => `<button class="tk ${t[0]}" data-open="${t[4]}"><b>${t[1]}</b><strong>${t[2]}</strong><span>${t[3]}</span></button>`).join('');
-$('#kpis').innerHTML = [[musd(c27t), 'FY27 Annual Fund to date', pct(c27t / GOAL) + ' of goal', 'go:af', ''], [n0(FY26D.length), 'FY26 donors', musd(FY26T) + ' raised', 'go:an', ''], [pct(B26.ret), 'FY26 donor retention', 'Of FY25 donors', 'go:an', ''], [CHK.filter(c => c[1] <= c[2]).length + ' of ' + CHK.length, 'Data checks passing', (CHK.length - CHK.filter(c => c[1] <= c[2]).length) + ' to fix today', 'go:dq', CHK.some(c => c[1] > c[2]) ? 'warn' : ''], [pct(SELF_SERVED), 'Requests self-served', 'Target by June, first-year plan', 'go:pi', ''], ['Ready', 'Spring appeal list', 'Suppressions applied', 'go:seg', '']].map(k => `<button class="kpi ${k[4]}" data-open="${k[3]}"><strong>${k[0]}</strong><span>${k[1]}</span><small>${k[2]}</small></button>`).join('');
+$('#takeaways').innerHTML = [['', 'Annual Fund', `FY27 is at ${musd(c27t)} through November 23, ${c27t >= C26SD ? pct(c27t / C26SD - 1) + ' ahead of' : pct(1 - c27t / C26SD) + ' behind'} the same calendar day last year.`, `Simulated chance of reaching the ${musd(GOAL)} goal is ${pct(SIM.pGoal)}.`, 'go:af#progress'], ['slate', 'Renewal', `About ${n0(LYBUNT)} FY26 donors have not renewed yet.`, 'The renewal model sorts them for calls and notes.', 'go:seg#roc,thresh'], ['amber', 'Integrity', 'A worked example shows how a gap between an OER and a central total would be explained, dollar by dollar.', 'Hypothetical figures. Most such gaps are counting rules, not errors.', 'go:dq#recon']].map(t => `<button class="tk ${t[0]}" data-open="${t[4]}" data-title="${t[1]}"><b>${t[1]}</b><strong>${t[2]}</strong><span>${t[3]}</span></button>`).join('');
+$('#kpis').innerHTML = [[musd(c27t), 'FY27 Annual Fund to date', pct(c27t / GOAL) + ' of goal', 'go:af#progress', ''], [n0(FY26D.length), 'FY26 donors', musd(FY26T) + ' raised', 'go:an#flow', ''], [pct(B26.ret), 'FY26 donor retention', 'Of FY25 donors', 'go:an#cohort', ''], [CHK.filter(c => c[1] <= c[2]).length + ' of ' + CHK.length, 'Data checks passing', (CHK.length - CHK.filter(c => c[1] <= c[2]).length) + ' to fix today', 'go:dq#checks', CHK.some(c => c[1] > c[2]) ? 'warn' : ''], [pct(SELF_SERVED), 'Requests self-served', 'Target by June, first-year plan', 'go:pi#reqs', ''], ['Ready', 'Spring appeal list', 'Suppressions applied', 'go:seg#suppress,dataset', '']].map(k => `<button class="kpi ${k[4]}" data-open="${k[3]}" data-title="${k[1]}"><strong>${k[0]}</strong><span>${k[1]}</span><small>${k[2]}</small></button>`).join('');
 const GROUPS = [['af', 'Annual Fund reporting'], ['an', 'Analytics and forecasting'], ['seg', 'Segments and campaigns'], ['dq', 'Data integrity'], ['pi', 'Process and training'], ['sp', 'Special projects'], ['ml', 'Models and methods']];
-const NAMES = {overview: 'Overview', now: 'MIT Sloan context'}; GROUPS.forEach(g => NAMES[g[0]] = g[1]);
+const NAMES = {overview: 'Overview', cal: 'Calendar', now: 'MIT Sloan context'}; GROUPS.forEach(g => NAMES[g[0]] = g[1]);
 const DUTIES = [
  ['Data analysis and reporting · 50%', [['Lead reporting strategy and analysis for the Annual Fund and broader development', 'af#progress,catalog'], ['Assess fundraising performance against last year and goal', 'an#perf'], ['Analyze fundraising, donor behavior, portfolio, pipeline and revenue', 'an#flow,cohort,pipeline'], ['Check completeness, troubleshoot integrity and present findings', 'dq#checks,issues'], ['Design and maintain reports, dashboards and datasets', 'af#catalog'], ['Handle ad hoc requests and forecasting support for campaign execution', 'an#fcast,mape'], ['Analyze results across the appeal cycle', 'seg#cycle'], ['Build segmentation, suppression logic and campaign-ready datasets', 'seg#rfm,suppress,dataset'], ['Use SQL to query, validate and investigate discrepancies', 'dq#recon,checks'], ['Keep reporting assets, documentation and definitions', 'dq#defs']]],
  ['Business process improvement · 20%', [['Turn colleagues’ needs into efficient processes', 'pi#process'], ['Improve processes and use current tools better', 'pi#reqs,process'], ['Be the expert on platforms, reports and data, and train others', 'pi#training,assets'], ['Evaluate and recommend tools and methods', 'pi#tools'], ['Make metrics, business rules and inclusion criteria consistent', 'dq#defs']]],
@@ -1572,19 +1915,20 @@ const DUTIES = [
  ['Judgment, supervision and confidentiality', [['Decide whether a request needs existing reporting, new analysis, a process fix or training', 'pi#triage'], ['Clarify assumptions and limitations when interpreting central data', 'pi#brief'], ['Choose methods, segments and inclusion rules, and interpret results', 'seg#abtest,roc'], ['Lead projects across OER units and mentor staff', 'sp#roadmap'], ['Handle confidential donor data with care', 'sp#models']]],
  ['Preferred tools and platforms', [['Familiarity with Marketing Cloud, EverTrue, SalesLoft, ServiceNow, Jira, Confluence and Snowflake', 'pi#toolmap']]]
 ];
-$('#dutymap').innerHTML = '<div class="dgroups">' + DUTIES.map((g, gi) => `<div class="dgroup"><p class="dghead static"><b>${gi + 1}</b>${esc(g[0])}</p>${g[1].map(x => `<button class="duty" data-go="${x[1]}" data-title="${esc(x[0])}" data-group="${esc(g[0].split(' ·')[0])}">${esc(x[0])}</button>`).join('')}</div>`).join('') + '</div>';
-const CTX = [['Mission', 'MIT Sloan develops principled, innovative leaders who improve the world and generates ideas that advance management practice.', 'https://mitsloan.mit.edu/invent-your-future'], ['Values', 'MIT’s values of excellence and curiosity, openness and respect, and belonging and community.', 'https://mitsloan.mit.edu/node/26054'], ['OER', 'Connects alumni and students, strengthens the alumni network and builds a culture of philanthropy.', 'https://mbapolicyhandbook.mit.edu/office-external-relations-oer'], ['Annual Fund, FY26', '$5.8 million, with 90% from 619 Dean’s Circle donors, funding student clubs and conferences, faculty research and Action Learning labs.', 'https://mitsloan.mit.edu/node/52447'], ['24-Hour Challenge', '680 MIT Sloan donors on March 12, 2026, unlocking more than $745,000, up from 616 donors the year before.', 'https://mitsloan.mit.edu/alumni/mit-sloan-alumni-and-friends-support-2026-mit-24-hour-challenge'], ['Reunions', 'Reunion giving is more than 25% of the Annual Fund, per OER’s reunion giving posting.', 'https://web.mit.edu/sloan-hr/jobs/OERAssociateDirectorClassandReunion%20Giving.pdf'], ['Partners', 'Sloan Technology Services, MIT Resource Development and the Alumni Association, as named in the posting.', 'https://web.mit.edu/sloan-hr/jobs/OERSeniorDataandReportingAnalyst.pdf']];
+$('#dutymap').innerHTML = '<div class="dgroups">' + DUTIES.map((g, gi) => `<div class="dgroup"><p class="dghead static"><b>${gi + 1}</b>${esc(g[0])}</p><div class="dgchips">${g[1].map(x => `<button class="duty" data-go="${x[1]}" data-title="${esc(x[0])}" data-group="${esc(g[0].split(' ·')[0])}">${esc(x[0])}</button>`).join('')}</div></div>`).join('') + '</div>';
+const CTX = [['OER', 'Connects alumni and students, strengthens the alumni network and builds a culture of philanthropy.', 'https://mbapolicyhandbook.mit.edu/office-external-relations-oer'], ['Annual Fund, FY26', '$' + (PUB[2026].t / 1e6).toFixed(1) + ' million, with ' + pct(PUB[2026].sh) + ' from ' + PUB[2026].dc + ' Dean’s Circle donors, funding student clubs and conferences, faculty research and Action Learning labs.', 'https://mitsloan.mit.edu/node/52447'], ['24-Hour Challenge', '680 MIT Sloan donors on March 12, 2026, unlocking more than $745,000, up from 616 donors the year before.', 'https://mitsloan.mit.edu/alumni/mit-sloan-alumni-and-friends-support-2026-mit-24-hour-challenge'], ['Reunions', 'Reunion giving is more than 25% of the Annual Fund, per OER’s reunion giving posting.', 'https://web.mit.edu/sloan-hr/jobs/OERAssociateDirectorClassandReunion%20Giving.pdf'], ['Partners', 'Sloan Technology Services, MIT Resource Development and the Alumni Association, as named in the posting.', 'https://web.mit.edu/sloan-hr/jobs/OERSeniorDataandReportingAnalyst.pdf']];
 $('#context').innerHTML = CTX.map(c => `<li><b>${c[0]}.</b> ${esc(c[1])} <a href="${c[2]}" target="_blank" rel="noopener">Source ↗</a></li>`).join('');
 
 const SUBS = {
- overview: [['Five-minute path', ['fivemin']], ['Taking work off the Director', ['support']], ['How I handle donor data', ['handling']], ['Duties in the posting', ['dutymap']], ['Experience and MIT Sloan context', ['context']]],
+ overview: [['Mission and values', ['mission']], ['Five-minute path', ['fivemin']], ['Off the Director’s desk', ['support']], ['Donor data', ['handling']], ['Duties', ['dutymap']], ['Experience and context', ['context']]],
  now: [['Dean’s priorities', ['prio4']], ['Current and planned projects', ['projects']], ['MIT-wide context', ['mitwide', 'nowtl']], ['Sources', ['nowsrc']]],
- af: [['Published results', ['pubtrend']], ['Progress to goal', ['progress']], ['Programs and gift bands', ['programs', 'pyramid']], ['Reunion and 24-Hour Challenge', ['reunion', 'challenge']], ['Report catalog', ['catalog']]],
+ cal: [['The year on one wheel', ['calwheel']], ['Reports by cadence', ['catalog']], ['A typical week', ['calweek']]],
+ af: [['Published results', ['pubtrend']], ['Progress to goal', ['progress']], ['Programs and gift bands', ['programs', 'pyramid']], ['Reunion and 24-Hour Challenge', ['reunion', 'challenge']], ['Challenge clock', ['hcclock']]],
  an: [['Performance scorecard', ['perf']], ['Donor flow', ['flow', 'behav']], ['Retention and concentration', ['cohort', 'conc']], ['Forecast models', ['fcast', 'mape', 'season']], ['Pipeline and portfolios', ['pipeline', 'portfolio']]],
  seg: [['Appeal cycle', ['cycle']], ['Segments', ['rfm', 'kmeans']], ['Suppression logic', ['suppress']], ['Campaign dataset', ['dataset']], ['Appeal test', ['abtest']], ['Renewal model', ['roc', 'calib', 'thresh']]],
  dq: [['Business definitions', ['defs']], ['Reconcile with central', ['recon']], ['Quality checks and issues', ['checks', 'issues']], ['Anomaly detection', ['anom']]],
  pi: [['Request triage', ['triage', 'brief']], ['Requests', ['reqs']], ['Process redesign', ['process']], ['Tools', ['tools', 'toolmap']], ['Training and documentation', ['training', 'assets']]],
- ml: [['Matched to published figures', ['anchors']], ['How the forecast is built', ['mcspec']], ['Convergence and sensitivity', ['mcconv', 'mcsens']], ['Calibration and backtests', ['mccal', 'roll']], ['Parameter recovery', ['recov']], ['Renewal model diagnostics', ['rnboot', 'rnperm', 'rnlift']], ['Test design and power', ['power']]],
+ ml: [['Model register and cards', ['inventory']], ['Matched to published figures', ['anchors']], ['How the forecast is built', ['mcspec']], ['Convergence and sensitivity', ['mcconv', 'mcsens']], ['Calibration and backtests', ['mccal', 'roll']], ['Parameter recovery', ['recov']], ['Renewal model diagnostics', ['rnboot', 'rnperm', 'rnlift']], ['Upgrade propensity', ['upgrade']], ['Participation and reunion models', ['partfc', 'reunfc']], ['Test design and power', ['power']]],
  sp: [['Roadmap', ['roadmap']], ['Partners', ['raci']], ['Event support', ['event']], ['Model guardrails', ['models']], ['First 90 days', ['ninety']], ['First-year lifecycle', ['lifecycle', 'cadence']]]
 };
 
@@ -1608,15 +1952,15 @@ POP.proj = (id, t) => { const p = PROJ[+id]; openDlg(`<p class="eyebrow">${p[0]}
 $('#projects').innerHTML = PROJ.map((p, i) => `<button class="si" data-open="proj:${i}"><b>${p[0]}</b><strong>${p[1]}</strong><small>${esc(p[2])}</small></button>`).join('');
 const MIL2 = [['July 2025', 'Richard M. Locke becomes dean of MIT Sloan', 'New school priorities shape what Annual Fund reports emphasize.'], ['February 2026', 'Financial Times ranks MIT Sloan No. 1 in its Global MBA Ranking', 'A first, and a new message to test in appeals.'], ['March 2026', 'MIT 24-Hour Challenge, March 12: 680 Sloan donors', 'The live board and post-event analysis run every year.'], ['March 2026', 'Boi Carpenter becomes MIT’s Vice President for Resource Development', 'A new central partner focused on systems, structures and data.'], ['April 2026', 'Dean Locke shares four priorities with alumni', 'Fiscal sustainability and operational excellence among them.'], ['July 2026', 'FY27 begins, with the 8% endowment tax in effect', 'Flexible Annual Fund dollars matter more.'], ['July 2026', 'MIT Sloan Data Analytics Consortium announced, July 27', 'Organization members to report separately from alumni giving.'], ['July 2026', 'MIT Sloan announces the Evening MBA, July 15', 'A new program code and a future alumni segment.'], ['March 2027', 'Next MIT 24-Hour Challenge', 'Date to be announced by MIT.'], ['August 2027', 'First Evening MBA cohort arrives', 'Program reporting ready before the first class graduates.']];
 $('#nowtl').innerHTML = MIL2.map(m => `<li><b>${m[0]}</b><strong>${esc(m[1])}</strong><span>${esc(m[2])}</span></li>`).join('');
-$('#mitwide').innerHTML = `<div class="facts4"><div><b>$691M</b><span>given or pledged to MIT in FY25 by almost 31,000 donors</span></div><div><b>8%</b><span>federal tax on MIT’s endowment returns, from FY27</span></div><div><b>$5.8M</b><span>raised by the MIT Sloan Annual Fund in FY26, 90% of it from 619 Dean’s Circle donors</span></div><div><b>#1</b><span>MIT Sloan in the FT 2026 Global MBA Ranking</span></div></div><p class="note">MIT’s fundraising focus includes climate, life sciences and health, and generative AI. <b>So what:</b> with more pressure on central budgets, the flexible, unrestricted support the Annual Fund provides becomes more valuable to the school, and accurate reporting on it matters more.</p>`;
+$('#mitwide').innerHTML = `<div class="facts4"><div><b>$691M</b><span>given or pledged to MIT in FY25 by almost 31,000 donors</span></div><div><b>8%</b><span>federal tax on MIT’s endowment returns, from FY27</span></div><div><b>$${(PUB[2026].t / 1e6).toFixed(1)}M</b><span>raised by the MIT Sloan Annual Fund in FY26, ${pct(PUB[2026].sh)} of it from ${PUB[2026].dc} Dean’s Circle donors</span></div><div><b>#1</b><span>MIT Sloan in the FT 2026 Global MBA Ranking</span></div></div><p class="note">MIT’s fundraising focus includes climate, life sciences and health, and generative AI. <b>So what:</b> with more pressure on central budgets, the flexible, unrestricted support the Annual Fund provides becomes more valuable to the school, and accurate reporting on it matters more.</p>`;
 const NSRC = [['MIT Sloan alumni fireside chat with Dean Locke', 'https://mitsloan.mit.edu/node/51558'], ['MIT Sloan launches the Evening MBA', 'https://mitsloan.mit.edu/press/mit-sloan-school-management-launches-evening-mba'], ['MIT Sloan Data Analytics Consortium', 'https://mitsloan.mit.edu/press/mit-sloan-announces-a-new-data-analytics-industry-consortium'], ['Major tax impact on MIT and its mission', 'https://orgchart.mit.edu/node/1480'], ['New vice president for resource development', 'https://president.mit.edu/writing-speeches/new-vice-president-resource-development'], ['MIT Resource Development facts', 'https://facts.mit.edu/resource-development/'], ['Financial Times ranks MIT Sloan No. 1 in 2026 Global MBA Ranking', 'https://news.mit.edu/2026/financial-times-ranks-mit-sloan-no-1-global-mba-ranking-0313'], ['2026 MIT 24-Hour Challenge', 'https://mitsloan.mit.edu/alumni/mit-sloan-alumni-and-friends-support-2026-mit-24-hour-challenge'], ['Your 2025–2026 Impact: Dean’s Circle', 'https://mitsloan.mit.edu/node/52447'], ['Your 2025–2026 Impact', 'https://mitsloan.mit.edu/about/your-2025-2026-impact']];
 $('#nowsrc').innerHTML = NSRC.map(x => `<li><a href="${x[1]}" target="_blank" rel="noopener">${esc(x[0])} ↗</a></li>`).join('');
 
 /* ================= GAPS FROM THE FULL POSTING ================= */
 safe('perf', function perf() {
- const R = [['Annual Fund dollars', C27, C26SD, 'usd'], ['Donors', 1012, 968, 'n'], ['Alumni participation', .036, .034, 'p'], ['Retained from FY26, FY27 to date', .41, .39, 'p'], ['Dean’s Circle donors, $2,500+', 268, 259, 'n'], ['New donors', 118, 131, 'n'], ['Average gift', C27 / 1012, C26SD / 968, 'usd'], ['Gift officer meetings', 149, 137, 'n']];
+ const R = [['Annual Fund dollars', C27, C26SD, 'usd'], ['Donors', SD27.d, SD27.dLY, 'n'], ['Alumni participation', SD27.p, SD27.pLY, 'p'], ['Retained from FY26, FY27 to date', SD27.ret, SD27.retLY, 'p'], ['Dean’s Circle donors, $2,500+', 268, 259, 'n'], ['New donors', 118, 131, 'n'], ['Average gift', C27 / SD27.d, C26SD / SD27.dLY, 'usd'], ['Gift officer meetings', 149, 137, 'n']];
  const f = (v, t) => t === 'usd' ? (v >= 1e5 ? musd(v) : usd(v)) : t === 'p' ? pct1(v) : n0(v);
- $('#perf').innerHTML = `<div class="scroll"><table class="tbl"><thead><tr><th scope="col">Measure</th><th scope="col">FY27 to Nov 20</th><th scope="col">Same day FY26</th><th scope="col">Change</th></tr></thead><tbody>${R.map(r => { const ch = r[1] / r[2] - 1; return `<tr><th scope="row">${r[0]}</th><td><b>${f(r[1], r[3])}</b></td><td>${f(r[2], r[3])}</td><td><span class="st ${ch >= 0 ? 'pass' : 'flag'}">${ch >= 0 ? '+' : '−'}${pct(Math.abs(ch))}</span></td></tr>`; }).join('')}</tbody></table></div><p class="note">Same-day comparison removes the calendar effect. Synthetic figures. <b>So what:</b> dollars, donors and retention are ahead, but new donors trail last year, so the next appeal leans on acquisition and the first reunion classes.</p>`;
+ $('#perf').innerHTML = `<div class="scroll"><table class="tbl"><thead><tr><th scope="col">Measure</th><th scope="col">FY27 to Nov 23</th><th scope="col">Same day FY26</th><th scope="col">Change</th></tr></thead><tbody>${R.map(r => { const ch = r[1] / r[2] - 1; return `<tr><th scope="row">${r[0]}</th><td><b>${f(r[1], r[3])}</b></td><td>${f(r[2], r[3])}</td><td><span class="st ${ch >= 0 ? 'pass' : 'flag'}">${ch >= 0 ? '+' : '−'}${pct(Math.abs(ch))}</span></td></tr>`; }).join('')}</tbody></table></div><p class="note">Same-day comparison removes the calendar effect. Synthetic figures. <b>So what:</b> dollars, donors and retention are ahead, but new donors trail last year, so the next appeal leans on acquisition and the first reunion classes.</p>`;
 });
 safe('cycle', function cycle() {
  const A = [['Fall email', 'Sep', 24100, .006, 61200], ['Giving Tuesday', 'Dec 2', 18300, .009, 98400], ['Calendar year-end', 'Dec', 26800, .021, 1.21e6], ['24-Hour Challenge', 'Mar 12', 27500, .025, 0.52e6], ['Spring email', 'Apr', 26800, .014, 182000], ['Fiscal year-end', 'Jun', 22400, .017, 0.61e6]];
@@ -1688,6 +2032,7 @@ const REC = {
  programs: ['Give each newer one-year program a class-agent ask and a first-gift appeal in the first year after graduation.', 'Participation in those programs moves toward the MBA rate within three years.', 'Participation by program and class year, same day last year'],
  pyramid: ['Assign every leadership donor who has not renewed to an Annual Giving Officer by March, and ask donors giving $1,000 to $2,499 to join the Dean’s Circle at the Investor level.', 'The leadership share of dollars holds while upgrades widen the base under it.', 'Renewal rate and upgrades by gift band'],
  reunion: ['Start reunion solicitation 12 months out and send each class committee a weekly progress report against its last reunion.', 'More classes beat their previous reunion total.', 'Reunion dollars and participation against each class’s last reunion'],
+ hcclock: ['Send at about 8 a.m. local time in each region, and let the 15-minute report move the next send earlier when donors fall below last year’s pace two runs in a row.', 'Every region is asked in its own morning, and slow hours get help while they can still be made up.', 'Donors per 15 minutes by region, against the same slot last year'],
  challenge: ['Place matches and unlock milestones in the slowest hours, and send a midday reminder to last year’s challenge donors who have not given yet.', 'More donors in the hours that lag today.', 'Donors per hour against last year’s curve'],
  catalog: ['Retire any OER report with no user in 90 days, and answer repeat questions from the catalog first.', 'Fewer reports, each one trusted.', 'Active reports and requests answered from the catalog'],
  perf: ['Add a new-donor push before calendar year-end, because new donors are the one measure behind last year.', 'New donors back to last year’s same-day level by December 31.', 'New donors against the same day last year'],
@@ -1736,6 +2081,17 @@ safe('recs', function recs() {
   card.appendChild(d);
  });
 });
+
+/* the Director tiles: one popup per priority with what I would own, the evidence and what I would need first */
+const OWN = [
+ ['Definitions and reconciliation', 'A CASE-aligned definition set, a bridge from funds received to new funds committed, and an OER to central reconciliation with every difference explained.', [['std:all', 'CASE standards alignment'], ['go:dq#defs,recon', 'Definitions and worked reconciliation']], 'Who owns each definition centrally, and the current VSE extract.'],
+ ['CRM conversion', 'Reporting readiness: a field and report inventory, gates, a risk register, parallel-run parity tests and a cutover checklist.', [['crm:all', 'CRM gate list and risks'], ['go:sp#lifecycle', 'First-year lifecycle with the five gates']], 'Which system is chosen, the timeline, and whether it is lift-and-shift or redesign. Three conversions behind it: Raiser’s Edge to Advance at UAMS, Raiser’s Edge to Agilon at Phillips Academy, APEX to HART at Harvard FAS.'],
+ ['Reporting estate and self-service', 'The report catalog with owners and a retire list, request triage, a training calendar and an asset inventory.', [['go:pi#triage,training,assets', 'Triage, training and assets'], ['go:cal#catalog', 'Report catalog by cadence']], 'The current report list, and which reports matter most to their users.'],
+ ['Annual Fund and campaign reporting', 'Daily dashboard, weekly report, portfolio and pipeline pack, a backtested forecast, and automated suppression and campaign datasets.', [['go:af#pubtrend,progress', 'Published results and FY27 progress'], ['go:seg#suppress,dataset', 'Suppression waterfall and campaign dataset']], 'The campaign calendar and the Annual Giving team’s targets.'],
+ ['AI with guardrails', 'A one-page approved-use framework, pilot selection (anomaly explanations, draft narratives, propensity scores) and evaluation criteria.', [['go:sp#models', 'Models and guardrails'], ['go:ml#rnboot,rnperm', 'How the renewal models are tested']], 'Resource Development’s approval process and MIT’s data governance rules.']
+];
+POP.own = (id, t) => { const o = OWN[+id]; openDlg(`<p class="eyebrow">Where I would take work off the Director</p><h3 id="dlg-title">${o[0]}</h3><div class="ownd"><div><p class="k">What I would own</p><p>${o[1]}</p></div><div><p class="k">What I would need first</p><p>${o[3]}</p></div></div><p class="k">Evidence in this sample</p><div class="ownev">${o[2].map(([k, l]) => k.startsWith('go:') ? `<button class="ex ev" data-go="${k.slice(3)}" data-title="${l}">${l} ›</button>` : `<button class="ex ev" data-open="${k}">${l} ›</button>`).join('')}</div>`, t); };
+$('#support .ownprint').innerHTML = `<table class="tbl support"><thead><tr><th scope="col">Director’s priority</th><th scope="col">What I would own</th><th scope="col">What I would need first</th></tr></thead><tbody>${OWN.map(o => `<tr><th scope="row">${o[0]}</th><td>${o[1]}</td><td>${o[3].split('. Three conversions')[0].replace(/\.?$/, '.')}</td></tr>`).join('')}</tbody></table>`;
 /* ================= 7 MODELS AND METHODS ================= */
 const ML = {};
 const erfA = x => { const t = 1 / (1 + .3275911 * Math.abs(x)), y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - .284496736) * t + .254829592) * t * Math.exp(-x * x); return x >= 0 ? y : -y; };
@@ -1761,7 +2117,7 @@ const HIST = (() => { const ser = FCM.ser, r = rng(7171), yrs = [], first = 2011
  for (let y = 2022; y >= first; y--) { tot = tot / (1.045 + .035 * gs(r)); const back = 1 + .05 * gs(r); early.unshift(MS.map((v, m) => tot * v / MSS * (m >= 5 ? back : 1) * Math.exp(.09 * gs(r)))); }
  early.concat(recent).forEach((ms, i) => yrs.push({fy: first + i, m: ms})); return yrs; })();
 
-/* calibration engine: run the Monte Carlo on November 20 of each past year */
+/* calibration engine: run the Monte Carlo on November 23 of each past year */
 function calRows(o = {}) { const rows = []; for (let i = 1; i < HIST.length; i++) { const cur = HIST[i].m, prv = HIST[i - 1].m, sum4 = a => a[0] + a[1] + a[2] + a[3], td = sum4(cur) + cur[4] * NOVF, ls = sum4(prv) + prv[4] * NOVF, rest = [prv[4] * (1 - NOVF)].concat(prv.slice(5)), f = mcRun(td, ls, rest, Object.assign({N: 2000, seed: 300 + i}, o)), act = cur.reduce((a, b) => a + b, 0);
   const P = [.1, .5, .9].map(q => qnt(f, q)); rows.push({fy: HIST[i].fy, P, act, inn: act >= P[0] && act <= P[2], err: (P[1] - act) / act}); } return rows; }
 const covOf = o => { const r = calRows(o); return r.filter(x => x.inn).length / r.length; };
@@ -1778,24 +2134,24 @@ safe('mcspec', function mcspec() {
  s += `<line x1="${X(GOAL)}" x2="${X(GOAL)}" y1="6" y2="${Ht - B}" stroke="var(--ink)" stroke-width="2" stroke-dasharray="5 3"/><text x="${X(GOAL) + 5}" y="15" font-size="12" font-weight="700" fill="var(--ink)">Goal ${musd(GOAL)}</text>`;
  P.forEach((v, i) => s += `<line x1="${X(v)}" x2="${X(v)}" y1="${Ht - B}" y2="${Ht - B + 6}" stroke="var(--ink)"/><text x="${X(v)}" y="${Ht - B + 19}" text-anchor="middle" font-size="11.5" fill="var(--ink)">${['P10', 'P50', 'P90'][i]} ${musd(v)}</text>`);
  s += `<line x1="${L}" x2="${Wd - 12}" y1="${Ht - B}" y2="${Ht - B}" stroke="var(--muted)"/></svg>`;
- const steps = [['1', 'Same-day pace', `FY27 through November 20 divided by FY26 through November 20: ${musd(C27)} ÷ ${musd(C26SD)} = ${pace.toFixed(3)}.`], ['2', 'Year-level shock', 'One draw per path scales the whole rest of the year, so a strong year is strong in every month: g = pace × (1 + 0.08 z).'], ['3', 'Month-level noise', 'Each remaining month is last year’s month × g × (1 + 0.12 z), and the rest of November uses 0.10. This carries timing, such as December gifts landing in January.'], ['4', 'Paths to percentiles', `2,000 paths give P10, P50, P90 and the share of paths at or above the goal: ${pct(pg)}.`]];
+ const steps = [['1', 'Same-day pace', `FY27 through November 23 divided by FY26 through November 23: ${musd(C27)} ÷ ${musd(C26SD)} = ${pace.toFixed(3)}.`], ['2', 'Year-level shock', 'One draw per path scales the whole rest of the year, so a strong year is strong in every month: g = pace × (1 + 0.08 z).'], ['3', 'Month-level noise', 'Each remaining month is last year’s month × g × (1 + 0.12 z), and the rest of November uses 0.10. This carries timing, such as December gifts landing in January.'], ['4', 'Paths to percentiles', `2,000 paths give P10, P50, P90 and the share of paths at or above the goal: ${pct(pg)}.`]];
  $('#mcspec').innerHTML = `<div class="mcsteps">${steps.map(x => `<div><span class="exn">${x[0]}</span><b>${x[1]}</b><span>${x[2]}</span></div>`).join('')}</div>
- <div class="g2 mt"><div><h4 class="h4">The model</h4><pre class="sql"><code>Total(FY27) = Actual(Jul 1 to Nov 20)
+ <div class="g2 mt"><div><h4 class="h4">The model</h4><pre class="sql"><code>Total(FY27) = Actual(Jul 1 to Nov 23)
             + Σ over remaining months m of  FY26(m) · g · (1 + σm · εm)
 
 g     = ρ · (1 + σp · η)        ρ  = same-day pace = ${pace.toFixed(3)}
 σp    = 0.08   year-level shock, shared by all months, calibrated on history
 σm    = 0.12   month-level noise (0.10 for the rest of November)
 η, εm ~ N(0, 1), independent      paths = 2,000, seed = 2027</code></pre>
- <h4 class="h4">Why it is built this way</h4><ul class="plain tight"><li><b>Same-day pace, not month-end.</b> Comparing a partial month with a full one biases the pace. Both years are cut at November 20.</li><li><b>Two levels of noise.</b> A single month-level term understates risk, because months move together in a good or a bad year. The shared shock carries that correlation.</li><li><b>Last year as the shape.</b> FY26 sets the month pattern. Calibration below checks whether that is good enough across many years.</li><li><b>Calibrated on history.</b> Run on 15 past years, a year-level shock of ${ML.spCal.toFixed(2)} gives the 80% range its intended coverage. The calibration exhibit shows the search.</li><li><b>Known limits.</b> One prior year as the pattern, no structural breaks such as a new program’s first alumni, and normal noise where real gifts are lumpy. Large leadership gifts are better added as a separate pipeline term.</li></ul></div>
+ <h4 class="h4">Why it is built this way</h4><ul class="plain tight"><li><b>Same-day pace, not month-end.</b> Comparing a partial month with a full one biases the pace. Both years are cut at November 23.</li><li><b>Two levels of noise.</b> A single month-level term understates risk, because months move together in a good or a bad year. The shared shock carries that correlation.</li><li><b>Last year as the shape.</b> FY26 sets the month pattern. Calibration below checks whether that is good enough across many years.</li><li><b>Calibrated on history.</b> Run on 15 past years, a year-level shock of ${ML.spCal.toFixed(2)} gives the 80% range its intended coverage. The calibration exhibit shows the search.</li><li><b>Known limits.</b> One prior year as the pattern, no structural breaks such as a new program’s first alumni, and normal noise where real gifts are lumpy. Large leadership gifts are better added as a separate pipeline term.</li></ul></div>
  <div><h4 class="h4">What comes out: 2,000 simulated FY27 totals</h4><div class="chart">${s}</div><div class="facts4"><div><b>${musd(P[1])}</b><span>median total</span></div><div><b>${musd(P[0])} to ${musd(P[2])}</b><span>80% range</span></div><div><b>${pct(pg)}</b><span>chance of reaching ${musd(GOAL)}</span></div><div><b>${pct((P[2] - P[0]) / P[1])}</b><span>width of the range against the median</span></div></div>
  <h4 class="h4">Equivalent in R</h4>${sqlBox(`set.seed(2027)
-pace <- fy27_to_nov20 / fy26_to_nov20
-rest <- c(fy26_nov * (1 - 20/30), fy26_dec_to_jun)   # last year's remaining months
+pace <- fy27_to_nov23 / fy26_to_nov23
+rest <- c(fy26_nov * (1 - 23/30), fy26_dec_to_jun)   # last year's remaining months
 sims <- replicate(2000, {
   g     <- pace * (1 + 0.08 * rnorm(1))              # year-level shock, calibrated
   noise <- c(0.10, rep(0.12, 7))                     # month-level noise
-  fy27_to_nov20 + sum(rest * g * (1 + noise * rnorm(8)))
+  fy27_to_nov23 + sum(rest * g * (1 + noise * rnorm(8)))
 })
 quantile(sims, c(.1, .5, .9));  mean(sims >= 6.1e6)`)}</div></div>`;
  ML.pg = pg;
@@ -1828,21 +2184,21 @@ safe('mcsens', function mcsens() {
 
 safe('mccal', function mccal() {
  const rows = calRows();
- const cov = rows.filter(r => r.inn).length / rows.length, mae = mean(rows.map(r => Math.abs(r.err))), bias = mean(rows.map(r => r.err)), n = rows.length;
+ const cov = rows.filter(r => r.inn).length / rows.length; ML.cov = cov; const mae = mean(rows.map(r => Math.abs(r.err))), bias = mean(rows.map(r => r.err)), n = rows.length;
  const Wd = 960, H = 300, L = 60, B = 40, X = i => L + (Wd - L - 20) * (i + .5) / n, rel = rows.map(r => [r.P[0] / r.P[1] - 1, r.P[2] / r.P[1] - 1, r.act / r.P[1] - 1]), lo = Math.min(...rel.flat()) - .02, hi = Math.max(...rel.flat()) + .02, Yv = v => 12 + (H - 12 - B) * (1 - (v - lo) / (hi - lo));
  let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Calibration of the Monte Carlo forecast by fiscal year">`;
  for (let v = Math.ceil(lo * 20) / 20; v <= hi; v += .05) s += `<line x1="${L}" x2="${Wd - 20}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="${Math.abs(v) < 1e-9 ? 'var(--muted)' : 'var(--line)'}"/><text x="${L - 6}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v > 0 ? '+' : ''}${Math.round(v * 100)}%</text>`;
  rows.forEach((r, i) => { const [a, b, c] = rel[i]; s += `<rect x="${X(i) - 14}" y="${Yv(b)}" width="28" height="${Yv(a) - Yv(b)}" fill="var(--slate)" opacity=".28"/><line x1="${X(i) - 14}" x2="${X(i) + 14}" y1="${Yv(0)}" y2="${Yv(0)}" stroke="var(--slate)" stroke-width="2"/><circle cx="${X(i)}" cy="${Yv(c)}" r="6" fill="${r.inn ? 'var(--green)' : 'var(--accent)'}"><title>FY${r.fy}: actual ${musd(r.act * 1e6)}, median forecast ${musd(r.P[1] * 1e6)}</title></circle><text x="${X(i)}" y="${H - B + 18}" text-anchor="middle" font-size="12" fill="var(--muted)">FY${String(r.fy).slice(2)}</text>`; });
  s += `<text x="16" y="${(H - B) / 2}" font-size="12.5" fill="var(--muted)" transform="rotate(-90 16 ${(H - B) / 2})" text-anchor="middle">Actual against median</text></svg>`;
  const vb = cov < .75 || cov > .88 ? `Set σp to ${ML.spCal.toFixed(2)}` : 'Well calibrated', vs = cov < .75 || cov > .88 ? `the calibrated setting that brings coverage to ${pct(ML.grid.find(g => g[0] === ML.spCal)[1])}` : 'no change needed';
- $('#mccal').innerHTML = s + `<div class="legend"><span><i style="background:var(--slate);opacity:.4"></i>80% range, P10 to P90</span><span><i style="background:var(--green)"></i>Actual inside the range</span><span><i style="background:var(--accent)"></i>Actual outside</span></div><div class="facts4"><div><b>${rows.filter(r => r.inn).length} of ${n}</b><span>years inside the 80% range (${pct(cov)})</span></div><div><b>${pct1(mae)}</b><span>average miss of the median</span></div><div><b>${fx(bias * 100, 1)} pts</b><span>average bias of the median</span></div><div><b>${vb}</b><span>${vs}</span></div></div><p class="note">Each year is forecast with only what was known on November 20 of that year, using the prior year as the pattern. FY23 to FY26 are the same months as the Analytics tab and sum to MIT Sloan’s published totals. Earlier years are a longer synthetic history generated for this backtest. With ${n} years, coverage is itself uncertain by about ±${Math.round(100 * Math.sqrt(.8 * .2 / n))} points, so read it as a check, not a precise number.</p><h4 class="h4">Coverage as the year-level shock widens</h4><div class="calgrid">${ML.grid.map(g => `<div class="${g[0] === ML.spCal ? 'on' : ''}"><b>σp ${g[0].toFixed(2)}</b><span>${pct(g[1])}</span></div>`).join('')}</div><p class="note">Calibration picks σp ${ML.spCal.toFixed(2)}, the smallest setting that reaches 80% coverage, and the weekly forecast uses it. A wider shock widens the range without moving the median.${ML.spCal !== MC0.sp ? ' <b>Update the forecast setting to match.</b>' : ''}</p>`;
+ $('#mccal').innerHTML = s + `<div class="legend"><span><i style="background:var(--slate);opacity:.4"></i>80% range, P10 to P90</span><span><i style="background:var(--green)"></i>Actual inside the range</span><span><i style="background:var(--accent)"></i>Actual outside</span></div><div class="facts4"><div><b>${rows.filter(r => r.inn).length} of ${n}</b><span>years inside the 80% range (${pct(cov)})</span></div><div><b>${pct1(mae)}</b><span>average miss of the median</span></div><div><b>${fx(bias * 100, 1)} pts</b><span>average bias of the median</span></div><div><b>${vb}</b><span>${vs}</span></div></div><p class="note">Each year is forecast with only what was known on November 23 of that year, using the prior year as the pattern. FY23 to FY26 are the same months as the Analytics tab and sum to MIT Sloan’s published totals. Earlier years are a longer synthetic history generated for this backtest. With ${n} years, coverage is itself uncertain by about ±${Math.round(100 * Math.sqrt(.8 * .2 / n))} points, so read it as a check, not a precise number.</p><h4 class="h4">Coverage as the year-level shock widens</h4><div class="calgrid">${ML.grid.map(g => `<div class="${g[0] === ML.spCal ? 'on' : ''}"><b>σp ${g[0].toFixed(2)}</b><span>${pct(g[1])}</span></div>`).join('')}</div><p class="note">Calibration picks σp ${ML.spCal.toFixed(2)}, the smallest setting that reaches 80% coverage, and the weekly forecast uses it. A wider shock widens the range without moving the median.${ML.spCal !== MC0.sp ? ' <b>Update the forecast setting to match.</b>' : ''}</p>`;
  ML.cov = cov;
 });
 
 safe('roll', function roll() {
  const M = FCM.M, series = HIST.flatMap(h => h.m), sum = a => a.reduce((x, y) => x + y, 0), origins = HIST.map((h, i) => i).filter(i => i >= 4);
  const res = Object.keys(M).map(n => { const e = origins.map(i => { const tr = series.slice(0, i * 12), p = M[n](tr, 12), act = sum(HIST[i].m); return (sum(p) - act) / act; }); const b = mean(e), v = e.reduce((s, x) => s + (x - b) ** 2, 0) / e.length, mse = b * b + v; return {n, e, mae: mean(e.map(Math.abs)), b, sdv: Math.sqrt(v), rmse: Math.sqrt(mse), bshare: b * b / mse}; });
- const best = res.slice().sort((a, b) => a.rmse - b.rmse)[0], cols = ['var(--slate)', 'var(--gold)', 'var(--accent)', 'var(--green)'];
+ const best = res.slice().sort((a, b) => a.rmse - b.rmse)[0]; ML.rollBest = best; const cols = ['var(--slate)', 'var(--gold)', 'var(--accent)', 'var(--green)'];
  const Wd = 960, H = 260, L = 56, B = 34, n = origins.length, X = k => L + (Wd - L - 20) * k / (n - 1), all = res.flatMap(r => r.e), lo = Math.min(...all, -.05) - .01, hi = Math.max(...all, .05) + .01, Yv = v => 10 + (H - 10 - B) * (1 - (v - lo) / (hi - lo));
  let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Year-total forecast error by origin year and model">`;
  for (let v = Math.ceil(lo * 20) / 20; v <= hi; v += .05) s += `<line x1="${L}" x2="${Wd - 20}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="${Math.abs(v) < 1e-9 ? 'var(--muted)' : 'var(--line)'}"/><text x="${L - 6}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v > 0 ? '+' : ''}${Math.round(v * 100)}%</text>`;
@@ -1851,7 +2207,7 @@ safe('roll', function roll() {
  const single = (window.__fcBest || '');
  $('#roll').innerHTML = `<div class="chart scroll">${s}</svg></div><div class="legend">${res.map((r, j) => `<span><i style="background:${cols[j]}"></i>${r.n}</span>`).join('')}</div>
  <div class="scroll"><table class="tbl"><thead><tr><th scope="col">Model</th><th scope="col">Mean absolute error</th><th scope="col">Bias</th><th scope="col">Spread (SD)</th><th scope="col">RMSE</th><th scope="col">Share of error from bias</th></tr></thead><tbody>${res.map(r => `<tr${r === best ? ' class="best"' : ''}><th scope="row">${r.n}${r === best ? ' <span class="st pass">Lowest RMSE</span>' : ''}</th><td>${pct1(r.mae)}</td><td>${fx(r.b * 100, 1)} pts</td><td>${pct1(r.sdv)}</td><td>${pct1(r.rmse)}</td><td>${pct(r.bshare)}</td></tr>`).join('')}</tbody></table></div>
- <p class="note">Rolling origin: for each of ${n} fiscal years, every model is refitted on all earlier months and forecasts the next 12, as it would have on July 1. RMSE² splits into bias² plus variance, so the last column shows how much of each model’s error a simple level correction would remove. ${FCM.best ? (FCM.best === best.n ? `This agrees with the single-year backtest on the Analytics tab, which also picked ${best.n.toLowerCase()}.` : `The single-year backtest on the Analytics tab picked ${FCM.best.toLowerCase()}. Across ${n} years ${best.n.toLowerCase()} has the lower error, which is why one year is not enough to choose a model.`) : ''} These are July 1 forecasts. The Monte Carlo above updates from November 20 and is scored separately.</p>
+ <p class="note">Rolling origin: for each of ${n} fiscal years, every model is refitted on all earlier months and forecasts the next 12, as it would have on July 1. RMSE² splits into bias² plus variance, so the last column shows how much of each model’s error a simple level correction would remove. ${FCM.best ? (FCM.best === best.n ? `This agrees with the single-year backtest on the Analytics tab, which also picked ${best.n.toLowerCase()}.` : `The single-year backtest on the Analytics tab picked ${FCM.best.toLowerCase()}. Across ${n} years ${best.n.toLowerCase()} has the lower error, which is why one year is not enough to choose a model.`) : ''} These are July 1 forecasts. The Monte Carlo above updates from November 23 and is scored separately.</p>
  <h4 class="h4">Equivalent in R</h4>${sqlBox(`library(forecast)
 origins <- 2015:2026
 errs <- sapply(origins, function(fy) {
@@ -1952,6 +2308,125 @@ safe('power', function power() {
 power.prop.test(n = 9000, p1 = 0.014, p2 = 0.019, sig.level = 0.05)       # achieved power`)}</div></div>`;
 });
 
+/* upgrade propensity: observed FY25 to FY26 band moves on the synthetic file */
+safe('upgradeTM', function upgradeTM() {
+function upgDraw(Y) {
+ const BND = [[1, 250, '$1 to $249'], [250, 1000, '$250 to $999'], [1000, 2500, '$1,000 to $2,499'], [2500, 10000, '$2,500 to $9,999']], TEN = [[1, 1, '1 year'], [2, 3, '2 to 3 years'], [4, 5, '4 to 5 years'], [6, 99, '6 or more']];
+ const bi = a => a >= 10000 ? 4 : a < 250 ? 0 : BND.findIndex(b => a >= b[0] && a < b[1]), k25 = kY(Y), k26 = kY(Y + 1), F0 = 'FY' + String(Y).slice(2), F1 = 'FY' + String(Y + 1).slice(2);
+ const C = BND.map(() => TEN.map(() => ({n: 0, u: 0, dc: 0})));
+ DON.forEach(x => { const a = x.amt[k25]; if (!(a > 0) || a >= 10000) return; const b = bi(a), yrs = x.amt.slice(0, k25 + 1).filter(v => v > 0).length, t = TEN.findIndex(r => yrs >= r[0] && yrs <= r[1]), a2 = x.amt[k26] || 0; if (b < 0 || t < 0) return; const c = C[b][t]; c.n++; if (a2 > 0 && bi(a2) > b) c.u++; if (b < 3 && a2 >= 2500) c.dc++; });
+ const all = C.flat(), mx = Math.max(...all.filter(c => c.n >= 20).map(c => c.u / c.n)), Wd = 560, H = 290, L = 132, T = 30, cw = (Wd - L - 8) / 4, ch = 56;
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Heatmap of the share of donors who moved up a gift band, by band and years of giving">`;
+ TEN.forEach((t, j) => s += `<text x="${L + cw * j + cw / 2}" y="${T - 10}" text-anchor="middle" font-size="12.5" fill="var(--muted)">${t[2]}</text>`);
+ BND.forEach((b, i) => { s += `<text x="${L - 8}" y="${T + ch * i + ch / 2 + 4}" text-anchor="end" font-size="12.5" fill="var(--ink)">${b[2]}</text>`; TEN.forEach((t, j) => { const c = C[i][j], p = c.n ? c.u / c.n : 0, w = c.n >= 20 ? Math.round(8 + 82 * p / mx) : 0; s += `<rect x="${L + cw * j + 2}" y="${T + ch * i + 2}" width="${cw - 4}" height="${ch - 4}" fill="${c.n >= 20 ? `color-mix(in srgb, var(--accent) ${w}%, #fff)` : 'var(--paper)'}"><title>${b[2]}, ${t[2]}: ${c.u} of ${c.n} moved up</title></rect><text x="${L + cw * j + cw / 2}" y="${T + ch * i + ch / 2}" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">${c.n >= 20 ? pct(p) : '·'}</text><text x="${L + cw * j + cw / 2}" y="${T + ch * i + ch / 2 + 16}" text-anchor="middle" font-size="11" fill="var(--ink)">n = ${n0(c.n)}</text>`; }); });
+ s += `<text x="${L + (Wd - L) / 2}" y="${H - 4}" text-anchor="middle" font-size="12.5" fill="var(--muted)">Years given, FY12 to ${F0}</text></svg>`;
+ let best = [0, 0], bp = 0; C.slice(0, 3).forEach((r, i) => r.forEach((c, j) => { if (c.n >= 20 && c.u / c.n > bp) { bp = c.u / c.n; best = [i, j]; } }));
+ const tgt = [C[2][2], C[2][3]], tn = tgt[0].n + tgt[1].n, tdc = tgt[0].dc + tgt[1].dc, rest = C[2][0].n + C[2][1].n, rdc = C[2][0].dc + C[2][1].dc;
+ const tot = all.reduce((a, c) => ({n: a.n + c.n, u: a.u + c.u}), {n: 0, u: 0});
+ $('#upgrade').innerHTML = `<div class="g2"><div class="chart">${s}</div><div><div class="facts4"><div><b>${pct(tot.u / tot.n)}</b><span>of ${F0} donors under $10,000 moved up a band in ${F1}</span></div><div><b>${n0(tn)}</b><span>$1,000 to $2,499 donors with 4 or more years of giving</span></div><div><b>${pct(tdc / Math.max(1, tn))}</b><span>of them reached $2,500 or more in ${F1}, against ${pct(rdc / Math.max(1, rest))} for newer donors in the band</span></div><div><b>${n0(C[1][3].n)}</b><span>$250 to $999 donors with 6 or more years, moving up at ${pct(C[1][3].u / Math.max(1, C[1][3].n))}, the next pool for an upgrade ask</span></div></div></div>
+ <p class="note">Observed rates on the synthetic file, not a fitted score. Cells under 20 donors are left blank. The pilot model would be a logistic regression on band, years given, recency and 24-Hour Challenge history, judged by AUC and by upgrades against a random holdout. Donors at $10,000 and above are left out, since the next step for them is a gift officer, not an appeal.</p>
+ ${sqlBox(`d <- subset(donors, fy25 > 0 & fy25 < 10000)
+d$band25 <- cut(d$fy25, c(0, 250, 1000, 2500, 10000), right = FALSE)
+d$band26 <- cut(d$fy26, c(0, 250, 1000, 2500, 10000, Inf), right = FALSE)
+d$up     <- as.integer(d$band26) > as.integer(d$band25) & d$fy26 > 0
+d$tenure <- cut(d$years_given, c(0, 1, 3, 5, Inf))
+round(100 * tapply(d$up, list(d$band25, d$tenure), mean))      # the heatmap
+fit <- glm(up ~ band25 + tenure + recency + challenge, binomial, data = d)  # pilot score`)}</div></div>`;
+ if (Y === 2025) window.UPG = {C, tn, tdc, bp};
+ return `<b>${F0} to ${F1}</b>: ${pct(tot.u / tot.n)} of donors under $10,000 moved up a band, ${pct(tdc / Math.max(1, tn))} of $1,000 to $2,499 donors with 4 or more years reached $2,500.${Y >= 2023 ? ' From FY24 this includes the Leaders Give Challenge, which moves donors near $2,500 up to the Investor level (Methods 7.2, step 4).' : ''}`;
+}
+upgDraw(2025);
+timeMachine($('#upgrade'), [2022, 2023, 2024, 2025], y => `FY${String(y).slice(2)} to FY${String(y + 1).slice(2)}`, y => upgDraw(y), 3, 'Year pair for the upgrade heatmap');
+});
+
+/* participation forecast: annual trend model and same-day ratio, ranges from a rolling backtest */
+safe('partfc', function partfc() {
+ const yrs = []; for (let y = Y0; y <= Y1; y++) yrs.push(y);
+ const D = yrs.map(y => DON.filter(x => x.amt[kY(y)] > 0).length), trend = i => D[i - 1] * Math.pow(D[i - 1] / D[i - 4], 1 / 3);
+ const errs = []; for (let i = 4; i < D.length; i++) errs.push((trend(i) - D[i]) / D[i]);
+ const rmse = Math.sqrt(errs.reduce((a, e) => a + e * e, 0) / errs.length), bias = errs.reduce((a, b) => a + b, 0) / errs.length;
+ const d26 = D[D.length - 1], tr27 = trend(D.length), sd27 = d26 * SD27.d / SD27.dLY, den = SD27.d / SD27.p, z = 1.2816;
+ // same-day ratio is better informed than a trend, so its range is half the trend's backtest error (an assumption until donor dates are loaded)
+ const R = [['Trend, 3-year growth', tr27, tr27 * z * rmse, 'var(--slate)'], ['Same-day ratio', sd27, sd27 * z * rmse / 2, 'var(--accent)']];
+ const Wd = 560, H = 270, L = 52, B = 40, T = 14, n = yrs.length + 1, mx = Math.max(...D, ...R.map(r => r[1] + r[2])) * 1.08, X = i => L + (Wd - L - 16) * (i + .5) / n, bw = (Wd - L - 16) / n * .62, Yv = v => T + (H - T - B) * (1 - v / mx);
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Donors by fiscal year with FY27 forecasts">`;
+ [0, 1000, 2000, 3000, 4000].filter(v => v < mx).forEach(v => s += `<line x1="${L}" x2="${Wd - 16}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="var(--line)"/><text x="${L - 6}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${n0(v)}</text>`);
+ D.forEach((v, i) => { const y = yrs[i], pub = PUB[y] && PUB[y].n; s += `<rect x="${X(i) - bw / 2}" y="${Yv(v)}" width="${bw}" height="${Yv(0) - Yv(v)}" fill="var(--neutral)"><title>FY${String(y).slice(2)}: ${n0(v)} donors${pub ? `, published ${n0(pub)}` : ''}</title></rect>`; if (pub) s += `<circle cx="${X(i)}" cy="${Yv(pub)}" r="4" fill="var(--ink)"><title>Published FY${String(y).slice(2)}: ${n0(pub)}</title></circle>`; if (i % 2 === 0 || i === D.length - 1) s += `<text x="${X(i)}" y="${H - B + 16}" text-anchor="middle" font-size="11.5" fill="var(--muted)">${String(y).slice(2)}</text>`; });
+ R.forEach((r, k) => { const x = X(D.length) + (k ? 8 : -8); s += `<line x1="${x}" x2="${x}" y1="${Yv(r[1] + r[2])}" y2="${Yv(r[1] - r[2])}" stroke="${r[3]}" stroke-width="2"/><circle cx="${x}" cy="${Yv(r[1])}" r="5" fill="${r[3]}"><title>${r[0]}: ${n0(r[1])}, 80% range ${n0(r[1] - r[2])} to ${n0(r[1] + r[2])}</title></circle>`; });
+ s += `<text x="${X(D.length)}" y="${H - B + 16}" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--accent)">27</text><text x="${(L + Wd) / 2}" y="${H - 4}" text-anchor="middle" font-size="12.5" fill="var(--muted)">Fiscal year, donors</text></svg>`;
+ ML.part = {rmse, bias, sd27, tr27, den, n: errs.length};
+ $('#partfc').innerHTML = `<div class="chart">${s}</div><div class="legend"><span><i style="background:var(--neutral)"></i>Synthetic donors</span><span><i style="background:var(--ink);border-radius:50%"></i>Published count</span>${R.map(r => `<span><i style="background:${r[3]}"></i>${r[0]}</span>`).join('')}</div>
+ <div class="scroll"><table class="tbl"><thead><tr><th scope="col">Model</th><th scope="col">FY27 donors</th><th scope="col">80% range</th><th scope="col">Participation</th></tr></thead><tbody>${R.map(r => `<tr><th scope="row">${r[0]}</th><td>${n0(r[1])}</td><td>${n0(r[1] - r[2])} to ${n0(r[1] + r[2])}</td><td>${pct1(r[1] / den)}</td></tr>`).join('')}</tbody></table></div>
+ <p class="note">Trend backtest over ${errs.length} rolling origins: RMSE ${pct1(rmse)}, bias ${bias >= 0 ? '+' : ''}${pct1(bias)}. The same-day ratio, FY26 donors times FY27’s ${n0(SD27.d)} against ${n0(SD27.dLY)} on the same day, is preferred once a year is under way. Its range will come from a same-day backtest once gift dates are loaded. Participation uses about ${n0(den)} contactable alumni, implied by today’s ${pct1(SD27.p)}, a figure to confirm with central.</p>`;
+});
+
+/* reunion giving: leave-one-class-out regression of reunion participation on the class's last reunion */
+safe('reunfc', function reunfc() {
+ const rows = MIL.filter(m => m >= 5).map(m => { const gy = 2026 - m, prevY = m === 5 ? gy + 1 : 2021, cs = CLASS(gy), g = DON.filter(x => x.grad === gy), d26 = g.filter(x => x.amt[kY(2026)] > 0), dp = g.filter(x => x.amt[kY(prevY)] > 0); return {m, gy, cs, a: d26.length / cs, p: dp.length / cs, usd: d26.reduce((s, x) => s + x.amt[kY(2026)], 0), pusd: dp.reduce((s, x) => s + x.amt[kY(prevY)], 0), pn: dp.length}; }).filter(r => r.pn > 0);
+ const fit = rs => { const n = rs.length, mx = rs.reduce((s, r) => s + r.p, 0) / n, my = rs.reduce((s, r) => s + r.a, 0) / n, b = rs.reduce((s, r) => s + (r.p - mx) * (r.a - my), 0) / Math.max(1e-9, rs.reduce((s, r) => s + (r.p - mx) ** 2, 0)); return {a: my - b * mx, b}; };
+ rows.forEach((r, i) => { const o = rows.filter((_, j) => j !== i), f = fit(o), gr = o.map(q => (q.usd / Math.max(1, q.a * q.cs)) / (q.pusd / q.pn)).sort((a, b) => a - b), g = gr[Math.floor(gr.length / 2)]; r.pred = f.a + f.b * r.p; r.pusdPred = r.pred * r.cs * (r.pusd / r.pn) * g; });
+ const mae = rows.reduce((s, r) => s + Math.abs(r.pred - r.a), 0) / rows.length, mape = (() => { const e = rows.map(r => Math.abs(r.pusdPred - r.usd) / r.usd).sort((a, b) => a - b); return e[Math.floor(e.length / 2)]; })(), worst = rows.slice().sort((a, b) => Math.abs(b.pred - b.a) - Math.abs(a.pred - a.a))[0];
+ const Wd = 560, H = 36 + rows.length * 26, L = 116, mxp = Math.max(...rows.flatMap(r => [r.a, r.pred])) * 1.12, X = v => L + (Wd - L - 20) * v / mxp;
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Predicted and actual reunion participation by class">`;
+ [0, .05, .1, .15, .2, .25, .3].filter(v => v < mxp).forEach(v => s += `<line x1="${X(v)}" x2="${X(v)}" y1="8" y2="${H - 26}" stroke="var(--line)"/><text x="${X(v)}" y="${H - 10}" text-anchor="middle" font-size="11.5" fill="var(--muted)">${pct(v)}</text>`);
+ rows.forEach((r, i) => { const y = 20 + i * 26; s += `<text x="${L - 8}" y="${y + 4}" text-anchor="end" font-size="12" fill="var(--ink)">${r.m}th, class of ${r.gy}</text><line x1="${X(Math.min(r.a, r.pred))}" x2="${X(Math.max(r.a, r.pred))}" y1="${y}" y2="${y}" stroke="var(--muted)" stroke-width="2"/><circle cx="${X(r.pred)}" cy="${y}" r="5.5" fill="var(--paper)" stroke="var(--slate)" stroke-width="2"><title>Class of ${r.gy}, predicted ${pct1(r.pred)}</title></circle><circle cx="${X(r.a)}" cy="${y}" r="5" fill="var(--accent)"><title>Class of ${r.gy}, actual ${pct1(r.a)}, ${n0(Math.round(r.a * r.cs))} of ${n0(r.cs)}</title></circle>`; });
+ s += '</svg>';
+ ML.reun = {mae, mape, n: rows.length};
+ $('#reunfc').innerHTML = `<div class="chart">${s}</div><div class="legend"><span><i style="background:var(--accent);border-radius:50%"></i>Actual FY26</span><span><i style="background:var(--paper);border:2px solid var(--slate);border-radius:50%"></i>Predicted, class left out</span></div>
+ <div class="facts4"><div><b>${(mae * 100).toFixed(1)} pts</b><span>mean error in participation across ${rows.length} classes</span></div><div><b>${pct(mape)}</b><span>median error in class dollars, where one leadership gift can move a class total</span></div></div>
+ <p class="note">Participation is the class’s donors over class size. Dollars are predicted donors times the class’s last-reunion average gift, grown at the other classes’ median rate. Largest miss: class of ${worst.gy}, ${(Math.abs(worst.pred - worst.a) * 100).toFixed(1)} points. Dollars miss by far more than participation, so a class dollar goal should combine the participation forecast with a named leadership-gift plan. Small classes swing the most, so goals carry a range, not a point. The 1st reunion is left out because it has no earlier reunion.</p>`;
+});
+
+/* gift size: log next gift on last gift, reunion and engagement, trained FY13 to FY22 and tested on FY23 */
+safe('giftsize', function giftsize() {
+ const X = [], Y = [], Xt = [], Yt = [];
+ DON.forEach(x => { for (let y = 2013; y <= 2023; y++) { const a = x.amt[kY(y)], p = x.amt[kY(y - 1)]; if (!(a > 0 && p > 0) || a >= 25000 || p >= 25000) continue; const reu = x.grad && MIL.includes(y - x.grad) ? 1 : 0, row = [1, Math.log(p), reu, x.e ? 1 : 0, x.v ? 1 : 0, x.g ? 1 : 0]; (y === 2023 ? Xt : X).push(row); (y === 2023 ? Yt : Y).push(Math.log(a)); } });
+ const k = 6, A = Array.from({length: k}, () => new Array(k + 1).fill(0));
+ X.forEach((r, n) => { for (let i = 0; i < k; i++) { for (let j = 0; j < k; j++) A[i][j] += r[i] * r[j]; A[i][k] += r[i] * Y[n]; } });
+ for (let c = 0; c < k; c++) { let p = c; for (let q = c + 1; q < k; q++) if (Math.abs(A[q][c]) > Math.abs(A[p][c])) p = q; [A[c], A[p]] = [A[p], A[c]]; for (let q = 0; q < k; q++) if (q !== c) { const f = A[q][c] / A[c][c]; for (let j = c; j <= k; j++) A[q][j] -= f * A[c][j]; } }
+ const w = A.map((r, i) => r[k] / r[i]), pr = Xt.map(r => r.reduce((s, v, i) => s + v * w[i], 0)), my = Yt.reduce((a, b) => a + b, 0) / Yt.length;
+ const sse = Yt.reduce((s, y, i) => s + (y - pr[i]) ** 2, 0), sst = Yt.reduce((s, y) => s + (y - my) ** 2, 0), ape = Yt.map((y, i) => Math.abs(Math.exp(pr[i] - y) - 1)).sort((a, b) => a - b);
+ ML.gift = {r2: 1 - sse / sst, mdape: ape[Math.floor(ape.length / 2)], nTr: X.length, nTe: Xt.length, w};
+});
+
+/* model register and one-page model cards */
+const MCARD = (() => {
+ const g = (o, k, f) => { try { return f(o[k]); } catch (e) { return ''; } };
+ const auc = g(RM, 'auc', () => RM.prod ? RM.prod.auc.toFixed(3) : ''), cov = ML.cov != null ? pct(ML.cov) : '', rb = ML.rollBest, U = window.UPG || {}, Pt = ML.part || {}, Ru = ML.reun || {}, Gf = ML.gift || {};
+ const FEAT = (RM && RM.FE ? RM.FE.map(f => f[1].toLowerCase()) : []).join(', ');
+ return [
+  {n: 'Receipts forecast', st: 'Built here', m: 'Monte Carlo on same-day pace', t: 'Fiscal-year Annual Fund total at June 30, cash basis', pop: 'All Annual Fund receipts', f: 'Monthly receipts history, same-day pace against last year, month-to-month shape', sp: 'Rolling origin over 12 fiscal years, each refitted on earlier months only', dm: 'RMSE of the year total and coverage of the 80% range', v: `80% range covered ${cov || 'about 80%'} of past years${rb ? `, best July 1 model ${rb.n} with RMSE ${pct1(rb.rmse)}` : ''}`, fm: 'Structural break from a new program, a large unbooked gift or a campaign change', mit: 'A separate term for known leadership gifts, and a forecast note whenever a program starts', rf: 'Refit monthly, recalibrated each July', ow: 'Director of Strategic Information and OER leadership', ex: 'af#progress', ev: 'ml#mcspec,mccal,roll'},
+  {n: 'Participation forecast', st: 'Built here', m: 'Trend and same-day ratio', t: 'Donor count and participation rate at June 30', pop: 'Hard-credit Annual Fund donors over contactable alumni', f: 'Annual donor history, same-day donor count, reunion calendar', sp: `Rolling origin, ${Pt.n || 12} years`, dm: 'Same-day error of the donor count', v: Pt.rmse ? `Trend backtest RMSE ${pct1(Pt.rmse)}; same-day forecast ${n0(Pt.sd27)} donors` : '', fm: 'A new program with no history, or a change to the contactable-alumni count', mit: 'Agree the denominator with central before each year, and note program changes', rf: 'Monthly', ow: 'Director of Strategic Information', ex: 'ml#partfc', ev: ''},
+  {n: 'Renewal score', st: 'Built here', m: 'Logistic regression, two challengers', t: 'Gave in year t+1, among donors who gave in year t', pop: 'Annual Fund donors in year t', f: FEAT || 'Recency, frequency, consecutive years, email, events, challenge flag', sp: 'Train on FY24 donors and their FY25 outcome, test on FY25 donors and their FY26 outcome', dm: 'Out-of-time AUC and calibration', v: auc ? `AUC ${auc} on the test year, logistic within 0.01 of boosting` : '', fm: 'Score drift after a campaign or channel change', mit: 'Recalibrate each July and watch the top features for drift each quarter', rf: 'Annual, drift checked quarterly', ow: 'Annual Giving', ex: 'seg#roc,calib', ev: 'ml#rnboot,rnperm,rnlift'},
+  {n: 'Lapse risk', st: 'Built here', m: 'One minus the renewal score', t: 'Gave nothing in year t+1, among donors who gave in year t', pop: 'Same as renewal', f: 'Same as renewal, opposite target', sp: 'Same as renewal', dm: 'AUC and lift by decile', v: auc ? `Same AUC as renewal, ${auc}` : '', fm: 'Double counting if renewal and lapse lists are worked as separate programs', mit: 'One score with two views, so a donor sits on one list only', rf: 'Annual', ow: 'Annual Giving', ex: 'ml#rnlift', ev: ''},
+  {n: 'Upgrade propensity', st: 'Pilot', m: 'Observed rates, logistic pilot', t: 'Moves up one gift band or more the next year', pop: 'Donors under $10,000', f: 'Current band, years given, last gift size, engagement', sp: 'Train FY23 to FY25 transitions, test FY25 to FY26', dm: 'Upgrades against a random holdout, and band-to-band accuracy', v: U.bp ? `Highest rate below the Dean’s Circle ${pct(U.bp)}` : '', fm: 'Small cells in the higher bands', mit: 'Cells under 20 donors are not reported, and bands are merged until they pass', rf: 'Annual', ow: 'Annual Giving', ex: 'ml#upgrade', ev: ''},
+  {n: 'Gift size', st: 'Built here', m: 'Linear regression on log gift', t: 'Next gift amount, log scale', pop: 'Donors who gave in two consecutive years', f: 'Last gift (log), reunion year, email, events, challenge donor', sp: `Train FY13 to FY22 (${n0(Gf.nTr || 0)} gift pairs), test FY23 (${n0(Gf.nTe || 0)})`, dm: 'R squared and residuals on held-out gifts', v: Gf.r2 ? `Median error ${pct(Gf.mdape)} of the gift on the test year, the figure that matters for an ask amount. Test R² on the log scale is ${Gf.r2.toFixed(2)}, high because last year’s gift explains most of the spread between donors` : '', fm: 'Outliers from principal and leadership gifts', mit: 'Gifts of $25,000 and above routed to gift officers and left out of the fit', rf: 'Quarterly', ow: 'Annual Giving', ex: 'ml#recov', ev: ''},
+  {n: 'Reunion giving', st: 'Built here', m: 'Regression on last reunion', t: 'Class dollars and participation in the reunion year', pop: 'Reunion classes, 5th reunion and later', f: 'Class size, last-reunion participation and average gift', sp: 'Leave one class out', dm: 'Error by class', v: Ru.mae ? `Mean error ${(Ru.mae * 100).toFixed(1)} points of participation, median ${pct(Ru.mape)} of dollars, ${Ru.n} classes` : '', fm: 'Small classes with high variance', mit: 'Goals set as a range, and small classes pooled with neighbors', rf: 'Each reunion cycle', ow: 'Reunion giving staff', ex: 'ml#reunfc', ev: 'af#reunion'},
+  {n: 'Appeal response', st: 'Built here', m: 'Randomized test with power', t: 'Response and revenue per recipient', pop: 'Appeal recipients in test cells', f: 'Segment, subject line, ask, timing', sp: 'Randomized test cells', dm: 'Revenue per recipient, with power fixed before launch', v: 'Power and minimum detectable lift computed per test', fm: 'Peeking early and many comparisons', mit: 'Sample size fixed before launch, one primary metric, corrected for multiple cells', rf: 'Each test', ow: 'Annual Giving', ex: 'seg#abtest', ev: 'ml#power'},
+  {n: 'Donor segments', st: 'Built here', m: 'RFM rules and k-means', t: 'Which group a donor belongs to', pop: 'Donors in the last five years', f: 'Recency, frequency, log value', sp: 'Clusters checked against the RFM rules', dm: 'Response and revenue by segment', v: 'Four clusters that match the RFM rules', fm: 'Segments that drift from how officers talk about donors', mit: 'Named segments reviewed with Annual Giving each year', rf: 'Annual', ow: 'Annual Giving', ex: 'seg#rfm,kmeans', ev: ''},
+  {n: 'Gift anomaly flag', st: 'Built here', m: 'Robust z-score on log gift', t: 'Gifts likely to be keying or coding errors', pop: 'Gifts posted since the last report', f: 'Gift amount against the donor’s history and the fund’s typical gift', sp: 'Flags confirmed or cleared by reviewers', dm: 'Share of flags confirmed', v: 'Reviewed before each report', fm: 'Too many flags, so reviewers stop reading them', mit: 'Threshold set so that most flags are confirmed, and tuned each quarter', rf: 'Quarterly', ow: 'Central data partners', ex: 'dq#anom', ev: ''},
+  {n: 'Pipeline conversion', st: 'Proposed', m: 'Stage-to-stage rates', t: 'Stage-to-stage move and expected close', pop: 'Lead annual prospects at $10,000 or more', f: 'Stage, days in stage, officer, ask size', sp: 'Rolling by quarter', dm: 'Calibration by stage', v: '', fm: 'Officers moving prospects into a stage early', mit: 'Stage entry rules written down, with spot checks each quarter', rf: 'Quarterly', ow: 'OER development leadership', ex: 'an#pipeline', ev: ''},
+  {n: 'Lifetime value', st: 'Proposed', m: 'Renewal, upgrade and gift size combined', t: 'Expected dollars over three to five years', pop: 'Current donors', f: 'Outputs of the renewal, upgrade and gift size models', sp: 'Backtest on donors as of FY21, scored on FY22 to FY26 giving', dm: 'Rank correlation with actual dollars', v: '', fm: 'Errors in the three models compound', mit: 'Used to rank, never as a dollar figure in a report', rf: 'Annual', ow: 'Director of Strategic Information', ex: '', ev: ''}
+ ];
+})();
+safe('inventory', function inventory() {
+ const SC = st => st === 'Built here' ? 'pass' : st === 'Pilot' ? 'pilot' : 'prop';
+ $('#inventory').innerHTML = `<div class="scroll"><table class="tbl inv"><thead><tr><th scope="col">Model</th><th scope="col">Target</th><th scope="col">Decision metric</th><th scope="col">Failure mode</th><th scope="col">Refresh</th><th scope="col">Owner</th><th scope="col">Status</th></tr></thead><tbody>${MCARD.map((m, i) => `<tr><th scope="row"><button class="linkbtn" data-open="mc:${i}">${m.n} ›</button><small>${m.m}</small></th><td>${m.t}</td><td>${m.dm}</td><td>${m.fm}</td><td>${m.rf}</td><td>${m.ow}</td><td><span class="st ${SC(m.st)}">${m.st}</span></td></tr>`).join('')}</tbody></table></div>
+ <p class="note">${MCARD.filter(m => m.st === 'Built here').length} models are fitted live in this sample, one is a pilot and ${MCARD.filter(m => m.st === 'Proposed').length} are proposed. “Built here” means built on synthetic data in this page, not in use at OER. No model changes a record, sets a solicitation strategy or contacts a donor, and none goes into use without Resource Development approval and MIT data governance review.</p>
+ <p class="mcbtns"><button class="hbtn" id="printCards" type="button">Print all model cards</button> <a class="hbtn" href="mit-sloan-model-cards.pdf" target="_blank" rel="noopener">Model cards PDF, 12 pages ↗</a></p>`;
+});
+const mcHTML = (m, i) => `<article class="mcard"><p class="eyebrow">Model card ${i + 1} of ${MCARD.length} · <span class="st ${m.st === 'Built here' ? 'pass' : m.st === 'Pilot' ? 'pilot' : 'prop'}">${m.st}</span></p><h3>${m.n}</h3><p class="sub">${m.m}. Owner of the decision: ${m.ow}.</p>
+ <dl class="mcgrid"><dt>Target and definition</dt><dd>${m.t}</dd><dt>Population</dt><dd>${m.pop}</dd><dt>Features</dt><dd>${m.f}</dd><dt>Split</dt><dd>${m.sp}</dd><dt>Decision metric</dt><dd>${m.dm}</dd><dt>Validation result</dt><dd>${m.v ? m.v + (m.st === 'Proposed' ? '' : ', on synthetic data') : 'Not yet validated, proposed model'}</dd><dt>Failure mode</dt><dd>${m.fm}</dd><dt>Safeguard</dt><dd>${m.mit}</dd><dt>Refresh</dt><dd>${m.rf}</dd><dt>Guardrails</dt><dd>No age, gender, race, ethnicity, religion or home value. Ranks or flags work for a person, never acts alone.</dd></dl>
+ <table class="tbl mcsign"><thead><tr><th scope="col">Sign-off</th><th scope="col">Who</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">Specification and validation</th><td>Analyst who built it</td><td>${m.st === 'Proposed' ? 'To do' : 'Done on synthetic data'}</td></tr><tr><th scope="row">Use in practice</th><td>${m.ow}</td><td>Pending</td></tr><tr><th scope="row">Approval</th><td>Resource Development</td><td>Pending</td></tr><tr><th scope="row">Governance review</th><td>MIT data governance</td><td>Pending</td></tr></tbody></table></article>`;
+POP.mc = (id, t) => { const i = +id, m = MCARD[i], ids = [m.ex, m.ev].filter(Boolean).map(x => x.split('#')[1]).join(','); openDlg(mcHTML(m, i) + (m.ex ? `<p class="mt"><button class="ex ev" data-go="${m.ex.split('#')[0]}#${ids}" data-title="${m.n}">See the exhibits for this model ›</button></p>` : '') + `<div class="mcnav">${i > 0 ? `<button class="hbtn" data-open="mc:${i - 1}">‹ ${MCARD[i - 1].n}</button>` : '<span></span>'}${i < MCARD.length - 1 ? `<button class="hbtn" data-open="mc:${i + 1}">${MCARD[i + 1].n} ›</button>` : ''}</div>`, t); };
+safe('printCards', function printCards() {
+ const b = $('#printCards'); if (!b) return;
+ window.FA_cards = () => { window.__cardsMode = true; $('#printpack').innerHTML = `<p class="pk-note">Model cards. ${MCARD.length} models, one page each. Work sample by Narissara Khomkhai, synthetic data, as of November 23, 2026.</p>` + MCARD.map((m, i) => `<div class="pk pk-mc">${mcHTML(m, i)}</div>`).join(''); document.body.classList.add('cards-print'); };
+ const done = () => { window.__cardsMode = false; document.body.classList.remove('cards-print'); packSafe(); };
+ b.addEventListener('click', () => { FA_cards(); print(); setTimeout(done, 500); });
+ addEventListener('afterprint', () => { if (window.__cardsMode) done(); });
+});
+
 /* recommendations for the methods tab, same format as the rest of the page */
 safe('mlrecs', function mlrecs() {
  const R = {
@@ -1964,6 +2439,10 @@ safe('mlrecs', function mlrecs() {
   rnboot: ['Keep logistic regression in production while the AUC interval for the difference includes zero, and revisit each year.', 'Officers get the explainable model when the complex one adds nothing measurable.', 'Paired AUC difference and its interval each year'],
   rnperm: ['Watch the top features for drift each quarter, and retrain when their distribution moves.', 'The score stays accurate as donor behavior changes.', 'Population stability of the top three features'],
   rnlift: ['Build the call list from the top 30% of scores, and hold out 10% at random to measure what the calls add.', 'Proof of incremental dollars, not only of ranking.', 'Renewal rate, called against held-out donors'],
+  partfc: ['Report FY27 donors each month from the same-day ratio with its range, and confirm the contactable-alumni count with central before quoting a participation rate.', 'A participation figure leadership can quote without a later correction.', 'Same-day error of the donor forecast at June 30'],
+  reunfc: ['Set each reunion class goal as a range from this model, and pool small classes with neighbors before setting a goal.', 'Goals classes can reach, and fewer surprises in small classes.', 'Error by class against the final reunion result'],
+  upgrade: ['Run a spring upgrade appeal to $1,000 to $2,499 donors with four or more years of giving, asking at the $2,500 Investor level, and hold out 10% at random.', 'More Dean’s Circle members from the donors most likely to move, with a measured effect.', 'Upgrades into $2,500 and above, mailed against held-out donors'],
+  inventory: ['Keep this register as the one list of models, and add no model without a model card, a stated check, an owner and Resource Development approval.', 'Every score an officer sees has a known purpose, test and owner.', 'Models with a current check on file'],
   power: ['Size every appeal test before launch with this calculation, and stop running tests too small to detect the lift that matters.', 'Fewer inconclusive tests and decisions on real effects.', 'Share of tests powered at 80% or more']
  };
  Object.entries(R).forEach(([id, r]) => { const el = document.getElementById(id); if (!el) return; const card = el.closest('.card') || el.parentElement; if (card.querySelector(`.rec[data-for="${id}"]`)) return; const d = document.createElement('div'); d.className = 'rec'; d.dataset.for = id; d.innerHTML = `<p class="rec-k">Recommendation</p><p class="rec-a">${r[0]}</p><p class="rec-o"><span><b>Expected outcome</b> ${r[1]}</span><span><b>Measure</b> ${r[2]}</span></p>`; card.appendChild(d); });
@@ -1971,7 +2450,7 @@ safe('mlrecs', function mlrecs() {
 
 /* links into the methods tab from the exhibits that use these models */
 safe('mllinks', function mllinks() {
- [['progress', 1, 'How this forecast is built, calibrated and tested'], ['fcast', 3, 'Rolling backtest of these models over 12 years'], ['roc', 5, 'Bootstrap intervals, feature importance and lift for these models'], ['abtest', 6, 'Power and sample size for appeal tests']].forEach(([id, k, label]) => {
+ [['progress', 2, 'How this forecast is built, calibrated and tested'], ['fcast', 4, 'Rolling backtest of these models over 12 years'], ['roc', 6, 'Bootstrap intervals, feature importance and lift for these models'], ['abtest', 9, 'Power and sample size for appeal tests']].forEach(([id, k, label]) => {
   const el = document.getElementById(id); if (!el || el.parentElement.querySelector(`.mllink[data-k="${k}"]`)) return;
   const p = document.createElement('p'); p.className = 'note mllink'; p.dataset.k = k; p.innerHTML = `<button class="linkbtn" data-go="ml" data-sub="${k}">${label} ›</button>`; el.insertAdjacentElement('afterend', p); });
 });
@@ -2051,7 +2530,7 @@ function handle(t) {
  if (t.dataset.go) { if (t.dataset.go.includes('#')) { openEvidence(t); return; } if (dlg.open) dlg.close(); show(t.dataset.go); if (t.dataset.sub !== undefined) showSub(t.dataset.go, +t.dataset.sub, true); return; }
  if (t.dataset.def) { openDlg(defHtml(t.dataset.def), t); return; }
  const [kind, id] = t.dataset.open.split(':');
- if (kind === 'go') { if (dlg.open) dlg.close(); show(id); return; }
+ if (kind === 'go') { if (id.includes('#')) { t.dataset.go = id; t.dataset.title = t.dataset.title || (t.querySelector('b,strong,.k,.v') || t).textContent.trim().slice(0, 60); openEvidence(t); delete t.dataset.go; return; } if (dlg.open) dlg.close(); show(id); return; }
  if (kind === 'def') { openDlg(defHtml(id), t); return; }
  if (POP[kind]) POP[kind](id, t);
 }
@@ -2115,8 +2594,55 @@ function openEvidence(t) {
  dlg.classList.add('wide');
  openDlg(`<p class="eyebrow">${esc(grp)} · evidence</p><h3 id="dlg-title">${esc(title)}</h3><div class="evidence">${html}</div><p style="margin-top:14px"><button class="linkbtn" data-go="${tab}" data-sub="${subIdx < 0 ? 0 : subIdx}">Open this in the ${esc(grp)} tab</button></p>`, t);
 }
-$('#index-btn').addEventListener('click', e => { e.stopPropagation(); const blocks = [['overview','Overview']].concat(GROUPS, [['now','MIT Sloan context']]).map(([pid, name]) => { const gi = GROUPS.findIndex(g => g[0] === pid) + 1; return `<div class="ixg"><button class="ixh" data-go="${pid}" data-sub="0">${gi ? '<b>' + gi + '</b>' : ''}${esc(name)}</button><ol>${SUBS[pid].map((sb, k) => `<li><button data-go="${pid}" data-sub="${k}"><span>${gi ? gi + '.' + (k + 1) : k + 1}</span>${esc(sb[0])}</button></li>`).join('')}</ol></div>`; }).join(''); dlg.classList.add('wide'); openDlg(`<p class="eyebrow">Index</p><h3 id="dlg-title">Every tab and section</h3><div class="ixgrid" data-wide>${blocks}</div>`, e.currentTarget); });
+(document.getElementById('index-pop') || document.createElement('i')).addEventListener('click', e => { e.stopPropagation(); const blocks = [['overview','Overview']].concat(GROUPS, [['now','MIT Sloan context']]).map(([pid, name]) => { const gi = GROUPS.findIndex(g => g[0] === pid) + 1; return `<div class="ixg"><button class="ixh" data-go="${pid}" data-sub="0">${gi ? '<b>' + gi + '</b>' : ''}${esc(name)}</button><ol>${SUBS[pid].map((sb, k) => `<li><button data-go="${pid}" data-sub="${k}"><span>${gi ? gi + '.' + (k + 1) : k + 1}</span>${esc(sb[0])}</button></li>`).join('')}</ol></div>`; }).join(''); dlg.classList.add('wide'); openDlg(`<p class="eyebrow">Index</p><h3 id="dlg-title">Every tab and section</h3><div class="ixgrid" data-wide>${blocks}</div>`, e.currentTarget); });
 
+
+/* platform index: a side rail with every tab, section and exhibit, a search box, and the current place marked */
+safe('rail', function rail() {
+ const PAN = [['overview', 'Overview'], ['cal', 'Calendar']].concat(GROUPS, [['now', 'MIT Sloan context']]), CARDS = [];
+ const cardsOf = (pid, k) => { const panel = document.getElementById(pid); if (!panel) return []; return [...panel.children].filter(c => +c.dataset.sub === k).flatMap(c => c.matches('.card') ? [c] : [...c.querySelectorAll(':scope > .card, :scope .card')]).filter(c => c.querySelector('h3')); };
+ const html = PAN.map(([pid, name]) => { const gi = GROUPS.findIndex(g => g[0] === pid) + 1, subs = SUBS[pid] || [];
+  return `<details class="rp" data-pid="${pid}"><summary><span class="rn">${gi || (pid === 'overview' ? '◆' : pid === 'cal' ? '◷' : '·')}</span>${esc(name)}</summary><ol>${subs.map((sb, k) => { const cs = [...new Set(cardsOf(pid, k))]; return `<li class="rs" data-pid="${pid}" data-k="${k}"><button type="button" class="rsb" data-pid="${pid}" data-k="${k}"><b>${gi ? gi + '.' + (k + 1) : k + 1}</b>${esc(sb[0])}</button>${cs.length > 1 || (cs[0] && cs[0].querySelector('h3').textContent.trim() !== sb[0]) ? `<ul>${cs.map(c => { CARDS.push({pid, k, c, t: c.querySelector('h3').textContent.trim()}); return `<li><button type="button" class="rc" data-i="${CARDS.length - 1}">${esc(CARDS[CARDS.length - 1].t)}</button></li>`; }).join('')}</ul>` : (cs[0] ? (CARDS.push({pid, k, c: cs[0], t: cs[0].querySelector('h3').textContent.trim(), hidden: 1}), '') : '')}</li>`; }).join('')}</ol></details>`; }).join('');
+ const R = document.createElement('aside'); R.id = 'rail'; R.className = 'rail'; R.setAttribute('aria-label', 'Platform index'); R.hidden = true;
+ R.innerHTML = `<div class="rh"><b>Platform index</b><button type="button" class="rpin linkbtn" aria-pressed="false">Keep open</button><button type="button" class="rx" aria-label="Close the index">×</button></div><label class="rsrch"><span class="sr">Find an exhibit</span><input type="search" placeholder="Find an exhibit, e.g. retention" autocomplete="off"></label><p class="rhint">Press / to search from anywhere.</p><div class="rres" hidden></div><nav class="rtree">${html}</nav>`;
+ document.body.appendChild(R);
+ const btn = $('#index-btn'), inp = R.querySelector('input'), res = R.querySelector('.rres'), tree = R.querySelector('.rtree'), pin = R.querySelector('.rpin');
+ btn.textContent = '☰ Index'; btn.setAttribute('aria-haspopup', 'false'); btn.setAttribute('aria-controls', 'rail'); btn.setAttribute('aria-expanded', 'false');
+ let pinned = false; try { pinned = localStorage.getItem('railPin') === '1'; } catch (e) {}
+ const wide = () => innerWidth >= 1280;
+ const open = (focus) => { R.hidden = false; btn.setAttribute('aria-expanded', 'true'); document.body.classList.toggle('rail-docked', pinned && wide()); mark(); if (focus) inp.focus(); };
+ const close = () => { R.hidden = true; btn.setAttribute('aria-expanded', 'false'); document.body.classList.remove('rail-docked'); };
+ const setPin = v => { pinned = v; pin.setAttribute('aria-pressed', v); pin.textContent = v ? 'Docked' : 'Keep open'; try { localStorage.setItem('railPin', v ? '1' : '0'); } catch (e) {} if (!R.hidden) document.body.classList.toggle('rail-docked', v && wide()); };
+ setPin(pinned);
+ btn.addEventListener('click', e => { e.stopPropagation(); R.hidden ? open(true) : close(); });
+ R.querySelector('.rx').addEventListener('click', () => { setPin(false); close(); btn.focus(); });
+ pin.addEventListener('click', () => setPin(!pinned));
+ addEventListener('resize', () => { if (!R.hidden) document.body.classList.toggle('rail-docked', pinned && wide()); });
+ const goCard = it => { if (!$('#' + it.pid).classList.contains('on')) show(it.pid); requestAnimationFrame(() => { spyHold = Date.now() + 700; setTimeout(spy, 760); window.scrollTo({top: Math.max(0, it.c.getBoundingClientRect().top + scrollY - stickH() - 12), behavior: 'instant'}); it.c.classList.remove('flash'); void it.c.offsetWidth; it.c.classList.add('flash'); const h = it.c.querySelector('h3'); if (h) { h.tabIndex = -1; h.focus({preventScroll: true}); } }); if (!(pinned && wide())) close(); };
+ R.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return;
+  if (b.classList.contains('rsb')) { const pid = b.dataset.pid, k = +b.dataset.k; if (!$('#' + pid).classList.contains('on')) show(pid); requestAnimationFrame(() => showSub(pid, k, true)); if (!(pinned && wide())) close(); }
+  else if (b.dataset.i != null) goCard(CARDS[+b.dataset.i]); });
+ inp.addEventListener('input', () => { const q = inp.value.trim().toLowerCase(); if (!q) { res.hidden = true; tree.hidden = false; return; }
+  const words = q.split(/\s+/), hits = CARDS.map((it, i) => [it, i]).filter(([it]) => { const hay = (it.t + ' ' + ((SUBS[it.pid] || [])[it.k] || [''])[0] + ' ' + (it.c.querySelector('.sub') ? it.c.querySelector('.sub').textContent : '')).toLowerCase(); return words.every(w => hay.includes(w)); });
+  const nm = pid => (PAN.find(p => p[0] === pid) || ['', ''])[1];
+  res.innerHTML = hits.length ? `<p class="rcount">${hits.length} exhibit${hits.length > 1 ? 's' : ''}</p><ul>${hits.slice(0, 40).map(([it, i]) => `<li><button type="button" class="rc" data-i="${i}">${esc(it.t)}<small>${esc(nm(it.pid))}</small></button></li>`).join('')}</ul>` : '<p class="rcount">No exhibit matches. Try fewer words.</p>';
+  res.hidden = false; tree.hidden = true; });
+ inp.addEventListener('keydown', e => { if (e.key === 'Enter') { const f = res.querySelector('button.rc'); if (f) f.click(); } if (e.key === 'Escape') { if (inp.value) { inp.value = ''; inp.dispatchEvent(new Event('input')); } else if (!(pinned && wide())) { close(); btn.focus(); } e.stopPropagation(); } });
+ addEventListener('keydown', e => { if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) && !($('#dlg') && $('#dlg').open)) { e.preventDefault(); open(true); } if (e.key === 'Escape' && !R.hidden && !(pinned && wide()) && !($('#dlg') && $('#dlg').open)) close(); });
+ document.addEventListener('click', e => { if (!R.hidden && !(pinned && wide()) && !R.contains(e.target) && e.target !== btn) close(); });
+ // mark where the reader is
+ let mq = 0; const mark = () => { if (R.hidden) return; const panel = $('.panel.on'); if (!panel) return; const pid = panel.id, lim = stickH() + 40;
+  R.querySelectorAll('details.rp').forEach(d => { const on = d.dataset.pid === pid; d.classList.toggle('cur', on); if (on && !d.open && !d.dataset.user) d.open = true; });
+  let cur = null, ct = -1e9; CARDS.forEach((it, i) => { const t = it.c.getBoundingClientRect().top; if (it.pid === pid && t <= lim + 120 && t > ct + 2) { cur = i; ct = t; } });
+  let k = 0; panel.querySelectorAll(':scope > [data-sub]').forEach(c => { if (c.getBoundingClientRect().top <= lim) k = Math.max(k, +c.dataset.sub); });
+  R.querySelectorAll('[aria-current]').forEach(x => x.removeAttribute('aria-current'));
+  const sb = R.querySelector(`.rsb[data-pid="${pid}"][data-k="${k}"]`); if (sb) sb.setAttribute('aria-current', 'location');
+  if (cur != null) { const cb = R.querySelector(`.rc[data-i="${cur}"]`); if (cb) cb.setAttribute('aria-current', 'true'); } };
+ R.querySelectorAll('details.rp').forEach(d => d.querySelector('summary').addEventListener('click', () => d.dataset.user = 1));
+ addEventListener('scroll', () => { cancelAnimationFrame(mq); mq = requestAnimationFrame(mark); }, {passive: true});
+ document.addEventListener('click', e => { if (e.target.closest('.tab')) setTimeout(mark, 50); });
+ if (pinned && wide()) open(false);
+});
 
 /* ================= TABS ================= */
 const tabs = $$('.tab');
@@ -2151,7 +2677,8 @@ window.FA_show = show;
 try { if (window.top !== window.self) $$('.cp-link').forEach(a => { a.hidden = true; const br = a.previousElementSibling; if (br && br.tagName === 'BR') br.hidden = true; }); } catch (e) {}
 /* two-page print pack instead of every panel */
 function buildPack() {
- const pick = ['takeaways', 'progress', 'suppress', 'support', 'handling'];
+ if (window.__cardsMode) return;
+ const pick = ['takeaways', 'progress', 'suppress', 'support', 'handling', 'mission'];
  const out = pick.map(id => { const el = document.getElementById(id); if (!el) return ''; const c = id === 'takeaways' ? el : (el.closest('.card') || el); const k = c.cloneNode(true); k.removeAttribute('id'); k.hidden = false; k.querySelectorAll('[id]').forEach(e => e.removeAttribute('id')); k.querySelectorAll('button').forEach(x => { const s = document.createElement('div'); s.className = x.className; s.innerHTML = x.innerHTML; x.replaceWith(s); }); return `<div class="pk pk-${id}">${k.outerHTML}</div>`; });
  const html = out.join('');
  $('#printpack').innerHTML = `<p class="pk-note">Two-page summary. The full interactive work sample, with every exhibit, is at narissa-pgm.github.io/MIT_Sloan_OER. All donor data is synthetic.</p>` + html;
