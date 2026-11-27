@@ -1003,7 +1003,85 @@ body{font-size:15.5px;line-height:1.5} h1,h2,h3,h4,h5,h6{font-weight:700;letter-
 @media(max-width:360px){.real-track{grid-template-columns:1fr}.real-track:before{display:none}.real-track button{display:grid;grid-template-columns:26px 1fr;gap:3px 6px}.real-track button:before{grid-row:span 2}.real-track button small{grid-column:2}}
 @media print{.real-story,.real-photo-dialog{display:none!important}}
 </style>
-</head>
+<style id="sl-visual">
+/* Visual upgrade layer: legible chart size, validated chart palette, hover tooltips, data bars and KPI meters. Content unchanged. */
+:root{--vx-shadow:0 1px 2px rgba(23,32,38,.05),0 6px 18px rgba(23,32,38,.05)}
+/* 2 · Chart palette: validated, colorblind-separable steps of the same brand family (charts only) */
+main .chart,#dlg .chart,#ux-dialog .chart,#calwheel,#hcclock{--accent:#a31f34;--slate:#1f6fa3;--gold:#c28a2b;--green:#3d8b5f;--amber:#6f4e9c}
+main .chart .legend,#dlg .chart .legend{--accent:#a31f34}
+.chart{border-color:#e4e7e5!important;border-radius:10px!important;background:#fff!important;padding:12px 14px!important}
+.chart svg [data-vx-tip]{transition:opacity .12s,filter .12s}
+.chart svg:hover [data-vx-tip]:not(:hover){opacity:.86}
+.chart svg [data-vx-tip]:hover{filter:brightness(1.12)}
+.legend{font-size:12.5px!important}
+.legend i{border-radius:3px}
+/* 3 · Tooltip */
+.vx-tip{position:fixed;z-index:9999;pointer-events:none;max-width:320px;background:#1f2427;color:#fff;border-radius:8px;padding:8px 11px;font:13px/1.45 Cambria,Georgia,serif;box-shadow:0 10px 28px rgba(0,0,0,.22)}
+.vx-tip[hidden]{display:none}.vx-tip b{display:block;font-size:13.5px}.vx-tip span{display:block;color:#e7ebed}
+/* 4 · Data bars inside tables */
+.vx-db{display:flex;align-items:center;gap:8px;min-width:110px}
+.vx-db>i{display:block;height:8px;border-radius:99px;background:#1f6fa3;flex:none;opacity:.85}
+.vx-db>i.alt{background:#a31f34}.vx-db>i.ok{background:#3d8b5f}.vx-db>i.mut{background:#8a949a}
+.vx-db>em{font-style:normal;white-space:nowrap}
+.vx-dbw{display:inline-block;width:72px;height:8px;border-radius:99px;background:#eef1f2;flex:none;position:relative;overflow:hidden}
+.vx-dbw>i{position:absolute;top:0;bottom:0;left:0;border-radius:99px}
+.vx-dv{display:inline-flex;align-items:center;gap:8px}
+.vx-dvb{display:inline-block;width:80px;height:10px;position:relative;background:linear-gradient(90deg,transparent calc(50% - 1px),#9aa3a8 calc(50% - 1px),#9aa3a8 calc(50% + 1px),transparent calc(50% + 1px)),#f4f6f7;border-radius:3px}
+.vx-dvb>i{position:absolute;top:1px;bottom:1px;border-radius:2px}
+.vx-heat td.vx-h{font-weight:bold;text-align:center}
+/* 5 · KPI meters on overview tiles */
+.kpi .vx-m{display:block;height:6px;border-radius:99px;background:#eef1f2;margin-top:8px;position:relative;overflow:visible}
+.kpi .vx-m>i{display:block;height:100%;border-radius:99px;background:#a31f34}
+.kpi .vx-m>b{position:absolute;top:-4px;bottom:-4px;width:2px;background:#1f2a30;border-radius:1px}
+.kpi .vx-dots{display:flex;gap:4px;margin-top:8px}
+.kpi .vx-dots i{width:12px;height:12px;border-radius:50%;background:#eef1f2;box-shadow:inset 0 0 0 1.5px #c9cfd2}
+.kpi .vx-dots i.on{background:#3d8b5f;box-shadow:none}
+.kpi .vx-dots i.off{background:#fbeef0;box-shadow:inset 0 0 0 1.5px #a31f34}
+/* 6 · Cards: calmer depth */
+main .card{box-shadow:var(--vx-shadow)}
+@media print{.vx-tip{display:none!important}.vx-db>i,.vx-dvb>i,.kpi .vx-m>i,.vx-heat td.vx-h{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+@media(prefers-reduced-motion:reduce){.chart svg [data-vx-tip]{transition:none}}
+.chart ~ .legend{--accent:#a31f34;--slate:#1f6fa3;--gold:#c28a2b;--green:#3d8b5f;--amber:#6f4e9c}
+
+/* Where I would take work off the Director: first-year roadmap */
+.vxr-wrap{margin:14px 0 4px;overflow-x:auto}
+.vxr{display:block;width:100%;height:auto;min-width:760px;font-family:inherit}
+.vxr-q{font-size:12.5px;fill:#56626a}
+.vxr-fy{font-size:11.5px;fill:#8a959c;font-weight:bold}
+.vxr-n{font-size:13px;font-weight:bold}
+.vxr-t{font-size:15.5px;font-weight:bold;fill:#1f2a30}
+.vxr-b{font-size:12.5px;fill:#56626a}
+.vxr-l{font-size:11.5px;font-weight:bold;pointer-events:none}
+.vxr-key text{font-size:12px;fill:#56626a}
+.vxr-lane{cursor:pointer;outline:none}
+.vxr-lane .vxr-bg{transition:fill .15s}
+.vxr-lane:hover .vxr-bg,.vxr-lane:focus-visible .vxr-bg{fill:#dfe8ee;fill-opacity:.45}
+.vxr-lane:hover .vxr-t,.vxr-lane:focus-visible .vxr-t{fill:var(--c);text-decoration:underline}
+.vxr-lane:focus-visible .vxr-bg{stroke:#1f6fa3;stroke-width:2}
+.vxr-mini{min-width:0;max-width:640px}
+.vxo-why{margin:4px 0 12px;color:#3d4a52;font-size:15px;line-height:1.45;padding-left:12px;border-left:3px solid var(--c)}
+.vxo-when{margin:0 0 14px;padding:8px 10px 6px;border:1px solid #e7eae9;border-radius:10px;background:#fbfcfc}
+.vxo-cols{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;margin-bottom:14px}
+.vxo h4{font-size:14px;margin:0 0 8px;color:#1f2a30}
+.vxo ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.vxo li{position:relative;padding:7px 10px 7px 34px;border-radius:8px;font-size:14px;line-height:1.35}
+.vxo-do li{background:color-mix(in srgb,var(--c) 7%,#fff);border:1px solid color-mix(in srgb,var(--c) 18%,#fff)}
+.vxo-do li:before{content:'';position:absolute;left:12px;top:11px;width:9px;height:5px;border-left:2px solid var(--c);border-bottom:2px solid var(--c);transform:rotate(-45deg)}
+.vxo-need li{background:#f7f5f4;border:1px solid #ebe6e5}
+.vxo-need li:before{content:'';position:absolute;left:13px;top:13px;width:8px;height:8px;border-radius:50%;border:2px solid #8a959c}
+.vxo-ev{display:flex;flex-wrap:wrap;gap:8px}
+@media(max-width:700px){.vxo-cols{grid-template-columns:1fr}}
+#support.vx-own .note{margin-top:12px;padding:12px 14px 12px 16px;border-radius:10px;background:#f7f5f4;border:1px solid #ebe6e5;border-left:4px solid #750014}
+@media print{.vxr-wrap{display:none}}
+@media(prefers-reduced-motion:reduce){.vxr-lane .vxr-bg{transition:none}}
+/* Section nav: quieter "you are here" */
+.subnav button[aria-pressed=true]{background:#f6e9ec!important;border-color:#750014!important;color:#750014!important}
+/* Small charts, click to enlarge */
+.vx-zoom{position:relative;cursor:zoom-in}
+.vx-zoom:after{content:'⤢ Click to enlarge';position:absolute;top:8px;right:10px;font-size:11.5px;font-weight:bold;color:#fff;background:rgba(31,42,48,.82);padding:3px 8px;border-radius:999px;opacity:0;transform:translateY(-3px);transition:opacity .15s,transform .15s;pointer-events:none}
+.vx-zoom:hover:after,.vx-zoom:focus-visible:after{opacity:1;transform:none}
+.vx-zoom:hover{box-shadow:0 0 0 2px rgba(163,31,52,.25)}
+</style></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="head"><div class="wrap">
@@ -2132,12 +2210,15 @@ safe('anomalies', function anomalies() {
 safe('reqs', function reqs() {
  const MO = ['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'], TY = [['Lists and segments', 'var(--accent)'], ['Report changes', 'var(--slate)'], ['Analysis and forecasts', 'var(--gold)'], ['Data fixes', 'var(--amber)']];
  const D = [[14, 9, 4, 6], [11, 8, 3, 5], [18, 10, 5, 7], [20, 9, 6, 6], [22, 8, 7, 5], [25, 7, 6, 8], [12, 6, 4, 4], [16, 6, 5, 4], [21, 5, 7, 4], [13, 5, 4, 3], [14, 4, 5, 3], [19, 4, 6, 3]], SS = SSERIES;
- const Wd = 900, H = 290, L = 46, T = 14, B = 36, mx = 50, bw = (Wd - L - 70) / 12, Yv = v => T + (H - T - B) * (1 - v / mx), Yp = p => T + (H - T - B) * (1 - p);
- let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Data requests by month and type, with the share answered by self-service">`;
- [0, 10, 20, 30, 40, 50].forEach(v => s += `<line x1="${L}" x2="${Wd - 60}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="var(--line)"/><text x="${L - 6}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v}</text>`);
- D.forEach((m, i) => { let acc = 0; m.forEach((v, k) => { s += `<rect x="${L + i * bw + 6}" y="${Yv(acc + v)}" width="${bw - 12}" height="${Yv(acc) - Yv(acc + v)}" fill="${TY[k][1]}"><title>${MO[i]} ${TY[k][0]}: ${v}</title></rect>`; acc += v; }); s += `<text x="${L + i * bw + bw / 2}" y="${H - 12}" text-anchor="middle" font-size="12" fill="var(--muted)">${MO[i]}</text>`; });
- s += `<polyline fill="none" stroke="var(--green)" stroke-width="3" points="${SS.map((p, i) => (L + i * bw + bw / 2) + ',' + Yp(p)).join(' ')}"/><text x="${Wd - 56}" y="${Yp(SS[11]) + 4}" font-size="12.5" font-weight="700" fill="var(--green)">${pct(SS[11])}</text><text x="${Wd - 56}" y="${Yp(SS[11]) + 20}" font-size="11.5" fill="var(--green)">self-served</text>`;
- $('#reqs').innerHTML = s + '</svg><div class="legend">' + TY.map(t => `<span><i style="background:${t[1]}"></i>${t[0]}</span>`).join('') + '<span><i style="background:var(--green)"></i>Share answered by a dashboard, right scale</span></div><p class="note">A first-year plan with synthetic counts. Report-change requests fall as definitions settle and self-service grows. At Harvard FAS, ad-hoc requests fell from 300 to 400 a year to under 100 after reusable reports went live.</p>';
+ const Wd = 900, H = 360, L = 46, R = 70, T = 24, bw = (Wd - L - R) / 12, mx = 50, b0 = 222, Yv = v => T + (b0 - T) * (1 - v / mx), p0 = 322, p1 = 258, Yp = p => p0 - (p0 - p1) * p;
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Data requests by month and type, with the share answered by self-service in a separate panel">`;
+ s += `<text x="${L}" y="14" font-size="12.5" font-weight="700" fill="var(--ink)">Requests per month</text>`;
+ [0, 10, 20, 30, 40, 50].forEach(v => s += `<line x1="${L}" x2="${Wd - R}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="${v ? 'var(--line)' : '#9aa3a8'}"/><text x="${L - 6}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v}</text>`);
+ D.forEach((m, i) => { let acc = 0; const tot = m.reduce((a, b) => a + b, 0); m.forEach((v, k) => { s += `<rect x="${L + i * bw + 7}" y="${Yv(acc + v) + 1}" width="${bw - 14}" height="${Math.max(0, Yv(acc) - Yv(acc + v) - 2)}" rx="2" fill="${TY[k][1]}"><title>${MO[i]} ${TY[k][0]}: ${v}</title></rect>`; acc += v; }); s += `<text x="${L + i * bw + bw / 2}" y="${Yv(tot) - 6}" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink)">${tot}</text><text x="${L + i * bw + bw / 2}" y="${H - 12}" text-anchor="middle" font-size="12" fill="var(--muted)">${MO[i]}</text>`; });
+ s += `<text x="${L}" y="${p1 - 14}" font-size="12.5" font-weight="700" fill="var(--ink)">Share answered by a dashboard</text>`;
+ [0, .5, 1].forEach(v => s += `<line x1="${L}" x2="${Wd - R}" y1="${Yp(v)}" y2="${Yp(v)}" stroke="${v ? 'var(--line)' : '#9aa3a8'}"/><text x="${L - 6}" y="${Yp(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v * 100}%</text>`);
+ s += `<path d="M${L + bw / 2} ${Yp(0)}L${SS.map((p, i) => (L + i * bw + bw / 2) + ' ' + Yp(p)).join('L')}L${L + 11 * bw + bw / 2} ${Yp(0)}Z" fill="var(--green)" opacity=".12"/><polyline fill="none" stroke="var(--green)" stroke-width="2.5" points="${SS.map((p, i) => (L + i * bw + bw / 2) + ',' + Yp(p)).join(' ')}"/>` + SS.map((p, i) => `<circle cx="${L + i * bw + bw / 2}" cy="${Yp(p)}" r="${i === 11 ? 5 : 3.5}" fill="var(--green)" stroke="#fff" stroke-width="1.5"><title>${MO[i]} self-served: ${pct(p)}</title></circle>`).join('') + `<text x="${Wd - R + 10}" y="${Yp(SS[11]) + 4}" font-size="12.5" font-weight="700" fill="var(--ink)">${pct(SS[11])}</text><text x="${Wd - R + 10}" y="${Yp(SS[11]) + 19}" font-size="11.5" fill="var(--muted)">self-served</text>`;
+ $('#reqs').innerHTML = s + '</svg><div class="legend">' + TY.map(t => `<span><i style="background:${t[1]}"></i>${t[0]}</span>`).join('') + '<span><i style="background:var(--green)"></i>Share answered by a dashboard, lower panel</span></div><p class="note">A first-year plan with synthetic counts. Report-change requests fall as definitions settle and self-service grows. At Harvard FAS, ad-hoc requests fell from 300 to 400 a year to under 100 after reusable reports went live.</p>';
 });
 safe('process', function process() {
  const BEF = [['Email request and wait', 4], ['Edit last year’s query by hand', 3], ['Dedupe in Excel', 2], ['Apply suppressions by hand', 2], ['Rework after errors', 2]], AFT = [['Intake form with parameters', .2], ['Run the parameterized dataset', .3], ['Automatic suppression counts', .1], ['Peer check against the waterfall', .4], ['Publish to the shared folder', .1]];
@@ -2239,13 +2320,20 @@ safe('perf', function perf() {
 const CYC = [['Fall email', 'Sep', 24100, .006, 61200], ['Giving Tuesday', 'Dec 2', 18300, .009, 98400], ['Calendar year-end', 'Dec', 26800, .021, 1.21e6], ['24-Hour Challenge', 'Mar 12', 27500, .025, 0.52e6], ['Spring email', 'Apr', 26820, .014, 182000], ['Fiscal year-end', 'Jun', 22400, .017, 0.61e6]];
 safe('cycle', function cycle() {
  const A = CYC;
- const Wd = 960, H = 300, L = 70, T = 16, B = 56, bw = (Wd - L - 70) / A.length, mx = 1.4e6, mr = .03, Yv = v => T + (H - T - B) * (1 - v / mx), Yr = v => T + (H - T - B) * (1 - v / mr);
- let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="FY26 appeal cycle: dollars and response rate by appeal">`;
- [0, .5e6, 1e6].forEach(v => s += `<line x1="${L}" x2="${Wd - 60}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="var(--line)"/><text x="${L - 8}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v ? (v >= 1e6 ? '$' + v / 1e6 + 'M' : '$' + v / 1e3 + 'K') : '$0'}</text>`);
- [0, .01, .02, .03].forEach(v => s += `<text x="${Wd - 54}" y="${Yr(v) + 4}" font-size="12" fill="var(--accent)">${(v * 100).toFixed(0)}%</text>`);
- A.forEach((a, i) => { const x = L + i * bw; s += `<rect x="${x + 14}" y="${Yv(a[4])}" width="${bw - 28}" height="${Yv(0) - Yv(a[4])}" fill="var(--slate)" opacity=".75"><title>${a[0]}: ${k1(a[4])}</title></rect><text x="${x + bw / 2}" y="${H - 34}" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">${a[0]}</text><text x="${x + bw / 2}" y="${H - 18}" text-anchor="middle" font-size="11.5" fill="var(--muted)">${a[1]} · ${n0(a[2])} sent</text>`; });
- s += `<polyline fill="none" stroke="var(--accent)" stroke-width="2.5" points="${A.map((a, i) => (L + i * bw + bw / 2) + ',' + Yr(a[3])).join(' ')}"/>` + A.map((a, i) => `<circle cx="${L + i * bw + bw / 2}" cy="${Yr(a[3])}" r="5" fill="var(--accent)"/><text x="${L + i * bw + bw / 2 + 8}" y="${Yr(a[3]) - 8}" font-size="12" font-weight="700" fill="var(--accent)">${pct1(a[3])}</text>`).join('');
- $('#cycle').innerHTML = s + `</svg><div class="legend"><span><i style="background:var(--slate)"></i>Dollars raised, left scale</span><span><i style="background:var(--accent)"></i>Response rate, right scale</span></div><p class="note">FY26 Annual Fund appeal cycle, synthetic. The 24-Hour Challenge date is from MIT Sloan’s published results. <b>So what:</b> the 24-Hour Challenge has the best response rate but calendar year-end raises the most, so both get the most testing and the cleanest lists.</p>`;
+ const Wd = 960, H = 410, L = 70, R = 24, T = 30, bw = (Wd - L - R) / A.length, top0 = 210, mx = 1.4e6, Yv = v => T + (top0 - T) * (1 - v / mx), r0 = 336, r1 = 250, mr = .03, Yr = v => r0 - (r0 - r1) * v / mr;
+ let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="FY26 appeal cycle: dollars raised by appeal, and response rate by appeal in a separate panel">`;
+ s += `<text x="${L}" y="14" font-size="12.5" font-weight="700" fill="var(--ink)">Dollars raised</text>`;
+ [0, .5e6, 1e6].forEach(v => s += `<line x1="${L}" x2="${Wd - R}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="${v ? 'var(--line)' : '#9aa3a8'}"/><text x="${L - 8}" y="${Yv(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${v ? (v >= 1e6 ? '$' + v / 1e6 + 'M' : '$' + v / 1e3 + 'K') : '$0'}</text>`);
+ s += `<text x="${L}" y="${r1 - 12}" font-size="12.5" font-weight="700" fill="var(--ink)">Response rate</text>`;
+ [0, .01, .02, .03].forEach(v => s += `<line x1="${L}" x2="${Wd - R}" y1="${Yr(v)}" y2="${Yr(v)}" stroke="${v ? 'var(--line)' : '#9aa3a8'}"/><text x="${L - 8}" y="${Yr(v) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${(v * 100).toFixed(0)}%</text>`);
+ const best = A.reduce((b, a) => a[3] > b[3] ? a : b, A[0]), most = A.reduce((b, a) => a[4] > b[4] ? a : b, A[0]);
+ A.forEach((a, i) => { const x = L + i * bw, cx = x + bw / 2, w = Math.min(64, bw - 40);
+  s += `<g data-vx-tip="${a[0]} · ${a[1]} · ${n0(a[2])} sent · ${k1(a[4])} raised · ${pct1(a[3])} response"><rect x="${x + 2}" y="${T}" width="${bw - 4}" height="${r0 - T}" fill="none" pointer-events="all"/><path d="M${cx - w / 2} ${Yv(0)}V${Yv(a[4]) + 4}q0 -4 4 -4h${w - 8}q4 0 4 4V${Yv(0)}Z" fill="var(--slate)" opacity="${a === most ? 1 : .78}"/>`;
+  s += `<line x1="${cx}" x2="${cx}" y1="${Yr(0)}" y2="${Yr(a[3])}" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/><circle cx="${cx}" cy="${Yr(a[3])}" r="${a === best ? 7 : 5.5}" fill="var(--accent)" stroke="#fff" stroke-width="2"/></g>`;
+  s += `<text x="${cx}" y="${Yv(a[4]) - 7}" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">${k1(a[4])}</text><text x="${cx + 11}" y="${Yr(a[3]) + 4}" font-size="12" font-weight="700" fill="var(--ink)">${pct1(a[3])}</text>`;
+  s += `<text x="${cx}" y="${H - 50}" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">${a[0]}</text><text x="${cx}" y="${H - 33}" text-anchor="middle" font-size="11.5" fill="var(--muted)">${a[1]} · ${n0(a[2])} sent</text>`; });
+ s += `<text x="${Wd - R}" y="14" text-anchor="end" font-size="11.5" fill="var(--muted)">Most dollars: ${most[0]} · best response: ${best[0]}</text>`;
+ $('#cycle').innerHTML = s + `</svg><div class="legend"><span><i style="background:var(--slate)"></i>Dollars raised, top panel</span><span><i style="background:var(--accent)"></i>Response rate, lower panel</span></div><p class="note">FY26 Annual Fund appeal cycle, synthetic. The 24-Hour Challenge date is from MIT Sloan’s published results. <b>So what:</b> the 24-Hour Challenge has the best response rate but calendar year-end raises the most, so both get the most testing and the cleanest lists.</p>`;
 });
 const TRI = [['Is there a report or dashboard that already answers it?', 'Point to it and show how to filter it. Log the question for the training calendar.', 'Existing reporting'], ['Will the question come back every month or every appeal?', 'Build or extend a dataset or dashboard, with definitions, an owner and a validation date.', 'New recurring output'], ['Is it a one-time decision question?', 'Run the analysis, and send it with an analysis brief that states the assumptions and limitations.', 'New analysis'], ['Is the real problem a slow or error-prone process?', 'Map the process and propose a change, like the appeal list redesign.', 'Process improvement'], ['Is the data itself wrong or missing?', 'Log it, find the root cause and route the fix to its owner, often a central partner.', 'Data issue']];
 $('#triage').innerHTML = '<ol class="triage">' + TRI.map((x, i) => `<li><span class="tq"><b>${i + 1}</b>${esc(x[0])}</span><span class="ta"><strong>${x[2]}</strong>${esc(x[1])}</span></li>`).join('') + '</ol><p class="note">Every request is answered the first way that fits, from the top. The goal is that recurring questions stop needing a person.</p>';
@@ -2282,8 +2370,8 @@ const CRM = {
 POP.crm = (id, t) => {
  const k = id === 'all' ? -1 : +id, G = CRM.gates;
  const gate = g => `<div class="crm-g"><p><b>${g[0]} · ${g[1]}.</b> ${g[2]}</p><ul>${g[3].map(x => `<li>${x}</li>`).join('')}</ul></div>`;
- openDlg(`<p class="eyebrow">CRM conversion · reporting readiness</p><h3 id="dlg-title">${k < 0 ? 'Five gates from three conversions' : G[k][0] + ' · ' + G[k][1]}</h3><p class="prop">Proposed. Scope and timing come from the Director, BDTO and IS&amp;T</p>
- <p>The method I used for Raiser’s Edge to Advance at UAMS, Raiser’s Edge to Agilon at Phillips Academy, and APEX to HART at Harvard FAS. I would own reporting readiness. The system choice and the data mart stay with the Director, BDTO and IS&amp;T.</p>
+ openDlg(`<p class="eyebrow">CRM conversion · reporting readiness</p><h3 id="dlg-title">${k < 0 ? 'Five gates to a reporting-ready cutover' : G[k][0] + ' · ' + G[k][1]}</h3><p class="prop">Proposed. Scope and timing come from the Director, BDTO and IS&amp;T</p>
+ <p>I would own reporting readiness. Each gate below has to pass before reports move to the new CRM. The system choice and the data mart stay with the Director, BDTO and IS&amp;T.</p>
  ${k < 0 ? G.map(gate).join('') : gate(G[k])}
  <h4 class="h4">Risk register</h4><div class="scroll"><table class="tbl"><thead><tr><th scope="col">Risk</th><th scope="col">Impact</th><th scope="col">Mitigation</th></tr></thead><tbody>${CRM.risks.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table></div>
  ${k >= 0 ? '<p style="margin-top:10px"><button class="linkbtn" data-open="crm:all">See all five gates ›</button></p>' : ''}`, t);
@@ -2363,12 +2451,12 @@ safe('recs', function recs() {
 /* the Director tiles: one popup per priority with what I would own, the evidence and what I would need first */
 const OWN = [
  ['Definitions and reconciliation', 'A CASE-aligned definition set, a bridge from funds received to new funds committed, and an OER to central reconciliation with every difference explained.', [['std:all', 'CASE standards alignment'], ['go:dq#defs,recon', 'Definitions and worked reconciliation']], 'Who owns each definition centrally, and the current VSE extract.'],
- ['CRM conversion', 'Reporting readiness: a field and report inventory, gates, a risk register, parallel-run parity tests and a cutover checklist.', [['crm:all', 'CRM gate list and risks'], ['go:sp#lifecycle', 'First-year lifecycle with the five gates']], 'Which system is chosen, the timeline, and whether it is lift-and-shift or redesign. Three conversions behind it: Raiser’s Edge to Advance at UAMS, Raiser’s Edge to Agilon at Phillips Academy, APEX to HART at Harvard FAS.'],
+ ['CRM conversion', 'Reporting readiness: a field and report inventory, gates, a risk register, parallel-run parity tests and a cutover checklist.', [['crm:all', 'CRM gate list and risks'], ['go:sp#lifecycle', 'First-year lifecycle with the five gates']], 'Which system is chosen, the timeline, and whether it is lift-and-shift or redesign.'],
  ['Reporting estate and self-service', 'The report catalog with owners and a retire list, request triage, a training calendar and an asset inventory.', [['go:pi#triage,training,assets', 'Triage, training and assets'], ['go:cal#catalog', 'Report catalog by cadence']], 'The current report list, and which reports matter most to their users.'],
  ['Annual Fund and campaign reporting', 'Daily dashboard, weekly report, portfolio and pipeline pack, a backtested forecast, and automated suppression and campaign datasets.', [['go:af#pubtrend,progress', 'Published results and FY27 progress'], ['go:seg#suppress,dataset', 'Suppression waterfall and campaign dataset']], 'The campaign calendar and the Annual Giving team’s targets.'],
  ['AI with guardrails', 'A one-page approved-use framework, pilot selection (anomaly explanations, draft narratives, propensity scores) and evaluation criteria.', [['go:sp#models', 'Models and guardrails'], ['go:ml#rnboot,rnperm', 'How the renewal models are tested']], 'Resource Development’s approval process and MIT’s data governance rules.']
 ];
-POP.own = (id, t) => { const o = OWN[+id]; openDlg(`<p class="eyebrow">Where I would take work off the Director</p><h3 id="dlg-title">${o[0]}</h3><div class="ownd"><div><p class="k">What I would own</p><p>${o[1]}</p></div><div><p class="k">What I would need first</p><p>${o[3]}</p></div></div><p class="k">Evidence in this sample</p><div class="ownev">${o[2].map(([k, l]) => k.startsWith('go:') ? `<button class="ex ev" data-go="${k.slice(3)}" data-title="${l}">${l} ›</button>` : `<button class="ex ev" data-open="${k}">${l} ›</button>`).join('')}</div>`, t); };
+window.slOWN = OWN; POP.own = (id, t) => { if (window.slOwnPop) return window.slOwnPop(id, t, openDlg); const o = OWN[+id]; openDlg(`<p class="eyebrow">Where I would take work off the Director</p><h3 id="dlg-title">${o[0]}</h3><div class="ownd"><div><p class="k">What I would own</p><p>${o[1]}</p></div><div><p class="k">What I would need first</p><p>${o[3]}</p></div></div><p class="k">Evidence in this sample</p><div class="ownev">${o[2].map(([k, l]) => k.startsWith('go:') ? `<button class="ex ev" data-go="${k.slice(3)}" data-title="${l}">${l} ›</button>` : `<button class="ex ev" data-open="${k}">${l} ›</button>`).join('')}</div>`, t); };
 $('#support .ownprint').innerHTML = `<table class="tbl support"><thead><tr><th scope="col">Director’s priority</th><th scope="col">What I would own</th><th scope="col">What I would need first</th></tr></thead><tbody>${OWN.map(o => `<tr><th scope="row">${o[0]}</th><td>${o[1]}</td><td>${o[3].split('. Three conversions')[0].replace(/\.?$/, '.')}</td></tr>`).join('')}</tbody></table>`;
 /* ================= 7 MODELS AND METHODS ================= */
 const ML = {};
@@ -3161,9 +3249,8 @@ let spyHold = 0, spyQ = 0;
 function spy() {
  if (Date.now() < spyHold) return;
  const panel = $('.panel.on'); if (!panel || !SUBS[panel.id]) return;
- const lim = stickH() + 24; let k = 0;
- [...panel.children].forEach(c => { if (c.dataset.sub !== undefined && c.getBoundingClientRect().top <= lim) k = Math.max(k, +c.dataset.sub); });
- if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) { const last = [...panel.children].filter(c => c.dataset.sub !== undefined).pop(); if (last && last.getBoundingClientRect().top < innerHeight) k = +last.dataset.sub; }
+ const atEnd = innerHeight + scrollY >= document.documentElement.scrollHeight - 4, lim = stickH() + (innerHeight - stickH()) * (atEnd ? .5 : .3); let k = 0;
+ [...panel.children].forEach(c => { if (c.dataset.sub !== undefined && c.offsetHeight > 0 && c.getBoundingClientRect().top <= lim) k = Math.max(k, +c.dataset.sub); });
  const nav = document.querySelector(`.subnav[data-panel="${panel.id}"]`); if (nav) nav.querySelectorAll('button[data-sub]').forEach(b => b.setAttribute('aria-pressed', +b.dataset.sub === k));
 }
 addEventListener('scroll', () => { cancelAnimationFrame(spyQ); spyQ = requestAnimationFrame(spy); }, {passive: true});
@@ -3383,5 +3470,100 @@ safe('ux-visuals', function(){
 })();
 
 </script>
-</body>
+<script id="sl-visual-js">
+(()=>{'use strict';
+/* Visual upgrade layer: styled tooltips from chart <title>s, table data bars and KPI meters. Reads the rendered page; never changes figures. */
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let tip=null;
+function show(html,x,y,host){if(!tip){tip=document.createElement('div');tip.className='vx-tip';tip.setAttribute('role','status')}let parent=host?.closest?.('dialog[open]')||document.body;if(tip.parentNode!==parent)parent.appendChild(tip);tip.innerHTML=html;tip.hidden=false;let r=tip.getBoundingClientRect(),l=x+16,t=y+16;if(l+r.width>innerWidth-8)l=x-r.width-16;if(t+r.height>innerHeight-8)t=y-r.height-16;tip.style.left=Math.max(8,l)+'px';tip.style.top=Math.max(8,t)+'px'}
+const hide=()=>{if(tip)tip.hidden=true};
+const fmt=s=>{let p=String(s).split(/\n|\s·\s(?=[A-Z$0-9])/);if(p.length===1){let m=String(s).match(/^([^:]{2,60}):\s*(.+)$/);if(m)p=[m[1],m[2]]}return '<b>'+esc(p[0])+'</b>'+p.slice(1).map(x=>'<span>'+esc(x)+'</span>').join('')};
+document.addEventListener('pointermove',e=>{let t=e.target.closest?.('[data-vx-tip]');if(t)show(fmt(t.dataset.vxTip),e.clientX,e.clientY,t);else hide()},{passive:true});
+document.addEventListener('focusin',e=>{let t=e.target.closest?.('[data-vx-tip]');if(t){let r=t.getBoundingClientRect();show(fmt(t.dataset.vxTip),r.left+Math.min(r.width/2,60),r.bottom-4,t)}});
+document.addEventListener('focusout',hide);addEventListener('scroll',hide,{passive:true});
+
+/* Chart <title> → styled tooltip (keeps an accessible name) */
+function titles(root){root.querySelectorAll('svg title').forEach(t=>{let p=t.parentElement;if(!p||p.tagName.toLowerCase()==='svg')return;let txt=t.textContent.trim();if(!txt)return;p.dataset.vxTip=txt;if(!p.hasAttribute('aria-label')&&(p.hasAttribute('tabindex')||p.getAttribute('role')))p.setAttribute('aria-label',txt);t.remove()})}
+
+/* Table data bars */
+const num=s=>{s=String(s).replace(/[−–]/g,'-').replace(/,/g,'');let m=s.match(/(-?\$?\d+(?:\.\d+)?)\s*([KkM%×x])?/);if(!m)return NaN;let v=parseFloat(m[1].replace('$',''));if(m[2]==='K'||m[2]==='k')v*=1e3;if(m[2]==='M')v*=1e6;return v};
+const CFG=[['reunion',/^Participation$/,'bar'],['reunion',/^Dollars$/,'bar'],['perf',/^Change$/,'div'],['mape',/error/i,'low'],['agoask',/^Close rate$/,'pct'],['agoask',/^Gift to ask$/,'pct'],['roc',/^AUC$/,'bar'],['roll',/^Mean absolute error$|^RMSE$/,'low'],['partfc',/^Participation$/,'bar'],['learn-survival',/^Survival$/,'pct'],['power',/^Donors per cell$/,'bar'],['checks',/^Failing$/,'low'],['tools',/^(Tableau|Salesforce CRM Analytics|Power BI|Cognos)$/,'heat']];
+function bars(){CFG.forEach(([id,re,mode])=>{let host=document.getElementById(id);if(!host)return;host.querySelectorAll('table').forEach(tb=>{let hs=[...(tb.tHead?.rows[0]?.cells||[])],j=hs.findIndex(h=>re.test(h.textContent.trim()));if(j<0)return;let key='vx'+j;if(tb.dataset[key])return;tb.dataset[key]='1';
+let cells=[...tb.tBodies[0]?.rows||[]].map(r=>r.cells[j]).filter(Boolean),vals=cells.map(c=>num(c.textContent)),fin=vals.filter(Number.isFinite);if(!fin.length)return;let mx=Math.max(...fin.map(Math.abs),mode==='pct'?100:0)||1,mn=Math.min(...fin);
+cells.forEach((c,i)=>{let v=vals[i];if(!Number.isFinite(v))return;
+if(mode==='heat'){let lo=Math.min(...fin),hi=Math.max(...fin),f=hi>lo?(v-lo)/(hi-lo):.5;c.classList.add('vx-h');c.style.background=`rgba(31,111,163,${(.08+f*.42).toFixed(2)})`;c.closest('table').classList.add('vx-heat');return}
+if(mode==='div'){let w=Math.min(100,Math.abs(v)/mx*50);c.innerHTML=`<span class="vx-dv"><span class="vx-dvb" aria-hidden="true"><i style="${v>=0?'left:50%':'right:50%'};width:${w}%;background:${v>=0?'#3d8b5f':'#a31f34'}"></i></span>${c.innerHTML}</span>`;return}
+let w=mode==='pct'?Math.max(0,Math.min(100,v)):Math.abs(v)/mx*100,cls=mode==='low'?(v===mn?'ok':'mut'):'';c.innerHTML=`<span class="vx-db"><span class="vx-dbw" aria-hidden="true"><i class="${cls}" style="width:${Math.max(2,w)}%;background:${cls==='ok'?'#3d8b5f':cls==='mut'?'#8a949a':'#1f6fa3'}"></i></span><em>${c.innerHTML}</em></span>`})})})}
+
+/* Overview KPI meters */
+function meters(){document.querySelectorAll('.kpis .kpi').forEach(k=>{if(k.querySelector('.vx-m,.vx-dots'))return;let t=k.textContent.replace(/\s+/g,' '),m;
+if((m=t.match(/(\d+) of (\d+)/))&&+m[2]<=12){let d=+m[1],n=+m[2];k.insertAdjacentHTML('beforeend',`<span class="vx-dots" aria-hidden="true">${Array.from({length:n},(_,i)=>`<i class="${i<d?'on':'off'}"></i>`).join('')}</span>`);return}
+if((m=t.match(/([\d.]+)% of goal/))){k.insertAdjacentHTML('beforeend',`<span class="vx-m" aria-hidden="true"><i style="width:${Math.min(100,+m[1])}%"></i></span>`);return}
+let s=k.querySelector('strong')?.textContent||'';if((m=s.match(/^([\d.]+)%$/))){let tg=t.match(/target[^\d]*([\d.]+)%/i);k.insertAdjacentHTML('beforeend',`<span class="vx-m" aria-hidden="true"><i style="width:${Math.min(100,+m[1])}%"></i>${tg?`<b style="left:${tg[1]}%"></b>`:''}</span>`)}})}
+
+let q=false;const run=()=>{if(q)return;q=true;requestAnimationFrame(()=>{q=false;try{titles(document);bars();meters()}catch(e){console.warn('visual layer',e)}})};
+new MutationObserver(run).observe(document.body,{childList:true,subtree:true});run();
+})();
+</script><script id="sl-own-js">
+(()=>{'use strict';
+/* Pilot: dark ownership map for the Director section; small charts open in the existing enlarge view on click. */
+const ACC=['#1f6fa3','#3d8b5f','#b07a22','#6f4e9c','#a31f34'];
+const ORDER=[0,3,2,1,4];
+const COL=['#1f6fa3','#2f7a50','#9a6a17','#6f4e9c','#a31f34'];
+const QS=['Q2 FY27','Q3 FY27','Q4 FY27','Q1 FY28','Q2 FY28'];
+/* bars per workstream: [startQ, endQ, label, solid] ; solid = dated on the first-year roadmap */
+const BARS={0:[[0,2,'Shared definitions with central partners',1],[0,1,'Daily data quality checks',1]],
+3:[[1,2,'Appeal dataset automation',1],[1,3,'Pipeline report',1],[2,3,'Reunion dashboard',1]],
+2:[[0,5,'Training series, all of OER',1],[2,5,'Report catalog and retire list, once definitions land',0]],
+1:[[2,5,'Reporting readiness, window set by the CRM decision',0]],
+4:[[3,5,'Pilots after approval, no date set',0]]};
+const BUILDS={0:'Starts first',3:'Builds on step 1',2:'Builds on steps 1 and 2',1:'Builds on steps 1 to 3',4:'Gated by approval'};
+const WHY={0:'Every report, forecast and list depends on agreed definitions and a reconciled total, so this goes first.',3:'Appeal datasets, the pipeline report and the reunion dashboard all use the agreed definitions.',2:'The catalog and retire list follow once definitions settle and the core reports exist. Training runs all year.',1:'The report inventory and parity tests reuse the defined, cataloged reports. The cutover date comes from the CRM decision.',4:'No model goes into production without Resource Development approval and MIT data governance review.'};
+const DELIV={0:['A CASE-aligned definition set','A bridge from funds received to new funds committed','An OER to central reconciliation with every difference explained'],
+1:['A field and report inventory','Gates and a risk register','Parallel-run parity tests','A cutover checklist'],
+2:['The report catalog with owners and a retire list','Request triage','A training calendar','An asset inventory'],
+3:['Daily dashboard and weekly report','Portfolio and pipeline pack','A backtested forecast','Automated suppression and campaign datasets'],
+4:['A one-page approved-use framework','Pilot selection: anomaly explanations, draft narratives, propensity scores','Evaluation criteria']};
+const NEED={0:['Who owns each definition centrally','The current VSE extract'],1:['Which system is chosen','The timeline','Whether it is lift-and-shift or redesign'],2:['The current report list','Which reports matter most to their users'],3:['The campaign calendar','The Annual Giving team’s targets'],4:['Resource Development’s approval process','MIT’s data governance rules']};
+const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const tint=(h,a)=>{let n=parseInt(h.slice(1),16),r=n>>16,g=n>>8&255,b=n&255,m=v=>Math.round(v+(255-v)*a);return '#'+[m(r),m(g),m(b)].map(v=>v.toString(16).padStart(2,'0')).join('')};
+/* draw the quarter grid with the given steps; mini = popup strip for one step */
+function road(steps,opt={}){const W=opt.w||1040,X0=opt.mini?8:372,CW=(W-X0-10)/5,x=q=>X0+q*CW,BH=opt.mini?16:17,GAP=5,HEAD=opt.mini?24:34;
+let y=HEAD+4,lanes=[],grid='',body='',arrows='';
+steps.forEach((k,n)=>{let bars=BARS[k],h=Math.max(opt.mini?0:58,bars.length*(BH+GAP)+18);lanes.push({k,n,y,h});y+=h});
+const H=y+(opt.mini?6:40);
+for(let q=0;q<=5;q++)grid+=`<line x1="${x(q)}" x2="${x(q)}" y1="${HEAD-6}" y2="${y}" stroke="${q===3?'#c9cfd2':'#e7eae9'}" stroke-width="${q===3?1.5:1}"/>`;
+QS.forEach((l,q)=>grid+=`<text x="${x(q)+CW/2}" y="${HEAD-12}" text-anchor="middle" class="vxr-q">${l}</text>`);
+if(!opt.mini)grid+=`<text x="${x(3)+4}" y="${HEAD-24}" class="vxr-fy">FY28</text><text x="${x(0)+4}" y="${HEAD-24}" class="vxr-fy">FY27</text>`;
+lanes.forEach(L=>{const c=COL[opt.mini?opt.n:L.n],cy=L.y+L.h/2,bars=BARS[L.k];let g='';
+ if(!opt.mini){g+=`<rect class="vxr-bg" x="0" y="${L.y+2}" width="${W}" height="${L.h-4}" rx="8" fill="#ffffff" fill-opacity="0"/>`;
+  g+=`<circle cx="20" cy="${cy}" r="13" fill="#ffffff" stroke="${c}" stroke-width="2"/><text x="20" y="${cy+4.5}" text-anchor="middle" class="vxr-n" fill="${c}">${L.n+1}</text>`;
+  g+=`<text x="44" y="${cy-5}" class="vxr-t">${esc(window.slOWN[L.k][0])}</text><text x="44" y="${cy+14}" class="vxr-b">${BUILDS[L.k]}</text>`;}
+ const top=cy-(bars.length*(BH+GAP)-GAP)/2;
+ bars.forEach((b,i)=>{const bx=x(b[0])+3,bw=x(b[1])-x(b[0])-6,by=top+i*(BH+GAP),fits=b[2].length*6.1+16<bw;
+  if(b[3])g+=`<rect x="${bx}" y="${by}" width="${bw}" height="${BH}" rx="4" fill="${c}"/>`;
+  else g+=`<rect x="${bx}" y="${by}" width="${bw}" height="${BH}" rx="4" fill="${tint(c,.9)}" stroke="${c}" stroke-width="1.4" stroke-dasharray="5 3"/>`;
+  if(L.k===4&&!b[3])g+=`<path d="M${bx} ${by+BH/2-8}l8 8-8 8-8-8z" fill="#ffffff" stroke="${c}" stroke-width="1.6"/>`;
+  const tx=(L.k===4&&!b[3])?bx+14:bx+8;
+  g+=fits?`<text x="${tx}" y="${by+BH-4.5}" class="vxr-l" fill="${b[3]?'#ffffff':tint(c,-0)}">${esc(b[2])}</text>`:`<text x="${bx+bw+7}" y="${by+BH-4.5}" class="vxr-l" fill="#1f2a30">${esc(b[2])}</text>`;
+  L['b'+i]={bx,by,bw}});
+ body+=opt.mini?g:`<g class="vxr-lane" role="button" tabindex="0" data-open="own:${L.k}" aria-label="Step ${L.n+1}, ${esc(window.slOWN[L.k][0])}. ${esc(BUILDS[L.k])}. Open the work plan." style="--c:${c}"><title>${esc(WHY[L.k])}</title>${g}</g>`;});
+if(!opt.mini){const by=k=>lanes.find(L=>L.k===k);
+ const arr=(a,b,q,ia)=>{const A=by(a),B=by(b);const ya=A['b'+ia].by+BH,yb=B.b0.by-3,xa=x(q)+3;arrows+=`<path d="M${xa+10} ${ya} V${yb-4}" stroke="#7d8a91" stroke-width="1.5" fill="none" marker-end="url(#vxr-ah)"/>`};
+ arr(0,3,1,1);arr(2,1,2,1);
+ const ly=H-14;body+=`<g class="vxr-key" transform="translate(${X0},${ly})"><rect x="0" y="-10" width="26" height="12" rx="3" fill="#5f6b72"/><text x="34" y="0">Dated on the first-year roadmap</text><rect x="250" y="-10" width="26" height="12" rx="3" fill="#f1f3f4" stroke="#5f6b72" stroke-dasharray="4 2"/><text x="284" y="0">Starts when what it builds on is ready</text><path d="M548 -5 H568" stroke="#7d8a91" stroke-width="1.5" marker-end="url(#vxr-ah)"/><text x="580" y="0">Builds on</text></g>`;}
+return `<svg viewBox="0 0 ${W} ${H}" class="vxr${opt.mini?' vxr-mini':''}" role="${opt.mini?'img':'group'}" aria-label="${opt.mini?'When this runs, by quarter':'First-year order of the five workstreams, by quarter'}"><defs><marker id="vxr-ah${opt.mini?'m':''}" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#7d8a91"/></marker></defs>${grid}${body}${arrows}</svg>`}
+function own(){const s=document.getElementById('support'),data=window.slOWN;if(!s||!data||s.classList.contains('vx-own'))return;let grid=s.querySelector('.own5');if(!grid)return;
+s.classList.add('vx-own');
+let sub=s.querySelector('.sub');if(sub)sub.textContent='The Director of Strategic Information sets the agenda and keeps team leadership and enterprise partnerships. These are the five parts I would carry, in the order I would take them on in the first year. Select a step to open its work plan.';
+grid.insertAdjacentHTML('beforebegin',`<div class="vxr-wrap">${road(ORDER)}</div>`);grid.hidden=true;grid.setAttribute('aria-hidden','true');
+s.querySelectorAll('.vxr-lane').forEach(g=>g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();g.dispatchEvent(new MouseEvent('click',{bubbles:true}))}}));
+let tb=s.querySelector('.ownprint tbody');if(tb){let rows=[...tb.rows];ORDER.forEach(k=>rows[k]&&tb.appendChild(rows[k]))}
+window.slOwnPop=(id,t,openDlg)=>{const k=+id,o=data[k],n=ORDER.indexOf(k),c=COL[n];
+ openDlg(`<div class="vxo" style="--c:${c}"><p class="eyebrow">Step ${n+1} of 5 in the first year</p><h3 id="dlg-title">${esc(o[0])}</h3><p class="vxo-why">${esc(WHY[k])}</p><div class="vxo-when">${road([k],{mini:1,n,w:560})}</div><div class="vxo-cols"><div><h4>What I would deliver</h4><ul class="vxo-do">${DELIV[k].map(d=>`<li>${esc(d)}</li>`).join('')}</ul></div><div><h4>What I need before I start</h4><ul class="vxo-need">${NEED[k].map(d=>`<li>${esc(d)}</li>`).join('')}</ul></div></div><h4>See it in this sample</h4><div class="vxo-ev">${o[2].map(([key,l])=>key.startsWith('go:')?`<button class="ex ev" data-go="${esc(key.slice(3))}" data-title="${esc(l)}">${esc(l)} ›</button>`:`<button class="ex ev" data-open="${esc(key)}">${esc(l)} ›</button>`).join('')}</div></div>`,t)};}
+const SKIP='[data-open],[data-go],button,a,input,select,textarea,label,[role=button],[tabindex],.vx-zoom-skip';
+function zoom(){document.querySelectorAll('main .card .chart').forEach(c=>{if(c.dataset.vxZ||c.closest('.rptdoc,dialog,.live-card'))return;let card=c.closest('.card'),btn=[...(card?.querySelectorAll('button')||[])].find(x=>/Enlarge visual/i.test(x.textContent));if(!btn)return;c.dataset.vxZ='1';c.classList.add('vx-zoom');c.title='';c.addEventListener('click',e=>{let hit=e.target.closest(SKIP);if(hit&&c.contains(hit)&&hit.tagName.toLowerCase()!=='svg')return;btn.click()})})}
+let q=false;const run=()=>{if(q)return;q=true;requestAnimationFrame(()=>{q=false;try{own();zoom()}catch(e){console.warn(e)}})};new MutationObserver(run).observe(document.body,{childList:true,subtree:true});run();
+})();
+</script></body>
 </html>
