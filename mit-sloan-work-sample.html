@@ -1081,8 +1081,46 @@ main .card{box-shadow:var(--vx-shadow)}
 .vx-zoom:after{content:'⤢ Click to enlarge';position:absolute;top:8px;right:10px;font-size:11.5px;font-weight:bold;color:#fff;background:rgba(31,42,48,.82);padding:3px 8px;border-radius:999px;opacity:0;transform:translateY(-3px);transition:opacity .15s,transform .15s;pointer-events:none}
 .vx-zoom:hover:after,.vx-zoom:focus-visible:after{opacity:1;transform:none}
 .vx-zoom:hover{box-shadow:0 0 0 2px rgba(163,31,52,.25)}
+</style><style id="nf-css">html,body{scroll-behavior:auto!important}
+main{transition:opacity .16s ease}
+html.nf-out main{opacity:0}
+@media(prefers-reduced-motion:reduce){main{transition:none}}
 </style></head>
-<body>
+<body><script id="nf-js">/* Section changes: quick fade-out, jump, fade-in. Never an animated scroll. */
+(function(){
+'use strict';
+var D=document,H=D.documentElement;
+if(window.__navfade)return;window.__navfade=1;
+var inst=function(o){return o&&typeof o==='object'?Object.assign({},o,{behavior:'instant'}):o};
+var ws=window.scrollTo.bind(window),wb=window.scrollBy.bind(window);
+window.scrollTo=function(a,b){return typeof a==='object'?ws(inst(a)):ws(a,b)};window.scroll=window.scrollTo;
+window.scrollBy=function(a,b){return typeof a==='object'?wb(inst(a)):wb(a,b)};
+var siv=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(a){return siv.call(this,typeof a==='object'?inst(a):a)};
+['scrollTo','scroll','scrollBy'].forEach(function(k){var f=Element.prototype[k];if(f)Element.prototype[k]=function(a,b){return typeof a==='object'?f.call(this,inst(a)):f.call(this,a,b)}});
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var main=function(){return D.querySelector('main')};
+function isNav(t){
+ if(t.matches('a.skip,[aria-haspopup="dialog"],[data-info],[data-def],[download],[target]'))return false;
+ if(t.tagName==='A'){var h=t.getAttribute('href')||'';if(h.charAt(0)!=='#'||h.length<2)return false;var g=D.getElementById(decodeURIComponent(h.slice(1)));return !!g&&!g.closest('dialog')}
+ if(t.closest('dialog'))return t.matches('[data-go]:not([data-go*="#"])');
+ if(t.matches('[data-go]'))return t.getAttribute('data-go').indexOf('#')<0;
+ if(t.matches('[data-open^="go:"]'))return true;
+ var m=main();if(m&&m.contains(t))return false;
+ if(t.getAttribute('aria-selected')==='true')return false;
+ return t.matches('[role=tab],.tab,[aria-controls],button[class*="nav"],[class*="nav"] button,button[id*="Nav"]');
+}
+var busy=false;
+window.addEventListener('click',function(e){
+ if(e.__nf||busy||e.defaultPrevented||e.button>0||e.metaKey||e.ctrlKey||e.shiftKey)return;
+ var t=e.target.closest&&e.target.closest('a,button,[role=tab],[data-go],[data-open]');if(!t||!isNav(t))return;
+ var m=main();if(!m||reduce)return;
+ e.preventDefault();e.stopImmediatePropagation();busy=true;H.classList.add('nf-out');
+ setTimeout(function(){var ev=new MouseEvent('click',{bubbles:true,cancelable:true,view:window});ev.__nf=1;t.dispatchEvent(ev);
+  requestAnimationFrame(function(){requestAnimationFrame(function(){H.classList.remove('nf-out');busy=false})})},150);
+ setTimeout(function(){H.classList.remove('nf-out');busy=false},900);
+},true);
+})();
+</script>
 <a class="skip" href="#main">Skip to content</a>
 <header class="head"><div class="wrap">
  <div>
